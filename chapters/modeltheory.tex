@@ -753,42 +753,103 @@ The telicity of each verb was deemed to be [+Telic] if two out of three tests yi
 Using a set of 30 transitive verbs of interest and 10 intransitive verbs resulted in a set of 160 sentences to be used as experimental stimuli (because of the 2x2 design). The 30 transitive verbs were the same used by \textcite{Resnik1993, Resnik1996} to test his Selectional Preference Strength, since \textcite{Medina2007} employs the same measure to quantify semantic selectivity. Of the 160 stimuli, the 40 intransitive sentences were used as fillers to distract the participants from the real focus of the experiment, the 60 transitive sentences with an overt object were used as controls (since they had to be grammatical by default), and the remaining 60 transitive sentences \textit{without} a direct object were the actual target of the experiment.\\
 A total of 15 native speakers of English were recruited as participants among the undergraduate students of Johns Hopkins University and rewarded class credit for their effort. Each of them saw all the stimuli in every experimental condition in randomized order, i.e. the experiment followed a within-subject crossed design. Participants partook in a short training session with 3 mock stimuli before accessing the experiment proper, and received immediate feedback. Both in the training session and the experimental session, participants had to score each stimulus on a 5-point Likert scale ranging from 1 (ungrammatical) to 5 (fully grammatical).
 
-\paragraph{Computational step 2: Parameter estimation} The acceptability judgments thus obtained for each verb in each experimental condition were considered equal to the probability of the implicit object output to be returned by the stochastic model based on all the possible re-rankings of the constraints at play for that given input. TESTO TESTO
+\paragraph{Computational step 2: Judgments and probabilities} The acceptability judgments thus obtained for each verb in each experimental condition were considered equal to the probability of the implicit object output to be returned by the stochastic model based on all the possible re-rankings of the constraints at play for that given input. The judgment scores were then used to estimate the probabilities of the four possible constraint rankings in \reftab{medina_4rankings}, which in turn were used to estimate the probabilities of \textsc{*Int Arg} dominating each of the other three constraints. Let us retrace the computational steps that lead to this result.\\
+As shown before, the probability of an implicit object output for each aspectual type of input is equal to the joint probability of the independent pairwise rankings of the relevant constraints. This is shown in \refeq{aspectualprobs} to \refeq{aspectualprobs4}, reported here again for ease of consultation.
 
-\paragraph{Computational step 3: Predicted grammaticality of object drop} testo
+\begin{align*}  \tag{\refeq{aspectualprobs}}
+    & p(\text{implicit})\textsubscript{Telic Perfective} = p(*I \gg {F, T, P}) \\
+    & p(\text{implicit})\textsubscript{Telic Imperfective} = p(*I \gg {F, T, P}) + p(P \gg *I \gg {F, T}) \tag{\refeq{aspectualprobs2}}\\
+    & p(\text{implicit})\textsubscript{Atelic Perfective} = p(*I \gg {F, T, P}) + p(T \gg *I \gg {F, P}) \tag{\refeq{aspectualprobs3}}\\
+    & p(\text{implicit})\textsubscript{Atelic Imperfective} = p(*I \gg {F, T, P}) + p(T \gg *I \gg {F, P}) + \nonumber \\ & + p(P \gg *I \gg {F, T}) + p({T, P} \gg *I \gg F) \tag{\refeq{aspectualprobs4}}
+\end{align*}
+
+Based on the calculations in \refeq{jointprobsmedina} to \refeq{jointprobsmedina4}, the aforementioned joint probabilities are computed as follows in \refeq{jointcomplete} to \refeq{jointcomplete4}.
+
+\begin{align}  \labeq{jointcomplete}
+    & p(\text{implicit})\textsubscript{Telic Perfective} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) \\
+    & p(\text{implicit})\textsubscript{Telic Imperfective} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) + \nonumber \\ & + p(*I \gg F) \cdot p(*I \gg T) \cdot [1 - p(*I \gg P)] \labeq{jointcomplete2}\\
+    & p(\text{implicit})\textsubscript{Atelic Perfective} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) + \nonumber \\ & + p(*I \gg F) \cdot [1 - p(*I \gg T)] \cdot p(*I \gg P) \labeq{jointcomplete3}\\
+    & p(\text{implicit})\textsubscript{Atelic Imperfective} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) + \nonumber \\ & + p(*I \gg F) \cdot [1 - p(*I \gg T)] \cdot p(*I \gg P) + \nonumber \\ & + p(*I \gg F) \cdot p(*I \gg T) \cdot [1 - p(*I \gg P)] + \nonumber \\ & + p(*I \gg F) \cdot [1 - p(*I \gg T)] \cdot [1 - p(*I \gg P)] \labeq{jointcomplete4}
+\end{align}
+
+\paragraph{Computational step 3: Parameter estimation} The last step involves \refeq{medinafunction_f}, \refeq{medinafunction_t}, and \refeq{medinafunction_p}, where the ranking of \textsc{*Int Arg} with respect to the other three constraints was defined as a (linear) function of the input verb's semantic selectivity. Plugging them in \refeq{jointcomplete} results in the (cubic) function in \refeq{cubic_telperf}, describing the probability of an implicit object output with a telic perfective input depending on the specific verb's semantic selectivity.
+
+\begin{align}  \labeq{cubic_telperf}
+    & p(\text{implicit})\textsubscript{Telic Perfective} = [\frac{\delta_1 - \gamma_1}{SPS_{max} - SPS_{min}} \cdot ({SPS_{i} - SPS_{min}}) + \gamma_1] \cdot \nonumber \\ & \cdot [\frac{\delta_2 - \gamma_2}{SPS_{max} - SPS_{min}} \cdot ({SPS_{i} - SPS_{min}}) + \gamma_2] \cdot \nonumber \\ & \cdot [\frac{\delta_3 - \gamma_3}{SPS_{max} - SPS_{min}} \cdot ({SPS_{i} - SPS_{min}}) + \gamma_3]
+\end{align}
+
+The value of the function, i.e. $p(\text{implicit})\textsubscript{Telic Perfective}$, is the average acceptability judgment for a telic perfective input with a known SPS, i.e. $SPS_{i}$ in the equation. The values of $SPS_{max}$ and $SPS_{min}$ are known, since they are the maximum and minimum Selectional Preference Strength values in Resnik's list, respectively. Henceforth, the equation has only to be solved for $\delta_i$ and $\gamma_i$, which are the values the function takes at $SPS_{max}$ and $SPS_{min}$ respectively. A similar reasoning applies to telic imperfective, atelic perfective, and atelic imperfective inputs, once again plugging \refeq{medinafunction_f}, \refeq{medinafunction_t}, and \refeq{medinafunction_p} into \refeq{jointcomplete2}, \refeq{jointcomplete3}, and \refeq{jointcomplete4}.\\
+At the end of this process, the experimenter is left with a set of $n$ equations, each having six unknowns to be solved for, where $n$ is the total number of target sentences among the stimuli. In order to calculate $\delta_i$ and $\gamma_i$, the judgments (i.e. the probabilities of object drop which serve as values of the functions) underwent two preprocessing steps in Medina's pipeline, namely:
+\begin{enumerate}
+    \item for each target sentence, the 15 judgments provided by 15 participants were averaged into a single numerical value, and
+    \item this numerical value was converted linearly to fall between 0 and 1, since this is the proper range for probabilities
+\end{enumerate}
+
+Medina estimated the values of the unknown parameters using Excel Solver\sidenote{An add-in component of Microsoft Excel used to find the optimal value of a function based on several constraints.}, based on the following two constraints:
+\begin{itemize}
+    \item $\delta_i$ and $\gamma_i$ have to fall between 0 and 1
+    \item the sum-squared error between the predictions of the model and the actual grammaticality judgment data have to be minimized
+\end{itemize}
+Thanks to these constraints, the model outputs predicted grammaticality values in the 0-1 probability range.
+
+\paragraph{Summary of results} The values of $\delta_i$ and $\gamma_i$ Medina found as a result of this optimization indicate that in English, \textsc{*Int Arg} is more likely to dominate each of the other three constraints when the verb is highly semantically selective, and this is most evident for \textsc{Telic End}. The actual values are
+
+FARE TABELLA CON DUE COLONNE PER DELTA E GAMMA E NOMINARE CIASCUNA RIGA CON P(INTARG << CONSTRAINT)
+
+These results are visualized in \reffig{medina_intargabove}, adapted from \textcite[143-144]{Medina2007}.
+
+\begin{figure}[htb]
+\caption{DIDASCALIA.}
+\labfig{medina_intargabove}
+\begin{tikzpicture}
+    \begin{axis}[legend pos=south east, xmin=0, ymin=0, ymax=1, axis lines = left,scaled ticks=false, xlabel={SPS}, ylabel={p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg})}] 
+        \addplot[color=black,mark=x] coordinates {
+        (0.72,0.70) 
+        (4.80,0.82) 
+    }; 
+      \addlegendentry{p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg})};
+            \addplot[color=red,mark=x] coordinates {
+        (0.72,0.36) 
+        (4.80,1.00) 
+    }; 
+    \addlegendentry{p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}};
+            \addplot[color=blue,mark=x] coordinates {
+        (0.72,0.65) 
+        (4.80,0.80) 
+    }; 
+    \addlegendentry{p(\textsc{*Int Arg} $\gg$ \textsc{Perf Coda})};
+    % \node [above] at (axis cs:  0.72,0.70) {(0.72,0.70)};
+    % \node [above left] at (axis cs:  4.80,0.82) {(4.80,0.82)};
+    \end{axis} 
+\end{tikzpicture}
+\end{figure}
+
+testo testo testo
+
+GRAFICO CON LE 4 FUNZIONI TUTTE INSIEME (plottare punto per punto), cfr \reffig{mock_scatter_medina}
+
+% \begin{figure}[htb]
+% \caption{Hypothetical representation of the relationship between semantic selectivity and the probability (as a proxy to grammaticality) of an implicit object output in the stochastic model by \textcite{Medina2007}. }
+% \labfig{mock_scatter_medina}
+%   \begin{tikzpicture}
+% \begin{axis}[legend pos=outer north east,
+%     axis lines = left,scaled ticks=false,ymax=100,ymin=0,minor tick num=1,xlabel={SPS}, ylabel={probability of implicit object output}]
+%       \addplot+[no marks,thick] {4*(x^3)};
+%       \addlegendentry{atelic imperfective};
+%       \addplot+[no marks,thick] {3*(x^3)};
+%       \addlegendentry{atelic perfective};
+%       \addplot+[no marks,thick] {2*(x^3)};
+%       \addlegendentry{telic imperfective};
+%       \addplot+[no marks,thick] {x^3};
+%       \addlegendentry{telic perfective};
+%     \end{axis}
+%   \end{tikzpicture}
+% \end{figure}
 
 
 
-% \begin{frame}[fragile]{{\small Finding the Constraint Ranking Probabilities: Medina's method}}
-% \begin{table}[ht]
-%     \centering
-%     %\begin{tabular}{c|c}
-%     \resizebox{0.85\textwidth}{!}{\begin{tabularx}{\textwidth}{X|X}
-%     \multicolumn{1}{c}{\textbf{\alert{LOGIC $\Downarrow$}}} & \\
-%     \hline
-%     &\\
-%     f(SPS) = probability of *\textsc{Int Arg} dominating each constraint & knowing the relative \% of each constraint orderings, estimate the \% of \textsc{*Int Arg} dominating each constraint \\
-%     &\\
-%     these outputs determine the relative \% of each of the 8 possible constraint orderings & relative \% of each of the 8 possible constraint orderings can be estimated via the relative \% of impl object output \\
-%     &\\
-%     these relative \% determine the relative \% (and thus grammaticality) of the impl object output for a given input & obtained grammaticality judgments = relative \% of impl object output for a given input \\
-%     &\\
-%     \hline
-%      & \multicolumn{1}{c}{\textbf{\alert{PROCEDURE $\Uparrow$}}}
-%     \end{tabularx}}
-% \end{table}
-% \end{frame}
 
-% \begin{frame}[fragile]{{\small Finding the Constraint Ranking Probabilities: Medina's method}}
-% \\ {\small Medina used Excel Solver to \alert{estimate the 6 parameters} of the ranking functions to minimize the sum-squared error between model predictions and actual judgments}\\~\\
-% {\small \alert{Example:} estimating parameters for the telic perfective input of a verb (\textit{to find}) with SPS = 0.96 and average judgment = 1.93} \\
-% % \small (judgments were then re-scaled between 0 and 1)
-% \includegraphics[width=0.7\textwidth]{images/examplemodel.png}\\
-% Solving the estimation problem means \alert{solving a system} of \textit{n} equations (with \textit{n} = number of grammaticality judgments)
-% \end{frame}
-
-
-\section{Building on Medina (2007)} \labsec{improvingmedina}
+\section{Building on Medina TOGLIERE E ACCORPARE AL PROSSIMO CAPITOLO} \labsec{improvingmedina}
 
 Improving the original model (aggiungere sezione/paragrafo sul fatto che il mio modello computazionale è in Python, più scalabile se faccio alcune opportune modifiche, e tratta meglio le variabili (vedere se medina normalizza i dati, etc))
 
