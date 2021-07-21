@@ -792,14 +792,24 @@ Medina estimated the values of the unknown parameters using Excel Solver\sidenot
 \end{itemize}
 Thanks to these constraints, the model outputs predicted grammaticality values in the 0-1 probability range.
 
-\paragraph{Summary of results} The values of $\delta_i$ and $\gamma_i$ Medina found as a result of this optimization indicate that in English, \textsc{*Int Arg} is more likely to dominate each of the other three constraints when the verb is highly semantically selective, and this is most evident for \textsc{Telic End}. The actual values are
+\paragraph{Summary of results} The values of $\delta_i$ and $\gamma_i$ Medina found as a result of this optimization indicate that in English, \textsc{*Int Arg} is more likely to dominate each of the other three constraints when the verb is highly semantically selective, and this is most evident for \textsc{Telic End}. The actual values computed by the model are in \reftab{medina_deltagammas}.
 
-FARE TABELLA CON DUE COLONNE PER DELTA E GAMMA E NOMINARE CIASCUNA RIGA CON P(INTARG << CONSTRAINT)
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Values of unknown parameters $\delta_i$ and $\gamma_i$ as computed in Medina's stochastic model.}
+\labtab{medina_deltagammas} 
+\begin{tabular}{l|cc}
+                                                                                & $\gamma$ & $\delta$ \\
+                                                                                \hline
+p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg}) & 0.70        & 0.82        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}) & 0.36        & 1.00        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Perf Coda}) & 0.65        & 0.80       
+\end{tabular}
+\end{table}
 
-These results are visualized in \reffig{medina_intargabove}, adapted from \textcite[143-144]{Medina2007}.
+These results are visualized in \reffig{medina_intargabove}, adapted from the figures in \textcite[143-144]{Medina2007}.
 
 \begin{figure}[htb]
-\caption{DIDASCALIA.}
+\caption{Graphical representation of the values of $\gamma$ and $\delta$ in Medina's model.}
 \labfig{medina_intargabove}
 \begin{tikzpicture}
     \begin{axis}[legend pos=south east, xmin=0, ymin=0, ymax=1, axis lines = left,scaled ticks=false, xlabel={SPS}, ylabel={p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg})}] 
@@ -824,65 +834,59 @@ These results are visualized in \reffig{medina_intargabove}, adapted from \textc
 \end{tikzpicture}
 \end{figure}
 
-testo testo testo
+Knowing the actual values of these parameters, it's possible to plug them into \labeq{cubic_telperf} (and the equivalent functions for the three other aspectual types of input) to let the model predict the grammaticality of an implicit object output in terms of its probability as a function of semantic selectivity. Graphically, the state of affairs that was hypothesized in \reffig{mock_scatter_medina} looks like \reffig{medina_predictedresults} (adapted from \textcite[145]{Medina2007}) in Medina's model of object drop in English.
 
-GRAFICO CON LE 4 FUNZIONI TUTTE INSIEME (plottare punto per punto), cfr \reffig{mock_scatter_medina}
+\begin{figure}[htb]
+\caption{Graphical representation of the values of $\gamma$ and $\delta$ in Medina's model.}
+\labfig{medina_predictedresults}
+\begin{tikzpicture}
+    \begin{axis}[legend pos=south east, xmin=0, ymin=0, ymax=1, axis lines = left,scaled ticks=false, xlabel={SPS}, ylabel={probability of implicit object output}] 
+        \addplot[color=black,mark=x] coordinates {
+        (0,0.15) 
+        (1,0.22) 
+        (2,0.32) 
+        (3,0.41) 
+        (4,0.55) 
+        (5,0.70) 
+    }; 
+      \addlegendentry{tel perf};
+        \addplot[color=olive,mark=x] coordinates {
+        (0,0.25) 
+        (1,0.34) 
+        (2,0.48) 
+        (3,0.59) 
+        (4,0.75) 
+        (5,0.92) 
+    }; 
+      \addlegendentry{tel imperf};  
+        \addplot[color=red,mark=x] coordinates {
+        (0,0.50) 
+        (1,0.54) 
+        (2,0.58) 
+        (3,0.62) 
+        (4,0.66) 
+        (5,0.70) 
+    }; 
+      \addlegendentry{atel perf};    
+        \addplot[color=blue,mark=x] coordinates {
+        (0,0.72) 
+        (1,0.76) 
+        (2,0.80) 
+        (3,0.84) 
+        (4,0.88) 
+        (5,0.92) 
+    }; 
+      \addlegendentry{atel imperf};        
+    \end{axis} 
+\end{tikzpicture}
+\end{figure}
 
-% \begin{figure}[htb]
-% \caption{Hypothetical representation of the relationship between semantic selectivity and the probability (as a proxy to grammaticality) of an implicit object output in the stochastic model by \textcite{Medina2007}. }
-% \labfig{mock_scatter_medina}
-%   \begin{tikzpicture}
-% \begin{axis}[legend pos=outer north east,
-%     axis lines = left,scaled ticks=false,ymax=100,ymin=0,minor tick num=1,xlabel={SPS}, ylabel={probability of implicit object output}]
-%       \addplot+[no marks,thick] {4*(x^3)};
-%       \addlegendentry{atelic imperfective};
-%       \addplot+[no marks,thick] {3*(x^3)};
-%       \addlegendentry{atelic perfective};
-%       \addplot+[no marks,thick] {2*(x^3)};
-%       \addlegendentry{telic imperfective};
-%       \addplot+[no marks,thick] {x^3};
-%       \addlegendentry{telic perfective};
-%     \end{axis}
-%   \end{tikzpicture}
-% \end{figure}
+Finally, it results that:
+\begin{itemize}
+    \item the probability of an implicit object output is directly proportional to the verb's Selectional Preference Strength for all aspectual types of input;
+    \item the relative probabilities hypothesized in \reffig{mock_scatter_medina} are also shown in the actual results, with the implicit object construction being most likely with atelic imperfective inputs and least likely with telic perfective inputs;
+    \item due to semantic selectivity, there is an interaction between aspectual features so that telic imperfective inputs are less likely to accept object drop than atelic perfective inputs when the verb's SPS is low (approximately lower than 3 in Resnik's and Medina's case), while the opposite happens for verbs with a higher SPS;
+    \item in \reffig{medina_predictedresults}, the curves for inputs having the same telicity feature are more-or-less parallel because of the strong telicity effect shown in the steep p(\textsc{*Int Arg} $\gg$ \textsc{Telic End} curve in \reffig{medina_intargabove}, where it is also easy to spot the interaction between telicity and perfectivity that was mentioned in the previous bullet point.
+\end{itemize}
 
-
-
-
-\section{Building on Medina TOGLIERE E ACCORPARE AL PROSSIMO CAPITOLO} \labsec{improvingmedina}
-
-Improving the original model (aggiungere sezione/paragrafo sul fatto che il mio modello computazionale è in Python, più scalabile se faccio alcune opportune modifiche, e tratta meglio le variabili (vedere se medina normalizza i dati, etc))
-
-
-\subsection{Semantic selectivity} \labsec{pisasps}
-
-spostare qui il paragrafo su PISA che adesso sta in predictors.tex
-
-
-\subsection{More constraints} \labsec{newconstraints}
-
-text
-
-% \alert{Iterativity} and \alert{manner specification} (\hyperlink{otherfactors}{\beamergotobutton{back to origins}}) can become two markedness constraints based on binary features of the predicate ([+/- iterative, +/- specified]):
-% \begin{itemize}
-    % \item \textsc{Non-Iterative Argument (Non-Iter Arg)}: non-iterative predicates must occur with an overt argument in the output
-    % \item \textsc{Manner-Specified Argument (Man-Spec Arg)}: manner-specified predicates must occur with an overt argument in the output
-% \end{itemize}
-% {\small As with \textsc{Telic End} and \textsc{Perf Coda}, \textbf{the omission of a dObj} violates them} \\~\\
-% {\footnotesize The experimental design will accomodate them easily: \hyperlink{expsetting}{\beamergotobutton{Experimental setting}}}
-
-
-\subsection{Crosslinguistic evidence} \labsec{crossling}
-
-text
-
-% Literature agrees on the lack of \alert{cross-linguistic accounts} of argument omissibility, so it would be super interesting to be among the pioneers! Comparing the results of my model and seeing whether there is some pattern in the way verbs cluster cross-linguistically with respect to the omissibility of their objects/Instruments is something I would really like to do.\\~\\ {\small The experimental design and my Python scripts are easily \alert{adaptable} to this purpose, and I can create both data/stimuli-sets.}
-
-
-\subsection{Open Science paradigm} \labsec{sharingiscaring}
-
-text
-
-% I estimated Medina's parameters using \alert{Python}. Following Paul's suggestion (thanks!) I looked into library optimization functions that find minima of functions and finally chose \alert{scipy.optimize.curve\_fit} among the many available.\\~\\
-% My script also computes \alert{everything else}: Medina's original model, the partially extended model, the full extended model, data exploration and preprocessing, model evaluations, and figures.\\~\\
-% If you are interested, the script(s) and mock input data are \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{\textbf{here}} on my \alert{GitHub} profile with a detailed explanation.
+In \nrefch{predictors} I will TESTO TESTO TESTO
