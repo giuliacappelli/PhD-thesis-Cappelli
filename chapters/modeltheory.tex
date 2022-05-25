@@ -635,6 +635,7 @@ Let us look at the underlying mathematics in more detail. A function $f(x) = y$ 
 \end{tikzpicture}
 \end{figure}
 
+\hl{Here, $y = x$ meets the $y$ axis in the origin because $q$ is null, and it bisects perfectly the first and third quadrants of the cartesian plane because $m$ is equal to 1. The curves described by $y = 2x + 2$ and $y = -3x - 5$ are steeper ($y$ grows/decreases faster than $x$), because $m$ is larger than 1, and they meet the $y$ axis at 2 and -5 respectively. Moreover, $y = x$ and $y = 2x + 2$ are \textit{positive} linear functions because their slope is positive, i.e. $y$ values increase when $x$ values do, while the opposite holds for $y = -3x - 5$.}\\
 Since any flavor of Optimality Theory requires a conflict between constraints, and since \textsc{*Int Arg} is the one constraint to conflict with all the others in this account of object drop, Medina's model defines a linear function for the pairwise ordering of \textsc{*Int Arg} with respect to \textsc{Faith Arg} (\refeq{medinafunction_f}), \textsc{Telic End} (\refeq{medinafunction_t}), and \textsc{Perf Coda} (\refeq{medinafunction_p}), for a total of three different linear functions. In general, each function takes the form in \refeq{medinafunction_ex}, where the probability of \textsc{*Int Arg} being ranked above another constraint is $y$, $SPS_i$ is \alert{$x$}, $\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}}$ is \alert{$m$}, $\gamma_k - SPS_{min} (\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}})$ is \alert{$q$}, and $\delta_k$ and $\gamma_k$ are, respectively, the values the function assumes at $SPS_{max}$ and $SPS_{min}$.
 
 \begin{equation} \labeq{medinafunction_ex}
@@ -762,7 +763,7 @@ step 3         & step 1               \\ \hline
 Let us discuss each computational step in more detail.
 
 \paragraph{Computational step 1: Collecting acceptability judgments} The collection of acceptability judgments is not a part of the computational procedure \textit{per se}, unlike the estimation of the parameters of the linear functions. However, since acceptability judgments are directly equated to the probability of an implicit object output, the fine points of their collection belong to this section nonetheless. I will now present the main aspects of Medina's experimental design, which the interested reader can find and integrate with additional information in \textcite[110-134]{Medina2007}.\\
-The linguistic predictors of object drop under consideration are semantic selectivity, telicity, and perfectivity. Among these, semantic selectivity and telicity are inherent properties of each verb, while perfectivity is a sentence-level property. For this reason, the verbs in the experiment are annotated with respect to their semantic selectivity and telicity, while sentences are manipulated for perfectivity. This results in a 2x2 factorial design\sidenote{A experimental design with two independent variables having two levels each, resulting in four experimental conditions.} where each verb, having its own selectivity and telicity profile, appears both with and without a direct object, both having and lacking the perfectivity feature. The examples in \ref{medina_exstim} are adapted from \textcite[113]{Medina2007}.
+The linguistic predictors of object drop under consideration are semantic selectivity, telicity, and perfectivity. Among these, semantic selectivity and telicity\sidenote{\hl{Based on} \textcite{Olsen1997telicity-privative} and pertaining observations throughout this chapter.} are inherent properties of each verb, while perfectivity is a sentence-level property. For this reason, the verbs in the experiment are annotated with respect to their semantic selectivity and telicity, while sentences are manipulated for perfectivity. This results in a 2x2 factorial design\sidenote{A experimental design with two independent variables having two levels each, resulting in four experimental conditions.} where each verb, having its own selectivity and telicity profile, appears both with and without a direct object, both having and lacking the perfectivity feature. The examples in \ref{medina_exstim} are adapted from \textcite[113]{Medina2007}.
 
 \ex. \label{medina_exstim} \a. \label{medina_exstim1} Michael had brought.
 \b. \label{medina_exstim2}  Michael was bringing.
@@ -848,7 +849,7 @@ These results are visualized in \reffig{medina_intargabove}, adapted from the fi
         (0.72,0.36) 
         (4.80,1.00) 
     }; 
-    \addlegendentry{p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}};
+    \addlegendentry{p(\textsc{*Int Arg} $\gg$ \textsc{Telic End})};
             \addplot[color=blue,mark=x] coordinates {
         (0.72,0.65) 
         (4.80,0.80) 
@@ -860,10 +861,10 @@ These results are visualized in \reffig{medina_intargabove}, adapted from the fi
 \end{tikzpicture}
 \end{figure}
 
-Knowing the actual values of these parameters, it is possible to plug them into \labeq{cubic_telperf} (and the equivalent functions for the three other aspectual types of input) to let the model predict the grammaticality of an implicit object output in terms of its probability as a function of semantic selectivity. Graphically, the state of affairs that was hypothesized in \reffig{mock_scatter_medina} looks like in \reffig{medina_predictedresults} (adapted from \textcite[145]{Medina2007}) in Medina's model of object drop in English.
+Knowing the actual values of these parameters, it is possible to plug them into \labeq{cubic_telperf} (and the equivalent functions for the three other aspectual types of input) to let the model predict the grammaticality of an implicit object output in terms of its probability as a function of semantic selectivity. Graphically, the state of affairs that was hypothesized in \reffig{mock_scatter_medina} looks like in \reffig{medina_predictedresults} (adapted from \textcite[145]{Medina2007}) in Medina's model of object drop in English. \hl{The figure shows the probability of an implicit object output for all possible aspectual types depending on SPS values ranging from 0 to 5, based on the $\gamma$ and $\delta$ values estimated in the model} (shown in \reftab{medina_deltagammas}).
 
 \begin{figure}[htb]
-\caption{Graphical representation of the values of $\gamma$ and $\delta$ in Medina's model.}
+\caption{\hl{Realistic representation of the relationship between semantic selectivity and the probability (as a proxy to grammaticality) of an implicit object output in Medina's model, based on computed $\gamma$ and $\delta$ values.}}
 \labfig{medina_predictedresults}
 \begin{tikzpicture}
     \begin{axis}[legend pos=south east, xmin=0, ymin=0, ymax=1, axis lines = left,scaled ticks=false, xlabel={SPS}, ylabel={probability of implicit object output}] 
@@ -912,7 +913,7 @@ Finally, it results that:
     \item the probability of an implicit object output is directly proportional to the verb's Selectional Preference Strength for all aspectual types of input;
     \item the relative probabilities hypothesized in \reffig{mock_scatter_medina} are also shown in the actual results, with the implicit object construction being most likely with atelic imperfective inputs and least likely with telic perfective inputs;
     \item due to semantic selectivity, there is an interaction between aspectual features so that telic imperfective inputs are less likely to accept object drop than atelic perfective inputs when the verb's SPS is low (approximately lower than 3 in Resnik's and Medina's case), while the opposite happens for verbs with a higher SPS;
-    \item in \reffig{medina_predictedresults}, the curves for inputs having the same telicity feature are more-or-less parallel because of the strong telicity effect shown in the steep p(\textsc{*Int Arg} $\gg$ \textsc{Telic End} curve in \reffig{medina_intargabove}, where it is also easy to spot the interaction between telicity and perfectivity that was mentioned in the previous bullet point.
+    \item in \reffig{medina_predictedresults}, the curves for inputs having the same telicity feature are more-or-less parallel because of the strong telicity effect shown in the steep p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}) curve in \reffig{medina_intargabove}, where it is also easy to spot the interaction between telicity and perfectivity that was mentioned in the previous bullet point.
 \end{itemize}
 
 In \nrefch{predictors} I will present my own Stochastic Optimality Theoretic model of the implicit object construction in English and Italian, discussing both \textcite{Medina2007}'s legacy and the ways my model brings a novel contribution to object drop studies.
