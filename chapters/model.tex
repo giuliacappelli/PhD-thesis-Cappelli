@@ -1,25 +1,162 @@
 % \setchapterstyle{kao}
 \setchapterpreamble[u]{\margintoc}
-\chapter{Predicting the acceptability of implicit objects}
+\chapter{Predicting the grammaticality of implicit objects}
 \labch{model}
 
-\section{Fitting the model} \labsec{fittingmodel}
+\section{Introduction} \labsec{introfitting}
 
-\subsection{For English} \labsec{fitting_eng}
+\subsection{Progressive models} \labsec{intro_models}
 
-text
+tre modelli diversi di complessità crescente: qui dire che uso il modello base di Medina, uno intermedio con iterativity (giustificato da boxplot e lmem del capitolo di analisi dei risultati), uno completo con tutti i regressori insieme
 
-\subsection{For Italian} \labsec{fitting_ita}
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{MODEL CAPTION.}
+\labtab{tab_mymodels}
+\begin{tabular}{cccc}
+& SPS Resnik & Comp PISA & Behav PISA \\
+\hline
+StOT basic & eng | ita          & eng | ita   & eng | ita   \\
+StOT +iter & eng | ita  & eng | ita & eng | ita \\
+StOT +iter +mannspec & eng | ita   & eng | ita   & eng | ita  
+\end{tabular}
+\end{table}
 
-text
+
+\subsection{Constraints} \labsec{intro_constraints}
+
+v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
 
 
-\section{Model assessment} \labsec{assessment}
+\section{Basic Stochastic OT model} \labsec{stot_basic}
 
-\subsection{For English} \labsec{assess_eng}
 
-text
+\subsection{Fitting the model} \labsec{stot_basic_fitting}
 
-\subsection{For Italian} \labsec{assess_ita}
+estimation of unknown variables (equazioni e tutto)
+
+
+\subsection{Parameters of the linear functions} \labsec{stot_basic_parameters}
+
+quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Predicted grammaticality of an implicit object output} \labsec{stot_basic_predicted}
+
+il plot con le cubiche
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Model assessment} \labsec{stot_basic_assessment}
+
+adjusted R squared + 
+individual error (Medina 146) +
+Pearson actual-predicted collettivo e per ciascun aspectual type
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Comparing English and Italian} \labsec{stot_basic_engita}
+
+testo
+
+
+
+\section{Intermediate Stochastic OT model} \labsec{stot_ext1}
+
+
+\subsection{Fitting the model} \labsec{stot_ext1_fitting}
+
+estimation of unknown variables (equazioni e tutto)
+
+
+\subsection{Parameters of the linear functions} \labsec{stot_ext1_parameters}
+
+quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Predicted grammaticality of an implicit object output} \labsec{stot_ext1_predicted}
+
+il plot con le cubiche
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Model assessment} \labsec{stot_ext1_assessment}
+
+adjusted R squared + 
+individual error (Medina 146) +
+Pearson actual-predicted collettivo e per ciascun aspectual type
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Comparing English and Italian} \labsec{stot_ext1_engita}
+
+testo
+
+
+
+\section{Full Stochastic OT model} \labsec{stot_full}
+
+
+\subsection{Fitting the model} \labsec{stot_full_fitting}
+
+estimation of unknown variables (equazioni e tutto)
+
+
+\subsection{Parameters of the linear functions} \labsec{stot_full_parameters}
+
+quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Predicted grammaticality of an implicit object output} \labsec{stot_full_predicted}
+
+il plot con le cubiche
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Model assessment} \labsec{stot_full_assessment}
+
+adjusted R squared + 
+individual error (Medina 146) +
+Pearson actual-predicted collettivo e per ciascun aspectual type
+
+\paragraph{English} testo
+
+\paragraph{Italian} testo
+
+
+\subsection{Comparing English and Italian} \labsec{stot_full_engita}
+
+testo
+
+
+\section{Final remarks} \labsec{stot_conclusions}
+
+\subsection{Title} \labsec{o}
 
 text

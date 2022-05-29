@@ -15,11 +15,22 @@ This Chapter presents the five linguistic factors I will use as predictors in my
 % SPS can be computed over all senses of a noun, and thus over all of the argument classes which subsume each of these senses
 
 As shown in \nrefsec{recoverability}, direct objects are likely omitted if they are "sufficiently recoverable" \parencite{Glass2013} from the meaning of the verb. Following \textcite{Medina2007}, object recoverability as a predictor in the Stochastic Optimality Theoretic model provided in this thesis is a continuous variable, for two main reasons. First, it would not be possible to set a fixed threshold value to separate recoverable and non-recoverable object verbs. Second, a continuous predictor works especially well within a model of \textit{gradient} grammaticality, such as the one hereby provided.\\
-While Medina employs the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996}, I model object recoverability using \texttt{PISA}, a novel distributional measure of Preference In Selection of Arguments by \textcite{CappelliLenciPISA}.
+While Medina \hl{only} employs the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996}, I model object recoverability using \hl{three different measures of a verb's semantic selectivity as a proxy to object recoverability:}
 
-\subsection{PISA}\labsec{compuPisa}
+\begin{itemize}
+    \item SPS, the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996};
+    \item Computational PISA, a novel distributional measure of Preference In Selection of Arguments by \textcite{CappelliLenciPISA};
+    \item Behavioral PISA, a behavioral measure inspired by Computational PISA and computed as the Object Similarity measure by \textcite{Medina2007}.
+\end{itemize}
 
-\paragraph{Introduction} Before turning to the details of \texttt{PISA}, a brief historical introduction is in order. \textcite{Resnik1993, Resnik1996} was the first to link the recoverability of direct objects to the selectional preferences of transitive verbs in a computational model, substantiating this claim by showing that his measure of selectional preference correlates well with plausibility and typicality judgments provided by human subjects. Resnik observed that the distribution of the classes of entities used as direct objects in a corpus regardless of the predicate (called "prior distribution") is different from the distribution of the same classes used as direct objects of a given verb (called "posterior distribution"), say, \textit{to grow}. A graphical representation of this observation is provided in \reffig{resnik_prior&posterior}.
+These three measures are explained in full detail throughout this section.
+
+
+\subsection{Resnik's SPS}\labsec{resnik_sps}
+% Before turning to the details of PISA, a brief historical introduction is in order.
+% \paragraph{Introduction}  
+
+\textcite{Resnik1993, Resnik1996} was the first to link the recoverability of direct objects to the selectional preferences of transitive verbs in a computational model, substantiating this claim by showing that his measure of selectional preference correlates well with plausibility and typicality judgments provided by human subjects. Resnik observed that the distribution of the classes of entities used as direct objects in a corpus regardless of the predicate (called "prior distribution") is different from the distribution of the same classes used as direct objects of a given verb (called "posterior distribution"), say, \textit{to grow}. A graphical representation of this observation is provided in \reffig{resnik_prior&posterior}.
 
 \begin{center}
 \begin{figure}[htb]
@@ -125,7 +136,10 @@ The classes considered when computing the SPS scores have to belong to a lexical
 \end{forest}
 \end{figure}
 
-In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wordnet,Miller1995} as a computational model of the lexical taxonomy. Its appeal to the author \parencite[32]{Resnik1993} lies in that the WordNet taxonomy encodes knowledge in an explicit, hierarchical fashion, which is "intuitively reasonable" and "widely accepted".\\ While powerful in many respects, Resnik's model of selectional preferences has a crucial drawback, which is the need for a manually-built lexicon. This requirement makes it difficult to compute SPS scores for verbs in languages without a WordNet, for neologisms, and for special registers not yet encoded in WordNet. Given this severe limitation, I decided not to use Resnik's SPS to model the recoverability of direct objects, creating instead a model based on distributional semantics \parencite{Lenci:2018} that can be applied in all the cases where the SPS measure cannot.\\
+In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wordnet,Miller1995} as a computational model of the lexical taxonomy. Its appeal to the author \parencite[32]{Resnik1993} lies in that the WordNet taxonomy encodes knowledge in an explicit, hierarchical fashion, which is "intuitively reasonable" and "widely accepted".\\ While powerful in many respects, Resnik's model of selectional preferences has a crucial drawback, which is the need for a manually-built lexicon. This requirement makes it difficult to compute SPS scores for verbs in languages without a WordNet, for neologisms, and for special registers not yet encoded in WordNet. Given this severe limitation, I decided \hl{to improve on} Resnik's SPS to model the recoverability of direct objects, creating a model based on distributional semantics \parencite{Lenci:2018} that can be applied in all the cases where the SPS measure cannot.
+
+\subsection{Computational PISA}\labsec{compuPisa}
+
 Distributional semantics is based on the Distributional Hypothesis, which states that words occurring in the same contexts tend to have similar meanings, or, quoting the popular formula from \textcite{firth1957synopsis}, that "you shall know a word by the company it keeps". Such a framework puts the meaning of words in the ever-changing use speakers make of language, instead of securing it in the nodes of a static lexical taxonomy. Most importantly, distributional semantics posits a correlation between distributional similarity and semantic similarity and uses the former to model the latter. Roughly, the semantic space where words "keep company" can be modeled as a vector space where each word is a vector whose dimensions are context words. An example is provided in \reffig{vectorspace}, where the two words \textit{hamburger} and \textit{dragon} populate a semantic space defined by the three context words \textit{big}, \textit{tasty}, and \textit{mythological}. The coordinates of \textit{hamburger} are (2,2,0) because in this hypothetical situation it occurs twice with \textit{big}, twice with \textit{tasty}, and never with \textit{mythological}, while the coordinates of \textit{dragon} are (2,0,1) because it occurs twice with \textit{big}, never with \textit{tasty}, and once with \textit{mythological} in the hypothetical corpus.
 
 \begin{figure}[htb]
@@ -215,16 +229,16 @@ How does all of this translate into a solution to the problem of having a taxono
 \end{tikzpicture}
 \end{figure}
 
-Based on these consideration, the conclusion is that the closer the direct objects of a verb are in a vector space, the more recoverable they should be. This is the main intuition behind \texttt{PISA}, whose computational implementation I will discuss in the next paragraph.
+Based on these consideration, the conclusion is that the closer the direct objects of a verb are in a vector space, the more recoverable they should be. This is the main intuition behind Computational PISA, whose computational implementation I will discuss in the next paragraph.
 
-\paragraph{Computational implementation} \texttt{PISA} is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb.\\
+\paragraph{Computational implementation} Computational PISA is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb. \hl{The full script used to obtain Computational PISA scores using a corpus and a list of verbs as input is available} \href{http://www.overleaf.com}{on GitHub}. \\
 This is done in two steps, for each transitive verb under consideration. The first one is to compute the Selectional Association between the verb and each one of its direct objects as defined by \textcite{Erk2007, ErkEtAl2010} in \refeq{erkpadopado}. This is a measure of the strength of the selectional preference \textit{SA} of a verb for a possible argument \textit{a\textsubscript{0}}, modeled as the weighted sum of the similarities between the candidate argument \textit{a\textsubscript{0}} and the actual arguments found in the corpus (each called \textit{a} in the formula). In \textcite{CappelliLenciPISA} and this dissertation I measure argument similarity with the cosine similarity.
 
 \begin{equation} \labeq{erkpadopado}
 SA_{v,r} (a_0) = \sum_{a \in args(v,r)} wt_{v,r}(a) \: sim(a_0,a)
 \end{equation}
 
-Then, \texttt{PISA} scores are computed as in \refeq{pisa}, i.e. by averaging \refeq{erkpadopado} over the \textit{n} direct objects of a given transitive verb.
+Then, Computational PISA scores are computed as in \refeq{pisa}, i.e. by averaging \refeq{erkpadopado} over the \textit{n} direct objects of a given transitive verb.
 
 \begin{equation} \labeq{pisa}
 PISA_{v,r} = \frac{1}{n} \sum_{i = 1}^{n} SA_{v,r} (a_i)
@@ -262,9 +276,9 @@ In \refeq{ent}, $p(a) = \frac{f(a)}{\sum_{a_0 \in A}f(a_0)}$, where $A$ is the c
 \end{itemize}
 
 \paragraph{The original experiment}
-In \textcite{CappelliLenciPISA}, we computed weighted models of argument recoverability, as explained in the previous paragraph, and also unweighted models, only taking into account 300 direct objects for each transitive verb. For each verb, the relevant 300 objects were selected after sorting the entire list of direct objects based on the FRQ, IDF, LMI and ENT functions. The reason to include unweighted models in the experiment stems from the observation that the computation of \refeq{pisa} for verbs with a large number of direct objects can get cumbersome, and it may be possible to achieve a comparable degree of informativity by only considering the most relevant objects occurring with each verb.\\
+In \textcite{CappelliLenciPISA}, I computed weighted models of argument recoverability, as explained in the previous paragraph, and also unweighted models, only taking into account 300 direct objects for each transitive verb. For each verb, the relevant 300 objects were selected after sorting the entire list of direct objects based on the FRQ, IDF, LMI and ENT functions. The reason to include unweighted models in the experiment stems from the observation that the computation of \refeq{pisa} for verbs with a large number of direct objects can get cumbersome, and it may be possible to achieve a comparable degree of informativity by only considering the most relevant objects occurring with each verb.\\
 I tested the models on a 99-verb set of transitive verbs, extracting their direct objects from ukWaC, a 2-billion token part-of-speech tagged and lemmatized corpus of English \parencite{FerraresiEtAl2008}. Direct objects were modeled as bare head nouns, excluding any determiner and modifier present in the DP (e.g. \textit{sword} instead of \textit{a big rusty sword}). I obtained the vector representation of direct objects by using 12 different 300-dimensional embeddings trained on a concatenation of ukWaC and a 2018-dump of English Wikipedia, including both SVD-reduced count-based DSMs and neural embeddings.\\
-Since \texttt{PISA} was intended to model argument recoverability, I tested the results of each model by means of a Mann-Whitney U test comparing the mean \texttt{PISA} score of the recoverable-object transitive verbs with the mean \texttt{PISA} score of the non-recoverable-object transitive verbs. Summing up the discussion of the results carried out in the original paper (here in \reftab{tab:mwu}), it was found that the weighted versions of \texttt{PISA} yield highly significant results, while the unweighted versions yield results with a comparable degree of significance just with the FRQ sorting function and, in particular, running the model on word2vec \parencite{mikolov2013efficient} distributional spaces.
+Since Computational PISA was intended to model argument recoverability, I tested the results of each model by means of a Mann-Whitney U test comparing the mean Computational PISA score of the recoverable-object transitive verbs with the mean Computational PISA score of the non-recoverable-object transitive verbs. Summing up the discussion of the results carried out in the original paper (here in \reftab{tab:mwu}), it was found that the weighted versions of Computational PISA yield highly significant results, while the unweighted versions yield results with a comparable degree of significance just with the FRQ sorting function and, in particular, running the model on word2vec \parencite{mikolov2013efficient} distributional spaces.
 
 \begin{table}
 \caption{Mann-Whitney U tests comparing recoverable- and non-recoverable-argument verbs (significance levels).}
@@ -297,39 +311,55 @@ Since \texttt{PISA} was intended to model argument recoverability, I tested the 
 \end{small}
 \end{table}
 
-\paragraph{Operative choices}
-Drawing from the results discussed in \textcite{CappelliLenciPISA} and summarized in the previous paragraph, in this thesis I computed \texttt{PISA} scores based on word2vec neural embeddings. I used the UNI function among the five defined before because it leads to highly significant results while being more straightforward than any other (un)weighted model, since it does not require the computation of any weighting/sorting function.\\
-To model the recoverability of Italian transitive verbs, in this thesis I extracted data from itWaC, a 2-billion token part-of-speech tagged and lemmatized corpora of Italian \parencite{baroni2009wacky}.
+\paragraph{\hl{Operative choices}}
+Drawing from the results discussed in \textcite{CappelliLenciPISA} and summarized in the previous paragraph, I computed Computational PISA scores for my verbs of interest in English and Italian. For English, I based the calculations on ukWaC as in the original study, and for Italian, I based them on itWaC, a 2-billion token part-of-speech tagged and lemmatized corpus of Italian \parencite{baroni2009wacky}. Given that corpora this large inevitably suffer from significant noise in the data, which then results in possibly unreliable results, I pre-processed the data extracted from both corpora to minimize the impact of noise and tagging mishaps. First of all, I filtered the 65,000 direct objects of my 30+30 verbs of interest so that they were:
+\begin{itemize}
+    \item not hapaxes (considering the verb-noun frequencies)
+    \item having an absolute frequency in the corpus greater than 100
+    \item present in WordNet (to eliminate misspelled words)
+\end{itemize}
+Then, I manually filtered the remaining nouns so that each verb only takes direct objects which do not belong to any of these categories:
+\begin{itemize}
+    \item idiomatic senses (e.g. 'ice' as an object of 'to break')
+    \item metaphoric senses (e.g. 'mind' as an object of 'to poison')
+    \item direct objects of an unintended meaning of the verb (e.g. 'salmon' as an object of 'to smoke', since the intended sense of 'to smoke' in my study is only the one related to inhaling the byproduct of the combustion of tobacco and other plants)
+    \item unintended direct objects (e.g. Recipients in double-object constructions such as 'pupils' in 'to teach pupils Linguistics', since in my study I am only interested in Theme/Patient direct objects)
+    \item mistagged direct objects (e.g. 'disorder' as an object of 'to eat', which is clearly the result of the automatic corpus tagger interpreting 'eating' in 'eating disorder' as a verb rather than as an adjective)
+    \item 'thing' (and 'stuff'), which appears with every transitive verb and is thus irrelevant
+\end{itemize}
+The files containing the complete list of direct objects of each verb, both raw and cleaned, both in English and in Italian, are freely available \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}.\\
+
+testo FREQ function, word2vec spaces
+FREQ+word2vec è quella più consistent tra wei/topk
+
+% in this thesis I computed Computational PISA scores based on word2vec neural embeddings. I used the UNI function among the five defined before because it leads to highly significant results while being more straightforward than any other (un)weighted model, since it does not require the computation of any weighting/sorting function.\\
+% To model the recoverability of Italian transitive verbs, in this thesis I extracted data from itWaC, a 2-billion token part-of-speech tagged and lemmatized corpora*** of Italian \parencite{baroni2009wacky}.
 
 \paragraph{Results}
-The \texttt{PISA} scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_pisa}.\\ % \vspace{}
+The Computational PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_pisa}.\\ % \vspace{}
 
 
 \subsection{\hl{Behavioral PISA}}\labsec{behavPisa}
 
 \paragraph{Introduction} 
-Despite representing a clear step forward compared to Resnik's taxonomy-based measure of selectional preferences, a corpus-based measure such as \texttt{PISA} still has notable downsides. First of all, the corpus on which \texttt{PISA} calculations are based has to be large enough to feature all the verbs under consideration, and for each verb to present a sufficient number of direct objects to allow for the computation of meaningful \texttt{PISA}. It may well be the case that using a small corpus forces an experimenter to draw from a different set of verbs than intended for their study, if not all of them are featured in the corpus. Moreover, low-frequency verbs may appear with a small set of direct objects even in large corpora, making it potentially difficult to obtain reliable \texttt{PISA} scores. Another order of problems (which larger, automatically-tagged corpora are more prone to suffer from than smaller, manually-tagged ones) depends on noisy or otherwise inaccurate corpus data. For instance, large corpora constructed via crawling the Web (such as ukWaC and itWaC) typically present a substantial number of misspelled words and mis-tagged parts of speech, making it necessary to clean them manually beforehand. In addition to this, even clean corpora often lack fine-grained semantic information, about thematic roles (e.g. distinguishing the Theme and the Recipient in 'John gave Mary a book'), polysemy (e.g. 'to graduate' may mean 'to become a doctor', but also 'to arrange something in gradations'), idiomatic uses of verbs (e.g. there is usually no actual bucket being kicked when someone 'kicks the bucket').\\
-In order to overcome these problems and obtain equally reliable scores for each verb in my experiment, I decided to implement a behavioral variant of the original \texttt{PISA} measure (henceforth "Behavioral \texttt{PISA}", as opposed to "Computational \texttt{PISA}"). In this case, the semantic similarity of a given verb's direct objects is not approximated via their distributional similarity in a corpus, but instead via their psychological similarity as judged by native speakers of the languages under study. Such a measure is intended to provide robust data for each verb regardless of its corpus frequency or scarcity of direct objects with respect to other verbs, at the cost of having to perform a behavioral experiment with human subjects.
+Despite representing a clear step forward compared to Resnik's taxonomy-based measure of selectional preferences, a corpus-based measure such as Computational PISA still has notable downsides. First of all, the corpus on which Computational PISA calculations are based has to be large enough to feature all the verbs under consideration, and for each verb to present a sufficient number of direct objects to allow for the computation of meaningful Computational PISA. It may well be the case that using a small corpus forces an experimenter to draw from a different set of verbs than intended for their study, if not all of them are featured in the corpus. Moreover, low-frequency verbs may appear with a small set of direct objects even in large corpora, making it potentially difficult to obtain reliable Computational PISA scores. Another order of problems (which larger, automatically-tagged corpora are more prone to suffer from than smaller, manually-tagged ones) depends on noisy or otherwise inaccurate corpus data. For instance, large corpora constructed via crawling the Web (such as ukWaC and itWaC) typically present a substantial number of misspelled words and mis-tagged parts of speech, making it necessary to clean them manually beforehand. In addition to this, even clean corpora often lack fine-grained semantic information, about thematic roles (e.g. distinguishing the Theme and the Recipient in 'John gave Mary a book'), polysemy (e.g. 'to graduate' may mean 'to become a doctor', but also 'to arrange something in gradations'), idiomatic uses of verbs (e.g. there is usually no actual bucket being kicked when someone 'kicks the bucket').\\
+In order to overcome these problems and obtain equally reliable scores for each verb in my experiment, I decided to implement a behavioral variant of the original Computational PISA measure. In the case of Behavioral PISA, the semantic similarity of a given verb's direct objects is not approximated via their distributional similarity in a corpus, but instead via their psychological similarity as judged by native speakers of the languages under study. Such a measure is intended to provide robust data for each verb regardless of its corpus frequency or scarcity of direct objects with respect to other verbs, at the cost of having to perform a behavioral experiment with human subjects.
 
 \paragraph{Experimental protocol}
-The experimental procedure to obtain the relevant data and compute the Behavioral \texttt{PISA} scores follows closely the method Medina used in her thesis to compute a comparable measure, which she calls "Object Similarity" \parencite[173-178]{Medina2007}, and whose purpose is to overcome the shortcomings of Resnik's SPS. In a sense, Object Similarity may be viewed as a behavioral precursor of Computational \texttt{PISA}, both being based on a broad notion of selectivity-as-semantic-closeness.\\
+The experimental procedure to obtain the relevant data and compute the Behavioral PISA scores follows closely the method Medina used in her thesis to compute a comparable measure, which she calls "Object Similarity" \parencite[173-178]{Medina2007}, and whose purpose is to overcome the shortcomings of Resnik's SPS. In a sense, Object Similarity may be viewed as a behavioral precursor of Computational PISA, both being based on a broad notion of selectivity-as-semantic-closeness.\\
 In order to build the stimuli, I picked 6 pairs of direct objects for each verb of interest in my two 30-verb sets (one for English and one for Italian, as detailed in \nrefch{judgments}). For each verb, the direct objects comprising the 6 pairs were randomly selected from the manually cleaned (see \nrefsec{compuPisa}) verb-object lists, so that each pair contained two different direct objects. This operation resulted in 180 stimuli (30 verbs x 6 direct objects) for each language, which the interested reader will find in \refapp{behavpisa_stimuli}. Each pair of direct objects works as a stimulus, without explicit mention of the verb which subcategorizes the objects in the pair.\\
-The two lists of 180 stimuli was used to create two Google Form surveys (with randomized stimuli), and 25 unpaid raters were recruited online for each language among native speakers holding at least a Bachelor's degree. Each rater had to judge the similarity of the two objects in each pair on a 7-point Likert scale in a single experimental session. Crucially, the participants to the experiment were not provided with a strict definition of similarity, and they did not know that the stimuli were direct objects of a given set of verbs.
+The two lists of 180 stimuli was used to create two Google Form surveys (with randomized stimuli), and 25 unpaid raters were recruited online for each language among native speakers holding at least a Bachelor's degree. Each rater had to judge the similarity of the two objects in each pair on a 7-point Likert scale in a single experimental session. Crucially, the participants to the experiment were not provided with a strict definition of similarity, and they did not know that the stimuli were direct objects of a given set of verbs. Instead, they were told that the pair 'love - upholstery' should get a rating of 1 an the pair 'cat - dog' should get a rating of 7, to familiarize them with the Likert scale, and they were encouraged to make use of the whole 7-point scale whenever necessary.
 
-\paragraph{Computational implementation} Behavioral \texttt{PISA} is defined as the mean pairwise similarity between a subset of direct objects of a transitive verb. The pairwise similarity is obtained via human similarity judgments, as described right above. The mean for each verb $v$ is then computed as in \refeq{eq_behavPisa}, where $r$ is a (normalized) rating and $i$ is the total number of ratings.
+\paragraph{Computational implementation} Behavioral PISA is defined as the mean pairwise similarity between a subset of direct objects of a transitive verb. The pairwise similarity is obtained via human similarity judgments on a 7-point Likert scale, as described right above. In order to account for individual differences in the use of the scale, I computed the within-subject z-scores of these results, and then I averaged the normalized scores to obtain a single value for each verb of interest \parencite{KimEtAl2018, KimEtAl2019, KimEtAl2019a} as in \refeq{eq_behavPisa}, where $r$ is a (normalized) rating and $i$ is the total number of ratings.
 
 \begin{equation} \labeq{eq_behavPisa}
 PISA_{v} = \frac{\sum_{i} r_{v}}{i}
 \end{equation}
 
-% QUI DEVO DIRE CHE PRIMA HO NORMALIZZATO I GIUDIZI COME NAJOUNG! V. SCRIPT SE HO FATTO ALTRE COSE
-
-% \texttt{PISA} is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb.\\
-
-% caricare script su github e mettere link qui
+The Behavioral PISA scores thus obtained were then normalized to fall between 0 and 1. The Python script I coded to generate the stimuli and compute the Behavioral PISA scores for each verb is freely available \href{https://github.com/giuliacappelli/behavioralPISA}{on my GitHub profile}.
 
 \paragraph{Results} 
-The Behavioral \texttt{PISA} scores for the English and Italian transitive verbs under consideration are fully listed in \refapp{behavpisa_scores}.\\ 
+The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refapp{behavpisa_scores}.\\ 
 
 \section{Telicity} \labsec{predictor_telicity}
 
