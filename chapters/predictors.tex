@@ -30,7 +30,7 @@ These three measures are explained in full detail throughout this section.
 % Before turning to the details of PISA, a brief historical introduction is in order.
 % \paragraph{Introduction}  
 
-\textcite{Resnik1993, Resnik1996} was the first to link the recoverability of direct objects to the selectional preferences of transitive verbs in a computational model, substantiating this claim by showing that his measure of selectional preference correlates well with plausibility and typicality judgments provided by human subjects. Resnik observed that the distribution of the classes of entities used as direct objects in a corpus regardless of the predicate (called "prior distribution") is different from the distribution of the same classes used as direct objects of a given verb (called "posterior distribution"), say, \textit{to grow}. A graphical representation of this observation is provided in \reffig{resnik_prior&posterior}.
+\paragraph{Description} \textcite{Resnik1993, Resnik1996} was the first to link the recoverability of direct objects to the selectional preferences of transitive verbs in a computational model, substantiating this claim by showing that his measure of selectional preference correlates well with plausibility and typicality judgments provided by human subjects. Resnik observed that the distribution of the classes of entities used as direct objects in a corpus regardless of the predicate (called "prior distribution") is different from the distribution of the same classes used as direct objects of a given verb (called "posterior distribution"), say, \textit{to grow}. A graphical representation of this observation is provided in \reffig{resnik_prior&posterior}.
 
 \begin{center}
 \begin{figure}[htb]
@@ -137,6 +137,9 @@ The classes considered when computing the SPS scores have to belong to a lexical
 \end{figure}
 
 In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wordnet,Miller1995} as a computational model of the lexical taxonomy. Its appeal to the author \parencite[32]{Resnik1993} lies in that the WordNet taxonomy encodes knowledge in an explicit, hierarchical fashion, which is "intuitively reasonable" and "widely accepted".\\ While powerful in many respects, Resnik's model of selectional preferences has a crucial drawback, which is the need for a manually-built lexicon. This requirement makes it difficult to compute SPS scores for verbs in languages without a WordNet, for neologisms, and for special registers not yet encoded in WordNet. Given this severe limitation, I decided \hl{to improve on} Resnik's SPS to model the recoverability of direct objects, creating a model based on distributional semantics \parencite{Lenci:2018} that can be applied in all the cases where the SPS measure cannot.
+
+\paragraph{Results}
+The SPS scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_resnik}.\\ % \vspace{}
 
 \subsection{Computational PISA}\labsec{compuPisa}
 
@@ -312,7 +315,7 @@ Since Computational PISA was intended to model argument recoverability, I tested
 \end{table}
 
 \paragraph{\hl{Operative choices}}
-Drawing from the results discussed in \textcite{CappelliLenciPISA} and summarized in the previous paragraph, I computed Computational PISA scores for my verbs of interest in English and Italian. For English, I based the calculations on ukWaC as in the original study, and for Italian, I based them on itWaC, a 2-billion token part-of-speech tagged and lemmatized corpus of Italian \parencite{baroni2009wacky}. Given that corpora this large inevitably suffer from significant noise in the data, which then results in possibly unreliable results, I pre-processed the data extracted from both corpora to minimize the impact of noise and tagging mishaps. First of all, I filtered the 65,000 direct objects of my 30+30 verbs of interest so that they were:
+Drawing from the results discussed in \textcite{CappelliLenciPISA} and summarized in the previous paragraph, I computed Computational PISA scores for my verbs of interest in English and Italian. For English, I based the calculations on ukWaC as in the original study, and for Italian, I based them on itWaC, a 2-billion token part-of-speech tagged and lemmatized corpus of Italian \parencite{baroni2009wacky}. Given that web-scraped, automatically tagged corpora this large inevitably suffer from significant noise in the data, which then results in possibly unreliable results, I pre-processed the data extracted from both corpora to minimize the impact of noise and tagging mishaps. First of all, I filtered the 65,000 direct objects of my 30+30 verbs of interest so that they were:
 \begin{itemize}
     \item not hapaxes (considering the verb-noun frequencies)
     \item having an absolute frequency in the corpus greater than 100
@@ -328,15 +331,10 @@ Then, I manually filtered the remaining nouns so that each verb only takes direc
     \item 'thing' (and 'stuff'), which appears with every transitive verb and is thus irrelevant
 \end{itemize}
 The files containing the complete list of direct objects of each verb, both raw and cleaned, both in English and in Italian, are freely available \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}.\\
-
-testo FREQ function, word2vec spaces
-FREQ+word2vec è quella più consistent tra wei/topk
-
-% in this thesis I computed Computational PISA scores based on word2vec neural embeddings. I used the UNI function among the five defined before because it leads to highly significant results while being more straightforward than any other (un)weighted model, since it does not require the computation of any weighting/sorting function.\\
-% To model the recoverability of Italian transitive verbs, in this thesis I extracted data from itWaC, a 2-billion token part-of-speech tagged and lemmatized corpora*** of Italian \parencite{baroni2009wacky}.
+Based on the results from the original Computational PISA study, I based my computations on word2vec neural embeddings (which yield consistently reliable results) and employed the FRQ weighting funtion (which is the best-performing among all five, both in weighted and in sorted models of Computational PISA).
 
 \paragraph{Results}
-The Computational PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_pisa}.\\ % \vspace{}
+The Computational PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_cpisa}.\\ % \vspace{}
 
 
 \subsection{\hl{Behavioral PISA}}\labsec{behavPisa}
@@ -347,7 +345,7 @@ In order to overcome these problems and obtain equally reliable scores for each 
 
 \paragraph{Experimental protocol}
 The experimental procedure to obtain the relevant data and compute the Behavioral PISA scores follows closely the method Medina used in her thesis to compute a comparable measure, which she calls "Object Similarity" \parencite[173-178]{Medina2007}, and whose purpose is to overcome the shortcomings of Resnik's SPS. In a sense, Object Similarity may be viewed as a behavioral precursor of Computational PISA, both being based on a broad notion of selectivity-as-semantic-closeness.\\
-In order to build the stimuli, I picked 6 pairs of direct objects for each verb of interest in my two 30-verb sets (one for English and one for Italian, as detailed in \nrefch{judgments}). For each verb, the direct objects comprising the 6 pairs were randomly selected from the manually cleaned (see \nrefsec{compuPisa}) verb-object lists, so that each pair contained two different direct objects. This operation resulted in 180 stimuli (30 verbs x 6 direct objects) for each language, which the interested reader will find in \refapp{behavpisa_stimuli}. Each pair of direct objects works as a stimulus, without explicit mention of the verb which subcategorizes the objects in the pair.\\
+In order to build the stimuli, I picked 6 pairs of direct objects for each verb of interest in my two 30-verb sets (one for English and one for Italian, as detailed in \nrefch{judgments}). For each verb, the direct objects comprising the 6 pairs were randomly selected from the manually cleaned (see \nrefsec{compuPisa}) verb-object lists, so that each pair contained two different direct objects. This operation resulted in 180 stimuli (30 verbs x 6 direct objects) for each language, which the interested reader will find in \refapp{app_behavPisa}. Each pair of direct objects works as a stimulus, without explicit mention of the verb which subcategorizes the objects in the pair.\\
 The two lists of 180 stimuli was used to create two Google Form surveys (with randomized stimuli), and 25 unpaid raters were recruited online for each language among native speakers holding at least a Bachelor's degree. Each rater had to judge the similarity of the two objects in each pair on a 7-point Likert scale in a single experimental session. Crucially, the participants to the experiment were not provided with a strict definition of similarity, and they did not know that the stimuli were direct objects of a given set of verbs. Instead, they were told that the pair 'love - upholstery' should get a rating of 1 an the pair 'cat - dog' should get a rating of 7, to familiarize them with the Likert scale, and they were encouraged to make use of the whole 7-point scale whenever necessary.
 
 \paragraph{Computational implementation} Behavioral PISA is defined as the mean pairwise similarity between a subset of direct objects of a transitive verb. The pairwise similarity is obtained via human similarity judgments on a 7-point Likert scale, as described right above. In order to account for individual differences in the use of the scale, I computed the within-subject z-scores of these results, and then I averaged the normalized scores to obtain a single value for each verb of interest \parencite{KimEtAl2018, KimEtAl2019, KimEtAl2019a} as in \refeq{eq_behavPisa}, where $r$ is a (normalized) rating and $i$ is the total number of ratings.
@@ -359,7 +357,7 @@ PISA_{v} = \frac{\sum_{i} r_{v}}{i}
 The Behavioral PISA scores thus obtained were then normalized to fall between 0 and 1. The Python script I coded to generate the stimuli and compute the Behavioral PISA scores for each verb is freely available \href{https://github.com/giuliacappelli/behavioralPISA}{on my GitHub profile}.
 
 \paragraph{Results} 
-The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refapp{behavpisa_scores}.\\ 
+The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_bpisa}.\\ 
 
 \section{Telicity} \labsec{predictor_telicity}
 
@@ -400,13 +398,21 @@ Like telicity, perfectivity appears as a binary feature in my experiments and mo
 To choose the correct tenses to encode (im)perfectivity in English and in Italian, a critical discussion on the relation between tense and aspect is in order. A common perspective on grammatical aspect in English, as summarized by \textcite[106]{smith1991parameter} and \textcite[663]{wagner2001aspectual}, is that perfective aspect corresponds to the simple form of the verb, while the imperfective aspect is derived by means of the progressive construction (i.e. by adding the auxiliary \textit{be} and \textit{-ing} to the main verb). This perspective has the undeniable merit of keeping grammatical aspect and lexical aspect apart, acknowledging the orthogonality of (a)telicity and (im)perfectivity (refer to \textcite{bertinetto2001frequent} for an extensive discussion on the issue). However, the view that the simple form of a verb is necessarily interpreted as perfective has long since been abandoned.\\
 Based on \textcite{Olsen1997, bertinetto2001frequent}, the simple past in English is not marked for the perspective aspect. On the contrary, simple verb forms are aspectually unmarked, and they get different aspectual interpretations based on the interaction of tense, lexical aspect, and the different context they appear in. For this reason, for the experimental stimuli I will choose tenses that are aspectually marked, as to avoid misinterpretations.\\
 Even though simple past does not equate to perfective aspect, it's true that past tense hints towards perfectivity, as noted by \textcite{comrie1976aspect} and later on by \textcite{wagner2001aspectual, Olsen1997, Medina2007}, among others. So, a morphologically unmarked past form is more likely to be interpreted as perfective than a non-past form. Moreover, there are differences internal to the group of past forms. In fact, as we saw before, the simple past is aspectually unmarked, but the past perfect (e.g. \textit{John had written a book.)} is marked as perfective.
-% So, not only is a morphologically unmarked past form more likely to be interpreted as perfective than a non-past form, but there are differences internal to the group of past forms. In fact, as we saw before, the simple past is aspectually unmarked, but the past perfect (e.g. \textit{John had written a book.)} is marked as perfective.
-% For this reason, in my choice of aspectually marked verb forms, I will only pick from past forms in order to avoid having the "past/perfectivity bias" as a confound in my experiments.
 
 \subsection{Operative choices}
 Considering what has been noted in the previous paragraph, and following \textcite{Medina2007}, in the experimental stimuli perfective aspect will be encoded with perfect morphology and imperfective aspect will be encoded with progressive morphology.\\
-For English, perfective stimuli will be in the past perfect tense (e.g. \textit{John had played}) and imperfective stimuli in the past continuous tense (e.g. \textit{John was playing}). For Italian, perfective stimuli will be in the \textit{passato prossimo} tense (e.g. \textit{Gianni ha cantato}) and imperfective stimuli in the continuous past form created with the auxiliary 'to stay' in the \textit{imperfetto} tense and the simple gerund of the main verb (e.g. \textit{Gianni stava cantando}). Italian also has perfective-only and imperfective-only simple past tenses, namely \textit{passato remoto} and \textit{imperfetto}, but I chose to use compound tenses since \textit{passato remoto} lost some ground to \textit{passato prossimo} over the last few decades, and also considering the variety of regional uses of \textit{passato remoto} \parencite{bertinetto1996distribuzione}.
-% since nowadays \textit{passato remoto} is only used in old-fashioned books, fairy tales, and the regional varieties of Italian spoken by elderly and middle-aged people in some areas of the South.
+For English, perfective stimuli will be in the past perfect tense (as in \ref{perf_ex1_eng}) and imperfective stimuli in the past continuous tense (as in \ref{perf_ex2_eng}). For Italian, perfective stimuli will be in the \textit{\hl{tra}passato prossimo} tense (as in \ref{perf_ex1_ita}) and imperfective stimuli in the continuous past form created with the auxiliary 'to stay' in the \textit{imperfetto} tense and the simple gerund of the main verb (as in \ref{perf_ex2_ita}). 
+\ex.\label{perf_ex_eng} \a. John had played. \label{perf_ex1_eng} 
+\b. John was playing. \label{perf_ex2_eng}
+
+\ex.\label{perf_ex_ita} \a. Gianni \hl{aveva} cantato. \label{perf_ex1_ita} 
+\b. Gianni stava cantando. \label{perf_ex2_ita}
+
+On a side note, Italian also has perfective-only and imperfective-only simple past tenses, namely \textit{passato remoto} and \textit{imperfetto}, but I chose to use compound tenses since \textit{passato remoto} lost some ground to \textit{passato prossimo} over the last few decades, and also considering the variety of regional uses of \textit{passato remoto} \parencite{bertinetto1996distribuzione}. \hl{Most importantly, the \textit{trapassato} \textit{prossimo} tense was chosen to encode perfective aspect in Italian because it's the aspectually closest Italian tense to the English past perfect, despite the glaring differences between the aspectual systems in these two languages (Bertinetto 1992)}.
+
+% QUI DEVO CITARE \parencite{bertinetto1992piucheperf}, CHE PER QUALCHE MOTIVO CREA ERRORI ANCHE SE FORMALMENTE SEMBRA CORRETTO
+
+% Il mio suggerimento di rifare l'esperimento nasce dal fatto che occorre sempre confrontare (nei limiti del possibile) gli stessi oggetti. Questo principio viene violato se si confrontano piucheperfetto da un lato, e passato 'prossimo' dall'altro.
 
 \section{Iterativity} \labsec{predictor_iterativity}
 
@@ -414,7 +420,7 @@ As argued in \nrefsec{iterativity}, iterativity and other types of pluractionali
 \ex.\label{iterat_ex} \a. \# The Joker killed. \label{iterat_ex1} 
 \b. The Joker killed again. \label{iterat_ex2}
 
-Iterativity is yet another binary predictor and it will be used in the behavioral experiments in the same way as perfectivity, that is to say, by creating both iterative and non-iterative stimuli for the same verb as in \ref{iterat_ex} (please refer to \refapp{app_stimuli} for the complete set).
+Iterativity is yet another binary predictor and it will be encoded in the behavioral experiments in the same way as perfectivity, that is to say, by creating both iterative and non-iterative stimuli for the same verb as in \ref{iterat_ex} (please refer to \refapp{app_stimuli} for the complete set).
 
 \section{Manner specification} \labsec{predictor_mannspec}
 
