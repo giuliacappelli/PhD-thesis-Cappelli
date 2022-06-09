@@ -5,26 +5,698 @@
 This appendix collects the sentence stimuli for the behavioral experiment about object drop in English and Italian, each featuring 30 transitive verbs of interest and 10 intransitive filler verbs (listed in \refapp{app_verbs}). These data are also available \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}, together with the individual judgments provided by 30 participants per language on a 7-point Likert scale.\\
 The Python scripts I wrote to analyse the results and create a Stochastic Optimality Theoretic model of object drop are available \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{on my Github profile} in a dedicated repository.
 
+% taggare ogni frase con perf e iter! vedere se ci vanno anche gli altri predittori
+
 
 \section{English}
 
 \subsection{Target sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\       
+\hline
+\endhead
+behead    & no   & no   & no   & Clara was beheading.        \\
+behead    & no   & no   & yes  & Tom was beheading again.    \\
+behead    & no   & yes  & no   & Betty had beheaded.         \\
+behead    & no   & yes  & yes  & Sarah had beheaded again.   \\
+break     & no   & no   & no   & Clara was breaking.         \\
+break     & no   & no   & yes  & Clara was breaking again.   \\
+break     & no   & yes  & no   & Sarah had broken.           \\
+break     & no   & yes  & yes  & Sam had broken again.       \\
+build     & no   & no   & no   & Sarah was building.         \\
+build     & no   & no   & yes  & Paul was building again.    \\
+build     & no   & yes  & no   & Paul had built.             \\
+build     & no   & yes  & yes  & Paul had built again.       \\
+chop      & no   & no   & no   & Sean was chopping.          \\
+chop      & no   & no   & yes  & Clara was chopping again.   \\
+chop      & no   & yes  & no   & Sean had chopped.           \\
+chop      & no   & yes  & yes  & Paul had chopped again.     \\
+clean     & no   & no   & no   & Tom was cleaning.           \\
+clean     & no   & no   & yes  & Sarah was cleaning again.   \\
+clean     & no   & yes  & no   & John had cleaned.           \\
+clean     & no   & yes  & yes  & Diana had cleaned again.    \\
+cook      & no   & no   & no   & Diana was cooking.          \\
+cook      & no   & no   & yes  & John was cooking again.     \\
+cook      & no   & yes  & no   & Betty had cooked.           \\
+cook      & no   & yes  & yes  & Clara had cooked again.     \\
+cut       & no   & no   & no   & John was cutting.           \\
+cut       & no   & no   & yes  & Sam was cutting again.      \\
+cut       & no   & yes  & no   & Sean had cut.               \\
+cut       & no   & yes  & yes  & Tom had cut again.          \\
+devour    & no   & no   & no   & Diana was devouring.        \\
+devour    & no   & no   & yes  & Sam was devouring again.    \\
+devour    & no   & yes  & no   & Paul had devoured.          \\
+devour    & no   & yes  & yes  & Betty had devoured again.   \\
+doodle    & no   & no   & no   & Sarah was doodling.         \\
+doodle    & no   & no   & yes  & Tom was doodling again.     \\
+doodle    & no   & yes  & no   & Paul had doodled.           \\
+doodle    & no   & yes  & yes  & Sam had doodled again.      \\
+drink     & no   & no   & no   & Clara was drinking.         \\
+drink     & no   & no   & yes  & Tom was drinking again.     \\
+drink     & no   & yes  & no   & Sarah had drunk.            \\
+drink     & no   & yes  & yes  & Sarah had drunk again.      \\
+eat       & no   & no   & no   & Betty was eating.           \\
+eat       & no   & no   & yes  & Paul was eating again.      \\
+eat       & no   & yes  & no   & Betty had eaten.            \\
+eat       & no   & yes  & yes  & Sean had eaten again.       \\
+embroider & no   & no   & no   & Clara was embroidering.     \\
+embroider & no   & no   & yes  & Sam was embroidering again. \\
+embroider & no   & yes  & no   & Sarah had embroidered.      \\
+embroider & no   & yes  & yes  & Paul had embroidered again. \\
+hum       & no   & no   & no   & Sam was humming.            \\
+hum       & no   & no   & yes  & Tom was humming again.      \\
+hum       & no   & yes  & no   & Mary had hummed.            \\
+hum       & no   & yes  & yes  & Diana had hummed again.     \\
+kill      & no   & no   & no   & Diana was killing.          \\
+kill      & no   & no   & yes  & Sam was killing again.      \\
+kill      & no   & yes  & no   & Sarah had killed.           \\
+kill      & no   & yes  & yes  & Tom had killed again.       \\
+knife     & no   & no   & no   & Tom was knifing.            \\
+knife     & no   & no   & yes  & John was knifing again.     \\
+knife     & no   & yes  & no   & Diana had knifed.           \\
+knife     & no   & yes  & yes  & Sarah had knifed again.     \\
+poison    & no   & no   & no   & Mary was poisoning.         \\
+poison    & no   & no   & yes  & Paul was poisoning again.   \\
+poison    & no   & yes  & no   & Paul had poisoned.          \\
+poison    & no   & yes  & yes  & Sean had poisoned again.    \\
+polish    & no   & no   & no   & Mary was polishing.         \\
+polish    & no   & no   & yes  & Mary was polishing again.   \\
+polish    & no   & yes  & no   & Paul had polished.          \\
+polish    & no   & yes  & yes  & Betty had polished again.   \\
+pour      & no   & no   & no   & Tom was pouring.            \\
+pour      & no   & no   & yes  & Betty was pouring again.    \\
+pour      & no   & yes  & no   & Tom had poured.             \\
+pour      & no   & yes  & yes  & Mary had poured again.      \\
+sew       & no   & no   & no   & Betty was sewing.           \\
+sew       & no   & no   & yes  & Tom was sewing again.       \\
+sew       & no   & yes  & no   & Betty had sewn.             \\
+sew       & no   & yes  & yes  & Mary had sewn again.        \\
+sign      & no   & no   & no   & Betty was signing.          \\
+sign      & no   & no   & yes  & Sarah was signing again.    \\
+sign      & no   & yes  & no   & John had signed.            \\
+sign      & no   & yes  & yes  & Mary had signed again.      \\
+sing      & no   & no   & no   & Sam was singing.            \\
+sing      & no   & no   & yes  & Paul was singing again.     \\
+sing      & no   & yes  & no   & Sam had sung.               \\
+sing      & no   & yes  & yes  & Paul had sung again.        \\
+sip       & no   & no   & no   & Paul was sipping.           \\
+sip       & no   & no   & yes  & John was sipping again.     \\
+sip       & no   & yes  & no   & Betty had sipped.           \\
+sip       & no   & yes  & yes  & Sean had sipped again.      \\
+slice     & no   & no   & no   & John was slicing.           \\
+slice     & no   & no   & yes  & Diana was slicing again.    \\
+slice     & no   & yes  & no   & Tom had sliced.             \\
+slice     & no   & yes  & yes  & John had sliced again.      \\
+smoke     & no   & no   & no   & Sam was smoking.            \\
+smoke     & no   & no   & yes  & Diana was smoking again.    \\
+smoke     & no   & yes  & no   & Diana had smoked.           \\
+smoke     & no   & yes  & yes  & Tom had smoked again.       \\
+steal     & no   & no   & no   & Betty was stealing.         \\
+steal     & no   & no   & yes  & John was stealing again.    \\
+steal     & no   & yes  & no   & Diana had stolen.           \\
+steal     & no   & yes  & yes  & Sam had stolen again.       \\
+swig      & no   & no   & no   & Tom was swigging.           \\
+swig      & no   & no   & yes  & Sam was swigging again.     \\
+swig      & no   & yes  & no   & Paul had swigged.           \\
+swig      & no   & yes  & yes  & Sean had swigged again.     \\
+teach     & no   & no   & no   & Sarah was teaching.         \\
+teach     & no   & no   & yes  & Sarah was teaching again.   \\
+teach     & no   & yes  & no   & Clara had taught.           \\
+teach     & no   & yes  & yes  & Sean had taught again.      \\
+wash      & no   & no   & no   & Paul was washing.           \\
+wash      & no   & no   & yes  & John was washing again.     \\
+wash      & no   & yes  & no   & Tom had washed.             \\
+wash      & no   & yes  & yes  & Mary had washed again.      \\
+watch     & no   & no   & no   & Betty was watching.         \\
+watch     & no   & no   & yes  & Sarah was watching again.   \\
+watch     & no   & yes  & no   & Sam had watched.            \\
+watch     & no   & yes  & yes  & Diana had watched again.    \\
+write     & no   & no   & no   & John was writing.           \\
+write     & no   & no   & yes  & Diana was writing again.    \\
+write     & no   & yes  & no   & Paul had written.           \\
+write     & no   & yes  & yes  & Tom had written again.     
+\end{longtable}
 
 \subsection{Control sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\
+\hline
+\endhead
+behead    & yes  & no   & no   & Tom was beheading a prisoner.                \\
+behead    & yes  & no   & yes  & John was beheading a prisoner again.         \\
+behead    & yes  & yes  & no   & Tom had beheaded a prisoner.                 \\
+behead    & yes  & yes  & yes  & Diana had beheaded a prisoner again.         \\
+break     & yes  & no   & no   & Sarah was breaking a vase.                   \\
+break     & yes  & no   & yes  & Mary was breaking a vase again.              \\
+break     & yes  & yes  & no   & Paul had broken a vase.                      \\
+break     & yes  & yes  & yes  & Tom had broken a vase again.                 \\
+build     & yes  & no   & no   & Betty was building a house.                  \\
+build     & yes  & no   & yes  & Paul was building a house again.             \\
+build     & yes  & yes  & no   & Betty had built a house.                     \\
+build     & yes  & yes  & yes  & Diana had built a house again.               \\
+chop      & yes  & no   & no   & Sarah was chopping a log.                    \\
+chop      & yes  & no   & yes  & Diana was chopping a log again.              \\
+chop      & yes  & yes  & no   & Tom had chopped a log.                       \\
+chop      & yes  & yes  & yes  & Tom had chopped a log again.                 \\
+clean     & yes  & no   & no   & Tom was cleaning a table.                    \\
+clean     & yes  & no   & yes  & Sam was cleaning a table again.              \\
+clean     & yes  & yes  & no   & Sam had cleaned a table.                     \\
+clean     & yes  & yes  & yes  & Tom had cleaned a table again.               \\
+cook      & yes  & no   & no   & Diana was cooking dinner.                    \\
+cook      & yes  & no   & yes  & John was cooking dinner again.               \\
+cook      & yes  & yes  & no   & Mary had cooked dinner.                      \\
+cook      & yes  & yes  & yes  & John had cooked dinner again.                \\
+cut       & yes  & no   & no   & Sam was cutting some paper.                  \\
+cut       & yes  & no   & yes  & Betty was cutting some paper again.          \\
+cut       & yes  & yes  & no   & Mary had cut some paper.                     \\
+cut       & yes  & yes  & yes  & Paul had cut some paper again.               \\
+devour    & yes  & no   & no   & Paul was devouring a roasted chicken.        \\
+devour    & yes  & no   & yes  & Sarah was devouring a roasted chicken again. \\
+devour    & yes  & yes  & no   & Mary had devoured a roasted chicken.         \\
+devour    & yes  & yes  & yes  & Betty had devoured a roasted chicken again.  \\
+doodle    & yes  & no   & no   & Paul was doodling a stick man.               \\
+doodle    & yes  & no   & yes  & Tom was doodling a stick man again.          \\
+doodle    & yes  & yes  & no   & Sean had doodled a stick man.                \\
+doodle    & yes  & yes  & yes  & Tom had doodled a stick man again.           \\
+drink     & yes  & no   & no   & Mary was drinking juice.                     \\
+drink     & yes  & no   & yes  & Tom was drinking juice again.                \\
+drink     & yes  & yes  & no   & Sarah had drunk juice.                       \\
+drink     & yes  & yes  & yes  & Sam had drunk juice again.                   \\
+eat       & yes  & no   & no   & John was eating pizza.                       \\
+eat       & yes  & no   & yes  & Sean was eating pizza again.                 \\
+eat       & yes  & yes  & no   & Sean had eaten pizza.                        \\
+eat       & yes  & yes  & yes  & John had eaten pizza again.                  \\
+embroider & yes  & no   & no   & Sam was embroidering a tapestry.             \\
+embroider & yes  & no   & yes  & Sam was embroidering a tapestry again.       \\
+embroider & yes  & yes  & no   & Clara had embroidered a tapestry.            \\
+embroider & yes  & yes  & yes  & Tom had embroidered a tapestry again.        \\
+hum       & yes  & no   & no   & Sam was humming a lullaby.                   \\
+hum       & yes  & no   & yes  & Sean was humming a lullaby again.            \\
+hum       & yes  & yes  & no   & Sam had hummed a lullaby.                    \\
+hum       & yes  & yes  & yes  & John had hummed a lullaby again.             \\
+kill      & yes  & no   & no   & Sarah was killing pests.                     \\
+kill      & yes  & no   & yes  & Sam was killing pests again.                 \\
+kill      & yes  & yes  & no   & Betty had killed pests.                      \\
+kill      & yes  & yes  & yes  & Diana had killed pests again.                \\
+knife     & yes  & no   & no   & Betty was knifing a man.                     \\
+knife     & yes  & no   & yes  & Sean was knifing a man again.                \\
+knife     & yes  & yes  & no   & Clara had knifed a man.                      \\
+knife     & yes  & yes  & yes  & Tom had knifed a man again.                  \\
+poison    & yes  & no   & no   & Paul was poisoning a plant.                  \\
+poison    & yes  & no   & yes  & John was poisoning a plant again.            \\
+poison    & yes  & yes  & no   & Diana had poisoned a plant.                  \\
+poison    & yes  & yes  & yes  & Paul had poisoned a plant again.             \\
+polish    & yes  & no   & no   & Sean was polishing a sword.                  \\
+polish    & yes  & no   & yes  & Betty was polishing a sword again.           \\
+polish    & yes  & yes  & no   & Sam had polished a sword.                    \\
+polish    & yes  & yes  & yes  & John had polished a sword again.             \\
+pour      & yes  & no   & no   & Sam was pouring wine.                        \\
+pour      & yes  & no   & yes  & Betty was pouring wine again.                \\
+pour      & yes  & yes  & no   & Betty had poured wine.                       \\
+pour      & yes  & yes  & yes  & Sam had poured wine again.                   \\
+sew       & yes  & no   & no   & John was sewing a curtain.                   \\
+sew       & yes  & no   & yes  & Mary was sewing a curtain again.             \\
+sew       & yes  & yes  & no   & Betty had sewn a curtain.                    \\
+sew       & yes  & yes  & yes  & John had sewn a curtain again.               \\
+sign      & yes  & no   & no   & Sam was signing a paper.                     \\
+sign      & yes  & no   & yes  & Betty was signing a paper again.             \\
+sign      & yes  & yes  & no   & Sean had signed a paper.                     \\
+sign      & yes  & yes  & yes  & Sarah had signed a paper again.              \\
+sing      & yes  & no   & no   & Paul was singing a carol.                    \\
+sing      & yes  & no   & yes  & Sarah was singing a carol again.             \\
+sing      & yes  & yes  & no   & Mary had sung a carol.                       \\
+sing      & yes  & yes  & yes  & Mary had sung a carol again.                 \\
+sip       & yes  & no   & no   & Sean was sipping water.                      \\
+sip       & yes  & no   & yes  & Mary was sipping water again.                \\
+sip       & yes  & yes  & no   & Tom had sipped water.                        \\
+sip       & yes  & yes  & yes  & John had sipped water again.                 \\
+slice     & yes  & no   & no   & Sarah was slicing some pie.                  \\
+slice     & yes  & no   & yes  & Mary was slicing some pie again.             \\
+slice     & yes  & yes  & no   & Sean had sliced some pie.                    \\
+slice     & yes  & yes  & yes  & Mary had sliced some pie again.              \\
+smoke     & yes  & no   & no   & Sarah was smoking a cigarette.               \\
+smoke     & yes  & no   & yes  & Paul was smoking a cigarette again.          \\
+smoke     & yes  & yes  & no   & John had smoked a cigarette.                 \\
+smoke     & yes  & yes  & yes  & Diana had smoked a cigarette again.          \\
+steal     & yes  & no   & no   & Sean was stealing money.                     \\
+steal     & yes  & no   & yes  & Mary was stealing money again.               \\
+steal     & yes  & yes  & no   & Tom had stolen money.                        \\
+steal     & yes  & yes  & yes  & Betty had stolen money again.                \\
+swig      & yes  & no   & no   & Sarah was swigging beer.                     \\
+swig      & yes  & no   & yes  & Clara was swigging beer again.               \\
+swig      & yes  & yes  & no   & John had swigged beer.                       \\
+swig      & yes  & yes  & yes  & Mary had swigged beer again.                 \\
+teach     & yes  & no   & no   & John was teaching linguistics.               \\
+teach     & yes  & no   & yes  & Sarah was teaching linguistics again.        \\
+teach     & yes  & yes  & no   & Mary had taught linguistics.                 \\
+teach     & yes  & yes  & yes  & Sean had taught linguistics again.           \\
+wash      & yes  & no   & no   & Clara was washing a car.                     \\
+wash      & yes  & no   & yes  & Tom was washing a car again.                 \\
+wash      & yes  & yes  & no   & Betty had washed a car.                      \\
+wash      & yes  & yes  & yes  & Sam had washed a car again.                  \\
+watch     & yes  & no   & no   & Sean was watching a movie.                   \\
+watch     & yes  & no   & yes  & Sarah was watching a movie again.            \\
+watch     & yes  & yes  & no   & Clara had watched a movie.                   \\
+watch     & yes  & yes  & yes  & Tom had watched a movie again.               \\
+write     & yes  & no   & no   & Paul was writing a letter.                   \\
+write     & yes  & no   & yes  & Betty was writing a letter again.            \\
+write     & yes  & yes  & no   & Sam had written a letter.                    \\
+write     & yes  & yes  & yes  & Clara had written a letter again.  
+\end{longtable}
 
 \subsection{Filler sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\
+\hline
+\endhead
+clap    & no   & no   & no   & Diana was clapping.                    \\
+clap    & no   & no   & yes  & Paul was clapping again.               \\
+clap    & no   & yes  & no   & Mary had clapped.                      \\
+clap    & no   & yes  & yes  & Sarah had clapped again.               \\
+clap    & yes  & no   & no   & Mary was clapping a show.              \\
+clap    & yes  & no   & yes  & Sean was clapping a show again.        \\
+clap    & yes  & yes  & no   & Tom had clapped a show.                \\
+clap    & yes  & yes  & yes  & Mary had clapped a show again.         \\
+fast    & no   & no   & no   & Betty was fasting.                     \\
+fast    & no   & no   & yes  & Sarah was fasting again.               \\
+fast    & no   & yes  & no   & Sean had fasted.                       \\
+fast    & no   & yes  & yes  & John had fasted again.                 \\
+fast    & yes  & no   & no   & Clara was fasting sushi.               \\
+fast    & yes  & no   & yes  & Sam was fasting sushi again.           \\
+fast    & yes  & yes  & no   & Diana had fasted sushi.                \\
+fast    & yes  & yes  & yes  & Sarah had fasted sushi again.          \\
+knock   & no   & no   & no   & Betty was knocking.                    \\
+knock   & no   & no   & yes  & Sarah was knocking again.              \\
+knock   & no   & yes  & no   & Mary had knocked.                      \\
+knock   & no   & yes  & yes  & Sean had knocked again.                \\
+knock   & yes  & no   & no   & Clara was knocking a door.             \\
+knock   & yes  & no   & yes  & Sarah was knocking a door again.       \\
+knock   & yes  & yes  & no   & Diana had knocked a door.              \\
+knock   & yes  & yes  & yes  & Betty had knocked a door again.        \\
+laugh   & no   & no   & no   & Sam was laughing.                      \\
+laugh   & no   & no   & yes  & Tom was laughing again.                \\
+laugh   & no   & yes  & no   & Sam had laughed.                       \\
+laugh   & no   & yes  & yes  & John had laughed again.                \\
+laugh   & yes  & no   & no   & John was laughing a joke.              \\
+laugh   & yes  & no   & yes  & John was laughing a joke again.        \\
+laugh   & yes  & yes  & no   & Betty had laughed a joke.              \\
+laugh   & yes  & yes  & yes  & Sean had laughed a joke again.         \\
+limp    & no   & no   & no   & Clara was limping.                     \\
+limp    & no   & no   & yes  & Betty was limping again.               \\
+limp    & no   & yes  & no   & John had limped.                       \\
+limp    & no   & yes  & yes  & Mary had limped again.                 \\
+limp    & yes  & no   & no   & Mary was limping a road.               \\
+limp    & yes  & no   & yes  & Paul was limping a road again.         \\
+limp    & yes  & yes  & no   & Paul had limped a road.                \\
+limp    & yes  & yes  & yes  & John had limped a road again.          \\
+rest    & no   & no   & no   & Sean was resting.                      \\
+rest    & no   & no   & yes  & Betty was resting again.               \\
+rest    & no   & yes  & no   & John had rested.                       \\
+rest    & no   & yes  & yes  & Sam had rested again.                  \\
+rest    & yes  & no   & no   & Betty was resting a bed.               \\
+rest    & yes  & no   & yes  & Mary was resting a bed again.          \\
+rest    & yes  & yes  & no   & Betty had rested a bed.                \\
+rest    & yes  & yes  & yes  & Tom had rested a bed again.            \\
+scream  & no   & no   & no   & Diana was screaming.                   \\
+scream  & no   & no   & yes  & Tom was screaming again.               \\
+scream  & no   & yes  & no   & Paul had screamed.                     \\
+scream  & no   & yes  & yes  & Sarah had screamed again.              \\
+scream  & yes  & no   & no   & Paul was screaming a spider.           \\
+scream  & yes  & no   & yes  & Paul was screaming a spider again.     \\
+scream  & yes  & yes  & no   & Tom had screamed a spider.             \\
+scream  & yes  & yes  & yes  & Tom had screamed a spider again.       \\
+sleep   & no   & no   & no   & Diana was sleeping.                    \\
+sleep   & no   & no   & yes  & Clara was sleeping again.              \\
+sleep   & no   & yes  & no   & John had slept.                        \\
+sleep   & no   & yes  & yes  & Sam had slept again.                   \\
+sleep   & yes  & no   & no   & Sarah was sleeping a pillow.           \\
+sleep   & yes  & no   & yes  & Mary was sleeping a pillow again.      \\
+sleep   & yes  & yes  & no   & Sarah had slept a pillow.              \\
+sleep   & yes  & yes  & yes  & Mary had slept a pillow again.         \\
+smile   & no   & no   & no   & Clara was smiling.                     \\
+smile   & no   & no   & yes  & Sean was smiling again.                \\
+smile   & no   & yes  & no   & Sam had smiled.                        \\
+smile   & no   & yes  & yes  & Paul had smiled again.                 \\
+smile   & yes  & no   & no   & Mary was smiling a friend.             \\
+smile   & yes  & no   & yes  & Sean was smiling a friend again.       \\
+smile   & yes  & yes  & no   & Clara had smiled a friend.             \\
+smile   & yes  & yes  & yes  & John had smiled a friend again.        \\
+stagger & no   & no   & no   & Clara was staggering.                  \\
+stagger & no   & no   & yes  & Clara was staggering again.            \\
+stagger & no   & yes  & no   & Mary had staggered.                    \\
+stagger & no   & yes  & yes  & Betty had staggered again.             \\
+stagger & yes  & no   & no   & Betty was staggering the pavement.     \\
+stagger & yes  & no   & yes  & Tom was staggering the pavement again. \\
+stagger & yes  & yes  & no   & Paul had staggered the pavement.       \\
+stagger & yes  & yes  & yes  & John had staggered the pavement again.
+\end{longtable}
 
 
 \section{Italian}
 
 \subsection{Target sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\
+\hline
+\endhead
+accoltellare   & no   & no         & no        & Marta stava accoltellando.            \\
+accoltellare   & no   & no         & yes       & Sara stava accoltellando di nuovo.    \\
+accoltellare   & no   & yes        & no        & Sara aveva accoltellato.              \\
+accoltellare   & no   & yes        & yes       & Paolo aveva accoltellato di nuovo.    \\
+affettare      & no   & no         & no        & Gianni stava affettando.              \\
+affettare      & no   & no         & yes       & Luca stava affettando di nuovo.       \\
+affettare      & no   & yes        & no        & Giulia aveva affettato.               \\
+affettare      & no   & yes        & yes       & Paolo aveva affettato di nuovo.       \\
+avvelenare     & no   & no         & no        & Luca stava avvelenando.               \\
+avvelenare     & no   & no         & yes       & Giulia stava avvelenando di nuovo.    \\
+avvelenare     & no   & yes        & no        & Maria aveva avvelenato.               \\
+avvelenare     & no   & yes        & yes       & Franco aveva avvelenato di nuovo.     \\
+bere           & no   & no         & no        & Giulia stava bevendo.                 \\
+bere           & no   & no         & yes       & Giulia stava bevendo di nuovo.        \\
+bere           & no   & yes        & no        & Maria aveva bevuto.                   \\
+bere           & no   & yes        & yes       & Sara aveva bevuto di nuovo.           \\
+cantare        & no   & no         & no        & Maria stava cantando.                 \\
+cantare        & no   & no         & yes       & Franco stava cantando di nuovo.       \\
+cantare        & no   & yes        & no        & Franco aveva cantato.                 \\
+cantare        & no   & yes        & yes       & Franco aveva cantato di nuovo.        \\
+canticchiare   & no   & no         & no        & Marta stava canticchiando.            \\
+canticchiare   & no   & no         & yes       & Paolo stava canticchiando di nuovo.   \\
+canticchiare   & no   & yes        & no        & Sara aveva canticchiato.              \\
+canticchiare   & no   & yes        & yes       & Franco aveva canticchiato di nuovo.   \\
+costruire      & no   & no         & no        & Sara stava costruendo.                \\
+costruire      & no   & no         & yes       & Franco stava costruendo di nuovo.     \\
+costruire      & no   & yes        & no        & Marta aveva costruito.                \\
+costruire      & no   & yes        & yes       & Gianni aveva costruito di nuovo.      \\
+cucinare       & no   & no         & no        & Maria stava cucinando.                \\
+cucinare       & no   & no         & yes       & Franco stava cucinando di nuovo.      \\
+cucinare       & no   & yes        & no        & Piero aveva cucinato.                 \\
+cucinare       & no   & yes        & yes       & Franco aveva cucinato di nuovo.       \\
+cucire         & no   & no         & no        & Gianni stava cucendo.                 \\
+cucire         & no   & no         & yes       & Marta stava cucendo di nuovo.         \\
+cucire         & no   & yes        & no        & Franco aveva cucito.                  \\
+cucire         & no   & yes        & yes       & Luca aveva cucito di nuovo.           \\
+decapitare     & no   & no         & no        & Piero stava decapitando.              \\
+decapitare     & no   & no         & yes       & Paolo stava decapitando di nuovo.     \\
+decapitare     & no   & yes        & no        & Giulia aveva decapitato.              \\
+decapitare     & no   & yes        & yes       & Paolo aveva decapitato di nuovo.      \\
+divorare       & no   & no         & no        & Carla stava divorando.                \\
+divorare       & no   & no         & yes       & Marta stava divorando di nuovo.       \\
+divorare       & no   & yes        & no        & Franco aveva divorato.                \\
+divorare       & no   & yes        & yes       & Sara aveva divorato di nuovo.         \\
+firmare        & no   & no         & no        & Maria stava firmando.                 \\
+firmare        & no   & no         & yes       & Piero stava firmando di nuovo.        \\
+firmare        & no   & yes        & no        & Sara aveva firmato.                   \\
+firmare        & no   & yes        & yes       & Marta aveva firmato di nuovo.         \\
+fumare         & no   & no         & no        & Gianni stava fumando.                 \\
+fumare         & no   & no         & yes       & Carla stava fumando di nuovo.         \\
+fumare         & no   & yes        & no        & Luca aveva fumato.                    \\
+fumare         & no   & yes        & yes       & Marta aveva fumato di nuovo.          \\
+guardare       & no   & no         & no        & Franco stava guardando.               \\
+guardare       & no   & no         & yes       & Luca stava guardando di nuovo.        \\
+guardare       & no   & yes        & no        & Gianni aveva guardato.                \\
+guardare       & no   & yes        & yes       & Gianni aveva guardato di nuovo.       \\
+insegnare      & no   & no         & no        & Marta stava insegnando.               \\
+insegnare      & no   & no         & yes       & Sara stava insegnando di nuovo.       \\
+insegnare      & no   & yes        & no        & Paolo aveva insegnato.                \\
+insegnare      & no   & yes        & yes       & Franco aveva insegnato di nuovo.      \\
+lavare         & no   & no         & no        & Giulia stava lavando.                 \\
+lavare         & no   & no         & yes       & Luca stava lavando di nuovo.          \\
+lavare         & no   & yes        & no        & Giulia aveva lavato.                  \\
+lavare         & no   & yes        & yes       & Franco aveva lavato di nuovo.         \\
+lucidare       & no   & no         & no        & Carla stava lucidando.                \\
+lucidare       & no   & no         & yes       & Sara stava lucidando di nuovo.        \\
+lucidare       & no   & yes        & no        & Giulia aveva lucidato.                \\
+lucidare       & no   & yes        & yes       & Luca aveva lucidato di nuovo.         \\
+mangiare       & no   & no         & no        & Sara stava mangiando.                 \\
+mangiare       & no   & no         & yes       & Franco stava mangiando di nuovo.      \\
+mangiare       & no   & yes        & no        & Sara aveva mangiato.                  \\
+mangiare       & no   & yes        & yes       & Paolo aveva mangiato di nuovo.        \\
+pulire         & no   & no         & no        & Luca stava pulendo.                   \\
+pulire         & no   & no         & yes       & Paolo stava pulendo di nuovo.         \\
+pulire         & no   & yes        & no        & Sara aveva pulito.                    \\
+pulire         & no   & yes        & yes       & Piero aveva pulito di nuovo.          \\
+ricamare       & no   & no         & no        & Luca stava ricamando.                 \\
+ricamare       & no   & no         & yes       & Franco stava ricamando di nuovo.      \\
+ricamare       & no   & yes        & no        & Giulia aveva ricamato.                \\
+ricamare       & no   & yes        & yes       & Carla aveva ricamato di nuovo.        \\
+rompere        & no   & no         & no        & Paolo stava rompendo.                 \\
+rompere        & no   & no         & yes       & Luca stava rompendo di nuovo.         \\
+rompere        & no   & yes        & no        & Piero aveva rotto.                    \\
+rompere        & no   & yes        & yes       & Paolo aveva rotto di nuovo.           \\
+rubare         & no   & no         & no        & Marta stava rubando.                  \\
+rubare         & no   & no         & yes       & Maria stava rubando di nuovo.         \\
+rubare         & no   & yes        & no        & Sara aveva rubato.                    \\
+rubare         & no   & yes        & yes       & Carla aveva rubato di nuovo.          \\
+scarabocchiare & no   & no         & no        & Franco stava scarabocchiando.         \\
+scarabocchiare & no   & no         & yes       & Paolo stava scarabocchiando di nuovo. \\
+scarabocchiare & no   & yes        & no        & Marta aveva scarabocchiato.           \\
+scarabocchiare & no   & yes        & yes       & Franco aveva scarabocchiato di nuovo. \\
+scrivere       & no   & no         & no        & Sara stava scrivendo.                 \\
+scrivere       & no   & no         & yes       & Carla stava scrivendo di nuovo.       \\
+scrivere       & no   & yes        & no        & Giulia aveva scritto.                 \\
+scrivere       & no   & yes        & yes       & Marta aveva scritto di nuovo.         \\
+sorseggiare    & no   & no         & no        & Sara stava sorseggiando.              \\
+sorseggiare    & no   & no         & yes       & Maria stava sorseggiando di nuovo.    \\
+sorseggiare    & no   & yes        & no        & Piero aveva sorseggiato.              \\
+sorseggiare    & no   & yes        & yes       & Marta aveva sorseggiato di nuovo.     \\
+spaccare       & no   & no         & no        & Giulia stava spaccando.               \\
+spaccare       & no   & no         & yes       & Gianni stava spaccando di nuovo.      \\
+spaccare       & no   & yes        & no        & Gianni aveva spaccato.                \\
+spaccare       & no   & yes        & yes       & Marta aveva spaccato di nuovo.        \\
+tagliare       & no   & no         & no        & Marta stava tagliando.                \\
+tagliare       & no   & no         & yes       & Maria stava tagliando di nuovo.       \\
+tagliare       & no   & yes        & no        & Luca aveva tagliato.                  \\
+tagliare       & no   & yes        & yes       & Piero aveva tagliato di nuovo.        \\
+trangugiare    & no   & no         & no        & Franco stava trangugiando.            \\
+trangugiare    & no   & no         & yes       & Sara stava trangugiando di nuovo.     \\
+trangugiare    & no   & yes        & no        & Giulia aveva trangugiato.             \\
+trangugiare    & no   & yes        & yes       & Sara aveva trangugiato di nuovo.      \\
+uccidere       & no   & no         & no        & Maria stava uccidendo.                \\
+uccidere       & no   & no         & yes       & Carla stava uccidendo di nuovo.       \\
+uccidere       & no   & yes        & no        & Giulia aveva ucciso.                  \\
+uccidere       & no   & yes        & yes       & Giulia aveva ucciso di nuovo.         \\
+versare        & no   & no         & no        & Marta stava versando.                 \\
+versare        & no   & no         & yes       & Franco stava versando di nuovo.       \\
+versare        & no   & yes        & no        & Maria aveva versato.                  \\
+versare        & no   & yes        & yes       & Paolo aveva versato di nuovo.      
+\end{longtable}
 
 \subsection{Control sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\
+\hline
+\endhead
+accoltellare   & yes  & no         & no        & Sara stava accoltellando un uomo.                   \\
+accoltellare   & yes  & no         & yes       & Carla stava accoltellando un uomo di nuovo.         \\
+accoltellare   & yes  & yes        & no        & Sara aveva accoltellato un uomo.                    \\
+accoltellare   & yes  & yes        & yes       & Gianni aveva accoltellato un uomo di nuovo.         \\
+affettare      & yes  & no         & no        & Paolo stava affettando una torta.                   \\
+affettare      & yes  & no         & yes       & Piero stava affettando una torta di nuovo.          \\
+affettare      & yes  & yes        & no        & Carla aveva affettato una torta.                    \\
+affettare      & yes  & yes        & yes       & Piero aveva affettato una torta di nuovo.           \\
+avvelenare     & yes  & no         & no        & Marta stava avvelenando una pianta.                 \\
+avvelenare     & yes  & no         & yes       & Marta stava avvelenando una pianta di nuovo.        \\
+avvelenare     & yes  & yes        & no        & Carla aveva avvelenato una pianta.                  \\
+avvelenare     & yes  & yes        & yes       & Carla aveva avvelenato una pianta di nuovo.         \\
+bere           & yes  & no         & no        & Carla stava bevendo del succo.                      \\
+bere           & yes  & no         & yes       & Paolo stava bevendo del succo di nuovo.             \\
+bere           & yes  & yes        & no        & Maria aveva bevuto del succo.                       \\
+bere           & yes  & yes        & yes       & Carla aveva bevuto del succo di nuovo.              \\
+cantare        & yes  & no         & no        & Marta stava cantando un inno.                       \\
+cantare        & yes  & no         & yes       & Gianni stava cantando un inno di nuovo.             \\
+cantare        & yes  & yes        & no        & Sara aveva cantato un inno.                         \\
+cantare        & yes  & yes        & yes       & Marta aveva cantato un inno di nuovo.               \\
+canticchiare   & yes  & no         & no        & Paolo stava canticchiando una ninna-nanna.          \\
+canticchiare   & yes  & no         & yes       & Maria stava canticchiando una ninna-nanna di nuovo. \\
+canticchiare   & yes  & yes        & no        & Gianni aveva canticchiato una ninna-nanna.          \\
+canticchiare   & yes  & yes        & yes       & Franco aveva canticchiato una ninna-nanna di nuovo. \\
+costruire      & yes  & no         & no        & Luca stava costruendo una casa.                     \\
+costruire      & yes  & no         & yes       & Marta stava costruendo una casa di nuovo.           \\
+costruire      & yes  & yes        & no        & Luca aveva costruito una casa.                      \\
+costruire      & yes  & yes        & yes       & Paolo aveva costruito una casa di nuovo.            \\
+cucinare       & yes  & no         & no        & Maria stava cucinando la cena.                      \\
+cucinare       & yes  & no         & yes       & Giulia stava cucinando la cena di nuovo.            \\
+cucinare       & yes  & yes        & no        & Marta aveva cucinato la cena.                       \\
+cucinare       & yes  & yes        & yes       & Franco aveva cucinato la cena di nuovo.             \\
+cucire         & yes  & no         & no        & Sara stava cucendo una tenda.                       \\
+cucire         & yes  & no         & yes       & Franco stava cucendo una tenda di nuovo.            \\
+cucire         & yes  & yes        & no        & Maria aveva cucito una tenda.                       \\
+cucire         & yes  & yes        & yes       & Franco aveva cucito una tenda di nuovo.             \\
+decapitare     & yes  & no         & no        & Luca stava decapitando un prigioniero.              \\
+decapitare     & yes  & no         & yes       & Luca stava decapitando un prigioniero di nuovo.     \\
+decapitare     & yes  & yes        & no        & Gianni aveva decapitato un prigioniero.             \\
+decapitare     & yes  & yes        & yes       & Piero aveva decapitato un prigioniero di nuovo.     \\
+divorare       & yes  & no         & no        & Gianni stava divorando un pollo arrosto.            \\
+divorare       & yes  & no         & yes       & Gianni stava divorando un pollo arrosto di nuovo.   \\
+divorare       & yes  & yes        & no        & Carla aveva divorato un pollo arrosto.              \\
+divorare       & yes  & yes        & yes       & Franco aveva divorato un pollo arrosto di nuovo.    \\
+firmare        & yes  & no         & no        & Marta stava firmando un documento.                  \\
+firmare        & yes  & no         & yes       & Gianni stava firmando un documento di nuovo.        \\
+firmare        & yes  & yes        & no        & Luca aveva firmato un documento.                    \\
+firmare        & yes  & yes        & yes       & Sara aveva firmato un documento di nuovo.           \\
+fumare         & yes  & no         & no        & Franco stava fumando una sigaretta.                 \\
+fumare         & yes  & no         & yes       & Piero stava fumando una sigaretta di nuovo.         \\
+fumare         & yes  & yes        & no        & Luca aveva fumato una sigaretta.                    \\
+fumare         & yes  & yes        & yes       & Carla aveva fumato una sigaretta di nuovo.          \\
+guardare       & yes  & no         & no        & Paolo stava guardando un film.                      \\
+guardare       & yes  & no         & yes       & Luca stava guardando un film di nuovo.              \\
+guardare       & yes  & yes        & no        & Giulia aveva guardato un film.                      \\
+guardare       & yes  & yes        & yes       & Gianni aveva guardato un film di nuovo.             \\
+insegnare      & yes  & no         & no        & Carla stava insegnando linguistica.                 \\
+insegnare      & yes  & no         & yes       & Gianni stava insegnando linguistica di nuovo.       \\
+insegnare      & yes  & yes        & no        & Marta aveva insegnato linguistica.                  \\
+insegnare      & yes  & yes        & yes       & Franco aveva insegnato linguistica di nuovo.        \\
+lavare         & yes  & no         & no        & Marta stava lavando una macchina.                   \\
+lavare         & yes  & no         & yes       & Piero stava lavando una macchina di nuovo.          \\
+lavare         & yes  & yes        & no        & Maria aveva lavato una macchina.                    \\
+lavare         & yes  & yes        & yes       & Franco aveva lavato una macchina di nuovo.          \\
+lucidare       & yes  & no         & no        & Paolo stava lucidando una spada.                    \\
+lucidare       & yes  & no         & yes       & Giulia stava lucidando una spada di nuovo.          \\
+lucidare       & yes  & yes        & no        & Franco aveva lucidato una spada.                    \\
+lucidare       & yes  & yes        & yes       & Piero aveva lucidato una spada di nuovo.            \\
+mangiare       & yes  & no         & no        & Paolo stava mangiando della pizza.                  \\
+mangiare       & yes  & no         & yes       & Marta stava mangiando della pizza di nuovo.         \\
+mangiare       & yes  & yes        & no        & Luca aveva mangiato della pizza.                    \\
+mangiare       & yes  & yes        & yes       & Gianni aveva mangiato della pizza di nuovo.         \\
+pulire         & yes  & no         & no        & Carla stava pulendo un tavolo.                      \\
+pulire         & yes  & no         & yes       & Gianni stava pulendo un tavolo di nuovo.            \\
+pulire         & yes  & yes        & no        & Giulia aveva pulito un tavolo.                      \\
+pulire         & yes  & yes        & yes       & Sara aveva pulito un tavolo di nuovo.               \\
+ricamare       & yes  & no         & no        & Paolo stava ricamando un arazzo.                    \\
+ricamare       & yes  & no         & yes       & Paolo stava ricamando un arazzo di nuovo.           \\
+ricamare       & yes  & yes        & no        & Luca aveva ricamato un arazzo.                      \\
+ricamare       & yes  & yes        & yes       & Franco aveva ricamato un arazzo di nuovo.           \\
+rompere        & yes  & no         & no        & Piero stava rompendo un vaso.                       \\
+rompere        & yes  & no         & yes       & Marta stava rompendo un vaso di nuovo.              \\
+rompere        & yes  & yes        & no        & Sara aveva rotto un vaso.                           \\
+rompere        & yes  & yes        & yes       & Giulia aveva rotto un vaso di nuovo.                \\
+rubare         & yes  & no         & no        & Paolo stava rubando dei soldi.                      \\
+rubare         & yes  & no         & yes       & Paolo stava rubando dei soldi di nuovo.             \\
+rubare         & yes  & yes        & no        & Piero aveva rubato dei soldi.                       \\
+rubare         & yes  & yes        & yes       & Marta aveva rubato dei soldi di nuovo.              \\
+scarabocchiare & yes  & no         & no        & Luca stava scarabocchiando un omino.                \\
+scarabocchiare & yes  & no         & yes       & Giulia stava scarabocchiando un omino di nuovo.     \\
+scarabocchiare & yes  & yes        & no        & Franco aveva scarabocchiato un omino.               \\
+scarabocchiare & yes  & yes        & yes       & Gianni aveva scarabocchiato un omino di nuovo.      \\
+scrivere       & yes  & no         & no        & Luca stava scrivendo una lettera.                   \\
+scrivere       & yes  & no         & yes       & Giulia stava scrivendo una lettera di nuovo.        \\
+scrivere       & yes  & yes        & no        & Sara aveva scritto una lettera.                     \\
+scrivere       & yes  & yes        & yes       & Sara aveva scritto una lettera di nuovo.            \\
+sorseggiare    & yes  & no         & no        & Giulia stava sorseggiando dell’acqua.               \\
+sorseggiare    & yes  & no         & yes       & Franco stava sorseggiando dell’acqua di nuovo.      \\
+sorseggiare    & yes  & yes        & no        & Gianni aveva sorseggiato dell’acqua.                \\
+sorseggiare    & yes  & yes        & yes       & Luca aveva sorseggiato dell’acqua di nuovo.         \\
+spaccare       & yes  & no         & no        & Luca stava spaccando un tronco.                     \\
+spaccare       & yes  & no         & yes       & Maria stava spaccando un tronco di nuovo.           \\
+spaccare       & yes  & yes        & no        & Carla aveva spaccato un tronco.                     \\
+spaccare       & yes  & yes        & yes       & Carla aveva spaccato un tronco di nuovo.            \\
+tagliare       & yes  & no         & no        & Paolo stava tagliando della carta.                  \\
+tagliare       & yes  & no         & yes       & Sara stava tagliando della carta di nuovo.          \\
+tagliare       & yes  & yes        & no        & Piero aveva tagliato della carta.                   \\
+tagliare       & yes  & yes        & yes       & Luca aveva tagliato della carta di nuovo.           \\
+trangugiare    & yes  & no         & no        & Luca stava trangugiando una birra.                  \\
+trangugiare    & yes  & no         & yes       & Sara stava trangugiando una birra di nuovo.         \\
+trangugiare    & yes  & yes        & no        & Carla aveva trangugiato una birra.                  \\
+trangugiare    & yes  & yes        & yes       & Sara aveva trangugiato una birra di nuovo.          \\
+uccidere       & yes  & no         & no        & Marta stava uccidendo dei parassiti.                \\
+uccidere       & yes  & no         & yes       & Carla stava uccidendo dei parassiti di nuovo.       \\
+uccidere       & yes  & yes        & no        & Luca aveva ucciso dei parassiti.                    \\
+uccidere       & yes  & yes        & yes       & Sara aveva ucciso dei parassiti di nuovo.           \\
+versare        & yes  & no         & no        & Sara stava versando del vino.                       \\
+versare        & yes  & no         & yes       & Carla stava versando del vino di nuovo.             \\
+versare        & yes  & yes        & no        & Maria aveva versato del vino.                       \\
+versare        & yes  & yes        & yes       & Carla aveva versato del vino di nuovo.             
+\end{longtable}
 
 \subsection{Filler sentences}
-text 
+
+\begin{longtable}{l|ccc|p{5cm}}
+\textbf{verb}     & \textbf{dObj} & \textbf{perfective} & \textbf{iterative}    & \textbf{sentence} \\
+\hline
+\endhead
+applaudire & no   & no         & no        & Sara stava applaudendo.                          \\
+applaudire & no   & no         & yes       & Carla stava applaudendo di nuovo.                \\
+applaudire & no   & yes        & no        & Paolo aveva applaudito.                          \\
+applaudire & no   & yes        & yes       & Piero aveva applaudito di nuovo.                 \\
+applaudire & yes  & no         & no        & Giulia stava applaudendo uno spettacolo.         \\
+applaudire & yes  & no         & yes       & Marta stava applaudendo uno spettacolo di nuovo. \\
+applaudire & yes  & yes        & no        & Marta aveva applaudito uno spettacolo.           \\
+applaudire & yes  & yes        & yes       & Marta aveva applaudito uno spettacolo di nuovo.  \\
+barcollare & no   & no         & no        & Giulia stava barcollando.                        \\
+barcollare & no   & no         & yes       & Maria stava barcollando di nuovo.                \\
+barcollare & no   & yes        & no        & Giulia aveva barcollato.                         \\
+barcollare & no   & yes        & yes       & Giulia aveva barcollato di nuovo.                \\
+barcollare & yes  & no         & no        & Giulia stava barcollando il marciapiede.         \\
+barcollare & yes  & no         & yes       & Marta stava barcollando il marciapiede di nuovo. \\
+barcollare & yes  & yes        & no        & Maria aveva barcollato il marciapiede.           \\
+barcollare & yes  & yes        & yes       & Paolo aveva barcollato il marciapiede di nuovo.  \\
+bussare    & no   & no         & no        & Giulia stava bussando.                           \\
+bussare    & no   & no         & yes       & Luca stava bussando di nuovo.                    \\
+bussare    & no   & yes        & no        & Gianni aveva bussato.                            \\
+bussare    & no   & yes        & yes       & Franco aveva bussato di nuovo.                   \\
+bussare    & yes  & no         & no        & Piero stava bussando una porta.                  \\
+bussare    & yes  & no         & yes       & Piero stava bussando una porta di nuovo.         \\
+bussare    & yes  & yes        & no        & Franco aveva bussato una porta.                  \\
+bussare    & yes  & yes        & yes       & Paolo aveva bussato una porta di nuovo.          \\
+digiunare  & no   & no         & no        & Paolo stava digiunando.                          \\
+digiunare  & no   & no         & yes       & Gianni stava digiunando di nuovo.                \\
+digiunare  & no   & yes        & no        & Maria aveva digiunato.                           \\
+digiunare  & no   & yes        & yes       & Piero aveva digiunato di nuovo.                  \\
+digiunare  & yes  & no         & no        & Giulia stava digiunando del sushi.               \\
+digiunare  & yes  & no         & yes       & Sara stava digiunando del sushi di nuovo.        \\
+digiunare  & yes  & yes        & no        & Marta aveva digiunato del sushi.                 \\
+digiunare  & yes  & yes        & yes       & Marta aveva digiunato del sushi di nuovo.        \\
+dormire    & no   & no         & no        & Piero stava dormendo.                            \\
+dormire    & no   & no         & yes       & Maria stava dormendo di nuovo.                   \\
+dormire    & no   & yes        & no        & Piero aveva dormito.                             \\
+dormire    & no   & yes        & yes       & Carla aveva dormito di nuovo.                    \\
+dormire    & yes  & no         & no        & Sara stava dormendo un cuscino.                  \\
+dormire    & yes  & no         & yes       & Luca stava dormendo un cuscino di nuovo.         \\
+dormire    & yes  & yes        & no        & Giulia aveva dormito un cuscino.                 \\
+dormire    & yes  & yes        & yes       & Carla aveva dormito un cuscino di nuovo.         \\
+ridere     & no   & no         & no        & Sara stava ridendo.                              \\
+ridere     & no   & no         & yes       & Piero stava ridendo di nuovo.                    \\
+ridere     & no   & yes        & no        & Sara aveva riso.                                 \\
+ridere     & no   & yes        & yes       & Paolo aveva riso di nuovo.                       \\
+ridere     & yes  & no         & no        & Luca stava ridendo una barzelletta.              \\
+ridere     & yes  & no         & yes       & Giulia stava ridendo una barzelletta di nuovo.   \\
+ridere     & yes  & yes        & no        & Marta aveva riso una barzelletta.                \\
+ridere     & yes  & yes        & yes       & Giulia aveva riso una barzelletta di nuovo.      \\
+riposarsi  & no   & no         & no        & Luca si stava riposando.                         \\
+riposarsi  & no   & no         & yes       & Gianni si stava riposando di nuovo.              \\
+riposarsi  & no   & yes        & no        & Piero si è riposato.                             \\
+riposarsi  & no   & yes        & yes       & Sara si è riposata di nuovo.                     \\
+riposarsi  & yes  & no         & no        & Luca si stava riposando un letto.                \\
+riposarsi  & yes  & no         & yes       & Maria si stava riposando un letto di nuovo.      \\
+riposarsi  & yes  & yes        & no        & Piero si è riposato un letto.                    \\
+riposarsi  & yes  & yes        & yes       & Luca si è riposato un letto di nuovo.            \\
+sorridere  & no   & no         & no        & Sara stava sorridendo.                           \\
+sorridere  & no   & no         & yes       & Carla stava sorridendo di nuovo.                 \\
+sorridere  & no   & yes        & no        & Paolo aveva sorriso.                             \\
+sorridere  & no   & yes        & yes       & Maria aveva sorriso di nuovo.                    \\
+sorridere  & yes  & no         & no        & Carla stava sorridendo un amico.                 \\
+sorridere  & yes  & no         & yes       & Giulia stava sorridendo un amico di nuovo.       \\
+sorridere  & yes  & yes        & no        & Gianni aveva sorriso un amico.                   \\
+sorridere  & yes  & yes        & yes       & Sara aveva sorriso un amico di nuovo.            \\
+urlare     & no   & no         & no        & Sara stava urlando.                              \\
+urlare     & no   & no         & yes       & Franco stava urlando di nuovo.                   \\
+urlare     & no   & yes        & no        & Luca aveva urlato.                               \\
+urlare     & no   & yes        & yes       & Marta aveva urlato di nuovo.                     \\
+urlare     & yes  & no         & no        & Gianni stava urlando un ragno.                   \\
+urlare     & yes  & no         & yes       & Carla stava urlando un ragno di nuovo.           \\
+urlare     & yes  & yes        & no        & Paolo aveva urlato un ragno.                     \\
+urlare     & yes  & yes        & yes       & Gianni aveva urlato un ragno di nuovo.           \\
+zoppicare  & no   & no         & no        & Luca stava zoppicando.                           \\
+zoppicare  & no   & no         & yes       & Maria stava zoppicando di nuovo.                 \\
+zoppicare  & no   & yes        & no        & Paolo aveva zoppicato.                           \\
+zoppicare  & no   & yes        & yes       & Piero aveva zoppicato di nuovo.                  \\
+zoppicare  & yes  & no         & no        & Luca stava zoppicando una strada.                \\
+zoppicare  & yes  & no         & yes       & Paolo stava zoppicando una strada di nuovo.      \\
+zoppicare  & yes  & yes        & no        & Maria aveva zoppicato una strada.                \\
+zoppicare  & yes  & yes        & yes       & Sara aveva zoppicato una strada di nuovo.     
+\end{longtable}
