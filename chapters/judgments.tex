@@ -1,30 +1,34 @@
 % \setchapterstyle{kao}
 \setchapterpreamble[u]{\margintoc}
-\chapter{Acceptability judgments}
+\chapter{Collecting acceptability judgments: materials and methods}
 \labch{judgments}
 
-\section{Materials and methods} \labsec{matandmethods}
+% \section{Materials and methods} \labsec{matandmethods}
 
 
-\subsection{Operative choices} \labsec{participants}
+\section{Operative choices} \labsec{participants}
 The development of both experiments is organized in three steps, i.e. building, running, and recruiting, with a different platform employed for each step. The merits of the PsychoPy-Pavlovia-Prolific pipeline, described below in full detail, make it a growingly popular choice among behavioral experimenters. Let us examine each step separately.
 
-\paragraph{Building the experiment} I built the experiment using the graphical interface (called "Builder") of PsychoPy v2020.2.10 \parencite{peirce2019psychopy2}. PsychoPy is an open-source, cross-platform software package allowing experimenters to build any kind of experiment in psychology, neuroscience, psychophysics, linguistics, and other behavioral sciences. It makes it possible to code an experiment from scratch using the Coder interface (or any Python-friendly Integrated Development Environment), or to build one using the graphical interface provided by the Builder. To a skilled Python programmer, the main appeal of the Builder lies in that it has a feature to translate the built-in Python functions into JavaScript code that can run online, while Coder-created experiments can only be run locally on the experimenter's computer.
+\subsection{Building the experiment locally} 
+I built the experiment using the graphical interface (called "Builder") of PsychoPy v2020.2.10 \parencite{peirce2019psychopy2}. PsychoPy is an open-source, cross-platform software package allowing experimenters to build any kind of experiment in psychology, neuroscience, psychophysics, linguistics, and other behavioral sciences. It makes it possible to code an experiment from scratch using the Coder interface (or any Python-friendly Integrated Development Environment), or to build one using the graphical interface provided by the Builder. To a skilled Python programmer, the main appeal of the Builder lies in that it has a feature to translate the built-in Python functions into JavaScript code that can run online, while Coder-created experiments can only be run locally on the experimenter's computer.
 
-\paragraph{Running the experiment online} In order to be run online on the participants' devices, a PsychoPy Builder experiment has first to be uploaded on Pavlovia, a hosting platform for behavioral experiments coded using PsychoPy, lab.js, or jsPsych. Pavlovia can be fine-tuned to launch experiments online with a variety of options (e.g. launch pilot or full-fledged experiment, save or discard incomplete submissions), and it integrates seamlessly with popular recruiting platforms. Moreover, it doubles up as a source code repository thanks to integration with GitLab.\\
+\subsection{Running the experiment online} 
+In order to be run online on the participants' devices, a PsychoPy Builder experiment has first to be uploaded on Pavlovia, a hosting platform for behavioral experiments coded using PsychoPy, lab.js, or jsPsych. Pavlovia can be fine-tuned to launch experiments online with a variety of options (e.g. launch pilot or full-fledged experiment, save or discard incomplete submissions), and it integrates seamlessly with popular recruiting platforms. Moreover, it doubles up as a source code repository thanks to integration with GitLab.\\
 The source code for both my experiments, as well as the stimuli used in them, is available here for \href{https://gitlab.pavlovia.org/gcappelli/grammaticality_eng}{English} and \href{https://gitlab.pavlovia.org/gcappelli/grammaticality_ita}{Italian}. The files can be read directly online, but the code requires PsychoPy to be edited.
 
-\paragraph{Recruiting participants} Both surveys were run on Prolific (formerly known as "Prolific Academic"), a large crowdsourcing platform that was specifically developed to cater to the needs of researchers.\\
+\subsection{Recruiting participants} 
+Both surveys were run on Prolific (formerly known as "Prolific Academic"), a large crowdsourcing platform that was specifically developed to cater to the needs of researchers.\\
 The experimental tasks were carried out by 30 people for the study on Italian and 30 people for the study on English. All 60 people are native speakers of Italian and English, untrained in Linguistics, holding at least a Bachelor's degree (in order to minimize the effect of education on their judgments), and lacking any knowledge of the goals of this dissertation.\\
 The estimated duration for the experiments was about 30 minutes. Participants who completed the experiment were given €-.-- each as compensation for their effort, in compliance with Prolific's policy calling for ethical rewards.
 
 
-\subsection{Target verbs} \labsec{verbs}
+\section{Target verbs} \labsec{verbs}
 Both for English and for Italian, the verb dataset used to build the stimuli comprises 30 target transitive verbs and 10 filler intransitive verbs. The reader will find both sets, together with the relevant frequency information, in \refapp{app_verbs}.\\
 The optimal verb set used in the creation of the stimuli must be balanced in every relevant aspect. This means that it has to include the same number of English and Italian verbs (leading to the same number of stimuli in both Likert experiments), that the verbs span over different frequency ranges within the same language (i.e. they are not all high-frequency or low-frequency verbs), and that each English verb has a corresponding Italian verb with roughly the same meaning and comparable (relative) frequency in the corpus. This last requirement on verb frequency is crucial, since word frequency is typically confounded with the variables under consideration in (psycho)linguistic experiments\sidenote{See, for instance, \textcite{arunachalam2013experimental, brysbaert2018word} on the word frequency effect and other confounding variables.}.\\
 The creation of a verb set for the two Likert experiments was accomplished in two steps, as detailed below.
 
-\paragraph{Creation of verb lists} First of all, a list was made of several transitive English verbs (5 from \textcite{Resnik1993}, 8 from \textcite{Levin1993}, 4 from both papers, and 5 commonly used verbs of my choosing). I further added to the list 12 verbs specified with respect to the manner component (discussed in \nrefsec{predictor_mannspec}), based on my personal opinion as a linguist and person in charge of this project. This resulted in a list containing 30 transitive verbs, reported in \reftab{verbs_engita}.\\
+\subsection{Creation of verb lists} 
+First of all, a list was made of several transitive English verbs (5 from \textcite{Resnik1993}, 8 from \textcite{Levin1993}, 4 from both papers, and 5 commonly used verbs of my choosing). I further added to the list 12 verbs specified with respect to the manner component (discussed in \nrefsec{predictor_mannspec}), based on my personal opinion as a linguist and person in charge of this project. This resulted in a list containing 30 transitive verbs, reported in \reftab{verbs_engita}.\\
 The English verbs in the list have unambiguous meanings (e.g. \textit{to slice, to wash}). I did not include all of Resnik's original set, which featured highly polysemous verbs such as \textit{to have} and \textit{to do}, precisely to comply with this requirement. In order to verify that the 30 verbs are indeed monosemous, quantifying my intuition in a more rigorous way, I used WordNet \parencite{Miller1995} to check that each verb belongs to just one synset (i.e. has just one sense) or, if it belongs to more than one as it often happens, that these synsets are very close together semantically. In order to achieve this result, I computed the Wu-Palmer similarity\sidenote{
 	The Wu-Palmer similarity (WP) is a similarity measure based on the depth of the two synsets (s1 and s2) in the taxonomy and the depth of their closest ancestor, i.e. the Least Common Subsumer (LCS).
 	\begin{equation*}
@@ -74,7 +78,8 @@ write	&	scrivere
 \end{tabular}
 \end{table}
 
-\paragraph{Frequency check} The second step in the creation of the verb set is a "sanity check" of the verb frequencies, both within-language and between-language, as detailed in this paragraph. The (absolute) frequency of each verb is extracted from ukWaC for English and itWaC for Italian \parencite{baroni2009wacky}.\\
+\subsection{Frequency check} 
+The second step in the creation of the verb set is a "sanity check" of the verb frequencies, both within-language and between-language, as detailed in this paragraph. The (absolute) frequency of each verb is extracted from ukWaC for English and itWaC for Italian \parencite{baroni2009wacky}.\\
 Absolute frequencies have to be transformed in order to be compared, since they are corpus-dependent, and also because words occur in a corpus according to the power law known as "Zipf's law".
 \sidenote{
 	According to Zipf's law, The $r$th most frequent word has a frequency $f(r)$ that scales according to:
@@ -97,7 +102,7 @@ Z = \log _{10} \frac{f}{c} + 9
 
 Having chosen a suitable scale to compare my verb frequencies, I performed the within- and between-language tests. As for the within-language check, I verified that the Zipf scores of the verbs for both languages were compatible with a distribution spanning from low- to high-frequency verbs, avoiding extremes (English verbs 2.078 $\div$ 5.520, Italian verbs 1.681 $\div$ 5.763). Lastly, I made sure that the same verb (modulo the translation into Italian) belonged in the same Zipf score tier in both languages by computing the difference between the English and the Italian Zipf scores. Since the Zipf scale is designed so that words in each of the 7 tiers have significantly different corpus frequencies, I take an English-Italian Zipf difference to be acceptable if smaller than 1, while I would reject any English-Italian verb pairs with a the difference equal to or greater than 1. The within- and between-language frequency tests showed that the two verb sets comply with the above requirements. The reader will find the frequencies and Zipf scores in \refapp{app_verbs}.
 
-\subsection{Design} \labsec{design}
+\section{Design} \labsec{design}
 
 Both experiments follow a within-subject fully crossed design, where every participant sees all the stimuli in random order and provides judgments for each on a 7-point Likert scale.\\
 The stimuli are organized in a 2x2x2 factorial design, summarized in \reftab{mydesign}, with 3 independent variables (presence of an overt direct object, perfectivity, iterativity) having 2 levels each (presence or absence of the feature). This experimental design is more complex than the 2x2 design by \textcite{Medina2007}, since I am adding iterativity as an independent variable.
@@ -121,7 +126,7 @@ overt dObj & perfectivity & iterativity \\
 
 Each verb of interest (fully listed in \refapp{app_verbs}) participates in each of the 8 experimental conditions. Since telicity, semantic recoverability and manner specification are inherent properties of each verb, they are not part of the experimental design.
 
-\subsection{Stimuli} \labsec{stimuli}
+\section{Stimuli} \labsec{stimuli}
 
 All the verbs of interest plus 10 intransitive filler verbs participate in all the experimental conditions, leading to a total of 320 sentence stimuli (twice as in \textcite{Medina2007}) for each language in the study.\\
 The list of English and Italian intransitive filler verbs is provided in \reftab{fillers_engita}. Since these verbs are part of the experimental design but irrelevant for the subsequent analysis, they were not controlled for frequency, nor were they annotated with semantic or aspectual information.
@@ -159,9 +164,10 @@ Let us consider the eight\sidenote{based on the design in \refsec{design}} examp
 All the 30 verbs of interest and the 10 filler verbs, both for English and Italian, will feature in stimuli like the ones listed in \ref{eat_simulation}. In transitive sentences, regardless of the verb being transitive or intransitive in nature, the direct object is semantically compatible with the meaning of the verb so that the violation of selectional preferences do not act as a confound in the experiment. The reader will find the full list of stimuli and verb-object pairings in \refapp{app_stimuli}, and detailed information on the manipulation of perfectivity and iterativity in \nrefsec{predictor_perfectivity}.
 
 
-\subsection{Setting} \labsec{setting}
+\section{Setting} \labsec{setting}
  
- \paragraph{Informed consent} First of all, the participants had to accept the privacy policy in order to proceed to the survey, or else decline the terms and exit the experiment. Below you will find the English and the Italian versions of the privacy policy.
+ \subsection{Informed consent} 
+ First of all, the participants had to accept the privacy policy in order to proceed to the survey, or else decline the terms and exit the experiment. Below you will find the English and the Italian versions of the privacy policy.
 
 \begin{kaobox}[frametitle=Privacy policy for the English survey]
 During this survey, you will not be asked personal information. In no way will it be possible for anyone to find out your identity by having access to your answers to the survey. The data you will provide will be used for the purposes of this linguistic experiment and they may be shared with third parties anonymously. By completing the survey, you accept these terms. If you leave the survey early, your data will not be used in the study and you will not be compensated.
@@ -171,7 +177,8 @@ During this survey, you will not be asked personal information. In no way will i
 Nel questionario non ti saranno chieste informazioni personali. Non sarà possibile per nessuno risalire alla tua identità a partire dalle risposte che darai nel questionario. I dati che fornirai saranno usati ai fini di questo esperimento linguistico e potranno essere condivisi con terzi in forma anonima. Completando il questionario, dichiari di accettare questi termini. Se abbandoni il questionario in anticipo, i tuoi dati non saranno usati nello studio e non riceverai alcun compenso.
 \end{kaobox}
 
-\paragraph{Instructions} Then, participants were given instructions in their native language (i.e. the target language of the survey). The full text is available right below for both English and Italian.
+\subsection{Instructions} 
+Then, participants were given instructions in their native language (i.e. the target language of the survey). The full text is available right below for both English and Italian.
 
 \begin{kaobox}[frametitle=Instructions for the English survey]
 This survey takes about 30 minutes to complete, and you will be rewarded € -.-- as compensation if you complete the survey.\\
@@ -201,7 +208,8 @@ A questa frase dovresti dare 7, perché è perfettamente accettabile.\\
 Questo non è un esame! Le tue risposte sono tutte giuste, perché sei un parlante nativo di italiano. Attenzione, però: per impedire che vengano date risposte a caso, il questionario contiene domande di controllo nascoste. Se le sbaglierai, ti sarà impedito di continuare a rispondere e non riceverai alcun compenso.
 \end{kaobox}
 
-\paragraph{Screening survey} Finally, the participants were asked to complete a short screening survey before entering the actual linguistic judgment survey. The screening questions are presented in \ref{screening_eng} for English and in \ref{screening_ita} for Italian:
+\subsection{Screening survey} 
+Finally, the participants were asked to complete a short screening survey before entering the actual linguistic judgment survey. The screening questions are presented in \ref{screening_eng} for English and in \ref{screening_ita} for Italian:
 \ex. \label{screening_eng} \a. Are you a native speaker of English?
 \b. Have you got a Bachelor's (or higher) degree?
 \c. Have you understood the instructions above?
@@ -212,7 +220,8 @@ Questo non è un esame! Le tue risposte sono tutte giuste, perché sei un parlan
 
 Participants could click on either "Yes" or "No" buttons to answer. Answering "No" to any screening questions meant being automatically kicked out of the survey.
 
-\paragraph{Training session} Before entering the actual experimental session, participants had the chance to accustom themselves to the task in a short training session. They were asked to judge the acceptability of each sentence on a 7-point Likert scale, as in the full experimental session. Likert scales are a reliable method to test grammaticality \parencite{WeskottFanselow2011}, and the 7-point variant (unlike the 5-point scale used by \textcite{Medina2007}) is the most common in experimental linguistics \parencite{Juzek2016}.\\ In order to keep the training session as short as possible while maximizing usefulness, subjects only judged a fully-grammatical sentence and a fully-ungrammatical sentence (in \ref{training_eng} for the English survey and \ref{training_ita} for the Italian survey).
+\subsection{Training session} 
+Before entering the actual experimental session, participants had the chance to accustom themselves to the task in a short training session. They were asked to judge the acceptability of each sentence on a 7-point Likert scale, as in the full experimental session. Likert scales are a reliable method to test grammaticality \parencite{WeskottFanselow2011}, and the 7-point variant (unlike the 5-point scale used by \textcite{Medina2007}) is the most common in experimental linguistics \parencite{Juzek2016}.\\ In order to keep the training session as short as possible while maximizing usefulness, subjects only judged a fully-grammatical sentence and a fully-ungrammatical sentence (in \ref{training_eng} for the English survey and \ref{training_ita} for the Italian survey).
 
 \ex. \label{training_eng} \a. \label{training_eng_yes} Jack had opened a bar.
 \b. \label{training_eng_no} *Ann went a sandwich.
@@ -222,10 +231,12 @@ Participants could click on either "Yes" or "No" buttons to answer. Answering "N
 
 Unlike the real experimental session, the training session allowed participants to keep rating a sentence as many times as they wanted, instead of kicking them out in the case of a mistake. After each judgment on the Likert scale, participants received immediate feedback in the same interface window. They were either prompted to provide a different judgment on the same sentence, if the score they chose was off-scale, or they were asked to continue to the next task, if they rated the sentence correctly. Expected scores in the training session were quite strict, i.e. no less than 6 for \ref{training_eng_yes} and \ref{training_ita_yes}, and no more than 2 for \ref{training_eng_no} and \ref{training_ita_no}.
 
-\paragraph{Experimental session} The 320 stimuli were presented in randomized order, since order is well-known to have an effect on acceptability judgments \parencite{Myers2009, Juzek2016}. In general, randomizing stimuli or counterbalancing conditions are good experimental practice to counteract the effects of carryover, fatigue, and practice. Moreover, the stimuli were presented one by one, in order to prevent participants to compare the stimuli one to another instead of judging them individually. The concern for similar task-specific strategies and the need to avoid eliciting them is raised, among others, by \textcite{Myers2009}.\\
+\subsection{Experimental session} 
+The 320 stimuli were presented in randomized order, since order is well-known to have an effect on acceptability judgments \parencite{Myers2009, Juzek2016}. In general, randomizing stimuli or counterbalancing conditions are good experimental practice to counteract the effects of carryover, fatigue, and practice. Moreover, the stimuli were presented one by one, in order to prevent participants to compare the stimuli one to another instead of judging them individually. The concern for similar task-specific strategies and the need to avoid eliciting them is raised, among others, by \textcite{Myers2009}.\\
 Participants were instructed to click on their chosen score and then press their spacebar to proceed to the next stimulus, so they could change their mind before submitting their judgment for good. Naturally, the experiment was programmed as to prevent participants from skipping stimuli.
 
-\paragraph{Reliability of judgments} The reliability of the collected judgments was ensured in two different ways. On a general note, paid compensation is standard practice in behavioral studies where attentiveness is key, as well as being a popular way to make up for the time participants invested in the experiment\sidenote{Please refer to \textcite{PERMUTHWEY2009280} for an extensive debate on the ethical and practical implications of financial remuneration in behavioral research.}.\\
+\subsection{Reliability of judgments} 
+The reliability of the collected judgments was ensured in two different ways. On a general note, paid compensation is standard practice in behavioral studies where attentiveness is key, as well as being a popular way to make up for the time participants invested in the experiment\sidenote{Please refer to \textcite{PERMUTHWEY2009280} for an extensive debate on the ethical and practical implications of financial remuneration in behavioral research.}.\\
 A more task-specific method to elicit reliable judgments involves using the clearly ungrammatical and the clearly grammatical control sentences as monitoring stimuli. This means that ungrammatical control sentences like \ref{filler_sentence}, where an intransitive filler verb appears with a direct object, should get a very low score on the 7-point Likert scale.
 \ex. \label{filler_sentence} * John had slept pillows.
 
@@ -254,4 +265,4 @@ overt dObj & perfectivity & iterativity & trans. verbs & intrans. verbs \\
 \end{table}
 
 Since getting a single judgment wrong out of 320 would cost a participant his reward (and, incidentally, cost this study valuable data), the requirements for a judgment to be deemed correct were softened with respect to those used in the training session. Thus, participants who provided a score higher than 3 (i.e. not in the lower half of the scale) to filler sentences or lower than 5 (i.e. not in the higher half of the scale) to control sentences were kicked out of the experiment and did not receive any compensation, since out-of-range scores would mean that they were not paying enough attention to the task or were downright clicking at random.\\ Notably, iterative sentences with transitive verbs used transitively and intransitive verbs used intransitively were not included among the control stimuli, because they are not prototypical examples of perfectly grammatical sentences. It would have been frustrating for participants to be excluded from the experiment (and the reward) for a single mistake on such a sentence, especially considering that half the stimuli already were control sentences.\\
-The results of the English and Italian experiments are presented in full detail in \nrefch{results}.
+The results of the English and Italian experiments are presented in full detail in \nrefch{results}. The full English and Italian stimuli, together with the raw scores provided by the participants on a 7-point Likert scale for the target sentences, are also available on my GitHub profile \href{https://github.com/giuliacappelli/dissertationData}{in a dedicated repository}.
