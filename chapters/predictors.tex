@@ -234,7 +234,7 @@ How does all of this translate into a solution to the problem of having a taxono
 
 Based on these consideration, the conclusion is that the closer the direct objects of a verb are in a vector space, the more recoverable they should be. This is the main intuition behind Computational PISA, whose computational implementation I will discuss in the next paragraph.
 
-\paragraph{Computational implementation} Computational PISA is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb. \hl{The full script used to obtain Computational PISA scores using a corpus and a list of verbs as input is available} \href{https://github.com/ellepannitto/PISA}{on GitHub}. \\
+\paragraph{Computational implementation} Computational PISA is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb. \hl{The full script used to obtain Computational PISA scores using a corpus and a list of verbs as input is available} \href{https://github.com/ellepannitto/PISA}{on GitHub}\sidenote{https://github.com/ellepannitto/ PISA}. \\
 This is done in two steps, for each transitive verb under consideration. The first one is to compute the Selectional Association between the verb and each one of its direct objects as defined by \textcite{Erk2007, ErkEtAl2010} in \refeq{erkpadopado}. This is a measure of the strength of the selectional preference \textit{SA} of a verb for a possible argument \textit{a\textsubscript{0}}, modeled as the weighted sum of the similarities between the candidate argument \textit{a\textsubscript{0}} and the actual arguments found in the corpus (each called \textit{a} in the formula). In \textcite{CappelliLenciPISA} and this dissertation I measure argument similarity with the cosine similarity.
 
 \begin{equation} \labeq{erkpadopado}
@@ -330,7 +330,7 @@ Then, I manually filtered the remaining nouns so that each verb only takes direc
     \item mistagged direct objects (e.g. 'disorder' as an object of 'to eat', which is clearly the result of the automatic corpus tagger interpreting 'eating' in 'eating disorder' as a verb rather than as an adjective)
     \item 'thing' (and 'stuff'), which appears with every transitive verb and is thus irrelevant
 \end{itemize}
-The files containing the complete list of direct objects of each verb, both raw and cleaned, both in English and in Italian, are freely available \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}.\\
+The files containing the complete list of direct objects of each verb, both raw and cleaned, both in English and in Italian, are freely available \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}\sidenote{https://github.com/giuliacappelli/ dissertationData}.\\
 I based my operative choices regarding the vector spaces and weighting functions on the results I obtained in the original Computational PISA study. In particular, I computed word2vec neural embeddings with the Python library Gensim with the same parameters for English and Italian, i.e. Skipgram with Negative Sampling (SGNS) with 5 noise words, window of 10 words, 300-dimension vectors, ignoring all words with an absolute frequency lower than 10. Among the five functions defined in \textcite{CappelliLenciPISA}, I employed the FRQ weighting function because it is the best-performing among all five, both in weighted and in sorted models of Computational PISA.
 
 \paragraph{Results}
@@ -354,7 +354,7 @@ The two lists of 180 stimuli was used to create two Google Form surveys (with ra
 PISA_{v} = \frac{\sum_{i} r_{v}}{i}
 \end{equation}
 
-The Behavioral PISA scores thus obtained were then normalized to fall between 0 and 1. The Python script I coded to generate the stimuli and compute the Behavioral PISA scores for each verb is freely available \href{https://github.com/giuliacappelli/behavioralPISA}{on my GitHub profile}.
+The Behavioral PISA scores thus obtained were then normalized to fall between 0 and 1. The Python script I coded to generate the stimuli and compute the Behavioral PISA scores for each verb is freely available \href{https://github.com/giuliacappelli/behavioralPISA}{on my GitHub profile}\sidenote{https://github.com/giuliacappelli/ behavioralPISA}.
 
 \paragraph{Results} 
 The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_bpisa}.\\ 
