@@ -22,21 +22,32 @@ cambiare titolo, l'ho preso da Keller! qui devo dire cosa voglio dimostrare nell
 descrizione dettagliata di capitoli e sezioni
 
 \subsection{Supporting materials}
-script e dati miei su GitHub!
+With an eye to the Open Science framework, I am using open source software and languages to collect and analyse data for this thesis whenever possible, and I am sharing my data, scripts and results on dedicated GitHub repositories. Should anyone in the future read these pages and find themselves interested in replicating my results, or testing new models on the data I collected, or using these materials in any other way, they will be able to do so effortlessly (and without spending money on proprietary software).\\
+The interested reader will find my data, i.e. the stimuli for each experiment and the raw results I got from participants, \href{https://github.com/giuliacappelli/dissertationData}{on my GitHub profile}\sidenote{https://github.com/giuliacappelli/ dissertationData}. In more detail, this repository contains:
+\begin{itemize}
+    \item 30 target verbs and 10 filler verbs both for English and for Italian, used in all the computational (\refsec{predictor_sps}) and behavioral (\refsec{behavPisa} and \refch{judgments}) experiments, as in \refapp{app_verbs}.
+    \item full lists of the direct objects of each target verb as extracted from the ukWaC corpus for English and from itWaC for Italian, both raw and manually cleaned (as detailed in \refsec{compuPisa}).
+    \item stimuli, full judgments elicited from 25 participants per language on a 7-point Likert scale, and final scores obtained in the Behavioral PISA experiment (\refsec{behavPisa}), also provided in \refapp{app_behavPisa}.
+    \item each verb tagged with its features relative to the verb-specific predictors of object drop, i.e. telicity, manner specification, and semantic selectivity, as in \refapp{app_predictors}.
+    \item stimuli and full judgments elicited from 30 participants per language on a 7-point Likert scale in the main behavioral experiment of this thesis (\refch{judgments}), aimed towards creating a Stochastic Optimality Theoretic model of object drop in English and Italian (\refch{model}), as in \refapp{app_stimuli}.
+\end{itemize}
+As for the data processing, analysis of results, computational implementation of experimental designs, and creation of stimuli, I coded several Python scripts and documented their usage on GitHub. In detail, they are as follows:
+\begin{itemize}    
+    \item \href{https://github.com/giuliacappelli/checkPolysemy}{Quantify the polysemy of words in a list}\sidenote{https://github.com/giuliacappelli/ checkPolysemy} using WordNet (Wu-Palmer Similarity), as in \nrefsec{verbs}.
+    \item \href{https://github.com/giuliacappelli/behavioralPISA}{Behavioral PISA}\sidenote{https://github.com/giuliacappelli/ behavioralPISA}, a (behavioral) measure of Preference In Selection of Arguments to model verb argument recoverability, as in \nrefsec{behavPisa}. The script takes care both of creating the stimuli for the experiment and of generating Behavioral PISA scores based on the Likert-scale acceptability judgments provided by human participants.
+    \item \href{https://github.com/giuliacappelli/PsychopyToMedina}{Psychopy-to-Medina converter}\sidenote{https://github.com/giuliacappelli/ PsychopyToMedina}, to convert the output of my PsychoPy behavioral experiment (\refch{judgments}) into a suitable input for my scripts to analyse the results (\refch{results}) and create Stochastic OT models of the implicit object construction following \textcite{Medina2007} (\refch{model}).
+    \item \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{Modeling the grammaticality of implicit objects}\sidenote{https://github.com/giuliacappelli/ MedinaStochasticOptimalityTheory} based on Medina (2007)'s variant of Stochastic Optimality Theory, as in \nrefch{results} and \nrefch{model}.
+    \item \href{https://github.com/giuliacappelli/generateMockLikertGrammaticalityJudgments}{Generate mock Likert-scale acceptability judgments}\sidenote{https://github.com/giuliacappelli/ generateMockLikertGrammaticalityJudgments} based on factor levels specified in the input, to test the above Stochastic Optimality Theoretic model on ideal data before running the experiment proper.
+\end{itemize}
 
-\subsection{LAVORI MIEI}
-Keller ha una sezione "Collaborations and published work", io qui metterei Computational PISA (e le tre conferenze), la conferenza di Venezia, altro dello stesso tipo
-
-
-
-% \section{Citations} % \textcite = \citet, \parencite = \citep
-
-% \index{citations}
-% To cite someone \cite{Visscher2008,James2013}, \textcite{Visscher2008,James2013}, \parencite{Visscher2008,James2013} is very simple: just 
-% use the \Command{sidecite}\index{\Command{sidecite}} command. It does 
-% not have an offset argument yet, but it probably will in the future. 
-% This command supports multiple entries, as you can see, and by default 
-% it prints the reference on the margin as well as adding it to the 
-% bibliography at the end of the document. Note that the citations have 
-% nothing to do with the text, \sidecite{James2013} but they are completely 
-% random as they only serve the purpose to illustrate the feature.
+\subsection{Published work and outreach}
+Relevant parts of the experimental section of this thesis have been shared with the scientific community, both in written form and during conferences. The original distributional measure of Preference In Selection of Arguments (Computational PISA) discussed in \textcite{CappelliLenciPISA}, tested on large sets of transitive verbs and Instrument verbs in English, was presented at:
+\begin{itemize}
+    \item *SEM 2020, 9th Joint Conference on Lexical and Computational Semantics, December 12-13th 2020, online due to the Covid-19 pandemic (originally in Barcelona, Spain)
+    \item LSA 2021, 95th Annual Meeting of the Linguistic Society of America, January 7-10th 2021, online due to the Covid-19 pandemic (originally in San Francisco, California)
+    \item CLiC-it 2020, 7th Italian Conference on Computational Linguistics, March 1-3rd 2021, online due to the Covid-19 pandemic (originally in Bologna, Italy)
+\end{itemize}
+The results of the main behavioral experiment of this thesis (detailed in \refch{judgments} and \refch{results}), especially the ones pertaining to Italian, were presented at:
+\begin{itemize}
+    \item SyntOp 2022, Syntactic Optionality in Italian, July 4-5th 2022, Venice (Italy)
+\end{itemize}
