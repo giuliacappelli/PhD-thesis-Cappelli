@@ -357,7 +357,45 @@ PISA_{v} = \frac{\sum_{i} r_{v}}{i}
 The Behavioral PISA scores thus obtained were then normalized to fall between 0 and 1. The Python script I coded to generate the stimuli and compute the Behavioral PISA scores for each verb is freely available \href{https://github.com/giuliacappelli/behavioralPISA}{on my GitHub profile}\sidenote{https://github.com/giuliacappelli/ behavioralPISA}.
 
 \paragraph{Results} 
-The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_bpisa}.\\ 
+The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_bpisa}.
+
+
+\subsection{\hl{Model evaluation}}
+
+The three models of semantic selectivity as a proxy to the recoverability of the direct objects of a verb discussed in this section, i.e. Resnik's SPS, Computational PISA, and Behavioral PISA, all capture different aspects of the same phenomenon and they leverage different computational implementations. Resnik's SPS is a taxonomy-based measure which looks at the WordNet classes direct objects belong to, in order to compute the selectional strength of a transitive verb. Computational PISA is a corpus-based measure whose implementation is rooted in distributional semantics. Behavioral PISA models the recoverability of direct objects via acceptability judgments elicited from native speakers relative to the similarity of pairs of objects of a set of given verbs.\\
+Using human judgments on object similarity as a baseline to evaluate the performance of computational models, in this section I will consider Behavioral PISA the benchmark against which Resnik's SPS and Computational PISA are to be compared.
+
+Based on the correlation matrix in \reftab{sps_correlmatrix_eng}, relative to the three models of semantic selectivity in English, it appears that Computational PISA is a significantly reliable model (Pearson $\rho$ 0.685, p < 0.001), while Resnik's SPS does not make the cut (Pearson $\rho$ 0.286, non-significant).
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Correlation matrix for the three models of semantic selectivity in English. Significance levels are star-marked in the table as follows:\\ 0 '***'  0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
+\labtab{sps_correlmatrix_eng}
+\begin{tabular}{l|lll}
+      & \textbf{SPS}   & \textbf{Comp. PISA}    & \textbf{Behav. PISA}    \\
+\hline
+\textbf{SPS}   &       & 0.330 .     & 0.286    \\
+\textbf{Comp. PISA} & 0.330 .  &          & 0.685 *** \\
+\textbf{Behav. PISA} & 0.286 & 0.685 *** &     
+\end{tabular}
+\end{table}
+
+Similarly, based on the correlation matrix in \reftab{sps_correlmatrix_ita}, relative to the three models of semantic selectivity in Italian, it results that Computational PISA in Italian is just as good a model of semantic selectivity as it is in English, with a Pearson $\rho$ of 0.687, significant at the 0.001 level. Interestingly, Resnik's SPS is also somewhat a good model if compared against human judgments (Pearson $\rho$ 0.522, p < 0.05), but way less so than Computational PISA.
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Correlation matrix for the three models of semantic selectivity in Italian. Significance levels are star-marked in the table as follows:\\ 0 '***'  0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
+\labtab{sps_correlmatrix_ita}
+\begin{tabular}{l|lll}
+      & \textbf{SPS}   & \textbf{Comp. PISA}    & \textbf{Behav. PISA}    \\
+\hline
+\textbf{SPS}   &       & 0.746 ***     & 0.522 *    \\
+\textbf{Comp. PISA} & 0.746 ***  &          & 0.687 *** \\
+\textbf{Behav. PISA} & 0.522 * & 0.687 *** &     
+\end{tabular}
+\end{table}
+
+Thus, Computational PISA compares favorably to Behavioral PISA both in English and in Italian, making it a sensible choice for a distributional model of a verb's semantic selectivity, especially considering that both PISAs are based on the pairwise similarity of direct objects.\\
+Incidentally, \reftab{sps_correlmatrix_eng} and \reftab{sps_correlmatrix_ita} also show that there is a much higher correlation between Computational PISA and Resnik's SPS in Italian (Pearson $\rho$ 0.746, p < 0.001) than in English (Pearson $\rho$ 0.330, not quite significant). These results suggest that, while being methodologically closer to Behavioral PISA as a pairwise similarity-based model, Computational PISA in Italian shares with Resnik's SPS something even more relevant. Given that Computational PISA, unlike Resnik's SPS, does not make use of WordNet or other taxonomies, it stands to reason that the common factor between these two measures of semantic selectivity in Italian has to be itWaC, i.e. the corpus used in both their computational implementations. More light on the difference between ukWaC and itWaC on the linguistic models of object drop they yield will be shed in \nrefch{results} and \nrefch{model}.
+
 
 \section{Telicity} \labsec{predictor_telicity}
 

@@ -8,18 +8,24 @@
 
 \subsection{Operative pipeline} \labsec{likert_pipeline}
 
-script Psychopy-to-Medina, 3 script Medina miei, forse altro (dire che questa tesi fa meglio di Medina, che invece aveva soltanto Excel e poco altro)
+This paragraph outlines the technical steps needed to obtain the same results I got using the same scripts I coded, for the sake of replicability. I am improving on the operative pipeline employed by \textcite{Medina2007}, which implied collecting judgments on an undisclosed platform and creating a Stochastic Optimality Theoretic model by means of Excel Solver, both because I use non-proprietary software and languages one can download and use for free, and because I am making my Python scripts and raw input data publicly accessible. As pointed out before, all the raw input data necessary to run my scripts, which in this case are the Likert judgments provided by human participants to the experiment in \refch{judgments}, are available \href{https://github.com/giuliacappelli/dissertationData}{in a dedicated GitHub repository}\footnote{https://github.com/giuliacappelli/dissertationData}.\\
+Since the script taking care of the data pre-processing, preliminary analysis, and model creation are designed to work on the barest of input data (i.e. lacking any platform-dependent additional information such as datestamps, operative systems, etc.), the first step in this pipeline is the cleansing and reshaping of the output generated in the PsychoPy-Pavlovia-Prolific process of judgment gathering detailed in \refsec{participants}. This result can be achieved using \href{https://github.com/giuliacappelli/PsychopyToMedina}{my dedicated script}\footnote{https://github.com/giuliacappelli/PsychopyToMedina} on GitHub, which takes care of taking the full Pavlovia-generated file as input and yielding a tabular output with the minimal information necessary to run my Stochastic Optimality Theoretic analysis. The script also anonymizes the participants' names to make the data shareable, and it can (optionally, depending on the experimenter's needs) filter out any participant providing polar either-1-or-7 judgments when prompted to make full use of the 7-point Likert scale.\\
+The judgments are now ready to be processed with \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{the main Python program}\footnote{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}, which requires an input comprised of columns for the verb lemmas, the sentence type (target, control or filler), a column for each predictor of object drop in the desired model, and a column with the judgments provided by each participant in the experiment. This script preprocesses the judgments as described in \refsec{likert_preprocessing}, generates the data used in the analysis provided in this Chapter, and models the judgments according to the Stochastic Optimality Theory requirements described in \refch{modeltheory} (final results in \refch{model}).
 
 \subsection{Data preprocessing} \labsec{likert_preprocessing}
 
-judgs normalizzati come Najoung, Zipf freq, etc
+Before moving forward to the actual data analysis and modeling, the main script carries out three preprocessing steps:
+\begin{enumerate}
+    \item computing the min-max normalized semantic selectivity values for Resnik's SPS, Computational PISA, and Behavioral PISA input files (first introduced in \refsec{predictor_sps}), to make the results comparable across models;
+    \item multiplying the semantic selectivity score of each verb by its Zipf value (first introduced in \refsec{verbs}), i.e. the base 10 logarithm of the frequency-per-billion-words of the verb in a given corpus, to avoid having the verb's frequency confound the information provided by the semantic selectivity models;
+    \item computing the within-subject z-scores for the judgments, then averaging these scores to obtain the mean judgment for each sentence in the stimuli list, then normalizing the mean judgments between 0 and 1 (following the technique by \textcite{KimEtAl2018, KimEtAl2019, KimEtAl2019a}), to account for inevitable differences in the way each participant makes use of the Likert scale.
+\end{enumerate}
+
+This kind of preprocessing also improves on \textcite{Medina2007}'s setting, where both semantic selectivity and judgment data were analysed raw, because it minimizes the potentially disruptive influence of external factors such as corpus frequencies and individual differences in humans on the final Stochastic Optimality Theoretic model of object drop.\\
+In the next sections I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that a comprenehsive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible. The model itself is presented and discussed in \refch{model}.
 
 
 \section{English results} \labsec{eng_judgresult}
-
-\subsection{Expected gradience} 
-
-vedere se mi riesce di creare quei grafici "a dune" che avevo fatto per la conf sui verbi di moto
 
 \subsection{Semantic selectivity} 
 
@@ -57,11 +63,6 @@ testo
 
 
 \section{Italian results} \labsec{ita_judgresult}
-
-
-\subsection{Expected gradience} 
-
-testo
 
 \subsection{Semantic selectivity} 
 
