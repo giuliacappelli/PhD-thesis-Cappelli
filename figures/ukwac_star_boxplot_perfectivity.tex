@@ -1,0 +1,103 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{darkslategray51}{RGB}{51,51,51}
+\definecolor{gray127}{RGB}{127,127,127}
+% \definecolor{lightgray}{RGB}{211,211,211}
+\definecolor{lightgray}{RGB}{219, 234, 242}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xlabel={perfectivity},
+xmin=-0.5, xmax=1.5,
+xtick style={color=black},
+xtick={0,1},
+xticklabels={imperfective,perfective},
+y grid style={darkgray176},
+ylabel={judgments},
+% ymin=-0.05, ymax=1.05,
+ytick style={color=black}
+]
+\path [draw=gray127, fill=lightgray, semithick]
+(axis cs:-0.4,0.602204346709387)
+--(axis cs:0.4,0.602204346709387)
+--(axis cs:0.4,0.98704066489974)
+--(axis cs:-0.4,0.98704066489974)
+--(axis cs:-0.4,0.602204346709387)
+--cycle;
+\path [draw=gray127, fill=lightgray, semithick]
+(axis cs:0.6,0.456605486312154)
+--(axis cs:1.4,0.456605486312154)
+--(axis cs:1.4,0.892890584144649)
+--(axis cs:0.6,0.892890584144649)
+--(axis cs:0.6,0.456605486312154)
+--cycle;
+\addplot [semithick, gray127]
+table {%
+0 0.602204346709387
+0 0.0381659063849534
+};
+\addplot [semithick, gray127]
+table {%
+0 0.98704066489974
+0 1
+};
+\addplot [semithick, gray127]
+table {%
+-0.2 0.0381659063849534
+0.2 0.0381659063849534
+};
+\addplot [semithick, gray127]
+table {%
+-0.2 1
+0.2 1
+};
+\addplot [semithick, gray127]
+table {%
+1 0.456605486312154
+1 0
+};
+\addplot [semithick, gray127]
+table {%
+1 0.892890584144649
+1 0.983829851784213
+};
+\addplot [semithick, gray127]
+table {%
+0.8 0
+1.2 0
+};
+\addplot [semithick, gray127]
+table {%
+0.8 0.983829851784213
+1.2 0.983829851784213
+};
+\addplot [semithick, darkslategray51]
+table {%
+0 1.083
+0 1.105
+1 1.105
+1 1.083
+};
+\addplot [semithick, gray127]
+table {%
+-0.4 0.854302146895634
+0.4 0.854302146895634
+};
+\addplot [semithick, gray127]
+table {%
+0.6 0.703338349500439
+1.4 0.703338349500439
+};
+\draw (axis cs:0.5,1.105) ++(0pt,1pt) node[
+  scale=0.5,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{**};
+\end{axis}
+
+\end{tikzpicture}

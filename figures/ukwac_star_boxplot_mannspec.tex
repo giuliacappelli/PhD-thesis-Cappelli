@@ -1,0 +1,111 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{darkslategray51}{RGB}{51,51,51}
+\definecolor{gray127}{RGB}{127,127,127}
+% \definecolor{lightgray}{RGB}{211,211,211}
+\definecolor{lightgray}{RGB}{219, 234, 242}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xlabel={manner specification},
+xmin=-0.5, xmax=1.5,
+xtick style={color=black},
+xtick={0,1},
+xticklabels={specified,non-specified},
+y grid style={darkgray176},
+ylabel={judgments},
+% ymin=-0.05, ymax=1.05,
+ytick style={color=black}
+]
+\path [draw=gray127, fill=lightgray, semithick]
+(axis cs:-0.4,0.442902217548646)
+--(axis cs:0.4,0.442902217548646)
+--(axis cs:0.4,0.844149815471059)
+--(axis cs:-0.4,0.844149815471059)
+--(axis cs:-0.4,0.442902217548646)
+--cycle;
+\path [draw=gray127, fill=lightgray, semithick]
+(axis cs:0.6,0.662358679791834)
+--(axis cs:1.4,0.662358679791834)
+--(axis cs:1.4,0.979057171503307)
+--(axis cs:0.6,0.979057171503307)
+--(axis cs:0.6,0.662358679791834)
+--cycle;
+\addplot [semithick, gray127]
+table {%
+0 0.442902217548646
+0 0.0569351554109251
+};
+\addplot [semithick, gray127]
+table {%
+0 0.844149815471059
+0 0.987272852584251
+};
+\addplot [semithick, gray127]
+table {%
+-0.2 0.0569351554109251
+0.2 0.0569351554109251
+};
+\addplot [semithick, gray127]
+table {%
+-0.2 0.987272852584251
+0.2 0.987272852584251
+};
+\addplot [semithick, gray127]
+table {%
+1 0.662358679791834
+1 0.286178067321328
+};
+\addplot [semithick, gray127]
+table {%
+1 0.979057171503307
+1 1
+};
+\addplot [semithick, gray127]
+table {%
+0.8 0.286178067321328
+1.2 0.286178067321328
+};
+\addplot [semithick, gray127]
+table {%
+0.8 1
+1.2 1
+};
+\addplot [black, mark=diamond*, mark size=2.5, mark options={solid,fill=gray127}, only marks]
+table {%
+1 0.0498803069817624
+1 0.0381659063849534
+1 0
+1 0.0386778298950844
+1 0.124033746002738
+};
+\addplot [semithick, darkslategray51]
+table {%
+0 1.083
+0 1.105
+1 1.105
+1 1.083
+};
+\addplot [semithick, gray127]
+table {%
+-0.4 0.644561209094105
+0.4 0.644561209094105
+};
+\addplot [semithick, gray127]
+table {%
+0.6 0.898289017165861
+1.4 0.898289017165861
+};
+\draw (axis cs:0.5,1.105) ++(0pt,1pt) node[
+  scale=0.5,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{***};
+\end{axis}
+
+\end{tikzpicture}

@@ -22,120 +22,158 @@ Before moving forward to the actual data analysis and modeling, the main script 
 \end{enumerate}
 
 This kind of preprocessing also improves on \textcite{Medina2007}'s setting, where both semantic selectivity and judgment data were analysed raw, because it minimizes the potentially disruptive influence of external factors such as corpus frequencies and individual differences in humans on the final Stochastic Optimality Theoretic model of object drop.\\
-In the next sections I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that a comprenehsive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible. The model itself is presented and discussed in \refch{model}.
+In the next sections, following \textcite{Medina2007}, I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that a comprenehsive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible. The model itself is presented and discussed in \refch{model}.
 
 
 \section{English results} \labsec{eng_judgresult}
 
-\subsection{Semantic selectivity} 
+\subsection{Semantic selectivity}
 
-\paragraph{Resnik's SPS} testo
+The effect of semantic selectivity on the acceptability of the implicit object in English is quantified by means of a Pearson correlation between them. The results of this computation are visualized in \reffig{explore_eng_semsel_sps} for Resnik's SPS, in \reffig{explore_eng_semsel_cpisa} for Computational PISA, and in \reffig{explore_eng_semsel_bpisa} for Behavioral PISA.\\
+The first thing to strike the eye of the observer is that the three models of semantic selectivity correlate with varying degrees of accuracy with the human judgments. Unsurprisingly the Selectional Preference Strength, a now-classic measure by \textcite{Resnik1993,Resnik1996}, yields unsatisfactory results which fall quite short of statistical significance. Computational PISA performs much better, with significant (p = 0.038) results, even though the correlation between it and the judgments is very modest (Pearson's $\rho$ = 0.381). Finally, Behavioral PISA appears to be by far the best-performing model of semantic selectivity, with a Pearson's $\rho$ of 0.494 against human judgments and a p value of 0.006.\\ 
+Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs}, these results should not come as a surprise. Indeed, being the gold standard of semantic selectivity models due to being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is a taxonomy-based measure.\\
+All in all, semantic selectivity (especially the PISA models) is not a bad predictor of object drop in English, but it's far from being a reliable one when considered in isolation from all the other possible ones.
 
-\paragraph{Computational PISA} testo
+% parlare dei singoli puntini rilevanti?
 
-\paragraph{Behavioral PISA} testo
 
-\subsection{Telicity} 
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Resnik's SPS) and normalized acceptability judgments on object drop in English.}
+\labfig{explore_eng_semsel_sps}
+    \input figures/ukwac_preliminary_scatterplot_SPS.tex
+\end{figure}
 
-testo
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Computational PISA) and normalized acceptability judgments on object drop in English.}
+\labfig{explore_eng_semsel_cpisa}
+    \input figures/ukwac_preliminary_scatterplot_Computational_PISA.tex
+\end{figure}
 
-\subsection{Perfectivity} 
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Behavioral PISA) and normalized acceptability judgments on object drop in English.}
+\labfig{explore_eng_semsel_bpisa}
+    \input figures/ukwac_preliminary_scatterplot_Behavioral_PISA.tex
+\end{figure}
 
-testo
 
-\subsection{Iterativity}
+\subsection{Binary predictors} 
 
-testo
+telicity
 
-\subsection{Manner specification} 
+\begin{figure}[htb]
+\caption{Effect of telicity on normalized acceptability judgments about object drop in English.}
+\labfig{explore_eng_telicity}
+    \input figures/ukwac_star_boxplot_telicity.tex
+\end{figure}
 
-testo
+perfectivity
+
+\begin{figure}[htb]
+\caption{Effect of perfectivity on normalized acceptability judgments about object drop in English.}
+\labfig{explore_eng_perfectivity}
+    \input figures/ukwac_star_boxplot_perfectivity.tex
+\end{figure}
+
+iterativity
+
+\begin{figure}[htb]
+\caption{Effect of iterativity on normalized acceptability judgments about object drop in English.}
+\labfig{explore_eng_iterativity}
+    \input figures/ukwac_star_boxplot_iterativity.tex
+\end{figure}
+
+mannspec
+
+\begin{figure}[htb]
+\caption{Effect of manner specification on normalized acceptability judgments about object drop in English.}
+\labfig{explore_eng_mannspec}
+    \input figures/ukwac_star_boxplot_mannspec.tex
+\end{figure}
+
 
 \subsection{Joint effect of predictors} 
 
-
-
-\paragraph{Resnik's SPS} testo
-
-\paragraph{Computational PISA} testo
-
-\paragraph{Behavioral PISA} testo
+tre modelli misti con le tre regressioni (?)
 
 
 \section{Italian results} \labsec{ita_judgresult}
 
 \subsection{Semantic selectivity} 
 
-\paragraph{Resnik's SPS} testo
+The effect of semantic selectivity on the acceptability of the implicit object in Italian is quantified by means of a Pearson correlation between them. The results of this computation are visualized in \reffig{explore_ita_semsel_sps} for Resnik's SPS, in \reffig{explore_ita_semsel_cpisa} for Computational PISA, and in \reffig{explore_ita_semsel_bpisa} for Behavioral PISA.\\
+What I observed about the correlations between the three models of semantic selectivity and human judgments about object drop in English still holds true, \textit{mutatis mutandis}, when considering the Italian data. First of all, it appears that Resnik's SPS is once again the worst-performing model among the three (with a staggeringly low, non-significant Pearson's $\rho$ of -0.055), Computational PISA makes the situation somewhat better but still not enough to be statistically significant (Pearson's $\rho$ = 0.223), and Behavioral PISA is quite a good model of semantic selectivity (Pearson's $\rho$ = 0.481, p value = 0.007).\\
+f
 
-\paragraph{Computational PISA} testo
+% dire che la cattiva performance di SPS e cPisa può dipendere dal corpus
 
-\paragraph{Behavioral PISA} testo
+% Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs}, these results should not come as a surprise. Indeed, being the gold standard of semantic selectivity models due to being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is a taxonomy-based measure.\\
+% All in all, semantic selectivity (especially the PISA models) is not a bad predictor of object drop in English, but it's far from being a reliable one when considered in isolation from all the other possible ones.
 
-\subsection{Telicity} 
+% % parlare dei singoli puntini rilevanti?
 
-testo
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Resnik's SPS) and normalized acceptability judgments on object drop in Italian.}
+\labfig{explore_ita_semsel_sps}
+    \input figures/itwac_preliminary_scatterplot_SPS.tex
+\end{figure}
 
-\subsection{Perfectivity} 
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Computational PISA) and normalized acceptability judgments on object drop in Italian.}
+\labfig{explore_ita_semsel_cpisa}
+    \input figures/itwac_preliminary_scatterplot_Computational_PISA.tex
+\end{figure}
 
-testo
+\begin{figure}[htb]
+\caption{Correlation between semantic selectivity (Behavioral PISA) and normalized acceptability judgments on object drop in Italian.}
+\labfig{explore_ita_semsel_bpisa}
+    \input figures/itwac_preliminary_scatterplot_Behavioral_PISA.tex
+\end{figure}
 
-\subsection{Iterativity}
 
-testo
+\subsection{Binary predictors} 
 
-\subsection{Manner specification} 
+telicity
 
-testo
+\begin{figure}[htb]
+\caption{Effect of telicity on normalized acceptability judgments about object drop in Italian.}
+\labfig{explore_ita_telicity}
+    \input figures/itwac_star_boxplot_telicity.tex
+\end{figure}
+
+perfectivity
+
+\begin{figure}[htb]
+\caption{Effect of perfectivity on normalized acceptability judgments about object drop in Italian.}
+\labfig{explore_ita_perfectivity}
+    \input figures/itwac_star_boxplot_perfectivity.tex
+\end{figure}
+
+iterativity
+
+\begin{figure}[htb]
+\caption{Effect of iterativity on normalized acceptability judgments about object drop in Italian.}
+\labfig{explore_ita_iterativity}
+    \input figures/itwac_star_boxplot_iterativity.tex
+\end{figure}
+
+mannspec
+
+\begin{figure}[htb]
+\caption{Effect of manner specification on normalized acceptability judgments about object drop in Italian.}
+\labfig{explore_ita_mannspec}
+    \input figures/itwac_star_boxplot_mannspec.tex
+\end{figure}
+
 
 \subsection{Joint effect of predictors} 
 
-
-
-\paragraph{Resnik's SPS} testo
-
-\paragraph{Computational PISA} testo
-
-\paragraph{Behavioral PISA} testo
+tre modelli misti con le tre regressioni (?)
 
 
 
-\section{Comparing English and Italian} \labsec{sumup_judgresult}
+\section{Observations} \labsec{sumup_judgresult}
 
-testo
+the take-home message of this chapter is that no predictor alone is decisive\\
+confronto italiano-inglese
 
-% \subsection{Expected gradience} 
-
-% testo
-
-% \subsection{Semantic selectivity} 
-
-% \paragraph{Resnik's SPS} testo
-
-% \paragraph{Computational PISA} testo
-
-% \paragraph{Behavioral PISA} testo
-
-% \subsection{Telicity} 
-
-% testo
-
-% \subsection{Perfectivity} 
-
-% testo
-
-% \subsection{Iterativity}
-
-% testo
-
-% \subsection{Manner specification} 
-
-% testo
-
-% \subsection{Joint effect of predictors} 
-
-% \paragraph{Resnik's SPS} testo
-
-% \paragraph{Computational PISA} testo
-
-% \paragraph{Behavioral PISA} testo
+% dire che l'italiano SPS è consistentemente peggio dell'inglese (v. anche Model comparison SPS)

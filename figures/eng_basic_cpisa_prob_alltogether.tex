@@ -1,0 +1,53 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{gray}{RGB}{128,128,128}
+\definecolor{green01270}{RGB}{0,127,0}
+\definecolor{lightgray204}{RGB}{204,204,204}
+
+\begin{axis}[
+legend cell align={left},
+legend style={
+  fill opacity=0.8,
+  draw opacity=1,
+  text opacity=1,
+  at={(0.03,0.03)},
+  anchor=south west,
+  draw=lightgray204
+},
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xlabel={Computational PISA},
+xmin=-0.050000000065, xmax=1.050000001365,
+xtick style={color=black},
+xtick={1e-93,1.0000000013},
+xticklabels={0,1},
+y grid style={gray},
+ylabel={p (*INT ARG >> other constraints)},
+ymajorgrids,
+ymin=0, ymax=1.0311897366007,
+ytick style={color=black}
+]
+\addplot [semithick, red]
+table {%
+1e-93 0.887130899938128
+1.0000000013 0.936655566102664
+};
+\addlegendentry{p (*INT ARG >> FAITH ARG)}
+\addplot [semithick, blue]
+table {%
+1e-93 0.376205267970775
+1.0000000013 0.999999999999272
+};
+\addlegendentry{p (*INT ARG >> TELIC END)}
+\addplot [semithick, green01270]
+table {%
+1e-93 0.826070347516901
+1.0000000013 0.862726098770076
+};
+\addlegendentry{p (*INT ARG >> PERF CODA)}
+\end{axis}
+
+\end{tikzpicture}
