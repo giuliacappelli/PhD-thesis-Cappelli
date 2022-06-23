@@ -11,18 +11,18 @@ legend style={
   fill opacity=0.8,
   draw opacity=1,
   text opacity=1,
-  at={(1,0)},
+  at={(1,0.5)},
   anchor=west,
   draw=lightgray204
 },
 tick align=outside,
 tick pos=left,
-x grid style={gray},
+x grid style={gray, dotted},
 xlabel={Behavioral PISA},
 xmajorgrids,
 xmin=-0.050000000065, xmax=1.050000001365,
 xtick style={color=black},
-y grid style={gray},
+y grid style={gray, dotted},
 ylabel={probability of implicit object output},
 ymajorgrids,
 ymin=0, ymax=1,
@@ -81,7 +81,7 @@ table {%
 0.979591838008163 0.388550248424531
 1.0000000013 0.388192160238015
 };
-\addlegendentry{telic perfective iterative}
+\addlegendentry{telic perf iter}
 \addplot [semithick, blue]
 table {%
 1e-93 0.458722659121887
@@ -135,7 +135,7 @@ table {%
 0.979591838008163 0.429777367453174
 1.0000000013 0.428156762945303
 };
-\addlegendentry{telic imperfective iterative}
+\addlegendentry{telic imperf iter}
 \addplot [semithick, green01270]
 table {%
 1e-93 0.513976180285522
@@ -189,7 +189,7 @@ table {%
 0.979591838008163 0.800835820241228
 1.0000000013 0.807410789705415
 };
-\addlegendentry{atelic perfective iterative}
+\addlegendentry{atelic perf iter}
 \addplot [semithick, black]
 table {%
 1e-93 0.658975219966619
@@ -243,7 +243,7 @@ table {%
 0.979591838008163 0.885808494476692
 1.0000000013 0.890534187695652
 };
-\addlegendentry{atelic imperfective iterative}
+\addlegendentry{atelic imperf iter}
 \addplot [semithick, red, dashed]
 table {%
 1e-93 0.34313375819409
@@ -297,7 +297,7 @@ table {%
 0.979591838008163 0.388225498079227
 1.0000000013 0.388192160238015
 };
-\addlegendentry{telic perfective non-iterative}
+\addlegendentry{telic perf non-iter}
 \addplot [semithick, blue, dashed]
 table {%
 1e-93 0.439936036837956
@@ -351,7 +351,7 @@ table {%
 0.979591838008163 0.429418159476728
 1.0000000013 0.428156762945303
 };
-\addlegendentry{telic imperfective non-iterative}
+\addlegendentry{telic imperf non-iter}
 \addplot [semithick, green01270, dashed]
 table {%
 1e-93 0.492926693912982
@@ -405,7 +405,7 @@ table {%
 0.979591838008163 0.800166481564417
 1.0000000013 0.807410789705415
 };
-\addlegendentry{atelic perfective non-iterative}
+\addlegendentry{atelic perf non-iter}
 \addplot [semithick, black, dashed]
 table {%
 1e-93 0.631987413051476
@@ -459,7 +459,7 @@ table {%
 0.979591838008163 0.88506813562833
 1.0000000013 0.890534187695652
 };
-\addlegendentry{atelic imperfective non-iterative}
+\addlegendentry{atelic imperf non-iter}
 \end{axis}
 
 \end{tikzpicture}

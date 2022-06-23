@@ -11,18 +11,18 @@ legend style={
   fill opacity=0.8,
   draw opacity=1,
   text opacity=1,
-  at={(1,0)},
+  at={(1,0.5)},
   anchor=west,
   draw=lightgray204
 },
 tick align=outside,
 tick pos=left,
-x grid style={gray},
+x grid style={gray, dotted},
 xlabel={SPS},
 xmajorgrids,
 xmin=-0.050000000065, xmax=1.050000001365,
 xtick style={color=black},
-y grid style={gray},
+y grid style={gray, dotted},
 ylabel={probability of implicit object output},
 ymajorgrids,
 ymin=0, ymax=1,
@@ -81,7 +81,7 @@ table {%
 0.979591838008163 0.216296406092058
 1.0000000013 0.210672782340179
 };
-\addlegendentry{telic perfective iterative spec}
+\addlegendentry{tel perf iter spec}
 \addplot [semithick, blue]
 table {%
 1e-93 0.632219686912469
@@ -135,7 +135,7 @@ table {%
 0.979591838008163 0.247786802844028
 1.0000000013 0.241140608864362
 };
-\addlegendentry{telic imperfective iterative spec}
+\addlegendentry{tel imperf iter spec}
 \addplot [semithick, green01270]
 table {%
 1e-93 0.734885865516123
@@ -189,7 +189,7 @@ table {%
 0.979591838008163 0.348033018288033
 1.0000000013 0.340113161648972
 };
-\addlegendentry{atelic perfective iterative spec}
+\addlegendentry{atel perf iter spec}
 \addplot [semithick, black]
 table {%
 1e-93 0.877479710453594
@@ -243,7 +243,7 @@ table {%
 0.979591838008163 0.398702828418912
 1.0000000013 0.389300857812684
 };
-\addlegendentry{atelic imperfective iterative spec}
+\addlegendentry{atel imperf iter spec}
 \addplot [semithick, red, dashed]
 table {%
 1e-93 0.529481543878445
@@ -297,7 +297,7 @@ table {%
 0.979591838008163 0.212325938022178
 1.0000000013 0.206724977473817
 };
-\addlegendentry{telic perfective non-iterative spec}
+\addlegendentry{tel perf non-iter spec}
 \addplot [semithick, blue, dashed]
 table {%
 1e-93 0.632219686912439
@@ -351,7 +351,7 @@ table {%
 0.979591838008163 0.243238277944308
 1.0000000013 0.236621866297917
 };
-\addlegendentry{telic imperfective non-iterative spec}
+\addlegendentry{tel imperf non-iter spec}
 \addplot [semithick, green01270, dashed]
 table {%
 1e-93 0.734885865516087
@@ -405,7 +405,7 @@ table {%
 0.979591838008163 0.341644313032393
 1.0000000013 0.333739768846369
 };
-\addlegendentry{atelic perfective non-iterative spec}
+\addlegendentry{atel perf non-iter spec}
 \addplot [semithick, black, dashed]
 table {%
 1e-93 0.877479710453552
@@ -459,7 +459,7 @@ table {%
 0.979591838008163 0.391383997384178
 1.0000000013 0.382005734997674
 };
-\addlegendentry{atelic imperfective non-iterative spec}
+\addlegendentry{atel imperf non-iter spec}
 \addplot [semithick, red, dash pattern=on 1pt off 3pt on 3pt off 3pt]
 table {%
 1e-93 0.529481543878471
@@ -513,7 +513,7 @@ table {%
 0.979591838008163 0.447781531185732
 1.0000000013 0.446085431666268
 };
-\addlegendentry{telic perfective iterative nonspec}
+\addlegendentry{tel perf iter nonspec}
 \addplot [semithick, blue, dash pattern=on 1pt off 3pt on 3pt off 3pt]
 table {%
 1e-93 0.632219686912469
@@ -567,7 +567,7 @@ table {%
 0.979591838008163 0.512973636454657
 1.0000000013 0.510599002883206
 };
-\addlegendentry{telic imperfective iterative nonspec}
+\addlegendentry{tel imperf iter nonspec}
 \addplot [semithick, green01270, dash pattern=on 1pt off 3pt on 3pt off 3pt]
 table {%
 1e-93 0.734885865516123
@@ -621,7 +621,7 @@ table {%
 0.979591838008163 0.720505535195435
 1.0000000013 0.720166719422615
 };
-\addlegendentry{atelic perfective iterative nonspec}
+\addlegendentry{atel perf iter nonspec}
 \addplot [semithick, black, dash pattern=on 1pt off 3pt on 3pt off 3pt]
 table {%
 1e-93 0.877479710453594
@@ -675,7 +675,7 @@ table {%
 0.979591838008163 0.825403279800764
 1.0000000013 0.824318354162164
 };
-\addlegendentry{atelic imperfective iterative nonspec}
+\addlegendentry{atel imperf iter nonspec}
 \addplot [semithick, red, dotted]
 table {%
 1e-93 0.529481543878445
@@ -729,7 +729,7 @@ table {%
 0.979591838008163 0.439561781704097
 1.0000000013 0.437726220673833
 };
-\addlegendentry{telic perfective non-iterative nonspec}
+\addlegendentry{tel perf non-iter nonspec}
 \addplot [semithick, blue, dotted]
 table {%
 1e-93 0.632219686912439
@@ -783,7 +783,7 @@ table {%
 0.979591838008163 0.503557181132851
 1.0000000013 0.501030869753001
 };
-\addlegendentry{telic imperfective non-iterative nonspec}
+\addlegendentry{tel imperf non-iter nonspec}
 \addplot [semithick, green01270, dotted]
 table {%
 1e-93 0.734885865516088
@@ -837,7 +837,7 @@ table {%
 0.979591838008163 0.707279498418628
 1.0000000013 0.706671489293945
 };
-\addlegendentry{atelic perfective non-iterative nonspec}
+\addlegendentry{atel perf non-iter nonspec}
 \addplot [semithick, black, dotted]
 table {%
 1e-93 0.877479710453552
@@ -891,7 +891,7 @@ table {%
 0.979591838008163 0.810251676376398
 1.0000000013 0.808871422793794
 };
-\addlegendentry{atelic imperfective non-iterative nonspec}
+\addlegendentry{atel imperf non-iter nonspec}
 \end{axis}
 
 \end{tikzpicture}
