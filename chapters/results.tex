@@ -21,8 +21,13 @@ Before moving forward to the actual data analysis and modeling, the main script 
     \item computing the within-subject z-scores for the judgments, then averaging these scores to obtain the mean judgment for each sentence in the stimuli list, then normalizing the mean judgments between 0 and 1 (following the technique by \textcite{KimEtAl2018, KimEtAl2019, KimEtAl2019a}), to account for inevitable differences in the way each participant makes use of the Likert scale.
 \end{enumerate}
 
-This kind of preprocessing also improves on \textcite{Medina2007}'s setting, where both semantic selectivity and judgment data were analysed raw, because it minimizes the potentially disruptive influence of external factors such as corpus frequencies and individual differences in humans on the final Stochastic Optimality Theoretic model of object drop.\\
-In the next sections, following \textcite{Medina2007}, I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that a comprenehsive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible. The model itself is presented and discussed in \refch{model}.
+This kind of preprocessing also improves on \textcite{Medina2007}'s setting, where both semantic selectivity and judgment data were analysed by considering their raw, original values, because it minimizes the potentially disruptive influence of external factors such as corpus frequencies and individual differences in humans on the final Stochastic Optimality Theoretic model of object drop.\\
+In the next sections, following \textcite{Medina2007}, I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that:
+\begin{itemize}
+    \item no factor alone has a main effect so strong as to fully predict the grammaticality of the implicit object construction;
+    \item a comprehensive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible.
+\end{itemize}
+The model itself is presented and discussed in \refch{model}.
 
 
 \section{English results} \labsec{eng_judgresult}
@@ -31,7 +36,7 @@ In the next sections, following \textcite{Medina2007}, I will provide a thorough
 
 The effect of semantic selectivity on the acceptability of the implicit object in English is quantified by means of a Pearson correlation between them. The results of this computation are visualized in \reffig{explore_eng_semsel_sps} for Resnik's SPS, in \reffig{explore_eng_semsel_cpisa} for Computational PISA, and in \reffig{explore_eng_semsel_bpisa} for Behavioral PISA.\\
 The first thing to strike the eye of the observer is that the three models of semantic selectivity correlate with varying degrees of accuracy with the human judgments. Unsurprisingly the Selectional Preference Strength, a now-classic measure by \textcite{Resnik1993,Resnik1996}, yields unsatisfactory results which fall quite short of statistical significance. Computational PISA performs much better, with significant (p = 0.038) results, even though the correlation between it and the judgments is very modest (Pearson's $\rho$ = 0.381). Finally, Behavioral PISA appears to be by far the best-performing model of semantic selectivity, with a Pearson's $\rho$ of 0.494 against human judgments and a p value of 0.006.\\ 
-Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs} (see \reftab{sps_correlmatrix_eng} in particular), these results should not come as a surprise. Indeed, being the gold standard of semantic selectivity models due to being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is a taxonomy-based measure.\\
+Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs} (see \reftab{sps_correlmatrix_eng} in particular), these results should not come as a surprise. Indeed, being the gold standard of semantic selectivity models due to being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is taxonomy-based.\\
 All in all, semantic selectivity (especially the PISA models) is not a bad predictor of object drop in English, but it's far from being a reliable one when considered in isolation from all the other possible ones.
 
 % parlare dei singoli puntini rilevanti?
@@ -59,11 +64,9 @@ All in all, semantic selectivity (especially the PISA models) is not a bad predi
 \subsection{Binary predictors} 
 
 \paragraph{Telicity}
-The boxplots in \reffig{explore_eng_telicity} illustrate the main effect of telicity on the acceptability judgments on the implicit object construction in English. A Mann-Whitney U test reveals that telic verbs were judged as significantly (p < 0.0001) less grammatical than atelic verbs, consistently with expectations (refer back to \refsec{telicity} and \refsec{predictor_telicity}).\\
-Despite the statistical significance of the difference between the ratings of telic and atelic verbs, it is not the case that all telic verbs receive ratings below a given threshold and all atelic verbs receive ratings above it. On the contrary, judgments for telic verbs span almost all the way from 0 to 1, and while judgments for atelic verbs have a much tighter distribution (with their interquartile range\sidenote{The interquartile range is the difference between the first quartile and the third quartile, which are the medians of the lower and the upper half of the dataset, respectively. Graphically, it is rendered as the so-called "box" in the boxplot. The other parts of a boxplot are the median (second quartile), cutting in half the interquartile range, and the so-called "whiskers", i.e. the minimum and maximum values in the dataset. Outliers are shown here as little diamonds outside of the boundaries traced by the whiskers.} being fully above the interquartile range for telic verbs), they still overlap in a non-negligible way.\\
-testo
-
-% motivare l'outlier
+The boxplots in \reffig{explore_eng_telicity} illustrate the main effect of telicity on the acceptability judgments on the implicit object construction in English. A Mann-Whitney U test reveals that telic verbs were judged as significantly (p < 0.0001) less grammatical than atelic verbs, consistently with expectations (refer back to \refsec{telicity} and \refsec{predictor_telicity}). In particular, the median rating for telic verbs is 0.501 and the median rating for atelic verbs is 0.906.\\
+Despite the statistical significance of the difference between the ratings of telic and atelic verbs, it is not the case that all telic verbs receive ratings below a given threshold and all atelic verbs receive ratings above it. On the contrary, judgments for telic verbs span almost all the way from 0 to 1, and while judgments for atelic verbs have a much tighter distribution (with their interquartile range\sidenote{The interquartile range is the difference between the first quartile and the third quartile, which are the medians of the lower and the upper half of the dataset, respectively. Graphically, it is rendered as the so-called "box" in the boxplot. The other parts of a boxplot are the median (second quartile), cutting the interquartile range, and the so-called "whiskers", i.e. the minimum and maximum values in the dataset. Outliers are shown in these boxplots as little diamonds outside of the boundaries traced by the whiskers.} being fully above the interquartile range for telic verbs), they still overlap in a non-negligible way.
+\reffig{explore_eng_telicity} only shows a single outlier among the atelic verbs, corresponding to the atelic, manner unspecified verb \textit{to cut} in the perfective, non-iterative sentence stimulus \textit{Sean had cut} (normalized acceptability rating of 0.286). This may depend on the fact that not only this verb is fairly resistant to object drop despite its atelicity, with all its ratings being within the lower 18 positions among the 72 atelic target stimuli, but this stimulus in particular also has two features which tend to favor the use of overt objects in sentences (i.e. perfectivity and lack of iterativity).
 
 \begin{figure}[htb]
 \caption{Effect of telicity on normalized acceptability judgments about object drop in English.}
@@ -71,8 +74,10 @@ testo
     \input figures/ukwac_star_boxplot_telicity.tex
 \end{figure}
 
+
 \paragraph{Perfectivity}
-The boxplots in \reffig{explore_eng_perfectivity} illustrate the main effect of perfectivity on the acceptability judgments on the implicit object construction in English.
+The boxplots in \reffig{explore_eng_perfectivity} illustrate the main effect of perfectivity on the acceptability judgments on the implicit object construction in English. The median rating for imperfective stimuli is 0.854 while the median rating for perfective stimuli is 0.703, and a Mann-Whitney U test shows that these medians are significantly different (p < 0.01). This result is compatible with the hypothesis that the imperfective aspect favors the omission of direct objects and perfective aspect resists it (refer back to \refsec{perfectivity} and \refsec{predictor_perfectivity}).\\
+However, the distribution of judgments both for imperfective and for perfective stimuli is very sparse, given that both span almost all the way from 0 to 1, and there is significant overlap between both interquartile ranges. Neither imperfective nor perfective stimuli received outlier ratings.
 
 \begin{figure}[htb]
 \caption{Effect of perfectivity on normalized acceptability judgments about object drop in English.}
@@ -81,7 +86,8 @@ The boxplots in \reffig{explore_eng_perfectivity} illustrate the main effect of 
 \end{figure}
 
 \paragraph{Iterativity}
-The boxplots in \reffig{explore_eng_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in English.
+The boxplots in \reffig{explore_eng_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in English. The median rating for iterative stimuli (0.826) is higher than the median rating for non-iterative stimuli (0.753), consistently with the literature on the matter (refer back to \refsec{iterativity} and \refsec{predictor_iterativity}). However, the difference is not stark enough to be statistically significant according to a Mann-Whitney U test, which may depend on native speakers being less sensitive to iterativity if compared to other linguistic factors (such as telicity and perfectivity) when it comes to judging the grammaticality of the implicit object construction. Another possible explanation for this apparently irrelevant role of iterativity may be that it is only lacking when considered as a main effect, but it may be a relevant predictor when considered in conjunction with several other factors in a joint model. I will get back to this in \refsec{eng_jointeffect}.\\
+Once again, the distribution of judgments for both types of stimuli covers almost all the possible 0-1 range, and there are no outlier ratings.
 
 \begin{figure}[htb]
 \caption{Effect of iterativity on normalized acceptability judgments about object drop in English.}
@@ -90,7 +96,13 @@ The boxplots in \reffig{explore_eng_iterativity} illustrate the main effect of i
 \end{figure}
 
 \paragraph{Manner specification}
-The boxplots in \reffig{explore_eng_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in English.
+The boxplots in \reffig{explore_eng_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in English. A Mann-Whitney U test shows that the median rating for manner non-specified verbs (0.898) is significantly higher (p < 0.001) than the median rating for manner specified verbs (0.645), consistently with the literature and the hypothesis (refer back to \refsec{mannerspec} and \refsec{predictor_mannspec}).\\
+The distribution of judgments for manner specified verbs (0.06 $\div$ 0.987) is more sparse than the distribution of judgments for manner non-specified verbs (0.286 $\div$ 1), if one does not consider the five outliers among the latter. These outliers are the ratings for:
+\begin{itemize}
+    \item the four target stimuli for the verb \textit{to break} (perfective non-iterative 0, imperfective iterative 0.038, perfective iterative 0.039, imperfective non-iterative 0.050);
+    \item the perfective, non-iterative stimulus for the verb \textit{to build} (0.124), i.e. \textit{Paul had built}.
+\end{itemize}
+As was the case with the atelic outlier in \reffig{explore_eng_telicity}, the outlier stimulus for the verb \textit{to build} is both perfective and non-iterative, making it a very unlikely candidate for felicitous object dropping. The verb \textit{to break} appears to be quite resistant to object drop regardless of the experimental conditions, given that all the target stimuli featuring it are outliers (below the lower whisker of the boxplot) in the distribution of judgments for manner non-specified verbs.
 
 \begin{figure}[htb]
 \caption{Effect of manner specification on normalized acceptability judgments about object drop in English.}
@@ -99,7 +111,7 @@ The boxplots in \reffig{explore_eng_mannspec} illustrate the main effect of mann
 \end{figure}
 
 
-\subsection{Joint effect of predictors} 
+\subsection{Joint effect of predictors}  \labsec{eng_jointeffect}
 
 tre modelli misti con le tre regressioni (?)
 
@@ -137,7 +149,8 @@ Concluding, Behavioral PISA is a satisfactory predictor of object drop in Italia
 \subsection{Binary predictors} 
 
 \paragraph{Telicity}
-The boxplots in \reffig{explore_ita_telicity} illustrate the main effect of telicity on the acceptability judgments on the implicit object construction in Italian.
+The boxplots in \reffig{explore_ita_telicity} illustrate the main effect of telicity on the acceptability judgments on the implicit object construction in Italian. A Mann-Whitney U test reveals that the median judgment for atelic verbs (0.823) is significantly higher (p < 0.0001) than the median judgment for telic verbs (0.384), consistently with abundant literature on the effect of telicity on object drop (refer back to \refsec{telicity} and \refsec{predictor_telicity}).\\
+The interquartile ranges of telic and atelic verbs do not overlap, as shown in the boxplots, but the overall distributions of ratings for the two types of verbs do indeed overlap for the most part. This goes to show that, despite the high statistical significance of the difference in judgments between telic and atelic verbs, telicity alone is not a sufficient predictor of object drop in Italian.
 
 \begin{figure}[htb]
 \caption{Effect of telicity on normalized acceptability judgments about object drop in Italian.}
@@ -146,7 +159,8 @@ The boxplots in \reffig{explore_ita_telicity} illustrate the main effect of teli
 \end{figure}
 
 \paragraph{Perfectivity}
-The boxplots in \reffig{explore_ita_perfectivity} illustrate the main effect of perfectivity on the acceptability judgments on the implicit object construction in Italian.
+The boxplots in \reffig{explore_ita_perfectivity} illustrate the main effect of perfectivity on the acceptability judgments on the implicit object construction in Italian. The median rating for imperfective stimuli (0.670) is significantly higher (p < 0.05) than the median rating for perfective stimuli (0.562), consistently with the hypothesis (refer back to \refsec{perfectivity} and \refsec{predictor_perfectivity}).\\
+However, the distribution of ratings for both imperfective and perfective stimuli is quite sparse, and thus there is significant overlap between them. The significant main effect of perfectivity on the grammaticality of the implicit object construction cannot be considered reason enough to use it as the sole predictor of object drop.
 
 \begin{figure}[htb]
 \caption{Effect of perfectivity on normalized acceptability judgments about object drop in Italian.}
@@ -155,7 +169,7 @@ The boxplots in \reffig{explore_ita_perfectivity} illustrate the main effect of 
 \end{figure}
 
 \paragraph{Iterativity}
-The boxplots in \reffig{explore_ita_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in Italian.
+The boxplots in \reffig{explore_ita_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in Italian. Interestingly, both in English (see \refsec{eng_judgresult}) and Italian there is no significant main effect of iterativity on the grammaticality of the implicit object construction, and once again the question arises of whether this depends on the weakness of this factor if compared against the other predictors, or whether it will be solved by considering its action in a joint statistical model of all five predictors. The median for iterative stimuli is indeed higher than the median for non-iterative stimuli (0.659 the former, 0.645 the latter), but the difference is way too small to even approach statistical significance. Moreover, there is almost complete overlap between the distributions of judgments for both types of stimuli.
 
 \begin{figure}[htb]
 \caption{Effect of iterativity on normalized acceptability judgments about object drop in Italian.}
@@ -164,7 +178,12 @@ The boxplots in \reffig{explore_ita_iterativity} illustrate the main effect of i
 \end{figure}
 
 \paragraph{Manner specification}
-The boxplots in \reffig{explore_ita_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in Italian.
+The boxplots in \reffig{explore_ita_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in Italian. TESTO
+
+% > median(df_ita$judg[df_ita$mannspec == "nospec"])
+% [1] 0.8334241
+% > median(df_ita$judg[df_ita$mannspec == "spec"])
+% [1] 0.4689224
 
 \begin{figure}[htb]
 \caption{Effect of manner specification on normalized acceptability judgments about object drop in Italian.}
