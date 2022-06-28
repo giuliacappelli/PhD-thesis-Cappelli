@@ -5,23 +5,37 @@
 
 \section{Introduction} \labsec{introfitting}
 
+In this Chapter I will model the grammaticality of the implicit object construction (\refch{indefinitedrop}) in a Stochastic Optimality Theoretic fashion inspired by \textcite{Medina2007} (\refch{modeltheory}), using five aspectual and semantic factors (\refch{factors} and \refch{predictors}) as constraints in several models of human acceptability judgments (\refch{judgments}) in English and Italian. Based on the results of these two behavioral experiments described in \refch{results}, a linguistically-motivated probabilistic model of object drop considering the joint effect of all five predictors is indeed feasible.\\
+In particular, I will describe the models in general in \refsec{intro_models}, I will delve into the finer details of the full English and Italian models of object drop as a function of Behavioral PISA (introduced in \refsec{behavPisa}) in \refsec{stot_full}, and I will draw some conclusions about relevant linguistic and mathematical aspects of these models in \refsec{stot_conclusions}.
+
 \subsection{Progressive models} \labsec{intro_models}
 
-tre modelli diversi di complessità crescente: qui dire che uso il modello base di Medina, uno intermedio con iterativity (giustificato da boxplot e lmem del capitolo di analisi dei risultati), uno completo con tutti i regressori insieme\\
+In this thesis, I build upon the foundations laid by \textcite{Medina2007}, which I detailed in \refsec{medinamodel}. In a nutshell, her Stochastic Optimality Theoretic analysis of the implicit object construction was focused on English, and used a set of only three predictors (semantic selectivity, telicity, and perfectivity) as constraints in the model. Moreover, she measured the verbs' semantic selectivity using the Selectional Preference Strength values originally computed by \textcite{Resnik1993,Resnik1996}, which poses evident limitations in the choice of transitive verbs to include in the model and which also suffers from some computational drawbacks due to being a taxonomy-based measure (more on this in \refsec{evalMySPSs}).\\
+Expanding on Medina's successful model of object drop, I bring several new ideas to the table:
+\begin{itemize}
+    \item quantifying semantic selectivity with two similarity-based measures, i.e. a novel computational one I contributed to develop in \textcite{CappelliLenciPISA} (Computational PISA, see \refsec{compuPisa}), and a behavioral one that improves on Medina's measure of Object Similarity (Behavioral PISA, see \refsec{behavPisa});
+    \item modeling the implicit object construction both in English and in Italian, comparing the performance of the two models and possible language-dependent differences in the constraint re-ranking;
+    \item computing increasingly more complex Stochastic Optimality Theoretic models of object drop, starting with Medina's three-predictor one, adding iterativity as a predictor in an intermediate model, and computing the full five-predictor model also including manner specification among the predictors.
+\end{itemize}
+These additions to Medina's setting resulted in a grand total of 18 models of the implicit object construction, which are summarized in \reftab{tab_mymodels} for the reader's convenience.
 
-in questo capitolo devo discutere nel dettaglio soltanto i modelli migliori (ext2 con bPISA in Eng e Ita), gli altri AL dice di metterli in appendice (ma comunque a testo voglio dire come li ho costruiti e la matematica, altrimenti boh)
+% dire che uno, ovviamente, è la replica di Medina (sotto dovrei anche fare una sezioncina per discutere eventuali differenze tra il suo e la replica, magari in model evaluation? oppure in un paragrafo a parte subito dopo)
+
+% perché iterativity e non mannspec nel modello intermedio? iter risulta molto signif nella regressione lmem in inglese, mentre iter e mannspec sono ugualmente nonsignif in italiano
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
-\caption{MODEL CAPTION.}
+\caption{The 18 Stochastic Optimality Theoretic models of object drop I computed for English and Italian.}
 \labtab{tab_mymodels}
-\begin{tabular}{cccc}
-& SPS Resnik & Comp PISA & Behav PISA \\
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
 \hline
 StOT basic & eng | ita          & eng | ita   & eng | ita   \\
 StOT +iter & eng | ita  & eng | ita & eng | ita \\
-StOT +iter +mannspec & eng | ita   & eng | ita   & eng | ita  
+StOT +iter +spec & eng | ita   & eng | ita   & eng | ita  
 \end{tabular}
 \end{table}
+
+The basic Stochastic Optimality Theoretic model of English judgments using Resnik's SPS as a measure of semantic selectivity is, as recalled earlier in this Section, a reproduction of the model by \textcite{Medina2007} employing the same constraints and acceptability judgments based on the same experimental protocol (but with different target verbs and an updated computational preprocessing pipeline, as explained in \refch{judgments} and \refch{results}). The other 17 models are fully novel
 
 
 \subsection{Constraints} \labsec{intro_constraints}
@@ -29,89 +43,59 @@ StOT +iter +mannspec & eng | ita   & eng | ita   & eng | ita
 v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
 
 
-\section{Basic Stochastic OT model} \labsec{stot_basic}
+\subsection{Model evaluation} \labsec{intro_evaluation}
 
+Pearson (tutti ***) e adjRsquared dei 18 modelli, dire che adesso mi accingo a parlare solo dei due modelli migliori (full bPisa) eng e ita, il resto sta tutto in appendice
 
-\subsection{Fitting the model} \labsec{stot_basic_fitting}
+fare confronto tra Medina originale e la mia replica!
 
-estimation of unknown variables (equazioni e tutto)
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Adjusted R\textsuperscript{2} values for the nine Stochastic OT models of object drop in English.}
+\labtab{tab_adjrsq_eng}
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
+\hline
+StOT basic           & 0.422        & 0.457     & 0.467      \\
+StOT +iter           & 0.421        & 0.456     & 0.466      \\
+StOT +iter +spec     & 0.425        & 0.454     & 0.468  
+\end{tabular}
+\end{table}
 
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in English.}
+\labtab{tab_pearson_eng}
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
+\hline
+StOT basic           & 0.661        & 0.686     & 0.693      \\
+StOT +iter           & 0.664        & 0.689     & 0.696      \\
+StOT +iter +spec     & 0.670        & 0.691     & 0.700     
+\end{tabular}
+\end{table}
 
-\subsection{Parameters of the linear functions} \labsec{stot_basic_parameters}
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Adjusted R\textsuperscript{2} values for the nine Stochastic OT models of object drop in Italian.}
+\labtab{tab_adjrsq_ita}
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
+\hline
+StOT basic           & 0.391        & 0.370     & 0.414      \\
+StOT +iter           & 0.386        & 0.365     & 0.410      \\
+StOT +iter +spec     & 0.458        & 0.404     & 0.455     
+\end{tabular}
+\end{table}
 
-quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Predicted grammaticality of an implicit object output} \labsec{stot_basic_predicted}
-
-il plot con le cubiche
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Model assessment} \labsec{stot_basic_assessment}
-
-adjusted R squared + 
-individual error (Medina 146) +
-Pearson actual-predicted collettivo e per ciascun aspectual type
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Comparing English and Italian} \labsec{stot_basic_engita}
-
-testo
-
-
-
-\section{Intermediate Stochastic OT model} \labsec{stot_ext1}
-
-
-\subsection{Fitting the model} \labsec{stot_ext1_fitting}
-
-estimation of unknown variables (equazioni e tutto)
-
-
-\subsection{Parameters of the linear functions} \labsec{stot_ext1_parameters}
-
-quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Predicted grammaticality of an implicit object output} \labsec{stot_ext1_predicted}
-
-il plot con le cubiche
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Model assessment} \labsec{stot_ext1_assessment}
-
-adjusted R squared + 
-individual error (Medina 146) +
-Pearson actual-predicted collettivo e per ciascun aspectual type
-
-\paragraph{English} testo
-
-\paragraph{Italian} testo
-
-
-\subsection{Comparing English and Italian} \labsec{stot_ext1_engita}
-
-testo
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in Italian.}
+\labtab{tab_pearson_ita}
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
+\hline
+StOT basic           & 0.637        & 0.621     & 0.655      \\
+StOT +iter           & 0.637        & 0.621     & 0.655      \\
+StOT +iter +spec     & 0.694        & 0.655     & 0.692     
+\end{tabular}
+\end{table}
 
 
 
@@ -126,19 +110,44 @@ estimation of unknown variables (equazioni e tutto)
 \subsection{Parameters of the linear functions} \labsec{stot_full_parameters}
 
 quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
+riportare anche la tabella coi valori numerici E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
 
 \paragraph{English} testo
 
+\begin{figure}[htb]
+\caption{Probability of \textsc{*Int Arg} being ranked above each of the other constraints, varying in accordance with Behavioral PISA (English full model).}
+\labfig{eng_ext2_bpisa_alltogether}
+    \input figures/eng_ext2_bpisa_prob_alltogether.tex
+\end{figure}
+
 \paragraph{Italian} testo
+
+\begin{figure}[htb]
+\caption{Probability of \textsc{*Int Arg} being ranked above each of the other constraints, varying in accordance with Behavioral PISA (Italian full model).}
+\labfig{ita_ext2_bpisa_alltogether}
+    \input figures/ita_ext2_bpisa_prob_alltogether.tex
+\end{figure}
 
 
 \subsection{Predicted grammaticality of an implicit object output} \labsec{stot_full_predicted}
 
-il plot con le cubiche
+il plot con le cubiche/polinomiali E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
 
 \paragraph{English} testo
 
+\begin{figure}[htb]
+\caption{Probability of an implicit object output for each aspectual type, as a function of Behavioral PISA (English full model).}
+\labfig{eng_ext2_bpisa_aspectualtypes}
+    \input figures/eng_ext2_bpisa_prob_aspectualtypes.tex
+\end{figure}
+
 \paragraph{Italian} testo
+
+\begin{figure}[htb]
+\caption{Probability of an implicit object output for each aspectual type, as a function of Behavioral PISA (Italian full model).}
+\labfig{ita_ext2_bpisa_aspectualtypes}
+    \input figures/ita_ext2_bpisa_prob_aspectualtypes.tex
+\end{figure}
 
 
 \subsection{Model assessment} \labsec{stot_full_assessment}
@@ -146,19 +155,33 @@ il plot con le cubiche
 adjusted R squared + 
 individual error (Medina 146) +
 Pearson actual-predicted collettivo e per ciascun aspectual type
+(criticism of Medina per la scelta di fare la somma degli squared errors)
 
 \paragraph{English} testo
 
 \paragraph{Italian} testo
 
 
-\subsection{Comparing English and Italian} \labsec{stot_full_engita}
+\subsection{Comparing the English and Italian models} \labsec{stot_full_engita}
 
 testo
 
 
+
 \section{Final remarks} \labsec{stot_conclusions}
 
-\subsection{Title} \labsec{o}
 
-text
+\subsection{Gradience} \labsec{concl_gradient}
+
+model of GRADIENT grammaticality
+object drop may be impossible (telic perf?), obligatory (atelic imperf?), but it is generally optional in degrees as shown in the model
+
+
+\subsection{Is the best model a good model?} \labsec{concl_aspectualtypes}
+
+parlare dei risultati dei singoli tipi aspettuali (Pearson) e vedere dove fallisce o meno
+
+
+\subsection{On regression models} \labsec{concl_lmem}
+
+confrontare i risultati col modello lmem fatto nel capitolo precedente e vedere se effettivamente un modello di regressione può essere usato come modello linguistico
