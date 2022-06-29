@@ -19,10 +19,6 @@ Expanding on Medina's successful model of object drop, I bring several new ideas
 \end{itemize}
 These additions to Medina's setting resulted in a grand total of 18 models of the implicit object construction, which are summarized in \reftab{tab_mymodels} for the reader's convenience.
 
-% dire che uno, ovviamente, è la replica di Medina (sotto dovrei anche fare una sezioncina per discutere eventuali differenze tra il suo e la replica, magari in model evaluation? oppure in un paragrafo a parte subito dopo)
-
-% perché iterativity e non mannspec nel modello intermedio? iter risulta molto signif nella regressione lmem in inglese, mentre iter e mannspec sono ugualmente nonsignif in italiano
-
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{The 18 Stochastic Optimality Theoretic models of object drop I computed for English and Italian.}
 \labtab{tab_mymodels}
@@ -35,12 +31,49 @@ StOT +iter +spec & eng | ita   & eng | ita   & eng | ita
 \end{tabular}
 \end{table}
 
-The basic Stochastic Optimality Theoretic model of English judgments using Resnik's SPS as a measure of semantic selectivity is, as recalled earlier in this Section, a reproduction of the model by \textcite{Medina2007} employing the same constraints and acceptability judgments based on the same experimental protocol (but with different target verbs and an updated computational preprocessing pipeline, as explained in \refch{judgments} and \refch{results}). The other 17 models are fully novel
+The basic Stochastic Optimality Theoretic model of English judgments using Resnik's SPS as a measure of semantic selectivity is, as recalled earlier in this Section, a reproduction of the model by \textcite{Medina2007} employing the same constraints and acceptability judgments based on the same experimental protocol (but with different target verbs and an updated computational preprocessing pipeline, as explained in \refch{judgments} and \refch{results}). The other 17 models are instead first-time analyses.\\
+Naturally, one could ask why it is iterativity, and not manner specification, the predictor of object drop to be included in the intermediate Stochastic Optimality Theoretic models. After all, the main effect of iterativity was shown to be non-significant in \reffig{explore_eng_iterativity} and \reffig{explore_ita_iterativity} both for English and Italian, unlike the very significant main effect of manner specification in both languages (refer back to \reffig{explore_eng_mannspec} and \reffig{explore_ita_mannspec}). Crucially though, I am creating probabilistic models considering the \textit{joint} effect of five linguistic factors on the grammaticality of the implicit object construction. Since the linear mixed-effects models for English (see \refsec{eng_jointeffect}) revealed a highly significant effect of iterativity and a non-significant effect of manner specification, while the two predictors were almost equally non-significant in the mixed models for Italian (see \refsec{ita_jointeffect}), it appeared that iterativity plays a larger role in determining the grammaticality of object drop when considered in combination with all the other linguistic factors involved.
 
 
-\subsection{Constraints} \labsec{intro_constraints}
+\subsection{The input, the output, and the constraints} \labsec{intro_constraints}
 
-v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
+A very short summary of the lengthy explanation of (Stochastic) Optimality Theory I provided in \refch{modeltheory}, and especially of the explanation of the novel variant by \textcite{Medina2007} in \refsec{medinamodel}, is in order. In particular, I am going to retrace the way the input to the optimization process maps to the output, and I will introduce my two novel constraints after looking back on Medina's original set.\\
+As shown in \ref{medina_input_generic} within \refsec{inputmedina}, the input to the syntactic optimization operated by the model has to include all the relevant lexical and semantic information that will be mapped to syntactically well-formed output forms, and nothing else. Thus, the input to my basic Stochastic Optimality Theoretic models (and Medina's) will look like \ref{my_input_basic}, the input to the intermediate models will look like \ref{my_input_ext1}, and the input to the full models with all five predictors will look like \ref{my_input_ext2}. All inputs in \ref{my_input_generic} contain a transitive verb with a subject and an unspecified direct object (since the model deals with indefinite, not definite, object drop), a numerical value for semantic selectivity (be it Resnik's SPS, Computational PISA, or Behavioral PISA), the [+Past] feature since all verbs in the stimuli are in the past tense, and the features of the predicate relative to all the binary predictors that are relevant in the model (two in the basic model, three in the intermediate model, four in the full model).
+
+\ex. \label{my_input_generic} 
+\a. \label{my_input_basic} verb (x,y), x = subject, y = unspecified, semantic selectivity = \textit{numerical value}, [+ Past], [$\pm$ Telic], [$\pm$ Perfective]
+\b. \label{my_input_ext1} verb (x,y), x = subject, y = unspecified, semantic selectivity = \textit{numerical value}, [+ Past], [$\pm$ Telic], [$\pm$ Perfective], [$\pm$ Iterative]
+\c. \label{my_input_ext2} verb (x,y), x = subject, y = unspecified, semantic selectivity = \textit{numerical value}, [+ Past], [$\pm$ Telic], [$\pm$ Perfective], [$\pm$ Iterative], [$\pm$ Manner Specified]
+
+Given these inputs, the \textsc{Gen} component of the Optimality Theoretic grammar (see \refsec{classicot}) generates two outputs, i.e. one with an overt (unspecified) direct object and one with an implicit direct object.\\
+Now that the grammar yielded a complete candidate set to evaluate, the model has to pick a winner (or, in our case, assign gradient grammaticality to the implicit object output in a probability space) based on the re-ranking of the relevant constraints. For the basic model, these are the ones in \ref{my_constraints_medina} (adapted from Medina's ones in \ref{medina_constraints}, introduced in \refsec{constraintsmedina}).
+
+\ex. \label{my_constraints_medina} 
+\a. \label{my_constraints_intarg} \textsc{*Int Arg (*Internal Argument Structure)}\\ The output must not contain an overt internal argument (that is to say, a direct object).
+\b. \label{my_constraints_faith} \textsc{Faith Arg (Faithfulness to Argument Structure)}\\ All arguments in the input must be present in the output.
+\c. \label{my_constraints_telic} \textsc{Telic End (Telic Endpoint)}\\ The endpoint of a [+ Telic] event must be bounded by the presence of an overt argument in the output.
+\c. \label{my_constraints_perf} \textsc{Perf Coda (Perfective Coda)}\\ The coda of a perfective event [+ Perfective] must be identified by the presence of an overt argument in the output.
+
+% \textsc{\textbf{*Int Arg (*Internal Argument Structure)}} {\small \alert{\textbf{markedness} constraint}}\\ The output must NOT contain an overt dObj
+% \\~\\
+% \textsc{\textbf{Faith Arg (Faithfulness to Argument Structure)}} {\small \alert{faithfulness con.}}\\ All arguments in the input must be present in the output.
+% \\~\\
+% \textsc{\textbf{Telic End (Telic Endpoint)}} {\small \alert{faithfulness con.}}\\ Telic predicates must be bounded by a dObj in the output.
+% \\~\\
+% \textsc{\textbf{Perf Coda (Perfective Coda)}} {\small \alert{faithfulness con.}}\\ Perfective predicates must be identified by a dObj in the output.
+
+I also designed the two novel constraints in \ref{my_constraints_new}, based on theoretical observation on iterativity and manner specification first introduced in \refch{factors} and explored further in \refch{predictors}. \textsc{Non-Iter Arg} is active both in the intermediate and in the full model, while \textsc{Mann-Spec Arg} is only active in the full model.
+% dire che i constraints nuovi non sono attivi nel modello basic, oppure che da un altro punto di vista sono tutti attivi, così come tutti gli altri mille constraints di OT, ma sono vacuously satisfied
+
+% non-iter arg è formulato in modo "negativo" perché altrimenti sarebbe un markedness constraint (è vero? cambierebbe qualcosa?)
+
+\ex. \label{my_constraints_new} 
+\a. \label{my_constraints_iter} \textsc{Non-Iterative Argument (Non-Iter Arg)}\\ Non-iterative predicates must occur with a direct object in the output.
+\b. \label{my_constraints_spec} \textsc{Manner-Specified Argument (Mann-Spec Arg)}\\ Manner-specified predicates must occur with a direct object in the output.
+
+In all my Stochastic Optimality Theoretic models, 
+% markedness il primo, faithfulness gli altri
+% dire che è il modo in cui intarg re-ranka con gli altri la chiave di volta
 
 
 \subsection{Model evaluation} \labsec{intro_evaluation}
@@ -100,6 +133,8 @@ StOT +iter +spec     & 0.694        & 0.655     & 0.692
 
 
 \section{Full Stochastic OT model} \labsec{stot_full}
+
+% v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
 
 
 \subsection{Fitting the model} \labsec{stot_full_fitting}
