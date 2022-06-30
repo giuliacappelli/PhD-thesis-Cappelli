@@ -49,38 +49,68 @@ Given these inputs, the \textsc{Gen} component of the Optimality Theoretic gramm
 Now that the grammar yielded a complete candidate set to evaluate, the model has to pick a winner (or, in our case, assign gradient grammaticality to the implicit object output in a probability space) based on the re-ranking of the relevant constraints. For the basic model, these are the ones in \ref{my_constraints_medina} (adapted from Medina's ones in \ref{medina_constraints}, introduced in \refsec{constraintsmedina}).
 
 \ex. \label{my_constraints_medina} 
-\a. \label{my_constraints_intarg} \textsc{*Int Arg (*Internal Argument Structure)}\\ The output must not contain an overt internal argument (that is to say, a direct object).
+\a. \label{my_constraints_intarg} \textsc{*Int Arg (*Internal Argument Structure)}\\ The output must not contain an overt direct object.
 \b. \label{my_constraints_faith} \textsc{Faith Arg (Faithfulness to Argument Structure)}\\ All arguments in the input must be present in the output.
-\c. \label{my_constraints_telic} \textsc{Telic End (Telic Endpoint)}\\ The endpoint of a [+ Telic] event must be bounded by the presence of an overt argument in the output.
-\c. \label{my_constraints_perf} \textsc{Perf Coda (Perfective Coda)}\\ The coda of a perfective event [+ Perfective] must be identified by the presence of an overt argument in the output.
+\c. \label{my_constraints_telic} \textsc{Telic End (Telic Endpoint)}\\ Telic predicates must be bounded by an object in the output.
+\c. \label{my_constraints_perf} \textsc{Perf Coda (Perfective Coda)}\\ Perfective predicates must have a direct object in the output.
 
-% \textsc{\textbf{*Int Arg (*Internal Argument Structure)}} {\small \alert{\textbf{markedness} constraint}}\\ The output must NOT contain an overt dObj
-% \\~\\
-% \textsc{\textbf{Faith Arg (Faithfulness to Argument Structure)}} {\small \alert{faithfulness con.}}\\ All arguments in the input must be present in the output.
-% \\~\\
-% \textsc{\textbf{Telic End (Telic Endpoint)}} {\small \alert{faithfulness con.}}\\ Telic predicates must be bounded by a dObj in the output.
-% \\~\\
-% \textsc{\textbf{Perf Coda (Perfective Coda)}} {\small \alert{faithfulness con.}}\\ Perfective predicates must be identified by a dObj in the output.
-
-I also designed the two novel constraints in \ref{my_constraints_new}, based on theoretical observation on iterativity and manner specification first introduced in \refch{factors} and explored further in \refch{predictors}. \textsc{Non-Iter Arg} is active both in the intermediate and in the full model, while \textsc{Mann-Spec Arg} is only active in the full model.
-% dire che i constraints nuovi non sono attivi nel modello basic, oppure che da un altro punto di vista sono tutti attivi, così come tutti gli altri mille constraints di OT, ma sono vacuously satisfied
-
-% non-iter arg è formulato in modo "negativo" perché altrimenti sarebbe un markedness constraint (è vero? cambierebbe qualcosa?)
+I also designed the two novel constraints in \ref{my_constraints_new}, based on theoretical observations on iterativity and manner specification first introduced in \refch{factors} and explored further in \refch{predictors}. \textsc{Non-Iter Arg} is active both in the intermediate and in the full model, while \textsc{Mann-Spec Arg} is only active in the full model.
 
 \ex. \label{my_constraints_new} 
-\a. \label{my_constraints_iter} \textsc{Non-Iterative Argument (Non-Iter Arg)}\\ Non-iterative predicates must occur with a direct object in the output.
-\b. \label{my_constraints_spec} \textsc{Manner-Specified Argument (Mann-Spec Arg)}\\ Manner-specified predicates must occur with a direct object in the output.
+\a. \label{my_constraints_iter} \textsc{Non-Iter Arg (Non-Iterative Argument)}\\ Non-iterative predicates must occur with a direct object in the output.
+\b. \label{my_constraints_spec} \textsc{Mann-Spec Arg (Manner-Specified Argument)}\\ Manner-specified verbs must occur with a direct object in the output.
 
-In all my Stochastic Optimality Theoretic models, 
-% markedness il primo, faithfulness gli altri
-% dire che è il modo in cui intarg re-ranka con gli altri la chiave di volta
+In all my Stochastic Optimality Theoretic models, \textsc{*Int Arg} is a markedness constraint that gets violated when there is an overt direct object in the output, directly conflicting with all the other constraints, which are \textit{faithfulness} constraints penalizing implicit objects. This conflict between markedness and faithfulness constraints is the very core of an Optimality Theoretic grammar (refer back to \refch{modeltheory}).\\
+In the specific case of this thesis, an implicit object output will be (probabilistically) grammatical whenever \textsc{*Int Arg} is ranked above all the other constraints that are active (i.e. not vacuously satisfied\sidenote{As explained in detail in \refsec{constraintsmedina}, a constraint is vacuously satisfied when no candidate in the candidate set can violate it.}) for a given input. For instance, the full, five-predictor model would only favor object-dropping telic, perfective, non-iterative, manner-specified candidates if \textsc{*Int Arg} was ranked above \textsc{Faith Arg}, \textsc{Telic End}, \textsc{Perf Coda}, \textsc{Non-Iter Arg}, and \textsc{Mann-Spec Arg}. The same model would only require \textsc{*Int Arg} to be ranked above \textsc{Faith Arg} to allow for object drop in atelic, imperfective, iterative, manner non-specified candidates.
+
+% non-iter arg è formulato in modo "negativo" perché altrimenti sarebbe un markedness constraint (è vero? cambierebbe qualcosa?)
 
 
 \subsection{Model evaluation} \labsec{intro_evaluation}
 
-Pearson (tutti ***) e adjRsquared dei 18 modelli, dire che adesso mi accingo a parlare solo dei due modelli migliori (full bPisa) eng e ita, il resto sta tutto in appendice
+Let us put aside the inner workings of Medina-inspired Stochastic Optimality Theoretic models for the time being, and let us consider whether increasing the number of predictors (and thus the number of constraints) actually determines a better understanding of the nature of the implicit object construction. I am going to come back to the mathematical details of the model in \refsec{stot_full}, where I will focus on the two best-performing models, one for English and one for Italian. Unfortunately, it would be impossible to provide a complete account of all 18 models in \reftab{tab_mymodels} due to space constraints, but the interested reader can find graphical summaries of their results in \refapp{app_models}.\\
+An initial step to assess the absolute performance of each model, and hence to compare them and gauge their performance relative to each other, would be to compute Pearson correlations\sidenote{The Pearson's $\rho$ coefficient measuring the correlation between two variables can vary between -1 and 1. The strength of the correlation is judged by considering the absolute value of the coefficient, so that it is non-existent when $\rho$ is 0, very strong when it is closer to (-)1. If $\rho$ is positive the two variables are directly proportional one to another, while if it is negative they are indirectly proportional.} between the actual acceptability judgments provided by native speakers and the predicted grammaticality values yielded by each model. The Pearson's $\rho$ coefficients for English, all highly significant, are collected in \reftab{tab_pearson_eng}. These results show that the predicted values correlate quite well with the human-generated values in each model, going from 0.661 for the basic model using Resnik's SPS as a measure of semantic selectivity to 0.700 for the full model using Behavioral PISA as a measure of semantic selectivity.
 
-fare confronto tra Medina originale e la mia replica!
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in English.}
+\labtab{tab_pearson_eng}
+\begin{tabular}{l|ccc}
+& SPS & Comp PISA & Behav PISA \\
+\hline
+StOT basic           & 0.661        & 0.686     & 0.693      \\
+StOT +iter           & 0.664        & 0.689     & 0.696      \\
+StOT +iter +spec     & 0.670        & 0.691     & 0.700     
+\end{tabular}
+\end{table}
+
+However, the correlation coefficient only serves to quantify the strength of the linear relationship between actual and predicted judgments, without providing any information on how well the independent variables in the model (i.e. the predictors) explain the variance in the dependent variable (i.e. the acceptability judgments). I gleaned this information by computing the adjusted R\textsuperscript{2} value for each model, obtaining the results in \reftab{tab_adjrsq_eng} relative to English.\\
+The R-squared value, also known as "coefficient of determination", can be computed as the squared Pearson's $\rho$ or, alternatively, as in \refeq{rsquared} (with the Summed Squared Error computed as in \refeq{sse} and the Total Sum of Squares computed as in \refeq{tss}).
+
+\begin{equation} \labeq{rsquared}
+R^2 = 1 - \frac{\textrm{Summed Squared Error}}{\textrm{Total Sum of Squares}}
+\end{equation}
+
+The Summed Squared Error, computed with \refeq{sse}, is defined as the sum of the squared difference between each actual judgment and its corresponding judgment predicted by the model, for all judgments in the sample.
+
+\begin{equation} \labeq{sse}
+SSE = \sum_{i=1}^{n} (y_i - \widehat{y})^2
+\end{equation}
+
+The Total Sum of Squares is defined as the sum of the squared difference between each acceptability judgment in the sample and the average acceptability judgment, for all judgments in the sample. This is shown in \refeq{tss}.
+
+\begin{equation} \labeq{tss}
+TSS = \sum_{i=1}^{n} (y_i - \overline{y})^2
+\end{equation}
+
+R\textsuperscript{2} varies between 0 and 1, and it can be thought of as a percentage indicating the goodness of fit of a statistical model. However, it always increases when using additional predictors in a model, regardless of the usefulness of these variables in predicting the dependent variable. One could always add yet one more parameter to the model, overfit it to the data, and claim to have a very successful model due to a very high R\textsuperscript{2} value. In order to overcome this major drawback of R\textsuperscript{2}, it is recommended to compute an \textit{adjusted} R\textsuperscript{2} value that only increases when adding relevant parameters, while it decreases when adding useless ones. It is defined as in \refeq{adjR2}, where $n$ is the number of acceptability judgments to be predicted and $k$ is the number of independent variables (i.e. predictors) in the model, and it can be thought of as the percentage of variance explained by the sole indipendent variables that have an actual effect on the dependent variable.
+
+\begin{equation} \labeq{adjR2}
+\textrm{adjusted } R^2 = 1 - \frac{(1-R^2)(n-1)}{n-k-1}
+\end{equation}
+
+Let us close this much needed statistical parenthesis and go back to the summary of the English results. Oddly enough, \textcite[147]{Medina2007} limited her model assessment to the computation of the Summed Squared Error instead of also using it to compute the (adjusted) R\textsuperscript{2} value, which makes it impossible to compare mathematically her results and the ones I obtained in the basic model using Resnik's SPS as a measure of semantic selectivity. Moreover, the Summed Squared Error does not have an intrinsic meaning (unlike R\textsuperscript{2}), since it just increases whenever the total number of stimuli in the experiment increases (provided there is some difference between the actual and predicted values).\\
+\reftab{tab_adjrsq_eng} shows that all the nine models are fairly
+
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Adjusted R\textsuperscript{2} values for the nine Stochastic OT models of object drop in English.}
@@ -94,15 +124,19 @@ StOT +iter +spec     & 0.425        & 0.454     & 0.468
 \end{tabular}
 \end{table}
 
+% ragionare su cosa emerge da queste due tabelle relativamente all'inglese
+
+% dire che adesso parlo di pearson e rsq italiano
+
 \begin{table}[htb] % the "htb" makes table env unfloaty
-\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in English.}
-\labtab{tab_pearson_eng}
+\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in Italian.}
+\labtab{tab_pearson_ita}
 \begin{tabular}{l|ccc}
 & SPS & Comp PISA & Behav PISA \\
 \hline
-StOT basic           & 0.661        & 0.686     & 0.693      \\
-StOT +iter           & 0.664        & 0.689     & 0.696      \\
-StOT +iter +spec     & 0.670        & 0.691     & 0.700     
+StOT basic           & 0.637        & 0.621     & 0.655      \\
+StOT +iter           & 0.637        & 0.621     & 0.655      \\
+StOT +iter +spec     & 0.694        & 0.655     & 0.692     
 \end{tabular}
 \end{table}
 
@@ -118,18 +152,14 @@ StOT +iter +spec     & 0.458        & 0.404     & 0.455
 \end{tabular}
 \end{table}
 
-\begin{table}[htb] % the "htb" makes table env unfloaty
-\caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in Italian.}
-\labtab{tab_pearson_ita}
-\begin{tabular}{l|ccc}
-& SPS & Comp PISA & Behav PISA \\
-\hline
-StOT basic           & 0.637        & 0.621     & 0.655      \\
-StOT +iter           & 0.637        & 0.621     & 0.655      \\
-StOT +iter +spec     & 0.694        & 0.655     & 0.692     
-\end{tabular}
-\end{table}
+% dire cosa emerge sul solo italiano
 
+% confrontare eng e ita (facendo riferimento all'evaluation dei modelli semsel e degli lmem)
+% vedere quella cosa che diceva AL dei satellite/verb-framed cosi
+
+% fare confronto tra Medina originale e la mia replica!
+
+% spiegare perché adesso parlo solo dei due full bPISA models
 
 
 \section{Full Stochastic OT model} \labsec{stot_full}
