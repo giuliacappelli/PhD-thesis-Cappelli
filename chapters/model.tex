@@ -68,8 +68,9 @@ In the specific case of this thesis, an implicit object output will be (probabil
 
 \subsection{Model evaluation} \labsec{intro_evaluation}
 
-Let us put aside the inner workings of Medina-inspired Stochastic Optimality Theoretic models for the time being, and let us consider whether increasing the number of predictors (and thus the number of constraints) actually determines a better understanding of the nature of the implicit object construction. I am going to come back to the mathematical details of the model in \refsec{stot_full}, where I will focus on the two best-performing models, one for English and one for Italian. Unfortunately, it would be impossible to provide a complete account of all 18 models in \reftab{tab_mymodels} due to space constraints, but the interested reader can find graphical summaries of their results in \refapp{app_models}.\\
-An initial step to assess the absolute performance of each model, and hence to compare them and gauge their performance relative to each other, would be to compute Pearson correlations\sidenote{The Pearson's $\rho$ coefficient measuring the correlation between two variables can vary between -1 and 1. The strength of the correlation is judged by considering the absolute value of the coefficient, so that it is non-existent when $\rho$ is 0, very strong when it is closer to (-)1. If $\rho$ is positive the two variables are directly proportional one to another, while if it is negative they are indirectly proportional.} between the actual acceptability judgments provided by native speakers and the predicted grammaticality values yielded by each model. The Pearson's $\rho$ coefficients for English, all highly significant, are collected in \reftab{tab_pearson_eng}. These results show that the predicted values correlate quite well with the human-generated values in each model, going from 0.661 for the basic model using Resnik's SPS as a measure of semantic selectivity to 0.700 for the full model using Behavioral PISA as a measure of semantic selectivity.
+Let us put aside the inner workings of Medina-inspired Stochastic Optimality Theoretic models for the time being, and let us consider whether increasing the number of predictors (and thus the number of constraints) actually determines a better understanding of the nature of the implicit object construction. I am going to come back to the mathematical details of the model in \refsec{stot_full}, where I will focus on the two best-performing models, one for English and one for Italian. Unfortunately, it would be impossible to provide a complete account of all 18 models in \reftab{tab_mymodels} due to space constraints, but the interested reader can find graphical summaries of their results in \refapp{app_models}.
+
+\paragraph{English} An initial step to assess the absolute performance of each model, and hence to compare them and gauge their performance relative to each other, would be to compute Pearson correlations\sidenote{The Pearson's $\rho$ coefficient measuring the correlation between two variables can vary between -1 and 1. The strength of the correlation is judged by considering the absolute value of the coefficient, so that it is non-existent when $\rho$ is 0, very strong when it is closer to (-)1. If $\rho$ is positive the two variables are directly proportional one to another, while if it is negative they are indirectly proportional.} between the actual acceptability judgments provided by native speakers and the predicted grammaticality values yielded by each model. The Pearson's $\rho$ coefficients for English, all highly significant (p < 0.001), are collected in \reftab{tab_pearson_eng}. These results show that the predicted values correlate quite well with the human-generated values in each model, going from 0.661 for the basic model using Resnik's SPS as a measure of semantic selectivity to 0.700 for the full model using Behavioral PISA as a measure of semantic selectivity.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in English.}
@@ -109,8 +110,7 @@ R\textsuperscript{2} varies between 0 and 1, and it can be thought of as a perce
 \end{equation}
 
 Let us close this much needed statistical parenthesis and go back to the summary of the English results. Oddly enough, \textcite[147]{Medina2007} limited her model assessment to the computation of the Summed Squared Error instead of also using it to compute the (adjusted) R\textsuperscript{2} value, which makes it impossible to compare mathematically her results and the ones I obtained in the basic model using Resnik's SPS as a measure of semantic selectivity. Moreover, the Summed Squared Error does not have an intrinsic meaning (unlike R\textsuperscript{2}), since it just increases whenever the total number of stimuli in the experiment increases (provided there is some difference between the actual and predicted values).\\
-\reftab{tab_adjrsq_eng} shows that all the nine models are fairly
-
+According to the adjusted R\textsuperscript{2} values in \reftab{tab_adjrsq_eng}, the nine models explain between 42.1\% (intermediate model with Resnik's SPS) and 46.8\% (full model with Behavioral PISA) of the variation in the data. Given the complex nature of the implicit object construction and the interaction between all the predictors, these results, though modest in absolute terms, are quite encouraging.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Adjusted R\textsuperscript{2} values for the nine Stochastic OT models of object drop in English.}
@@ -124,9 +124,9 @@ StOT +iter +spec     & 0.425        & 0.454     & 0.468
 \end{tabular}
 \end{table}
 
-% ragionare su cosa emerge da queste due tabelle relativamente all'inglese
+Let us inspect \reftab{tab_adjrsq_eng} in more detail. Looking at it horizontally, i.e. comparing the performance of each type of model (basic, intermediate, full) on varying the measure of semantic selectivity, it emerges that models using Behavioral PISA have a better explanatory power than models using Computational PISA, which in turn are better than models using Resnik's SPS, regardless of the number of predictors in the model. Looking at the table vertically, i.e. comparing the performance of the three increasingly rich models of object drop based on the same measure of semantic selectivity, it results that the intermediate model is consistently worse (albeit imperceptibly) than the basic model regardless of the measure of semantic selectivity, while the addition of manner specification as a predictor in the full model makes it a better fit when using Resnik's SPS and Behavioral PISA, but a slightly worse fit than the intermediate model when using Computational PISA. Moreover, consistently with conclusions drawn in \refsec{eng_judgresult_semsel}, the difference in performance between the models based on Computational PISA and those based on Behavioral PISA is much lower than the difference between either of those and the models based on Resnik's SPS. In general, it is possible to conclude that a full, five-predictor model is a sensible choice to model the grammaticality of the implicit object construction in English, and the best model among the three full models is the one using Behavioral PISA to quantify semantic selectivity. I will provide a thorough analysis of this model in \refsec{stot_full}.
 
-% dire che adesso parlo di pearson e rsq italiano
+\paragraph{Italian} Let us now examine the performance of the nine Stochastic Optimality Theoretic models of object drop in Italian and compare it to the results for English I just discussed. The Pearson correlations between actual and predicted grammaticality judgments in \reftab{tab_pearson_ita}, all highly significant (p < 0.001), show varying degrees of reliability ranging from 0.621 for basic and intermediate models using Computational PISA to 0.694 for the full model using Resnik's SPS. As for English, I evaluated the goodness-of-fit of the nine models for Italian by computing the adjusted R\textsuperscript{2} values in \reftab{tab_adjrsq_ita}. These coefficients show that some models are a fairly poor fit (especially the intermediate model using Computational PISA, which only explains 36.5\% of the variance in the data), and only two of them have a performance comparable with the English models (the full model using Resnik's SPS explains 45.8\% of the variance, the full model using Behavioral PISA explains 45.5\%).
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Pearson correlations between actual and predicted values for the nine Stochastic OT models of object drop in Italian.}
@@ -152,12 +152,13 @@ StOT +iter +spec     & 0.458        & 0.404     & 0.455
 \end{tabular}
 \end{table}
 
-% dire cosa emerge sul solo italiano
+Taking a closer look at \reftab{tab_adjrsq_ita}, severals conclusions can be drawn. Looking at it line-by-line, it appears that Computational PISA-based models are consistently the worst for each type of Stochastic Optimality Theoretic model and Behavioral PISA-based models are the best (it actually loses to Resnik's SPS in the case of the full models, but only by a negligible 0.3\% difference). Looking at it column-by-column, results show that the intermediate model is consistently worse than the basic model, which in turn is consistently worse than the full model, indicating that iterativity alone is not a good addition to the basic three-predictor model devised by \textcite{Medina2007}, but iterativity and manner specification together provide the model with a much stronger explanatory power. Interestingly, there is a stark difference between the performance of Behavioral PISA-based models on one hand, and the performance of models using corpus-based measures of semantic selectivity (Resnik's SPS and Computational PISA) on the other hand. This state of affairs mirrors closely the conclusions I drew in \refsec{ita_judgresult_semsel} about the way these measures of semantic selectivity were computed, also in contrast with English results. All in all, it results that it makes sense to compute a five-predictor model to understand the factors regulating the implicit object construction in Italian, and it is best to implement semantic selectivity in such a model using Behavioral PISA despite the remarkable performance of the full SPS-based model (given all the drawbacks of Resnik's SPS which I pointed out throughout this Section and in \refch{results}).
+
+\paragraph{Comparing English and Italian} By looking at \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} in particular, it is evident that any given model using the same set of predictors and the same measure of semantic selectivity fits English data better than Italian data, with this difference being way more noticeable for models employing corpus-based measures of semantic selectivity than for models using Behavioral PISA (based on human similarity ratings) for the same purpose. As observed multiple times here and in \refch{results}, this may be most likely due to the better overall quality of the ukWaC corpus I used to model English if compared to itWaC, a web-based corpus of Italian that is similar in nature and dimensions (refer back to \refsec{compuPisa} for more details on the two corpora).\\
+Another intriguing difference between English and Italian relative to object drop that emerges by comparing \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} is that the addition of manner specification to the model determines a veritable qualitative leap in the case of Italian, where the full models are way better than the basic and intermediate ones, while the same is not true of English, where the performance of full models is quite similar (although slightly better) to that of basic and intermediate models. Given that all other factors in the models, as well as the stimuli used in the experiments, are identical in all respects but the language itself, it is clear that this difference between English and Italian models has to be ascribed to manner specification itself. A possible explanation could be found in the distinction between verb-framed and satellite-framed languages proposed by \textcite{talmy1991path}. 
 
 % confrontare eng e ita (facendo riferimento all'evaluation dei modelli semsel e degli lmem)
-% vedere quella cosa che diceva AL dei satellite/verb-framed cosi
-
-% fare confronto tra Medina originale e la mia replica!
+% vedere quella cosa che diceva AL dei satellite/verb-framed cosi (qualitative leap)
 
 % spiegare perché adesso parlo solo dei due full bPISA models
 
@@ -165,6 +166,10 @@ StOT +iter +spec     & 0.458        & 0.404     & 0.455
 \section{Full Stochastic OT model} \labsec{stot_full}
 
 % v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
+
+\subsection{A quick recap} \labsec{stot_full_recap}
+
+il discorso della logica che va al contrario dei computational steps
 
 
 \subsection{Fitting the model} \labsec{stot_full_fitting}
@@ -176,6 +181,8 @@ estimation of unknown variables (equazioni e tutto)
 
 quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
 riportare anche la tabella coi valori numerici E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
+
+confrontare coi risultati originali di Medina! qui posso certamente farlo (oppure scrivo proprio un capitoletto a parte dedicato al confronto con Medina e commento tutto il commentabile)
 
 \paragraph{English} testo
 
