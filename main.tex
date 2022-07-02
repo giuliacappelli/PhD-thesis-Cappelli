@@ -39,6 +39,9 @@
 \usepackage[english]{babel} % Load characters and hyphenation
 \usepackage[english=british]{csquotes} % English quotes
 
+% should be loaded by default, adding it to try to fix bibtex errors
+\usepackage{hyperref}
+
 % Load packages for testing
 \usepackage{blindtext}
 %\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
@@ -305,6 +308,7 @@
 
 % COMMENTA QUESTE DUE RIGHE PER RIMUOVERE LETTERONE ALFABETO DALLA BIBLIOGRAFIA
 \pagelayout{margin} % Restore margins
+\addcontentsline{toc}{chapter}{References}
 % \printbibheading % questo scrive "Bibliography" attaccato a bordo foglio
 \printbibheading[title=References\hphantom{cappelli}]
 \bibbycategory
