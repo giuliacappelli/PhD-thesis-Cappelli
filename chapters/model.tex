@@ -155,24 +155,145 @@ StOT +iter +spec     & 0.458        & 0.404     & 0.455
 Taking a closer look at \reftab{tab_adjrsq_ita}, severals conclusions can be drawn. Looking at it line-by-line, it appears that Computational PISA-based models are consistently the worst for each type of Stochastic Optimality Theoretic model and Behavioral PISA-based models are the best (it actually loses to Resnik's SPS in the case of the full models, but only by a negligible 0.3\% difference). Looking at it column-by-column, results show that the intermediate model is consistently worse than the basic model, which in turn is consistently worse than the full model, indicating that iterativity alone is not a good addition to the basic three-predictor model devised by \textcite{Medina2007}, but iterativity and manner specification together provide the model with a much stronger explanatory power. Interestingly, there is a stark difference between the performance of Behavioral PISA-based models on one hand, and the performance of models using corpus-based measures of semantic selectivity (Resnik's SPS and Computational PISA) on the other hand. This state of affairs mirrors closely the conclusions I drew in \refsec{ita_judgresult_semsel} about the way these measures of semantic selectivity were computed, also in contrast with English results. All in all, it results that it makes sense to compute a five-predictor model to understand the factors regulating the implicit object construction in Italian, and it is best to implement semantic selectivity in such a model using Behavioral PISA despite the remarkable performance of the full SPS-based model (given all the drawbacks of Resnik's SPS which I pointed out throughout this Section and in \refch{results}).
 
 \paragraph{Comparing English and Italian} By looking at \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} in particular, it is evident that any given model using the same set of predictors and the same measure of semantic selectivity fits English data better than Italian data, with this difference being way more noticeable for models employing corpus-based measures of semantic selectivity than for models using Behavioral PISA (based on human similarity ratings) for the same purpose. As observed multiple times here and in \refch{results}, this may be most likely due to the better overall quality of the ukWaC corpus I used to model English if compared to itWaC, a web-based corpus of Italian that is similar in nature and dimensions (refer back to \refsec{compuPisa} for more details on the two corpora).\\
-Another intriguing difference between English and Italian relative to object drop that emerges by comparing \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} is that the addition of manner specification to the model determines a veritable qualitative leap in the case of Italian, where the full models are way better than the basic and intermediate ones, while the same is not true of English, where the performance of full models is quite similar (although slightly better) to that of basic and intermediate models. Given that all other factors in the models, as well as the stimuli used in the experiments, are identical in all respects but the language itself, it is clear that this difference between English and Italian models has to be ascribed to manner specification itself. We could be tempted to seek an explanation in the well-known distinction between verb-framed and satellite-framed languages proposed by \textcite{talmy1991path} with respect to motion verbs. Verb-framed languages, such as Italian, typically encode the Path of motion in the verb root, while they (optionally) express the manner of motion via additional lexical material (e.g. \textit{uscì correndo}, lit. 'he/she went-out running'). Satellite-framed languages, such as English, typically encode the manner of motion in the verb root and make use of particles to encode the Path of motion (e.g. \textit{to go in}, \textit{to fall down}). Looking at \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} through Talmy-styled lenses, it would seem that Italian speakers are much more sensitive to manner being encoded in the verb root than English speakers due to Italian being a verb-framed language, despite there being no framing-dependent differences in the surface form of the verbs used in the stimuli (e.g. Eng. \textit{to devour} / It. \textit{divorare}). On the flip side, the distinction between verb- and satellite-framed languages seems to have much less hold outside the domain of motion verbs (see Mastrofini 2013 about manner-of-speaking verbs in English and Italian), and therefore it is possible that the explanation for the spike in the Italian (and not in the English) adjusted R\textsuperscript{2} values due to the manner specification parameter has to be found elsewhere.
+Another intriguing difference between English and Italian relative to object drop that emerges by comparing \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} is that the addition of manner specification to the model determines a veritable qualitative leap in the case of Italian, where the full models are way better than the basic and intermediate ones, while the same is not true of English, where the performance of full models is quite similar (although slightly better) to that of basic and intermediate models. Given that all other factors in the models, as well as the stimuli used in the experiments, are identical in all respects but the language itself, it is clear that this difference between English and Italian models has to be ascribed to manner specification itself. We could be tempted to seek an explanation in the well-known distinction between verb-framed and satellite-framed languages proposed by \textcite{talmy1991path, talmy2000toward} with respect to motion verbs. Verb-framed languages, such as Italian, typically encode the Path of motion in the verb root, while they (optionally) express the manner of motion via additional lexical material (e.g. \textit{uscì correndo}, lit. 'he/she went-out running'). Satellite-framed languages, such as English, typically encode the manner of motion in the verb root and make use of particles to encode the Path of motion (e.g. \textit{to go in}, \textit{to fall down}). Looking at \reftab{tab_adjrsq_eng} and \reftab{tab_adjrsq_ita} through Talmy-styled lenses, it would seem that Italian speakers are much more sensitive to manner being encoded in the verb root than English speakers due to Italian being a verb-framed language, despite there being no framing-dependent differences in the surface form of the verbs used in the stimuli (e.g. Eng. \textit{to devour} / It. \textit{divorare}). On the flip side, the distinction between verb- and satellite-framed languages seems to have much less hold outside the domain of motion verbs (see \textcite{mastrofini2013english} about manner-of-speaking verbs in English and Italian), and therefore it is possible that the explanation for the spike in the Italian (and not in the English) adjusted R\textsuperscript{2} values due to the manner specification parameter has to be found elsewhere.
 
 
 \section{A full account of the full models} \labsec{stot_full}
 In this Section, I will only discuss two of the 18 models in \reftab{tab_mymodels}, namely the best-performing model of object drop in English and the best model for Italian. It would be impossible to dedicate the same amount of attention to all the models I computed, but the interested reader can find a summary of the relevant results in \refapp{app_models}.\\
-Based on \reftab{tab_adjrsq_eng}, the best-performing model of the implicit object construction in English is the full model making use of Behavioral PISA to measure semantic selectivity. As for Italian, I would have to choose the full model quantifying semantic selectivity with Resnik's SPS based on the results in \reftab{tab_adjrsq_ita}, but I will instead present and discuss the full model using Behavioral PISA thanks to the negligible R\textsuperscript{2} difference between this model and the one using Resnik's SPS in Italian. This choice will make it possible to compare the English and the Italian models, since it minimizes the differences between them.
+Based on \reftab{tab_adjrsq_eng}, the best-performing model of the implicit object construction in English is the full model making use of Behavioral PISA to measure semantic selectivity. As for Italian, I would have to choose the full model quantifying semantic selectivity with Resnik's SPS based on the results in \reftab{tab_adjrsq_ita}, but I will instead present and discuss the full model using Behavioral PISA thanks to the negligible R\textsuperscript{2} difference between this model and the one using Resnik's SPS in Italian. Crucially, this choice will make it possible to compare the English and the Italian models, since it minimizes the differences between them.
 
 
 \subsection{A quick recap} \labsec{stot_full_recap}
 
-il discorso della logica che va al contrario dei computational steps 
+I will now go briefly over the logic behind Medina's variant of Stochastic Optimality Theory (first introduced in \refpage{3steplogicmedina}) which I am using to compute the full models of the gradient grammaticality of object drop in English and Italian. In a nutshell,
 
-% v. Medina 134-140, this section works backwards bla bla, guardare anche la mia slide che era piaciuta a Paul
+\begin{enumerate}
+    \item the probability of \textsc{*Int Arg} dominating each of the other constraints\sidenote{\textsc{*Int Arg} has to be ranked above all the other active constraints for a given input in order to obtain an implicit object output (see \refsec{constraintsmedina} and \refsec{intro_constraints})} is expressed as a function of the input verb's semantic selectivity (which I compute using Resnik's SPS, Computational PISA, and Behavioral PISA);
+    \item the values of the function are used to compute the relative probabilities of each of the 16 possible re-rankings of \textsc{*Int Arg} with respect to the five other constraints at play (see \reftab{me_16rankings})\sidenote{In order to save space, in \reftab{me_16rankings} \textsc{Faith Arg}, \textsc{Telic End}, \textsc{Perf Coda}, \textsc{Non-Iter Arg}, and \textsc{Mann-Spec Arg} are referred to as *I, F, T, P, N, and M, respectively.};
+    \item these relative probabilities determine the relative probability (and thus grammaticality) of the implicit object output for a given input, depending on the input's semantic selectivity score and binary aspectual features.
+\end{enumerate}
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Set of the 16 possible re-rankings of \textsc{*Int Arg} with respect to \textsc{Faith Arg}, \textsc{Telic End}, \textsc{Perf Coda}, \textsc{Non-Iter Arg}, and \textsc{Mann-Spec Arg}, these being unordered with respect one to another.}
+\labtab{me_16rankings} 
+\begin{tabular}{c}
+\textsc{*Int Arg} $\gg$ \{F, T, P, N, M\} \\
+T $\gg$ \textsc{*Int Arg} $\gg$ \{F, P, N, M\} \\
+P $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, N, M\} \\
+\{T, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, N, M\} \\
+M $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, P, N\} \\
+\{M, T\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, P, N\} \\
+\{M, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, N\} \\
+\{M, T, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, N\} \\
+N $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, P, M\} \\
+\{N, T\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, P, M\} \\
+\{N, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, M\} \\
+\{N, T, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, M\} \\
+\{M, N\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, P\} \\
+\{M, N, T\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, P\} \\
+\{M, N, P\} $\gg$ \textsc{*Int Arg} $\gg$ \{F, T\} \\
+\{M, N, T, P\} $\gg$ \textsc{*Int Arg} $\gg$ F \\
+\end{tabular}
+\end{table}
+
+As shown in \reftab{medina_nicetable}, the actual computational steps needed to model object drop go backwards with respect to the three-step logic I summed up just now. Recalling the summary of Medina's computational reasoning in \refpage{3stepcompmedina}, I will follow the exact same procedure:
+\begin{enumerate}
+    \item the grammaticality of the indefinite object drop is quantified via an acceptability judgment survey (refer back to \refch{judgments} for the experimental setting and to \refch{results} for the results), the results thereof are equated to the probability of an implicit object output for a given input;
+    \item the probability of each of the 16 possible constraint orderings in \reftab{me_16rankings} can be estimated via the probability of an implicit object output (i.e. the average judgment for a given input, normalized between 0 and 1);
+    \item knowing the probability of each constraint ordering, it is possible to estimate the probability of \textsc{*Int Arg} dominating each constraint and, finally, the probability of obtaining an implicit object output with each type of input.
+\end{enumerate}
+
+In particular, I will assess the mathematical procedure in \refsec{stot_full_fitting}, while I will discuss the probability of \textsc{*Int Arg} dominating each of the other five constraints and the probability of each type of input resulting in an implicit object output in \refsec{stot_full_parameters} and \refsec{stot_full_predicted}, respectively.
 
 
 \subsection{Fitting the model} \labsec{stot_full_fitting}
 
-estimation of unknown variables (equazioni e tutto)
+In the full Stochastic Optimality Theoretic model(s) I am going to compute, based on my four binary predictors, there are 16 different types of input. The combinatory logic behind this result is shown in \reftab{me_16inputs}.
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{The four binary constraints in the full Stochastic Optimality Theoretic model give rise to 16 different types of inputs.}
+\labtab{me_16inputs} 
+\begin{tabular}{l|cccc}
+         & telicity & perfectivity & iterativity & manner specification \\
+         \hline
+input 1  & +       & +           & +          & +                   \\
+input 2  & +       & +           & +          & -                   \\
+input 3  & +       & +           & -          & +                   \\
+input 4  & +       & +           & -          & -                   \\
+input 5  & +       & -           & +          & +                   \\
+input 6  & +       & -           & +          & -                   \\
+input 7  & +       & -           & -          & +                   \\
+input 8  & +       & -           & -          & -                   \\
+input 9  & -       & +           & +          & +                   \\
+input 10 & -       & +           & +          & -                   \\
+input 11 & -       & +           & -          & +                   \\
+input 12 & -       & +           & -          & -                   \\
+input 13 & -       & -           & +          & +                   \\
+input 14 & -       & -           & +          & -                   \\
+input 15 & -       & -           & -          & +                   \\
+input 16 & -       & -           & -          & -           
+\end{tabular}
+\end{table}
+
+As stated in \refsec{stot_full_recap}, the probability of an implicit object output for each type of input in \reftab{me_16inputs} is equal to the normalized acceptability rating attributed to that specific input. Then, this rating-as-probability is equated to the joint probability of all the rankings in \reftab{me_16rankings} where \textsc{*Int Arg} is ranked above all the relevant, active constraints for the specific type of input under consideration. So, for instance, the probability of an implicit object output for a telic, perfective, non-iterative, manner-specified input is computed as in \refeq{probz1}, since this input violates all the five faithfulness constraints at play, making it necessary to have \textsc{*Int Arg} outranking all of them for an implicit object output to be licensed by the model. The probability of an implicit object output for an atelic, perfective, non-iterative, manner-specified input, instead, is computed as in \refeq{probz2} because the \textsc{Telic End} constraint is vacuously satisfied by atelic inputs. For the same reason, the probability of an implicit object output for atelic, imperfective, iterative, manner-unspecified inputs is computed as in \refeq{probz3}, i.e. as the joint probability of all the rankings in \reftab{me_16rankings} (since these inputs vacuously satisfy all the constraints in the model with the exception of \textsc{Faith Arg}).
+
+\begin{align}  \labeq{probz1}
+    & p(\text{implicit})\textsubscript{Tel Perf Non-Iter Spec} = p(*I \gg {F, T, P, N, M}) \\
+    & p(\text{implicit})\textsubscript{Atel Perf Non-Iter Spec} = p(*I \gg {F, T, P, N, M}) + \nonumber \\ & + p(T \gg *I \gg {F, P, N, M}) \labeq{probz2}\\
+    & p(\text{implicit})\textsubscript{Atel Imperf Iter Non-Spec} = p(*I \gg {F, T, P, N, M}) + \nonumber \\ & + p(T \gg *I \gg {F, P, N, M}) + p(P \gg *I \gg {F, T, N, M}) + \nonumber \\ & + p({T, P} \gg *I \gg {F, N, M}) + p(M \gg *I \gg {F, T, P, N}) + \nonumber \\ & + p({M, T} \gg *I \gg {F, P, N}) + p({M, P} \gg *I \gg {F, T, N}) + \nonumber \\ & + p({M, T, P} \gg *I \gg {F, N}) + p(N \gg *I \gg {F, T, P, M}) + \nonumber \\ & + p({N, T} \gg *I \gg {F, P, M}) + p({N, P} \gg *I \gg {F, T, M}) + \nonumber \\ & + p({N, T, P} \gg *I \gg {F, M}) + p({M, N} \gg *I \gg {F, T, P}) + \nonumber \\ & + p({M, N, T} \gg *I \gg {F, P}) + p({M, N, P} \gg *I \gg {F, T}) + \nonumber \\ & + p({M, N, T, P} \gg *I \gg F) \labeq{probz3}
+\end{align}
+
+Knowing the probability of an implicit object output for each type of input (i.e. the normalized judgment for that type of input), and knowing the computation of the joint probabilities of relative rankings which give rise to it (as just shown briefly in \labeq{probz1} to \labeq{probz3}), it is now possible to compute the probability of \textsc{*Int Arg} dominating \textit{each} of the other five constraints, which will be used later to determine the parameters of the model itself. Limiting my examples to two types of input to avoid encumbering the reader with unnecessary details, the probability of an implicit object output for a telic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz1}) can be unpacked as in \refeq{probz1_loose}, while the probability of an implicit object output for an atelic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz2}) can be unpacked as in \refeq{probz2_loose}.
+
+\begin{align}  \labeq{probz1_loose}
+    & p(\text{implicit})\textsubscript{Tel Perf Non-Iter Spec} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) \cdot \nonumber \\ & \cdot p(*I \gg N) \cdot p(*I \gg M) \\
+    & p(\text{implicit})\textsubscript{Atel Perf Non-Iter Spec} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) \cdot \nonumber \\ & \cdot p(*I \gg N) \cdot p(*I \gg M) + p(*I \gg F) \cdot [1 - p(*I \gg T)] \cdot \nonumber \\ & \cdot p(*I \gg P) \cdot p(*I \gg N) \cdot p(*I \gg M) \labeq{probz2_loose}
+\end{align}
+
+As introduced in \refsec{rankingmedina}, the main innovation by \textcite{Medina2007} within the landscape of Stochastic Optimality Theory is the definition of the ranking of \textsc{*Int Arg} with respect to each of the other constraints at play as a (linear) function of the input verb's semantic selectivity. Such a function takes the shape of \refeq{medinafunction_ex_repeat} (updating \refeq{medinafunction_ex} with the use of Behavioral PISA instead of Resnik's SPS).
+
+\begin{equation} \labeq{medinafunction_ex_repeat}
+p(\textsc{*Int Arg} \gg \textrm{con}) = \frac{\delta_k - \gamma_k}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_k
+\end{equation}
+
+In particular, the five linear functions involved in my full models are shown in \refeq{medinafunction_f_repeat} to \refeq{medinafunction_m} (\refeq{medinafunction_f_repeat} to \refeq{medinafunction_p_repeat} are Medina's original \refeq{medinafunction_f} to \refeq{medinafunction_p}).
+
+\begin{equation} \labeq{medinafunction_f_repeat}
+p(\textsc{*Int Arg} \gg \textsc{F}) = \frac{\delta_1 - \gamma_1}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_1
+\end{equation}
+
+\begin{equation} \labeq{medinafunction_t_repeat}
+p(\textsc{*Int Arg} \gg \textsc{T}) = \frac{\delta_2 - \gamma_2}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_2
+\end{equation}
+
+\begin{equation} \labeq{medinafunction_p_repeat}
+p(\textsc{*Int Arg} \gg \textsc{P}) = \frac{\delta_3 - \gamma_3}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_3
+\end{equation}
+
+\begin{equation} \labeq{medinafunction_n}
+p(\textsc{*Int Arg} \gg \textsc{N}) = \frac{\delta_4 - \gamma_4}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_4
+\end{equation}
+
+\begin{equation} \labeq{medinafunction_m}
+p(\textsc{*Int Arg} \gg \textsc{M}) = \frac{\delta_5 - \gamma_5}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_5
+\end{equation}
+
+It is now possible to compute the probability of an implicit object output for any type of input in terms of a polynomial function computed as the product of several linear functions whose independent variable is the verb's Behavioral PISA score. This result can be obtained by plugging \refeq{medinafunction_f_repeat} to \refeq{medinafunction_m} into the computations of the joint probabilities of \textsc{*Int Arg} dominating each of the other five constraints. So, for instance, the probability of an implicit object output for a telic, perfective, non-iterative, manner-specified input (\refeq{probz1_loose}) can be computed as in  \refeq{polinomial_tpnm}.
+
+\begin{align}  \labeq{polinomial_tpnm}
+    & p(\text{implicit})\textsubscript{Tel Perf Non-Iter Spec} = \nonumber \\ & = [\frac{\delta_1 - \gamma_1}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_1] \cdot \nonumber \\ & \cdot [\frac{\delta_2 - \gamma_2}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_2] \cdot \nonumber \\ & \cdot [\frac{\delta_3 - \gamma_3}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_3] \cdot \nonumber \\ & \cdot [\frac{\delta_4 - \gamma_4}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_4] \cdot \nonumber \\ & \cdot [\frac{\delta_5 - \gamma_5}{\textrm{bPISA}_{max} - \textrm{bPISA}_{min}} \cdot ({\textrm{bPISA}_{i} - \textrm{bPISA}_{min}}) + \gamma_5]
+\end{align}
+
+All the variables in such equations are known, with the exception of $\gamma$s and $\delta$s, which are the values the linear functions take at $\textrm{bPISA}_{min}$ and $\textrm{bPISA}_{max}$, respectively. Based on Medina's method (see \refpage{medinaexcelsolver}), the computational model of the indefinite object construction takes as input the acceptability judgments (normalized between 0 and 1) and the Behavioral PISA scores for all the target stimuli, and optimizes the relevant polynomial functions (such as the one in \refeq{polinomial_tpnm}) so that:
+
+\begin{itemize}
+    \item $\delta_i$ and $\gamma_i$ fall between 0 and 1
+    \item the Summed Squared Error\sidenote{Refer to \refeq{sse} for a definition of Summed Squared Error.} between the actual judgments and the ones predicted by the model have to be minimized
+\end{itemize}
+
+PYTHON
+
+% alla fine della sezione, dire che tutto questo l'ho fatto con uno script in python che sta sul mio github
 
 
 \subsection{Parameters of the linear functions} \labsec{stot_full_parameters}
@@ -180,7 +301,7 @@ estimation of unknown variables (equazioni e tutto)
 quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
 riportare anche la tabella coi valori numerici E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
 
-confrontare coi risultati originali di Medina! qui posso certamente farlo (oppure scrivo proprio un capitoletto a parte dedicato al confronto con Medina e commento tutto il commentabile)
+confrontare coi risultati originali di Medina! qui posso certamente farlo (oppure scrivo proprio un capitoletto a parte, tra "the input the constraints the output" e "model evaluation", dedicato al confronto con Medina e commento tutto il commentabile: Medina vs basic-SPS-Eng mio) + correggere le parti qui dentro dove dicevo "oddly enough..."
 
 \paragraph{English} testo
 

@@ -76,6 +76,11 @@
 \usepackage{longtable}
 
 % BLOCCO AGGIUNTO PER AVERE LE LETTERONE ALFABETO NELLA BIBLIOGRAFIA
+% le prime tre righe sono fondamentali!
+\makeatletter
+\def\ifskipbib{\iftoggle{blx@skipbib}}
+\makeatother
+
 \def\initlist{}
 \forcsvlist{\listadd\initlist}{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 \forlistloop{\DeclareBibliographyCategory}{\initlist}

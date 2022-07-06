@@ -526,7 +526,7 @@ As noted in tableaux \reftab{medina2007_Ytel_Yperf} to \reftab{medina2007_Ntel_N
     \item implementing semantic selectivity in the model properly, and
     \item defining the relative ranking of \textsc{*Int Arg} with respect to the other three constraints as independent computations, yielding fine-grained interactions of semantic selectivity with telicity, perfectivity and faithfulness to the input.
 \end{itemize}
-In such a model, the grammaticality of candidates is assessed across all possible constraint re-rankings, each of which is assigned a probability by the model. Medina's implementation of this model stems from a three-step logic:
+In such a model, the grammaticality of candidates is assessed across all possible constraint re-rankings, each of which is assigned a probability by the model. Medina's implementation of this model stems from a three-step logic: \labpage{3steplogicmedina}
 \begin{enumerate}
     \item the probability of \textsc{*Int Arg} dominating each of the other constraints is expressed as a function of the input verb's semantic selectivity, computed via Resnik's Selectional Preference Strength
     \item the values of the function are used to compute the relative probabilities of each of the four possible re-rankings of \textsc{*Int Arg} with respect to the three other constraints at play
@@ -636,7 +636,7 @@ Let us look at the underlying mathematics in more detail. A function $f(x) = y$ 
 \end{figure}
 
 \hl{Here, $y = x$ meets the $y$ axis in the origin because $q$ is null, and it bisects perfectly the first and third quadrants of the cartesian plane because $m$ is equal to 1. The curves described by $y = 2x + 2$ and $y = -3x - 5$ are steeper ($y$ grows/decreases faster than $x$), because $m$ is larger than 1, and they meet the $y$ axis at 2 and -5 respectively. Moreover, $y = x$ and $y = 2x + 2$ are \textit{positive} linear functions because their slope is positive, i.e. $y$ values increase when $x$ values do, while the opposite holds for $y = -3x - 5$.}\\
-Since any flavor of Optimality Theory requires a conflict between constraints, and since \textsc{*Int Arg} is the one constraint to conflict with all the others in this account of object drop, Medina's model defines a linear function for the pairwise ordering of \textsc{*Int Arg} with respect to \textsc{Faith Arg} (\refeq{medinafunction_f}), \textsc{Telic End} (\refeq{medinafunction_t}), and \textsc{Perf Coda} (\refeq{medinafunction_p}), for a total of three different linear functions. In general, each function takes the form in \refeq{medinafunction_ex}, where the probability of \textsc{*Int Arg} being ranked above another constraint is $y$, $SPS_i$ is \alert{$x$}, $\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}}$ is \alert{$m$}, $\gamma_k - SPS_{min} (\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}})$ is \alert{$q$}, and $\delta_k$ and $\gamma_k$ are, respectively, the values the function assumes at $SPS_{max}$ and $SPS_{min}$.
+Since any flavor of Optimality Theory requires a conflict between constraints, and since \textsc{*Int Arg} is the one constraint to conflict with all the others in this account of object drop, Medina's model defines a linear function for the pairwise ordering of \textsc{*Int Arg} with respect to \textsc{Faith Arg} (\refeq{medinafunction_f}), \textsc{Telic End} (\refeq{medinafunction_t}), and \textsc{Perf Coda} (\refeq{medinafunction_p}), for a total of three different linear functions. In general, each function takes the form in \refeq{medinafunction_ex}, where the probability of \textsc{*Int Arg} being ranked above another constraint is $y$, $SPS_i$ is $x$, $\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}}$ is $m$, $\gamma_k - SPS_{min} (\frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}})$ is $q$, and $\delta_k$ and $\gamma_k$ are, respectively, the values the function assumes at $SPS_{max}$ and $SPS_{min}$.
 
 \begin{equation} \labeq{medinafunction_ex}
 p(\textsc{*Int Arg} \gg \textrm{con}) = \frac{\delta_k - \gamma_k}{SPS_{max} - SPS_{min}} \cdot ({SPS_{i} - SPS_{min}}) + \gamma_k
@@ -733,10 +733,10 @@ The curves in \reffig{mock_scatter_medina} are cubic functions because the compu
 
 \subsection{Implementing a probabilistic constraint ranking} \labsec{medinacomputation}
 
-\paragraph{Introduction} The three-step logic illustrated in \refsec{rankingmedina} is mirrored by the three-step procedure used to computationally implement the probabilistic constraint ranking. The computational steps devised by Medina are as follows:
+\paragraph{Introduction} The three-step logic illustrated in \refsec{rankingmedina} is mirrored by the three-step procedure used to computationally implement the probabilistic constraint ranking. The computational steps devised by Medina are as follows: \labpage{3stepcompmedina}
 
 \begin{enumerate}
-    \item the grammaticality the indefinite object drop is quantified via an acceptability judgment survey, the results thereof are equated to the probability of an implicit object output for a given input
+    \item the grammaticality of the indefinite object drop is quantified via an acceptability judgment survey, the results thereof are equated to the probability of an implicit object output for a given input
     \item the probability of each of the four possible constraint orderings can be estimated via the probability of an implicit object output
     \item knowing the probability of each constraint ordering, it is possible to estimate the probability of \textsc{*Int Arg} dominating each constraint
 \end{enumerate}
@@ -812,7 +812,7 @@ At the end of this process, the experimenter is left with a set of $n$ equations
     \item this numerical value was converted linearly to fall between 0 and 1, since this is the proper range for probabilities
 \end{enumerate}
 
-Medina estimated the values of the unknown parameters using Excel Solver\sidenote{An add-in component of Microsoft Excel used to find the optimal value of a function based on several constraints.}, based on the following two constraints:
+Medina estimated the values of the unknown parameters using Excel Solver\sidenote{An add-in component of Microsoft Excel used to find the optimal value of a function based on several constraints.}, based on the following two constraints: \labpage{medinaexcelsolver}
 \begin{itemize}
     \item $\delta_i$ and $\gamma_i$ have to fall between 0 and 1
     \item the sum-squared error between the predictions of the model and the actual grammaticality judgment data have to be minimized
