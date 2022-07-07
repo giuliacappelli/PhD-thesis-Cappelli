@@ -165,7 +165,7 @@ Based on \reftab{tab_adjrsq_eng}, the best-performing model of the implicit obje
 
 \subsection{A quick recap} \labsec{stot_full_recap}
 
-I will now go briefly over the logic behind Medina's variant of Stochastic Optimality Theory (first introduced in \refpage{3steplogicmedina}) which I am using to compute the full models of the gradient grammaticality of object drop in English and Italian. In a nutshell,
+I will now go briefly over the logic behind Medina's variant of Stochastic Optimality Theory (first introduced on \refpage{3steplogicmedina}) which I am using to compute the full models of the gradient grammaticality of object drop in English and Italian. In a nutshell,
 
 \begin{enumerate}
     \item the probability of \textsc{*Int Arg} dominating each of the other constraints\sidenote{\textsc{*Int Arg} has to be ranked above all the other active constraints for a given input in order to obtain an implicit object output (see \refsec{constraintsmedina} and \refsec{intro_constraints})} is expressed as a function of the input verb's semantic selectivity (which I compute using Resnik's SPS, Computational PISA, and Behavioral PISA);
@@ -196,7 +196,7 @@ N $\gg$ \textsc{*Int Arg} $\gg$ \{F, T, P, M\} \\
 \end{tabular}
 \end{table}
 
-As shown in \reftab{medina_nicetable}, the actual computational steps needed to model object drop go backwards with respect to the three-step logic I summed up just now. Recalling the summary of Medina's computational reasoning in \refpage{3stepcompmedina}, I will follow the exact same procedure:
+As shown in \reftab{medina_nicetable}, the actual computational steps needed to model object drop go backwards with respect to the three-step logic I summed up just now. Recalling the summary of Medina's computational reasoning on \refpage{3stepcompmedina}, I will follow the exact same procedure:
 \begin{enumerate}
     \item the grammaticality of the indefinite object drop is quantified via an acceptability judgment survey (refer back to \refch{judgments} for the experimental setting and to \refch{results} for the results), the results thereof are equated to the probability of an implicit object output for a given input;
     \item the probability of each of the 16 possible constraint orderings in \reftab{me_16rankings} can be estimated via the probability of an implicit object output (i.e. the average judgment for a given input, normalized between 0 and 1);
@@ -243,7 +243,7 @@ As stated in \refsec{stot_full_recap}, the probability of an implicit object out
     & p(\text{implicit})\textsubscript{Atel Imperf Iter Non-Spec} = p(*I \gg {F, T, P, N, M}) + \nonumber \\ & + p(T \gg *I \gg {F, P, N, M}) + p(P \gg *I \gg {F, T, N, M}) + \nonumber \\ & + p({T, P} \gg *I \gg {F, N, M}) + p(M \gg *I \gg {F, T, P, N}) + \nonumber \\ & + p({M, T} \gg *I \gg {F, P, N}) + p({M, P} \gg *I \gg {F, T, N}) + \nonumber \\ & + p({M, T, P} \gg *I \gg {F, N}) + p(N \gg *I \gg {F, T, P, M}) + \nonumber \\ & + p({N, T} \gg *I \gg {F, P, M}) + p({N, P} \gg *I \gg {F, T, M}) + \nonumber \\ & + p({N, T, P} \gg *I \gg {F, M}) + p({M, N} \gg *I \gg {F, T, P}) + \nonumber \\ & + p({M, N, T} \gg *I \gg {F, P}) + p({M, N, P} \gg *I \gg {F, T}) + \nonumber \\ & + p({M, N, T, P} \gg *I \gg F) \labeq{probz3}
 \end{align}
 
-Knowing the probability of an implicit object output for each type of input (i.e. the normalized judgment for that type of input), and knowing the computation of the joint probabilities of relative rankings which give rise to it (as just shown briefly in \labeq{probz1} to \labeq{probz3}), it is now possible to compute the probability of \textsc{*Int Arg} dominating \textit{each} of the other five constraints, which will be used later to determine the parameters of the model itself. Limiting my examples to two types of input to avoid encumbering the reader with unnecessary details, the probability of an implicit object output for a telic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz1}) can be unpacked as in \refeq{probz1_loose}, while the probability of an implicit object output for an atelic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz2}) can be unpacked as in \refeq{probz2_loose}.
+Knowing the probability of an implicit object output for each type of input (i.e. the normalized judgment for that type of input), and knowing the computation of the joint probabilities of relative rankings which give rise to it (as just shown briefly in \refeq{probz1} to \refeq{probz3}), it is now possible to compute the probability of \textsc{*Int Arg} dominating \textit{each} of the other five constraints, which will be used later to determine the parameters of the model itself. Limiting my examples to two types of input to avoid encumbering the reader with unnecessary details, the probability of an implicit object output for a telic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz1}) can be unpacked as in \refeq{probz1_loose}, while the probability of an implicit object output for an atelic, perfective, non-iterative, manner-specified input (computed before in \refeq{probz2}) can be unpacked as in \refeq{probz2_loose}.
 
 \begin{align}  \labeq{probz1_loose}
     & p(\text{implicit})\textsubscript{Tel Perf Non-Iter Spec} = p(*I \gg F) \cdot p(*I \gg T) \cdot p(*I \gg P) \cdot \nonumber \\ & \cdot p(*I \gg N) \cdot p(*I \gg M) \\
@@ -288,22 +288,35 @@ All the variables in such equations are known, with the exception of $\gamma$s a
 
 \begin{itemize}
     \item $\delta_i$ and $\gamma_i$ fall between 0 and 1
-    \item the Summed Squared Error\sidenote{Refer to \refeq{sse} for a definition of Summed Squared Error.} between the actual judgments and the ones predicted by the model have to be minimized
+    \item the Summed Squared Error\sidenote{Refer to \refeq{sse} for a definition of Summed Squared Error.} between the actual judgments and the ones predicted by the model are minimized
 \end{itemize}
 
-PYTHON
-
-% alla fine della sezione, dire che tutto questo l'ho fatto con uno script in python che sta sul mio github
+It would be prohibitive to even attempt to perform such a complex calculation by hand. \textcite[135]{Medina2007} made use of Excel Solver to estimate the $\gamma$s and $\delta$s of the linear functions, while I did so by coding a custom Python script that makes use of the \texttt{curve\_fit} method of the \texttt{optimize} function of the SciPy library \parencite{2020SciPy-NMeth}. My script, which is fully documented and commented for the convenience of future researchers, can be perused and downloaded from \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{my GitHub profile}\sidenote{https://github.com/giuliacappelli/ MedinaStochasticOptimalityTheory}. The interested reader can also download the raw data I used as input in the model from \href{https://github.com/giuliacappelli/dissertationData}{here}\sidenote{https://github.com/giuliacappelli/ dissertationData}.
 
 
 \subsection{Parameters of the linear functions} \labsec{stot_full_parameters}
 
-quei 3/5 plot con la righina unica come Medina (ha senso metterli tutti nello stesso plot?)
-riportare anche la tabella coi valori numerici E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
+In this Section, I am going to discuss the probability of \textsc{*Int Arg} outranking each of the other five constraints at play in my full models of object drop in English and Italian. As explained in \refch{modeltheory} and in \refsec{stot_full_fitting}, these probabilities stem from the estimation of the $\gamma$s and $\delta$s of the linear functions in \refeq{medinafunction_f_repeat} to \refeq{medinafunction_m}, whose product yields a different polynomial function (such as \refeq{polinomial_tpnm}) for each type of input among the 16 that are being modeled here (\reftab{me_16inputs}).
 
-confrontare coi risultati originali di Medina! qui posso certamente farlo (oppure scrivo proprio un capitoletto a parte, tra "the input the constraints the output" e "model evaluation", dedicato al confronto con Medina e commento tutto il commentabile: Medina vs basic-SPS-Eng mio) + correggere le parti qui dentro dove dicevo "oddly enough..."
+\paragraph{English} 
+The parameters of the five linear functions used to estimate the probability of \textsc{*Int Arg} being ranked above the other five constraints in English are reported in \reftab{me_eng_deltagammas}. The values taken by the $\gamma$s and $\delta$s show that the re-ranking probability of \textsc{*Int Arg} depends indeed on the semantic selectivity of verbs (here measured via Behavioral PISA), albeit in different degrees depending on the constraints. Moreover, it always shows a directly proportional relation to Behavioral PISA values, meaning that the re-ranking probability is higher for verbs with a higher semantic selectivity.
 
-\paragraph{English} testo
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Values of unknown parameters $\delta_i$ and $\gamma_i$ in the full Stochastic Optimality Theoretic model of the implicit object construction in English.}
+\labtab{me_eng_deltagammas} 
+\begin{tabular}{l|cc}
+                                                                                & $\gamma$ & $\delta$ \\
+                                                                                \hline
+p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg}) & 0.902        & 1.000        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}) & 0.490        & 1.000        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Perf Coda})  & 0.802        & 0.904        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Non-Iter Arg}) & 0.922        & 0.999        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Mann-Spec Arg}) & 0.889        & 1.000       
+\end{tabular}
+\end{table}
+
+These results are also represented graphically in \reffig{eng_ext2_bpisa_alltogether}, in order to make their relation to one another more evident. First of all, it emerges that the effect of semantic selectivity on the re-ranking probability of \textsc{*Int Arg} is much stronger for \textsc{Telic End} than for the other constraints, since the curve connecting the corresponding $\gamma$ and $\delta$ values is steeper than any other curve in the figure.\\
+Moreover, while all the five curves start from different points (their $\gamma$), four of them (all but the curve relative to \textsc{Perf Coda}) have a $\delta$ of 1, which is the maximum possible value given the constraints on the function optimization. This means that for verbs having a Behavioral PISA score equal to 1, it would be impossible for \textsc{*Int Arg} to be ranked below any of \textsc{Faith Arg}, \textsc{Telic End}, \textsc{Non-Iter Arg}, or \textsc{Mann-Spec Arg}.
 
 \begin{figure}[htb]
 \caption{Probability of \textsc{*Int Arg} being ranked above each of the other constraints, varying in accordance with Behavioral PISA (English full model).}
@@ -311,7 +324,33 @@ confrontare coi risultati originali di Medina! qui posso certamente farlo (oppur
     \input figures/eng_ext2_bpisa_prob_alltogether.tex
 \end{figure}
 
-\paragraph{Italian} testo
+Another relevant conclusion stemming from \reffig{eng_ext2_bpisa_alltogether} is that, regardless of semantic selectivity, \textsc{*Int Arg} is always more likely to rank above \textsc{Non-Iter Arg} than above \textsc{Faith Arg}, above \textsc{Faith Arg} more than above \textsc{Mann-Spec Arg}, and above \textsc{Mann-Spec Arg} more than above \textsc{Perf Coda}, since the curves associated with these rankings never cross. The very high $\gamma$s and $\delta$s for these functions go to show that, in the model of English grammar hereby described, \textsc{*Int Arg} is quite likely to rank above all those constraints. The only exception to this trend is the probability of \textsc{*Int Arg} outranking \textsc{Telic End}, which is higher than the probability of \textsc{*Int Arg} outranking \textsc{Perf Coda} when the Behavioral PISA score of the input verb is higher than 0.765, lower when the Behavioral PISA score is lower than 0.765, and exactly the same (88\%) if Behavioral PISA is 0.765. This depends on the fact that the curves for the re-ranking of \textsc{*Int Arg} with respect to \textsc{Telic End} and \textsc{Perf Coda} cross at (0.765, 0.88), i.e. when the Behavioral PISA score of the verb in the input is 0.765 and the re-ranking probability of \textsc{*Int Arg} is 88\%.
+
+\paragraph{Italian} 
+The $\gamma$ and $\delta$ parameters of the linear functions used to estimate the probability of \textsc{*Int Arg} being ranked above the other five constraints in Italian are in \reftab{me_ita_deltagammas}. These results paint a complex picture.
+
+% rerank prob depends on semsel, in gradi diversi
+% directly/indirectly proportional
+
+% effetto stronger for X, not for Y Z K
+% punti di partenza, punti di arrivo
+% chi sta sempre sopra chi, quali sono le intersezioni
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Values of unknown parameters $\delta_i$ and $\gamma_i$ in the full Stochastic Optimality Theoretic model of the implicit object construction in Italian.}
+\labtab{me_ita_deltagammas} 
+\begin{tabular}{l|cc}
+                                                                                & $\gamma$ & $\delta$ \\
+                                                                                \hline
+p(\textsc{*Int Arg} $\gg$ \textsc{Faith Arg}) & 0.773        & 0.892        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Telic End}) & 0.802        & 0.471        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Perf Coda})  & 0.803        & 0.895        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Non-Iter Arg}) & 0.964        & 1.000        \\
+p(\textsc{*Int Arg} $\gg$ \textsc{Mann-Spec Arg}) & 0.635        & 1.000       
+\end{tabular}
+\end{table}
+
+These results are also shown in \reffig{ita_ext2_bpisa_alltogether}.
 
 \begin{figure}[htb]
 \caption{Probability of \textsc{*Int Arg} being ranked above each of the other constraints, varying in accordance with Behavioral PISA (Italian full model).}
@@ -371,6 +410,11 @@ object drop may be impossible (telic perf?), obligatory (atelic imperf?), but it
 \subsection{Is the best model a good model?} \labsec{concl_aspectualtypes}
 
 parlare dei risultati dei singoli tipi aspettuali (Pearson) e vedere dove fallisce o meno
+
+
+\subsection{MEDINA} \labsec{concl_medinacompare}
+
+confrontare coi risultati originali di Medina! qui posso certamente farlo (oppure scrivo proprio un capitoletto a parte, tra "the input the constraints the output" e "model evaluation", oppure nei "final remarks", dedicato al confronto con Medina e commento tutto il commentabile: Medina vs basic-SPS-Eng mio) + correggere le parti qui dentro dove dicevo "oddly enough..."
 
 
 \subsection{On regression models} \labsec{concl_lmem}
