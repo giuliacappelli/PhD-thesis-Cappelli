@@ -324,17 +324,10 @@ Moreover, while all the five curves start from different points (their $\gamma$)
     \input figures/eng_ext2_bpisa_prob_alltogether.tex
 \end{figure}
 
-Another relevant conclusion stemming from \reffig{eng_ext2_bpisa_alltogether} is that, regardless of semantic selectivity, \textsc{*Int Arg} is always more likely to rank above \textsc{Non-Iter Arg} than above \textsc{Faith Arg}, above \textsc{Faith Arg} more than above \textsc{Mann-Spec Arg}, and above \textsc{Mann-Spec Arg} more than above \textsc{Perf Coda}, since the curves associated with these rankings never cross. The very high $\gamma$s and $\delta$s for these functions go to show that, in the model of English grammar hereby described, \textsc{*Int Arg} is quite likely to rank above all those constraints. The only exception to this trend is the probability of \textsc{*Int Arg} outranking \textsc{Telic End}, which is higher than the probability of \textsc{*Int Arg} outranking \textsc{Perf Coda} when the Behavioral PISA score of the input verb is higher than 0.765, lower when the Behavioral PISA score is lower than 0.765, and exactly the same (88\%) if Behavioral PISA is 0.765. This depends on the fact that the curves for the re-ranking of \textsc{*Int Arg} with respect to \textsc{Telic End} and \textsc{Perf Coda} cross at (0.765, 0.88), i.e. when the Behavioral PISA score of the verb in the input is 0.765 and the re-ranking probability of \textsc{*Int Arg} is 88\%.
+Another relevant conclusion stemming from \reffig{eng_ext2_bpisa_alltogether} is that, regardless of semantic selectivity, \textsc{*Int Arg} is always more likely to rank above \textsc{Non-Iter Arg} than above \textsc{Faith Arg}, above \textsc{Faith Arg} more than above \textsc{Mann-Spec Arg}, and above \textsc{Mann-Spec Arg} more than above \textsc{Perf Coda}, since the curves associated with these rankings never cross. The very high $\gamma$s and $\delta$s for these functions go to show that, in the model of English grammar hereby described, \textsc{*Int Arg} is quite likely to rank above all those constraints. The only exception to this trend is the probability of \textsc{*Int Arg} outranking \textsc{Telic End}, which is higher than the probability of \textsc{*Int Arg} outranking \textsc{Perf Coda} when the Behavioral PISA score of the input verb is higher than 0.765, lower when the Behavioral PISA score is lower than 0.765, and exactly the same (88\%) if Behavioral PISA is 0.765. This depends on the fact that the curves for the re-ranking of \textsc{*Int Arg} with respect to \textsc{Telic End} and \textsc{Perf Coda} cross at (0.765, 0.880), i.e. when the Behavioral PISA score of the verb in the input is 0.765 and the re-ranking probability of \textsc{*Int Arg} is 88\%.
 
 \paragraph{Italian} 
-The $\gamma$ and $\delta$ parameters of the linear functions used to estimate the probability of \textsc{*Int Arg} being ranked above the other five constraints in Italian are in \reftab{me_ita_deltagammas}. These results paint a complex picture.
-
-% rerank prob depends on semsel, in gradi diversi
-% directly/indirectly proportional
-
-% effetto stronger for X, not for Y Z K
-% punti di partenza, punti di arrivo
-% chi sta sempre sopra chi, quali sono le intersezioni
+The $\gamma$ and $\delta$ parameters of the linear functions used to estimate the probability of \textsc{*Int Arg} being ranked above the other five constraints in Italian are in \reftab{me_ita_deltagammas}.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Values of unknown parameters $\delta_i$ and $\gamma_i$ in the full Stochastic Optimality Theoretic model of the implicit object construction in Italian.}
@@ -358,12 +351,25 @@ These results are also shown in \reffig{ita_ext2_bpisa_alltogether}.
     \input figures/ita_ext2_bpisa_prob_alltogether.tex
 \end{figure}
 
+These re-ranking probabilities paint a complex picture. As in English grammar, also in Italian the re-ranking probability of \textsc{*Int Arg} varies depending on the semantic selectivity of the verb in the input. The $\gamma$s are lower than the $\delta$s for the functions relative to \textsc{Faith Arg}, \textsc{Perf Coda}, \textsc{Non-Iter Arg}, and \textsc{Mann-Spec Arg}, meaning that the probability of \textsc{*Int Arg} outranking these constraints is directly proportional to the Behavioral PISA score of the input verb. On the contrary, the re-ranking probability of \textsc{*Int Arg} with respect to \textsc{Telic End} is indirectly proportional to Behavioral PISA, against expectations (refer back to \refsec{medinamodel}). This unexpected result can be easily explained by looking at the relation between judgments and Behavioral PISA in Italian, shown in \reffig{ita_bpisa_telicity} (same visualization as in \reffig{explore_ita_semsel_bpisa}, but here the verbs are marked differently based on their telicity feature). We will remember that \textsc{Telic End} is only active for telic inputs, while it is vacuously satisfied by atelic inputs, and that \textsc{*Int Arg} has to outrank all active constraints for a given input in order for an implicit object output to be grammatical (see \refsec{intro_constraints}). Thus, clearly, the model predicts a lower probability of \textsc{*Int Arg} outranking \textsc{Telic End} for verbs with a higher Behavioral PISA score because it is fed input data where the least semantically selective verb (\textit{rubare}, 'to steal') is also the most grammatical one without a direct object, based on human acceptability judgments. Necessarily, all the other telic verbs have higher Behavioral PISA scores and lower acceptability judgments, thus determining the inverse re-ranking trend I observed.
+
+\begin{figure}[htb]
+\caption{Correlation between Behavioral PISA and normalized acceptability judgments on object drop in Italian (highlighting telicity).}
+\labfig{ita_bpisa_telicity}
+    \input figures/itwac_scatterplot_bpisa_colortelic.tex
+\end{figure}
+
+Going back to \reffig{ita_ext2_bpisa_alltogether}, it is also possible to observe that the effect of Behavioral PISA on the re-ranking probability of \textsc{*Int Arg} with respect to the other constraints is stronger for \textsc{Telic End} (albeit inversely) and \textsc{Mann-Spec Arg}, less noticeable for \textsc{Perf Coda} and \textsc{Faith Arg}, and almost irrelevant for \textsc{Non-Iter Arg}. Moreover, the very high $\gamma$ and $\delta$ values for the function relative to \textsc{Non-Iter Arg} make it so that (almost) regardless of semantic selectivity, \textsc{*Int Arg} will be most likely (between 96.4\% and 100\%) to outrank \textsc{Non-Iter Arg}.\\
+The second constraint which is more likely to be outranked by \textsc{*Int Arg} is \textsc{Perf Coda}, followed by \textsc{Faith Arg}. The situation is complicated by relevant interactions between the function relative to \textsc{Mann-Spec Arg} and those relative to the other four constraints\sidenote{There is also a small interaction between the function relative to \textsc{Telic End} and the functions for \textsc{Perf Coda} and \textsc{Faith Arg}, but I am not describing it into detail given how close it is to the minimum possible Behavioral PISA score.}. In more detail, it results that when Behavioral PISA is higher than 0.240, \textsc{*Int Arg} is more likely to outrank \textsc{Mann-Spec Arg} than \textsc{Telic End} (unlike when Behavioral PISA is lower), when Behavioral PISA is higher than 0.6 approximately, \textsc{*Int Arg} is more likely to outrank \textsc{Mann-Spec Arg} than \textsc{Perf Coda} and \textsc{Faith Arg} (unlike when Behavioral PISA is lower), and finally, when Behavioral PISA is 1, it is certain (probability of 100\%) that \textsc{*Int Arg} will outrank both \textsc{Non-Iter Arg} and \textsc{Mann-Spec Arg}.
+
+
 
 \subsection{Predicted grammaticality of an implicit object output} \labsec{stot_full_predicted}
 
-il plot con le cubiche/polinomiali E INDICARE LE INTERSEZIONI PER IL RUOLO DI SPS
+At last, this Section will present the grammaticality of implicit object outputs in English and in Italian as computed by the full Stochastic Optimality Theoretic model. The grammaticality of object drop is equated to the predicted probability of an implicit object output (depending on semantic selectiviy and the four binary predictors) as determined via plugging the $\gamma$s and $\delta$s of the five separate linear functions (reported in \refsec{stot_full_parameters}) into the 16 polynomial functions of the type exemplified in \refeq{polinomial_tpnm}, one for each type of input in the computation (obtained combinatorily as shown in \reftab{me_16inputs}).
 
-\paragraph{English} testo
+\paragraph{English} 
+\reffig{eng_ext2_bpisa_aspectualtypes} shows 
 
 \begin{figure}[htb]
 \caption{Probability of an implicit object output for each aspectual type, as a function of Behavioral PISA (English full model).}
@@ -371,7 +377,9 @@ il plot con le cubiche/polinomiali E INDICARE LE INTERSEZIONI PER IL RUOLO DI SP
     \input figures/eng_ext2_bpisa_prob_aspectualtypes.tex
 \end{figure}
 
-\paragraph{Italian} testo
+
+\paragraph{Italian} 
+testo
 
 \begin{figure}[htb]
 \caption{Probability of an implicit object output for each aspectual type, as a function of Behavioral PISA (Italian full model).}
