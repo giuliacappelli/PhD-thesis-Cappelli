@@ -437,9 +437,16 @@ manner unspecified  & 0.546 & 0.000
 \end{tabular}
 \end{table}
 
-Let us deepen the analysis by considering \reftab{full_eng_pearson_all}, which presents the Pearson correlations between actual and predicted values relative to all the 16 input types in the model.
+Let us deepen the analysis by considering \reftab{full_eng_pearson_all}, which presents the Pearson correlations between actual and predicted values relative to all the 16 input types in the model. These results come with a caveat attached, namely, that only a small, variable number of stimuli feature within each input type, given that the experiment has 120 target stimuli divided into 16 different input types (refer back to \refch{judgments} for more details on the experimental design). For this reason, the vast majority of the correlations in the table turned out to be statistically non-significant.\\
+However, interesting conclusions can be drawn by the statistically significant results, which are the correlations between actual and predicted values relative to:
 
-% DIRE CHE CI SONO POCHI VERBI PER OGNI GRUPPO
+\begin{itemize}
+    \item the 8 telic perfective non-iterative manner specified inputs;
+    \item the 8 telic imperfective non-iterative manner specified inputs;
+    \item the 8 telic imperfective iterative manner specified inputs (which approach statistical significance without reaching it, at p = 0.072).
+\end{itemize}
+
+The same 8 verbs are involved in these three correlations, i.e. \textit{to chop, to swig, to sign, to slice, to poison, to behead, to knife, to devour}. Moreover, they all are among the least likely inputs to yield an implicit object output, based on the results depicted in \reffig{eng_ext2_bpisa_aspectualtypes}. This observation is compatible with the conclusions drawn by \textcite[150-152]{Medina2007}, where the author argues that the model is quite apt at detecting the features conditioning the grammaticality of object drop with telic inputs, while it does not appear to have the same ability with respect to atelic inputs.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{Pearson correlations between actual and predicted judgments in the full StOT model of object drop in English modeling semantic selectivity with Behavioral PISA (all 16 input types).}
@@ -466,17 +473,44 @@ atelic & perfective & non-iterative & unspecified       & 0.317 & ns \\
 \end{tabular}
 \end{table}
 
+However, Medina's conclusion about the model being better at handling telic inputs than atelic ones does not live up to a closer analysis of the results, this time looking at the squared error for each sentence in the stimuli set. The full list of results, which I will not report here to avoid clogging the argumentation pipe, is available for consultation here in \refapp{app_errors} and, in a comfortably sortable CSV format, \href{https://github.com/giuliacappelli/dissertationData}{in a repository}\sidenote{https://github.com/giuliacappelli/ dissertationData} on my GitHub profile. Incidentally, one could also wonder as to why this analysis (following Medina) takes into consideration squared errors instead of the more straightforward absolute value\sidenote{The absolute value, or modulus, of a real number is its distance from 0, i.e. its numerical value regardless of its sign.} of the difference between actual and predicted judgments. The reason is that $x^2 < |x|$ for $x \in (-1,1)$ while $x^2 > |x|$ when $|x| > 1$ (as depicted in \reffig{squarederror_betterthan_abs}), so that, compared to absolute error, squared error is more lenient towards small errors and more punishing towards large errors.
 
-% adj R squared totale
-% Pearson for each aspectual type (+ Pearson generale)
-% individual squared error (citare appendice nuova!)
+\begin{figure}[htb]
+\caption{Relation between squared error and absolute error, visualized as the intersection between $y = x^2$ and $y = |x|$, respectively.}
+\labfig{squarederror_betterthan_abs}
+\begin{tikzpicture}
+\draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
+\draw[->] (0, 0) -- (0, 4.2) node[above] {$y$};
+\draw[->] (1, 1) -- (1, 1) node[right] {(1,1)};
+\draw[->] (-1, 1) -- (-1, 1) node[left] {(-1,1)};
+\draw[] (2, 4) -- (2, 4) node[right] {$y = x^2$};
+\draw[] (2.1, 2) -- (2.1, 2) node[right] {$y = |x|$};
+    \draw[scale=1.0, domain=-2:2, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
+    \draw[scale=1.0, domain=-2:2, smooth, variable=\x, red] plot ({\x}, {abs(\x)});
+\end{tikzpicture}    
+\end{figure}
 
-% summed	squared	error:	4.966			
-% total	sum	of	squares:	9.748		
-% n	of	points	in	data	sample:	120
-% n	of	variables	in	model:	5	
-% R	squared:	0.491				
-% adjusted	R	squared:	0.468			
+With that said, the analysis of the squared errors yielded by the full, Behavioral PISA-based model of object drop in English contradicts Medina's conclusions about atelic verbs being clumsily handled by the model. Indeed, the 13 best-performing stimuli (whose squared error is even zero) all feature atelic verbs, while they vary with respect to their other aspectual features and Behavioral PISA scores.\\
+Let us now consider the 5 worst-performing stimuli based on their squared errors, collected in \reftab{full_eng_sqerror_5worst}. These results can be easily explained by considering the Behavioral PISA scores of the input verbs in the five stimuli.
+
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Squared errors of the 5 worst-performing stimuli in the full model of object drop in English (modeling semantic selectivity with Behavioral PISA).}
+\labtab{full_eng_sqerror_5worst} 
+\begin{tabular}{l|ccccr|rrr}
+\textbf{verb}  & \textbf{tel} & \textbf{perf} & \textbf{iter} & \textbf{spec} & \textbf{bPISA}   & \textbf{actual} & \textbf{model} & \textbf{sq. error} \\
+\hline
+cut   & -  & +   & -   & -     & 0.356 & 0.286  & 0.745     & 0.211         \\
+steal & +  & +   & -   & -     & 0     & 0.83   & 0.327     & 0.253         \\
+steal & +  & -   & +   & -     & 0     & 0.962  & 0.442     & 0.27          \\
+steal & +  & -   & -   & -     & 0     & 0.927  & 0.407     & 0.27          \\
+steal & +  & +   & +   & -     & 0     & 0.945  & 0.355     & 0.348   
+\end{tabular}
+\end{table}
+
+The verb \textit{to cut} has a (normalized between 0 and 1) Behavioral PISA score of 0.356, which would call for a similar normalized acceptability judgments at about one-third of the 0-1 scale. However, the participants to the experiment provided an average rating of 0.286, which is substantially lower than expected based on Behavioral PISA alone. The model, seeing an atelic, iterative input with a not-too-low Behavioral PISA score, all features of a good candidate for object drop, predictably assigns to such an input a sensible, theory-abiding rating of 0.745 (i.e. a 74.5\% probability of yielding an implicit object output).\\
+On the contrary, all the target stimuli with the verb \textit{to steal}
+
+% sps minima, quindi giudizio pure deve essere minimo, ma la gente dice alto perché in genere non importa cosa uno rubi? rifletterci.
 
 
 \paragraph{Italian} testo
@@ -540,12 +574,22 @@ confrontare coi risultati originali di Medina! qui posso certamente farlo (oppur
 
 SSE non è una buona opzione! eng full mio ha SSE più alto di ita full mio con bPISA, ma adjRsq è meglio nel modello eng che nel modello ita
 
+% ENG
+% summed	squared	error:	4.966			
+% total	sum	of	squares:	9.748		
+% n	of	points	in	data	sample:	120
+% n	of	variables	in	model:	5	
+% R	squared:	0.491				
+% adjusted	R	squared:	0.468
+
 
 \subsection{On regression models} \labsec{concl_lmem}
 
 confrontare i risultati col modello lmem fatto nel capitolo precedente e vedere se effettivamente un modello di regressione può essere usato come modello linguistico
 
 % https://stats.stackexchange.com/questions/147001/is-minimizing-squared-error-equivalent-to-minimizing-absolute-error-why-squared
+
+% keller 2006, conclusioni!!! + keller 2000
 
 % L'INTRO DEL CAPITOLO RISPECCHIA I NUOVI CONTENUTI???
 
