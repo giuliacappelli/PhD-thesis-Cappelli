@@ -417,7 +417,7 @@ I will do so globally, by considering the adjusted R squared values of the two m
 
 
 \paragraph{English} 
-As shown in \reftab{tab_adjrsq_eng}, the adjusted R\textsuperscript{2} of the full model of the implicit object construction in English (modeling semantic selectivity with Behavioral PISA) is 0.468. This means that the model explains 46.8\% of the variance in the data and, thus, that it has a non-negligible explanatory power. This result, together with the highly significant Pearson correlation between actual and predicted values shown in \reftab{tab_pearson_eng} ($\rho$ = 0.700, p < 0.001), proves that the full model captures at least some of the relevant factors determining the grammaticality of object drop in English.\\
+As shown in \reftab{tab_adjrsq_eng}, the adjusted R\textsuperscript{2} of the full model of the implicit object construction in English (modeling semantic selectivity with Behavioral PISA) is 0.468. This means that the model explains 46.8\% of the variance in the data and, thus, that it has a non-negligible explanatory power. This result, together with the highly significant Pearson correlation between actual and predicted values shown in \reftab{tab_pearson_eng} ($\rho$ = 0.700, p < 0.0001), proves that the full model captures at least some of the relevant factors determining the grammaticality of object drop in English.\\
 Let us look more closely at the results. \reftab{full_eng_pearson_main} collects the Pearson correlations between actual and predicted values relative to the main input types in the model, i.e. the stimuli grouped by aspectual features in isolation, without interactions (presence/absence of telicity, perfectivity, iterativity, and manner specification). The correlations are all highly significant (p < 0.0001) and go from 0.412 for atelic inputs to 0.815 for manner specified inputs. This observation is critical for the interpretation of the results, because it goes to show that the overall picture is quite more complex than it may seem by only considering general R\textsuperscript{2} and Pearson values.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
@@ -455,21 +455,21 @@ The same 8 verbs are involved in these three correlations, i.e. \textit{to chop,
 \textbf{telicity} & \textbf{perfectivity} & \textbf{iterativity} & \textbf{manner} & \textbf{$\rho$} & \textbf{p} \\
 \hline
 telic & perfective & iterative & specified              & 0.52 & ns \\
-telic & imperf & iterative & specified                  & 0.665 & (0.072) \\
+telic & imperfective & iterative & specified                  & 0.665 & (0.072) \\
 atelic & perfective & iterative & specified             & 0.015 & ns \\
-atelic & imperf & iterative & specified                 & -0.521 & ns \\
+atelic & imperfective & iterative & specified                 & -0.521 & ns \\
 telic & perfective & non-iterative & specified          & 0.904 & 0.002 \\
-telic & imperf & non-iterative & specified              & 0.789 & 0.02 \\
+telic & imperfective & non-iterative & specified              & 0.789 & 0.02 \\
 atelic & perfective & non-iterative & specified         & -0.455 & ns \\
-atelic & imperf & non-iterative & specified             & -0.458 & ns \\
+atelic & imperfective & non-iterative & specified             & -0.458 & ns \\
 telic & perfective & iterative & unspecified            & 0.289 & ns \\
-telic & imperf & iterative & unspecified                & 0.297 & ns \\
+telic & imperfective & iterative & unspecified                & 0.297 & ns \\
 atelic & perfective & iterative & unspecified           & 0.454 & ns \\
-atelic & imperf & iterative & unspecified               & 0.407 & ns \\
+atelic & imperfective & iterative & unspecified               & 0.407 & ns \\
 telic & perfective & non-iterative & unspecified        & 0.204 & ns \\
-telic & imperf & non-iterative & unspecified            & -0.03 & ns \\
-atelic & perf & non-iterative & unspecified             & 0.213 & ns \\
-atelic & perfective & non-iterative & unspecified       & 0.317 & ns \\
+telic & imperfective & non-iterative & unspecified            & -0.03 & ns \\
+atelic & perfective & non-iterative & unspecified             & 0.213 & ns \\
+atelic & imperfective & non-iterative & unspecified       & 0.317 & ns \\
 \end{tabular}
 \end{table}
 
@@ -507,57 +507,82 @@ steal & +  & +   & +   & -     & 0     & 0.945  & 0.355     & 0.348
 \end{tabular}
 \end{table}
 
-The verb \textit{to cut} has a (normalized between 0 and 1) Behavioral PISA score of 0.356, which would call for a similar normalized acceptability judgments at about one-third of the 0-1 scale. However, the participants to the experiment provided an average rating of 0.286, which is substantially lower than expected based on Behavioral PISA alone. The model, seeing an atelic, iterative input with a not-too-low Behavioral PISA score, all features of a good candidate for object drop, predictably assigns to such an input a sensible, theory-abiding rating of 0.745 (i.e. a 74.5\% probability of yielding an implicit object output).\\
-On the contrary, all the target stimuli with the verb \textit{to steal}
-
-% sps minima, quindi giudizio pure deve essere minimo, ma la gente dice alto perché in genere non importa cosa uno rubi? rifletterci.
+The verb \textit{to cut} has a (normalized between 0 and 1) Behavioral PISA score of 0.356, which would call for a similar normalized acceptability judgments at about one-third of the 0-1 scale. However, the participants to the experiment provided an average rating of 0.286, which is substantially lower than expected based on Behavioral PISA alone. The model, presented with an atelic, iterative input with a not-too-low Behavioral PISA score, which are all features of a good candidate for object drop, predictably assigns to such an input a sensible, theory-abiding rating of 0.745 (i.e. a 74.5\% probability of yielding an implicit object output).\\
+On the contrary, all the target stimuli with the verb \textit{to steal} get a much lower predicted rating than the actual rating provided by human subjects. This happens, once again, because of the clash between Behavioral PISA (and telicity) and the judgments obtained in the experiment with native speakers. The verb \textit{to steal} is telic (a feature that usually goes hand-in-hand with object drop) and it has the lowest Behavioral PISA score among the 30 target verbs\sidenote{Please refer to \refappsec{app_bpisa} for the raw Behavioral PISA scores and to \reffig{explore_eng_semsel_bpisa} for a graphical representation of the normalized scores.}, therefore the model is quite keen on predicting a low probability of object drop for such an input. However, despite the minimum Behavioral PISA score, human subjects provided very high acceptability ratings for all the stimuli featuring this telic, manner unspecified verb (ranging from 0.830 for the perfective non-iterative stimulus to 0.962 for the imperfective iterative stimulus, consistently with what I noted so far about the role of the binary predictors). This unexpected clash between Behavioral PISA and human judgments is easily explained. As real-world knowledge suggests, it is indeed possible to steal a wide array of items from their legitimate possessor, as well as someone's breath, or heart, or thunder, or equally essential things in common-use idioms\sidenote{Refer back to \refpage{cleanthecorpus} for the detailed description of how I avoided idiom-dependent artifacts in my Computational and Behavioral PISA calculations.}. The broad spectrum of stealable items, i.e. the low semantic density of the direct objects of the verb \textit{to steal}, determines the low Behavioral PISA score of this verb. On the other hand, native speakers of English found it quite acceptable to use the verb intransitively even in the most object drop-resistant context (i.e. the perfective non-iterative stimulus \textit{Diana had stolen.}), since when processing such utterances they are typically more focused on the anti-social behavior shown by the Agent than on the concrete reality of the object the Agent stole (refer to \textcite[27-28]{Goldberg2005} for a similar effect of world knowledge facilitating object drop with some so-called "taboo" verbs). 
 
 
-\paragraph{Italian} testo
+\paragraph{Italian} 
+As argumented in \refsec{intro_evaluation}, the full Stochastic Optimality Theoretic model of object drop in Italian, making use of Behavioral PISA to quantify semantic selectivity, achieves a satisfactory level of reliability in its results. In particular, it explains 45.5\% of the variance in the data (based on the adjusted R\textsuperscript{2} computed in \reftab{tab_adjrsq_ita}), and there is a highly significant, large correlation between actual and predicted acceptability ratings (Pearson $\rho$ = 0.692, p value < 0.0001, as shown in \reftab{tab_pearson_ita}).\\
+A very high, very significant correlation with comparable Pearson $\rho$s and the same p value is also found between actual and predicted judgments when dividing the full set of stimuli into subgroups based on the main input types, as in \reftab{full_ita_pearson_main}. Among these 8 input types, only atelic and manner unspecified inputs yield predicted ratings that vary remarkably from those elicited from human subjects (Pearson $\rho$s are respectively 0.374 and 0.470, statistically significant in both cases). The overall results show that, despite these two inconsistencies, so far the general picture stays true to the one depicted by the adjusted R\textsuperscript{2} and total Pearson correlation without a great deal of nuance.
 
-% adj R squared totale
-% Pearson for each aspectual type (+ Pearson generale)
-% individual squared error (citare appendice nuova!)
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Pearson correlations between actual and predicted judgments in the full StOT model of object drop in Italian modeling semantic selectivity with Behavioral PISA (main input types).}
+\labtab{full_ita_pearson_main} 
+\begin{tabular}{l|rr}
+\textbf{input type} & \textbf{Pearson $\rho$} & \textbf{p value} \\
+\hline
+telic               & 0.640 & 0.000 \\
+atelic              & 0.374 & 0.001 \\
+perfective          & 0.631 & 0.000 \\
+imperfective        & 0.730 & 0.000 \\
+iterative           & 0.692 & 0.000 \\
+non-iterative       & 0.694 & 0.000 \\
+manner specified    & 0.749 & 0.000 \\
+manner unspecified  & 0.470 & 0.000
+\end{tabular}
+\end{table}
 
-% \reftab{tab_adjrsq_ita}
-% \reftab{tab_pearson_ita}
+Is this also valid when considering all the 16 input types hereby modeled? Let us look at the Pearson correlations in \reftab{full_ita_pearson_all}. Once again, as noted about the English stimuli, large p values are to be expected in such a computation, given that the 16 slots for the input types are populated by a meager 120-sentence total. However, while in English the correlation turned out to be statistically significant for two types of input (and approaching significance for a third type), this is not the case in Italian. I interpret these results to mean that the overall picture made up by the Italian data is more nuanced that the English one, where at least some clear-cut distinctions between the aspectual types emerge.
 
-% total Pearson	r= 0.692	p= 0.000
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Pearson correlations between actual and predicted judgments in the full StOT model of object drop in Italian modeling semantic selectivity with Behavioral PISA (all 16 input types).}
+\labtab{full_ita_pearson_all} 
+\begin{tabular}{llll|rr}
+\textbf{telicity} & \textbf{perfectivity} & \textbf{iterativity} & \textbf{manner} & \textbf{$\rho$} & \textbf{p} \\
+\hline
+telic    & perfective   & iterative     & specified             & 0.329 & ns \\
+telic    & imperfective       & iterative     & specified       & 0.630 & ns \\
+atelic   & perfective   & iterative     & specified             & 0.466 & ns \\
+atelic   & imperfective       & iterative     & specified       & 0.022 & ns \\
+telic    & perfective   & non-iterative & specified             & 0.558 & ns \\
+telic    & imperfective       & non-iterative & specified       & 0.478 & ns \\
+atelic   & perfective   & non-iterative & specified             & 0.099 & ns \\
+atelic   & imperfective       & non-iterative & specified       & 0.282 & ns \\
+telic    & perfective   & iterative     & unspecified           & 0.486 & ns \\
+telic    & imperfective      & iterative     & unspecified      & 0.751 & ns \\
+atelic   & perfective   & iterative     & unspecified           & 0.429 & ns \\
+atelic   & imperfective       & iterative     & unspecified     & 0.436 & ns \\
+telic    & perfective   & non-iterative & unspecified           & 0.552 & ns \\
+telic    & imperfective       & non-iterative & unspecified     & 0.775 & ns \\
+atelic   & perfective         & non-iterative & unspecified     & 0.419 & ns \\
+atelic   & imperfective   & non-iterative & unspecified         & 0.404 & ns
+\end{tabular}
+\end{table}
 
-% telic	r= 0.640	p= 0.000
-% atelic	r= 0.374	p= 0.001
-% perf	r= 0.631	p= 0.000
-% imperf	r= 0.730	p= 0.000
-% iter	r= 0.692	p= 0.000
-% noiter	r= 0.694	p= 0.000
-% spec	r= 0.749	p= 0.000
-% nospec	r= 0.470	p= 0.000
+Finally, a more in-depth analysis of the results concerns the squared error of each stimulus in the experiment about object drop in Italian (reported in full here in \refapp{app_errors} and \href{https://github.com/giuliacappelli/dissertationData}{online}\sidenote{https://github.com/giuliacappelli/ dissertationData} on my GitHub profile. Comparably with English, there are 12 stimuli in the full set of 120 stimuli whose squared error is null (which equates to perfect model performance), but, unlike in English, they do not belong to any input aspectual type in particular as a group. This is also another proof of the fact that apparently Italian grammar, at least with respect to object drop, is indeed more nuanced than English grammar.\\
+Let us now consider the five worst-performing stimuli, collected in \reftab{full_ita_sqerror_5worst}.
 
-% telic_perf_iter_spec	r= 0.329	p= 0.427
-% telic_imperf_iter_spec	r= 0.630	p= 0.094
-% atelic_perf_iter_spec	r= 0.466	p= 0.352
-% atelic_imperf_iter_spec	r= 0.022	p= 0.966
-% telic_perf_noiter_spec	r= 0.558	p= 0.150
-% telic_imperf_noiter_spec	r= 0.478	p= 0.231
-% atelic_perf_noiter_spec	r= 0.099	p= 0.852
-% atelic_imperf_noiter_spec	r= 0.282	p= 0.588
-% telic_perf_iter_nospec	r= 0.486	p= 0.514
-% telic_imperf_iter_nospec	r= 0.751	p= 0.249
-% atelic_perf_iter_nospec	r= 0.429	p= 0.164
-% atelic_imperf_iter_nospec	r= 0.436	p= 0.157
-% telic_perf_noiter_nospec	r= 0.552	p= 0.448
-% telic_imperf_noiter_nospec	r= 0.775	p= 0.225
-% atelic_perf_noiter_nospec	r= 0.419	p= 0.175
-% atelic_imperf_noiter_nospec	r= 0.404	p= 0.193
+% i 12 stimoli migliori (errore nullo) non sono di nessun tipo aspettuale particolare
+% squared error dei 5 stimoli peggiori, citare appendice nuova
+% POUR era anche in Medina! vedere lei cosa diceva
 
-% summed	squared	error:	4.516			
-% total	sum	of	squares:	8.65		
-% n	of	points	in	data	sample:	120
-% n	of	variables	in	model:	5	
-% R	squared:	0.478				
-% adjusted	R	squared:	0.455			
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{Squared errors of the 5 worst-performing stimuli in the full model of object drop in Italian (modeling semantic selectivity with Behavioral PISA).}
+\labtab{full_ita_sqerror_5worst} 
+\begin{tabular}{l|ccccr|rrr}
+\textbf{verb}  & \textbf{tel} & \textbf{perf} & \textbf{iter} & \textbf{spec} & \textbf{bPISA}   & \textbf{actual} & \textbf{model} & \textbf{sq. error} \\
+\hline
+firmare & +  & +   & -   & +     & 0.564 & 0.789  & 0.365     & 0.179         \\
+versare & -  & -   & +   & -     & 0.780  & 0.432  & 0.866     & 0.188         \\
+versare & -  & -   & -   & -     & 0.780  & 0.299  & 0.859     & 0.313         \\
+versare & -  & +   & +   & -     & 0.780  & 0.183  & 0.757     & 0.330          \\
+versare & -  & +   & -   & -     & 0.780  & 0.165  & 0.751     & 0.343        
+\end{tabular}
+\end{table}
 
 
+
+			
 
 \subsection{Comparing the English and Italian models} \labsec{stot_full_engita}
 
@@ -581,6 +606,14 @@ SSE non è una buona opzione! eng full mio ha SSE più alto di ita full mio con 
 % n	of	variables	in	model:	5	
 % R	squared:	0.491				
 % adjusted	R	squared:	0.468
+
+% ITA
+% summed	squared	error:	4.516			
+% total	sum	of	squares:	8.65		
+% n	of	points	in	data	sample:	120
+% n	of	variables	in	model:	5	
+% R	squared:	0.478				
+% adjusted	R	squared:	0.455
 
 
 \subsection{On regression models} \labsec{concl_lmem}
