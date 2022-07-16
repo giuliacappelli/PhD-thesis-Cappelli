@@ -141,7 +141,7 @@ In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wor
 \paragraph{Results}
 The SPS scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_resnik}.\\ % \vspace{}
 
-\subsection{Computational PISA}\labsec{compuPisa}
+\subsection{Computational PISA} \labsec{compuPisa}
 
 Distributional semantics is based on the Distributional Hypothesis, which states that words occurring in the same contexts tend to have similar meanings, or, quoting the popular formula from \textcite{firth1957synopsis}, that "you shall know a word by the company it keeps". Such a framework puts the meaning of words in the ever-changing use speakers make of language, instead of securing it in the nodes of a static lexical taxonomy. Most importantly, distributional semantics posits a correlation between distributional similarity and semantic similarity and uses the former to model the latter. Roughly, the semantic space where words "keep company" can be modeled as a vector space where each word is a vector whose dimensions are context words. An example is provided in \reffig{vectorspace}, where the two words \textit{hamburger} and \textit{dragon} populate a semantic space defined by the three context words \textit{big}, \textit{tasty}, and \textit{mythological}. The coordinates of \textit{hamburger} are (2,2,0) because in this hypothetical situation it occurs twice with \textit{big}, twice with \textit{tasty}, and never with \textit{mythological}, while the coordinates of \textit{dragon} are (2,0,1) because it occurs twice with \textit{big}, never with \textit{tasty}, and once with \textit{mythological} in the hypothetical corpus.
 
