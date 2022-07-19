@@ -2,20 +2,180 @@
 \chapter{Object-dropping verbs}
 \labch{objectdrop}
 
-Summary
+As mentioned in \refch{intro}, this thesis is about indefinite implicit objects. What is "indefinite" about them? In what sense can they be considered "implicit"? And ultimately, what is objecthood itself? This Chapter will answer these questions in reverse order, from the most general to the most specific one. In \refsec{theory_transitivity} I will make reference to the transitivity continuum, as defined by \textcite{HopperThompson1980} and further explored by later literature. In \refsec{theory_def_vs_indef} a crucial distinction will be made between definite and indefinite object drop, following \textcite{Fillmore1986} and subsequent works. The nature of \textit{indefinite} object drop will be finally described in \refsec{theory_defindefinite}, and a working definition (for the purposes of this thesis) will be provided in \refsec{theory_workingdef}.
 
-% *Cummins & Roberge (2005: 47)*  
-% > Based on work by Roberge
-% (2002, to appear), we hold that all null objects are syntactically represented.2
-% Roberge proposes a Transitivity Requirement (TR), parallel to the Extended
-% Projection Principle (EPP) for subjects, whereby the direct-object position,
-% complement of the verb, is given by Universal Grammar.
+\section{Transitivity as a prototype} \labsec{theory_transitivity}
 
-\section{Definite \textit{vs} indefinite object drop} \labsec{theory_mythesis}
+\subsection{Transitivity in Hopper \& Thompson (1980)} \labsec{theory_ht1980}
+School kids everywhere are used to call "transitive" the verbs which take an overt direct object, with reference to the syntax. In a traditional semantic definition, a clause is deemed "transitive" if it describes an event where the action performed by an Agent "passes over"\sidenote{Hence the name of the concept of transitivity, from Latin \textit{transire} 'to go over'} to a Patient, which usually undergoes some kind of transformation.\\
+Going beyond these naive definitions, but still capturing their spirit, \textcite{HopperThompson1980} first proposed an account where transitivity is interpreted as a scalar concept whose strength depends on several parameters, or, to use more modern terminology, as a prototype category \parencite{Naess2007}. In particular, they identified ten parameters \parencite[252]{HopperThompson1980}, reported almost \textit{verbatim} from \reftab{ht1980_parameters}.
 
-\subsection{Definite or indefinite: discrete accounts} \labsec{theory_discrete}
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{\textcite[252]{HopperThompson1980} defined transitivity as a prototype concept determined by ten parameters.}
+\labtab{ht1980_parameters}
+\begin{tabular}{rl|ll}
+ & & \textbf{high transitivity} & \textbf{low transitivity} \\
+ \hline
+A. & \textbf{Participants} & 2+ (Agent and Object)  & 1 participant  \\
+B. & \textbf{Kinesis} & action  & non-action  \\
+C. & \textbf{Aspect} & telic  & atelic  \\
+D. & \textbf{Punctuality} & punctual  & non-punctual  \\
+E. & \textbf{Volitionality} & volitional  & non-volitional  \\
+F. & \textbf{Affirmation} & affirmative  & negative  \\
+G. & \textbf{Mode} & realis  & irrealis  \\
+H. & \textbf{Agency} & A high in potency  & A low in potency   \\
+I. & \textbf{Affectedness of O} & O totally affected  & O not affected  \\
+J. & \textbf{Individuation of O} & O highly individuated  & O non-individuated  
+\end{tabular}
+\end{table}
 
-Definite or indefinite: discrete accounts -- Fillmore (1969)’s seminal work
+% PUNCTUALITY È LA PERFECTIVITY???
+SPIEGARE QUELLI NON OVVI
+
+A terse summary by \textcite[15]{Naess2007} clearly shows the relation between the naive definitions of transitivity and the ten-parameter account by \textcite{HopperThompson1980}. A prototypical cause is understood to describe an event such that:
+\begin{itemize}
+    \item a volitional Agent (E, H)
+    \item performs an action (B)
+    \item with a tangible, lasting effect on a Patient (A, I, J),
+    \item and it is presented as real and concluded (C, D, F, G).
+\end{itemize}
+
+These parameters are potentially active in all languages, but, in a true prototypical fashion, languages may differ from one another with respect to the actual subset of parameters they select as necessary criteria for transitivity.
+
+
+
+% *Naess (2007: 18)*
+% > Interestingly, an influential line of research in current functional typology ap-
+% pears to explicitly contradict the statement that prototypical transitive clauses have
+% highly individuated O arguments. The observation sometimes referred to as
+% “Comrie’s generalisation” (de Swart 2003, Næss 2007) states that “the most natural
+% kind of transitive construction is one where the A is high in animacy and definite-
+% ness, and the P [= O] is lower in animacy and definiteness; and any deviation from
+% this pattern leads to a more marked construction” (Comrie 1989 :128, my empha-
+% sis).
+
+% *Lorenzetti (2008: 78)*  
+% >  the phenomenon of the null instantiation of
+% objects is best characterised within a revised notion of transitivity to be conceived as a scalar
+% property of utterances, and emerging from the interplay of a cluster of parameters [Hopper
+% and Thompson 1980]. The latter, however, do not display the same degree of salience, and
+% only some of them, such as agentivity, affectedness and individuation of the object are
+% assumed to have a primary role in this respect.
+
+% *Newman & Rice (2006: 6)*  
+% > An influential and far-reaching re-conceptualization of the notion of
+% transitivity is that found in Hopper and Thompson (1980). They identify 10
+% parameters which distinguish high and low transitivity of clauses, as
+% summarized in Table 2.
+
+% *Olsen & Resnik (1997: 2)*
+% > According to H&T, clauses that
+% show telic aspect and individuated objects are more transitive than those with
+% atelic aspect and nonindividuated objects. Furthermore, if aspect and
+% individuation covary, telicity and high individuation should occur together in
+% transitive clauses, and atelicity and low individuation together in intransitive
+% clauses. 
+
+% *Kardos (2010: 1)*
+% > This paper is concerned with the distinct behavior of change-of-state (COS) verbs and
+% pseudo-transitive verbs. The members of the former class, such as break, crack, explode, dry,
+% harden, melt and open, are considered to exhibit prototypical transitive behavior (Hopper and
+% Thompson 1980, Blume 1998, Testelec 1998, inter alia), whereas those of the latter class,
+% such as eat, drink, sweep, write, knit, translate, which are also referred to as ambitransitive or
+% labile (Næss 2009), are known to feature both transitive and intransitive properties. [...]  
+%  First, it is widely assumed that what makes a verb
+% prototypically transitive is the semantically maximally distinct behavior of its arguments (e.g.
+% Kemmer 1993, Næss 2009). [...] with these verbs the obligatory
+% presence of two arguments follows from the fact that they denote complex events1 (Levin and
+% Rappaport Hovav 2005, van Hout 1996).
+
+% *Kardos (2010: 3)*  
+% > The term 'pseudo-transitive' chararacterizes different types of verbs, such as verbs of
+% creation (e.g. cook, write, knit), verbs of ingestion or consumption (e.g. eat, drink), and verbs
+% of surface contact (e.g. sweep). They occur in a variety of grammatical environments, unlike
+% change-of-state verbs. For instance, they appear in the transitivity alternation, in which the
+% alternating verb may appear with an explicit object or with an indefinite null complement
+% (INC)3 (Fillmore 1986).
+
+% *Kardos (2010: 4)*  
+% V. CENNAMO PER INCREMENTAL THEME!
+% > Finally, an interesting feature of verbs of creation, verbs of ingestion and verbs of surface
+% contact is that they occur with a special type of direct object, called incremental theme (for a
+% detailed discussion of incremental themes, see Dowty 1991, Levin and Rappaport Hovav
+% 2005, Wechsler 2005, Ramchand 2008).
+
+% *Kastner & Zu (2014: 19-20)* 
+% > Looking at implicit objects in Hebrew,
+% episodic contexts allow for any arbitrary object (140) while generic contexts require a [+human] or
+% [+animate] object (141). Examples are from Landau (2010:384), and see Cattaneo (2008) for discussion
+% of a similar requirement in Italian implicit objects:  
+% (140) ‘I hope you managed (=were quick enough) to photograph. (pointing to a bird)’  
+% (141) ‘The fact that in Texas, they hang people/*paintings in rooms without windows, drives me crazy.’  
+% Landau concludes that a full typology of implicit objects might have to make reference to [+human] or
+% [+generic] specifications
+
+\subsection{Later refinements} \labsec{theory_postthompson}
+Naess si ricollega perfettamente all'agent affectedness che dico sotto!
+
+% *Naess (2007: 28)*  
+% SI RICOLLEGA BENISSIMO ALLA PROTOTYPICAL TRANSITIVITY!  
+% > In what Kemmer calls a prototypical two-participant event, corresponding to
+% what will here be called a (semantically) transitive event, it is a basic requirement
+% that the Initiator and the Endpoint participants be two physically distinct entities,
+% and that the event involve some kind of transmission of force from the Initiator to
+% the Endpoint participant. Kemmer further specifies that the initiating entity – an
+% agent, in this particular case – should be human and acting volitionally, while the
+% Endpoint – a patient – should be inanimate, definite, and completely affected by
+% the event instigated by the agent.
+
+% *Naess (2007: 29)*  
+% > A prototypical transitive event, then, involves a prototypical agent and a proto-
+% typical patient, neither of which shares any of the defining properties of the other.
+% The fact that prototypicality tends to be recursive is noted by Taylor (1995 :61):
+% “the very attributes on whose basis membership in a category is determined are
+% more often than not themselves prototype categories.” We remember from the pre-
+% vious chapter that a fundamental property of prototype categories is that they are
+% defined in maximal distinction to each other.
+
+% *Naess (2007: 30)*  
+% > (3.1) The Maximally Distinct Arguments Hypothesis  
+% 		 A prototypical transitive clause is one where the two participants are maxi-
+% mally semantically distinct in terms of their roles in the event described by
+% the clause.
+
+
+\section{Definite \textit{vs} indefinite object drop} \labsec{theory_def_vs_indef}
+
+\subsection{Either definite or indefinite: discrete accounts} \labsec{theory_discrete}
+
+Definite or indefinite: discrete accounts -- Fillmore (1986)’s seminal work
+
+% *Olsen & Resnik (1997: 7)*  
+% IMPORTANTE! DEFINITE VS INDEFINITE  
+% > Resnik (1993) also tested whether there was a difference between definite
+% and indefinite implicit object alternations, in terms of a correlation between
+% selectional preference and implicit object instances. He hypothesizes (Resnik
+% 1993:88-89) that "if a verb requires that an antecedent be available in the
+% discourse context, the verb itself might not contribute as much information about
+% the omitted object." Similarly, the transitivity hypothesis ranks clauses with
+% definite implicit objects—those that have discourse antecedents and telic aspect—
+% as higher in transitivity than clauses with indefinite implicit objects. [...]  
+%  Moreover, H&T's individuation property
+% (elaborated here to include selectional constraints) covaries with aspect as
+% predicted by the transitivity hypothesis, unifying the "typicality" facts and the
+% telicity properties where previously they represented two apparently disparate
+% requirements on the implicit object constructions.
+
+% *Olsen & Resnik (1997: 9)*  
+% > An intriguing but as yet unexplored question concerns the potential
+% relationship between Resnik's (1993,1996) information-theoretic account of
+% selectional constraints and H&T's proposal that the transitivity spectrum is closely
+% bound up with discourse grounding. Backgrounded material may be distinguished
+% from foregrounded material by the amount of information added to the discourse,
+% as measured against prior context; this is also the intuitive characterization of
+% weakly versus strongly selected arguments. We therefore conjecture that the
+% relationship between transitivity and discourse new information may also be
+% amenable to an information-theoretic treatment.
 
 % *Liu (2008: 296)*  
 % > As Rutherford (1998:191) correctly points out, “Verbs
@@ -269,6 +429,497 @@ Definite or indefinite: discrete accounts -- Fillmore (1969)’s seminal work
 % material can be elided in the presence of a suitable antecedent clause in prior discourse:  
 % (7) [ Someone left]A , but I don’t know [who left]E .
 
+\subsection{Genre-based implicit objects: a special case of definite object drop} \labsec{theory_recipes}
+
+Recipes and special registers
+
+% Syntactic *Cote (1996: 120-122)* (130 del pdf)
+% > By syntactic explanation I mean any analysis which argues that the null object is represented in the syntactic structure of the sentence/utterance. [...] Culy (1987) argues this case for null objects in recipe constructions in English (a separate issue
+% which will be discussed in Chapter 4) and then adds that he rejects the idea of a difference between the
+% grammar of recipe contexts and the grammar of ‘Standard’ English. In particular, he argues that null
+% objects in general are zero anaphors.
+
+% *Ahringberg (2015: 9)*  
+% > 2.3.3 Constructional licensing
+% As previously mentioned, definite null instantiation is licensed not only by the predicate’s
+% lexical properties but also by the grammatical construction in which it is found (Fillmore, 1986,
+% p. 97; Lambrecht & Lemoine, 2005, p. 20). This kind of licensing is, for example, evident in
+% imperative constructions (Prytz, 2009, pp. 11-12) which are common in recipes or manuals.
+
+% *Garcia-Velasco & Munoz (2002: 9)*  
+% RECIPES != INDEFINITE OBJECT  
+% > Hypothesis 1  
+% Indefinite Objects do not present available referents in the surrounding linguistic or
+% extralinguistic context. [...]  
+% for example, bake tends to appear in recipe contexts, exemplifying the so called “instructional
+% imperative”, and consequently a type of structural omission. Bake, in this example does not
+% take an activity reading, and, therefore, it may have a referent in the surrounding linguistic
+% context:
+
+
+% *Weir (2017: 157)*  
+% PARALLELISMO VP/DP! È ANCHE IN QUALCHE APPUNTO QUA SOTTO
+% > This paper discusses object drop in English ‘reduced written register’ (RWR),
+% such as recipes (Haegeman 1987a, b, Massam & Roberge 1989, Massam 1992)
+% and diaries. [...] I propose that object drop in RWR is dependent on article drop. [...]  
+% This phenomenon is restricted to written English. Haegeman (1990) points out that
+% object drop of this type is impossible in speech.
+
+% *Weir (2017: 158)*  
+% > Previous work on the construction (Haegeman 1987a, b; Massam & Roberge 1989;
+% Massam 1992) concentrates primarily on the absence of objects in recipes, as in
+% (1a, b). It is also possible to see this phenomenon in instructional or directive reg-
+% isters more generally, as (1c) shows. Furthermore, it can appear in more informal
+% written registers, such as in diaries, SMS (text) messages, internet communication,
+% etc., as (1d, e) exemplify. It is, then, one of the hallmarks of the register which is
+% called ‘block language’ by Straumann (1935), ‘abbreviated English’ by Stowell (1991,
+% 1999), and ‘reduced written register’ by Weir (2013), the term I shall adopt here,
+% abbreviated as ‘RWR’. [...]  
+% Something about ‘reduced written register’ licenses the possibility of null objects,
+% a factor which is not present in spoken English.  
+% In this paper I propose an analysis which explains this variation. Concretely, I
+% capitalize on an apparently independent feature of RWR: it also allows article drop,
+% as shown below.  
+% (3) Bought Ø new phone today. (= I bought a new phone today.)
+
+% *Weir (2017: 160)*  
+% > Another interesting fact about null objects in RWR is that there are restrictions
+% on their co-occurrence with overt subject pronouns, as Massam & Roberge (1989)
+% and Massam (1992) discuss. Null objects are licit in imperatives, as in (12a), or in
+% a declarative sentence in which the subject has been dropped, as in (13a), but if
+% subjects are included in these structures, they become ungrammatical. 
+
+% *Weir (2017: 167)*  
+% > One of the phenomena which an account of object drop will have to explain is the
+% subject/object asymmetry: object pronouns cannot be dropped to the exclusion of
+% subject pronouns. Interestingly, this asymmetry has a very similar correlate in an-
+% other phenomenon which only takes place in ‘reduced written registers’ of English,
+% namely article drop. This phenomenon is most usually discussed with respect to
+% the grammar of newspaper headlines (Mårdh 1980, Stowell 1991, 1999, 2013, Reich
+% this issue, Weir 2013), but it is possible in other subregisters of RWR as well,
+
+% *Weir (2017: 168)*  
+% > A very interesting parallel with the object drop cases appears. Just as object
+% pronouns cannot be dropped if subject pronouns are present, articles in object DPs
+% cannot be dropped if articles in subject DPs are present. This subject-object asym-
+% metry was noted by Mårdh (1980) in a corpus study of English headlines. [...]  
+% Stowell (1991, 1999) also notes the asymmetry, and gives it a characterization in
+% terms of c-command: an article-ful DP may not c-command an article-less DP.
+
+% *Ruppenhofer & Michaelis (2010: 158)*
+% >  We consider
+% five genre-based omission types: instructional imperatives (Culy 1996, Bender
+% 1999), labelese, diary style (Haegeman 1990), match reports (Ruppenhofer 2004)
+% and quotative clauses. We show that these omission types share important traits;
+% all, for example, have anaphoric rather than indefinite construals. We also show,
+% however, that the omission types differ from each other in idiosyncratic ways.
+
+% *Ruppenhofer & Michaelis (2010: 159)*
+% > But genre and argument omission
+% are closely connected conventions — so much so that speakers and writers can
+% often evoke a rich genre by simply omitting the appropriate argument in a predi-
+% cation. For example, the title of Cynthia P. Lawrence’s 2002 novel, Chill Ø before
+% Serving Ø: A Mystery Novel for Food Lovers,1 evokes the Instructional Imperative
+
+% *Ruppenhofer & Michaelis (2010: 162)*
+% > For an omission to be genre-based, we require that the construction at issue allow the omission only
+% in some of the genres that it occurs in, or that the construction itself be limited to
+% particular genres, if it always allows omission. Thus, for example, the omissibility
+% of the subject of an imperative is not genre-based, as imperatives have this affor-
+% dance regardless of genre. By contrast, in ordinary, non-instructional imperatives
+% like (14), the object must be overt.  
+% (14) Take *(the money) and run.
+
+% *Ruppenhofer & Michaelis (2010: 163)*  
+% CFR. QUELLO CHE DICO SOTTO SUL LINGUAGGIO CALCISTICO! LA SITUAZIONE È PIÙ COMPLESSA DI COSÌ  
+% > genres enable omissions that the predicator or
+% construction would not otherwise permit, rather than blocking omissions that are
+% possible outside of the genre
+
+% *Ruppenhofer & Michaelis (2010: 165)*  
+% Thus, constructionally licensed null complements are not intrinsically anaphoric.2
+% Why then do genre-based omissions entail anaphoric construal? Perhaps because
+% recoverability of the missing argument requires recourse to cultural stereotypes, in
+% the same way that certain (nonanaphoric) lexically licensed omissions do:
+% (24) I love to read (magazines and books).
+% (25) She drinks (alcohol).
+% (26) He smokes (tobacco).
+% Just as reading, drinking and smoking conventionally involve certain types of
+% participants, so recipes, product labels and match reports invoke a specific set of
+% conventional participants (an edible substance, a product, a ball, etc.). This expla-
+% nation does not go through, however, because the missing arguments in (24)–(26)
+% are not in fact anaphoric: none are replaceable, for example, by the definite pro-
+% noun it. Genre-sensitive argument omissions are anaphoric because the relevant
+% genres presuppose the salience of certain entities. 
+
+% *Ruppenhofer & Michaelis (2010: 166)*  
+% > genre-based omissions are never obligatory [...] Both halves of
+% the Gricean quantity maxim would seem to encourage speakers to exploit the null
+% complementation opportunities offered by genres: while effort conservation fa-
+% vors argument omission, informativeness favors using linguistic conventions (like
+% argument omission) that signal what text type is in play. 
+
+% *Ruppenhofer & Michaelis (2010: 175)*  
+% > Accordingly, the grammar is viewed as consisting of a lexicon — a finite set of
+% lexical descriptions (descriptions of feature structures whose type is either lexeme
+% or word) — and a set of constructions. We propose (pace Kay, 2004) that argument
+% omission can but need not be licensed by a lexeme. In the case of activity verbs
+% like eat, drink and read, which allow existentially interpreted null-complements
+% in episodic contexts (e.g., Sue ate Ø at noon/drank Ø at the party/reads ø during
+% breakfast), we concur that the zero argument’s potential for null expression is en-
+% coded in the lexical entry of the particular verb, as per Kay. 
+
+% *Haegeman (1987: 237)*  
+% > Verbs like cut, place, pour, Combine, chill and sertpe are transitive in
+% English, but they appear in (14) to be objectless. At first glance one
+% might opt for a register-determined lexical rule which &dquo;intransitivises&dquo;
+% these verbs, thus no longer requiring that the object be projected syn-
+% tactically. However, there are clear arguments against this solution (cf.
+% also Haegeman 1987).
+% First of all we note that the set of verbs allowing indefinite object
+% drop as discussed above is confined to a relatively small set which is
+% lexically determined. But in the register of instructional language any
+% verb may appear without its object, as in (14), suggesting that a
+% lexically governed rule would miss a generalization.
+
+% ## Recipes
+
+% *Megitt (2019)*  
+% > recipe minilect  
+% chiarisce meglio a p. 8:  
+% > Nordman (1994) argues that the language of cookbooks belongs to the minilect genre (Swedish:
+% minilekt). The minilect is a subgroup of technolects, which in turn belongs to the wider concept
+% of non-fiction texts. According to Nordman (1994:53), the recipe is a minilect in that it is limited
+% in terms of vocabulary, that the syntax is strictly formalised and that the general structure and
+% layout of cookbooks often follow a pre-defined pattern. Furthermore, the stylistics of cookbook
+% language is, according to Nordman (1994:49), similar beyond language barriers. [...]  
+% Nordman (1994:67) observes that the recipe has an imperative function, in that it
+% is intended to make the reader perform a number of tasks in a pre-determined order.
+
+% *Megitt (2019: 20)*  
+% > McShane (2005:33) claims that in the English language, object ellipsis is in fact only possible
+% in narrowly defined registers, such as recipes.
+
+% *Ruda (2014: 341)*  
+% SI RICOLLEGA AL DISCORSO DELLA RECOVERABILITY  
+% > The identification of the referents of the objects in this case is fa-
+% cilitated by the restrictions on the set of possible referents of the objects imposed
+% by the nature of the registers and by the clearly defined purpose of communication. [...]  
+% The topical status of missing objects in recipes makes their content recoverable. An-
+% tecedents are restricted to a very limited set, as within the interpretive frame there
+% are only the ingredients, products of stages of cooking, and tools. Thus, the possible
+% reference of the objects is contextually determined and the interpretation is guided
+% by the nature of the recipe register. 
+
+% *Ruda (2014: 350-351)*  
+% >  It seems that this feature of objects in recipes adds to
+% the specific characteristics of this register. The omission of the object increases the
+% prominence of the remaining elements in the sentence, thereby making it possible for
+% the hearer's attention to be fully devoted to the phonetically realised elements (see
+% also Mittwoch 2005). Moreover, object drop is facilitated by the backgrounding of
+% information by linguistic or extra-linguistic context. Taking into account that the reg-
+% ister under discussion has a clearly defined structure dictated by the communicative
+% purpose of the texts, and that the set of possible referents of the omitted objects can
+% be predicted from the type of discourse, it seems that the nature of the given register
+% encourages object drop even further (see also Cummins and Roberge 2005 for some
+% discussion of the interpretive properties of null objects).
+
+% *Ruda (2014: 352)*  
+% ATTENZIONE! DA QUALCHE PARTE QUI, UN APPUNTO DICE L'ESATTO CONTRARIO!  
+% > Summarizing, it seems that the analyses of object drop in recipes employing
+% argument ellipsis are unworkable,
+
+% *Paesani (2006: 154)*
+% > the absence of objects, this characteristic is common in some special registers, in
+% particular cooking recipes.20 The following examples illustrate object omission in En-
+% glish (34), French (35), German (36), Serbian (37), and Spanish (38) cooking recipes.
+
+% *Paesani (2006: 155)*
+% > In each of these examples, the antecedent is a nonovert topic; context (linguistic or
+% nonlinguistic) determines the referent of the null object (cf. Haegeman 1987; Zwicky
+% 1990). This context is usually the list of ingredients at the start of the recipe, and the
+% first mention of the particular ingredient in the instructions. No repetition of the in-
+% gredient (topic) is required after it is first introduced into the discourse context (cf.
+% Sadock 1974).
+
+% *Paesani (2006: 158)*
+% > Syntactically, the diary register appears to resort to a sentential grammar more eas-
+% ily than the headline and recipe registers, for instance. Although diaries exhibit some
+% of the properties that characterize a nonsentential grammar such as null subjects and
+% the absence of tense inflection, rarely do these properties co-occur. Indeed, the diary
+% register is typified by utterances having a null subject and a tensed verb. Similarly, the
+% note-taking register, although characterized by more nonsentential properties than the
+% diary register, appears to be less distinctive than headlines and recipes. The note-taking
+% register exhibits most of the nonsentential properties outlined earlier, yet, like the diary
+% register, does not productively exhibit the co-occurrence of tenselessness and caseless-
+% ness typical of nonsententials in casual adult speech. The headline and recipe registers,
+% on the other hand, appear to be more distinctive because they resort to a nonsenten-
+% tial grammar more easily than do the diary and note-taking registers. Headlines and
+% recipes are typified by the types of base-generated phrases and root small clauses that
+% form the basis of the nonsentential analysis proposed by Progovac (Chap. 2, this vol-
+% ume). In particular, both registers provide strong support for the correlation between
+% tenselessness and caselessness characteristic of adult nonsententials.
+% One constant across the syntactic characteristics presented in Section 2 is the
+% clear link between discourse/pragmatic context and missing elements in the syntax.
+
+% *Paesani (2006: 161)*
+% > As argued in Progovac, TP and DP are interrelated in syntactic theory. A DP is visible
+% as a subject argument when it is assigned abstract (nominative) Case; TP then checks
+% the abstract Case of the subject DP. As a result of this interrelationship, utterances
+% that lack Tense cannot check structural Case. 
+
+% *Paesani (2006: 164)*
+% > As was noted in Section 2, missing objects are a common characteristic of the recipe
+% register. The absence of objects in this context may be linked to the co-occurrence of
+% tenselessness and caselessness characteristic of the nonsentential grammar. 
+
+% *Paesani (2006: 165)*  
+% OBJECT DROP AS TOPIC DROP IN RECIPES
+% > In English, objects tend to be focal in nature; however, in recipes, objects appear to
+% be topical. [...] Haegeman (1987) also argues that object drop in recipes is
+% topic linked; the antecedent of a missing object is a sentence-peripheral topic position. [...]  
+% Given the preponderance of imperative and infinitive constructions in the recipe
+% register, and the fact that the pragmatic frame for recipes is the “here and now,” the lack
+% of a Tense node may create the syntactic context for missing objects, as it does for the
+% absence of structural Case assignment on subjects. Massam and Roberge (1989) note
+% a link between the absence of subjects and objects in cooking recipes, stating that “it is
+% difficult to tell whether the imperative aspect or the no-subject aspect of the sentences
+% is relevant to the [missing object]” (135)
+
+% *Paesani (2006: 166)*  
+% TP === DP!!! SUBJECT/DETERMINER IN SPEC-TP/DP  
+% > There is thus a one-way correlation between the absence of objects and the absence of
+% subjects: if the object is omitted, then the subject must also be omitted, but not vice
+% versa. [...]  
+% This one-way relationship is similar to the generalization made by Stowell (1991)
+% regarding the omission of determiners in subject and object position in headlines (see
+% n. 11). The pattern of determiner omission in (72) is similar to that for subject and
+% object omission in (71).  
+% (72)a. An old man finds a rare gold coin  
+% b. Old man finds a rare gold coin  
+% c. Old man finds rare gold coin  
+% d. *An old man finds rare gold coin  
+
+% *Paesani (2006: 167)*  
+% LAW OF LEAST EFFORT  
+% > In addition, the co-occurrences typical of
+% cooking recipes may be related to the fact that both the subject (i.e., the person read-
+% ing the recipe) and the objects (i.e., the list of ingredients) are known. As a result, what
+% minimally needs to be expressed is the action performed by the subject on the objects.
+
+
+% *Garcia-Velasco & Munoz (2002: 6)*
+% > An interesting case is that of recipes, where we can find examples such as the following:
+% (13) Cook _____ gently for four minutes in plenty of boiling, salted water to obtain an
+% “al dente” texture. Drain _____ and serve _____
+% Massam & Roberge (1989) study the properties of understood objects in recipe contexts. The
+% authors observe inter alia that omitted objects tend to receive a specific (non-arbitrary)
+% interpretation and do not need to be present in the linguistic context.
+
+% *Massam & Roberge (1989: 135)*  
+% (EO = Empty Object)
+% > First, we note that the EO receives a specific interpretation, rather than, for example, an arbitrary reference. The
+% empty category need not have a particular linguistic antecedent;
+% instead, its reference appears to be contextually defined [...]  
+% 1 Evidence from French suggests that it is the no-subject aspect
+% of these constructions that is relevant for licensing RCEOs, as pointed
+% out by an LI reviewer. French RCEOs, although they may appear with
+% an imperative, are more usually found with infinitives [+ ESEMPI IN INGLESE NELLA STESSA PAGINA!]
+
+% *Cote (1996: 122)*
+% > Culy (1987) argues this case for null objects in recipe constructions in English (a separate issue
+% which will be discussed in Chapter 4) and then adds that he rejects the idea of a difference between the
+% grammar of recipe contexts and the grammar of ‘Standard’ English. In particular, he argues that null
+% objects in general are zero anaphors.
+
+% *Cote (1996: 167)*
+% > Objects are generally omitted much more frequently from recipes and instructions than they are
+% from ‘Standard’ English, and with fewer restrictions. 
+
+% *Cote (1996: 168)*
+% > In practice, it seems that these ‘recipe’ null objects are quite different from those in ‘Standard’
+% English. In particular, they may occur with strictly transitive verbs and do not in fact seem to be lexically-
+% constrained at all.  
+
+% Le ricette non sono comandi come gli altri  
+% > Note that it is not sufficient to say that these null objects must occur inside of commands with
+% salient objects. 
+
+% *Bender (1999: 2)*  
+% cita Culy (1996)  
+% > There are several important things to note in Culy's results. The rst is
+% that null objects occur frequently in recipes, and that this frequency varies
+% across cookbooks.
+
+% *Bender (1999: 4)*  
+% > As far as the syntax is concerned, Culy (1996) identi es three types of analysis:
+% deletion accounts, which involve a rule that deletes an object noun phrase;
+% semantic accounts, where a special entry for the selecting verb causes the object
+% position to be present in the semantics but not in the syntax; and empty category
+% accounts.
+
+% *Culy (1996: 91)*  
+% Culy critica Mohanan! infatti, in inglese la situazione non è affatto quella citata  
+% > Mohanan (1983: 643): "It is well known that [unrealized grammatical functions] in English 
+% are restricted to the subject position of nonfinite clauses"
+
+% *Culy (1996: 92 sgg.)*  
+% Culy nel paper fa una regressione multipla su set diacronici di ricette. La dipendente è la scelta di zero anaphors as opposed to pronouns and
+% noun phrases, 5 fattori come predittori --> stile (libro di ricette specifico) e semantica/discourse factors sono i fattori più importanti, sintassi no  
+% 5 factors = source, verb form, type of object, lookback, grammatical function of the antecedent (p. 93)  
+% stepwise multiple regression analysis with VARBRUL2 program (p. 95)
+
+% *Culy (1996: 92)*  
+% i detransitivized verbs come gli usi intransitivi di eat NON SONO zero anaphors!!!  
+% (quindi le ricette sono diverse dalle cose che interessano a me!)  
+
+% *Culy (1996: 101)*  
+% Sadock (1974) sostiene che "zero objects occur only when there is no overt subject of the clause" (cfr. Paesani 2006: 166)
+
+% *Liu (2008: 302)*  
+% IMPORTANTISSIMO! I NULL OBJECT NELLE RICETTE SONO DEFINITE, NON IMPLICIT!!!  
+% POSSO CONSIDERARLI NELL'OTTICA DI UN CONTINUUM TRA DEFINITE E IMPLICIT?  
+% DEVO RIFLETTERE SU QUESTA COSA E COMUNQUE PROBLEMATIZZARLA NEL CAPITOLO TEORICO
+% > Situational context-warranted object deletion is found mostly in instructional language
+% on product labels and manuals as well as on warning signs. The deleted
+% objects are concrete nouns, as seen in the following collected examples
+
+% ## Telegraphic register
+
+% *Cote (1996: 170)*
+% > As with recipe contexts, the telegraphic register or ‘sublanguage’ (eg., the language used in
+% telegraphs, memos, signs, etc...) makes more extensive use of null arguments than does ‘Standard’
+% English. This register, also known as “telegraphese”, is exemplified by (9) and (10) below.
+
+% ## Communities
+
+% *Glass (2013: 1)*
+% > First, I argue that recoverability is a matter of degree. At a minimum, one simply knows that
+% an object exists; at a maximum, one knows exactly what it is; and there is plenty of middle ground
+% in between. For an object to be omissible, it must be sufficiently recoverable along this continuum
+% for speakers to pursue their communicative goals in the context. Second, I argue that a given ob-
+% ject may easier to recover, and thus easier to omit, against the common ground of a particular
+% community of practice
+
+% ## Football language  
+
+% *Bergh & Ohlander (2016)*  
+% "Iniesta passed and Messi finished clinically": CFR. GLASS 2020 per la routine!  
+% In football you can't pass the salt, so it's ok to omit "the ball" in "passed" because it can only mean that  
+% In the context of a family dinner, you cannot say your big brother "passed *(the salt) and finished *(his steak)", let alone clinically
+
+% *Bergh & Ohlander (2016: 21)*  
+% > Object omission, however, is not the only special verb usage to be
+% found in football language. There are other types of special or
+% “unconventional” verb behaviour related to transitivity, often involving
+% violation of “normal” selectional constraints, as illustrated in expressions
+% such as kill the match and rest a player. Such verb usage will also be
+% dealt with in due course.
+
+% *Bergh & Ohlander (2016: 22)*  
+% >  As pointed out by Huddleston & Pullum
+% (2002:216), the notion of transitivity is often more usefully applied to
+% verb use than to verbs as such, since not all verbs are either transitive or
+% intransitive: “although faint is always intransitive many verbs can occur
+% either with or without an object. For example, read is intransitive in She
+% read and transitive in She read the letter” (cf. Jespersen 1924:158, Quirk
+% et al. 1985:1169). In a similar vein, Biber et al. (1999:147) note: “It is
+% striking that a lot of English verbs have both transitive and intransitive
+% uses”, pass being a prime example. 
+
+% *Bergh & Ohlander (2016: 22)*  
+% > From an overall communicative perspective, omission of objects – or
+% indeed any linguistic element – can be seen as a special exponent of a
+% general principle of expressive economy, underlying various types of
+% ellipsis, along the lines of: “Do not say more than you have to for the
+% message to get across!”8 [...]  
+% 8 Cf. “Zipf’s Law”, embodying the “principle of least effort” (Zipf 1949). From a
+% pragmatic perspective, object omission may be seen as a syntactic reflection of Grice’s
+% well-known ”maxim of quantity”, implying (second sub-maxim) that one should avoid
+% being more informative than necessary (Levinson 1983:101). Cf. also Jespersen’s
+% (1924:309) discussion of ”suppression”, akin to Grice’s quantity maxim: ”we suppress a
+% great many things which it would be pedantic to say expressly”; ”Only bores want to
+% express everything, but even bores find it impossible to express everything.”
+
+% *Bergh & Ohlander (2016: 24)*  
+% LA RECOVERABILITY È COLLEGATA ALLA PRAGMATICA (world knowledge, routine...)  
+% > From a communicative perspective, the basic point of the above
+% discussion is the recoverability of the omitted object, which, in turn, is
+% dependent on a variety of linguistic, contextual and situational factors, as
+% well as background knowledge. This can be illustrated by the most basic
+% of all ball-sport verbs, i.e. play. A sentence like They played beautifully
+% is, in isolation, multiply ambiguous, its full interpretation heavily
+% dependent on context.
+
+% *Bergh & Ohlander (2016: 26)*  
+% CONTINUA IL DISCORSO SUBITO SOPRA  
+% >  Knowledge of football’s conceptual framework is thus a
+% necessary requirement for the proper identification of missing objects in
+% football language; the same applies to the special languages of other
+% subject fields. Also, object omission within a special subject field may be
+% at least partially genre- or register-dependent (cf. Ferguson 1983, Müller
+% 2008). According to Ruppenhofer & Michaelis (2010:163f.), stressing
+% “the connection between genres and argument omission”, “certain genres
+% license object omissions that are otherwise permitted only in generic-
+% habitual contexts”, match reports being mentioned as one such genre.
+% Further, live match reporting may, due to time pressure, give rise to a
+% higher frequency of omitted objects than, say, a post-match analysis of a
+% game.
+
+% *Bergh & Ohlander (2016: 28)*  
+% QUINDI NON SI PUÒ CONCLUDERE SEMPLICEMENTE CHE I LINGUAGGI SPECIALISTICI AMMETTANO PIÙ OBJECT DROP
+% RISPETTO ALLA LINGUA D'USO COMUNE  
+% > It should also be stressed that not all transitive football verbs may
+% occur, with equal ease, without an object. For example, the football verb
+% par excellence, kick, whose self-evident object is normally the ball
+% (occasionally, less normally, a player in the opposition). Nonetheless,
+% kick does not readily permit object omission, as evidenced by the rarity
+% (as confirmed by web searches) of, e.g., ?She kicked into the net instead
+% of She kicked the ball into the net, in contrast to the perfectly normal She
+% shot (fired, sidefooted, struck, backheeled, etc.) into the net.; the same
+% goes for ?She hit into the net for She hit the ball into the net.
+% Interestingly, the verb deliver – which often occurs without an object in
+% general language (cf. section 2) – apparently does not gladly part from its
+% object (ball) in football language:
+
+% *Ruppenhofer & Michaelis (2010: 167)*  
+% >  we take an entity to
+% be topical if it can readily be reconstructed as the filler of a given argument posi-
+% tion. By contrast, we take an entity to be important in a given text only if it has
+% ongoing relevance to readers, and readers can infer qualities of the entity from the
+% text. In match reports, for example, the players are important while the ball is not:
+% readers do not typically make inferences about the ball based on the events of the
+% match, so one ball is as good as another for the purpose of match reporting. There
+% is, however, only one object of play, while there are multiple players. Thus, the ball
+% is highly topical: it is the only entity that could occupy the argument position it
+% does in a given match-report predication, e.g., object of the verb headed in (18).
+% One could therefore refer to the object of play by means of a pronoun without cre-
+% ating ambiguity. Accordingly, we might view null expression as the match-report
+% analog to anaphoric reference.
+
+% *Ruppenhofer & Michaelis (2010: 169)*  
+% > A further difference among genres is that some genre-sensitive argument-omission
+% constructions can combine with any predicate, whereas others require predicates
+% to denote actions or properties that are canonical in the genre. For instance, in di-
+% ary style, the subject of any predicate is subject to omission. Similarly, in the case of
+% object omission in the quotative construction, no particular judgment-expressing
+% reporting verbs can be considered canonical. By contrast, labelese predications are
+% limited to those that describe the provenance, constitution, qualities or efficacy
+% of the product, e.g., ø contains no hydrogenated oils, ø creates visibly fuller, thicker
+% hair. Labelese predications like that in (36), an altered version of a statement found
+% on a box of quinoa, are not attested:
+% (36) *Ø has flourished in cultivation for over 5,000 years.
+% Match reports may include non-canonical events involving the ball. For instance,
+% players sometimes step on the ball, kiss or rub it for good luck, hide it under their
+% shirts, etc. However, we find omissions only with predicates denoting canonical
+% aspects of the game such as taking various kinds of kicks or headers. Omissions
+% like that in (37) are not attested:
+% (37) Before he took that free kick he kissed *(the ball) for luck.
+
+% ## Whatsapp messages
+
+% *Stark & Meier (2018)*
+
 
 \subsection{Neither definite nor indefinite: continuous accounts} \labsec{theory_continuous}
 
@@ -288,14 +939,6 @@ Neither definite nor indefinite: continuous accounts
 % transitivity hypothesis. We locate English implicit object constructions on a
 % continuum of transitivity, with indefinite implicit object constructions (1a) closer
 % to intransitives, and definite implicit object constructions (1b) closer to transitives.
-
-% *Olsen & Resnik (1997: 2)*
-% > According to H&T, clauses that
-% show telic aspect and individuated objects are more transitive than those with
-% atelic aspect and nonindividuated objects. Furthermore, if aspect and
-% individuation covary, telicity and high individuation should occur together in
-% transitive clauses, and atelicity and low individuation together in intransitive
-% clauses. 
 
 % *Glass (2013: 1)*  
 % UTILI CONSIDERAZIONI TEORICHE E BIBLIOGRAFICHE  
@@ -435,101 +1078,6 @@ Neither definite nor indefinite: continuous accounts
 % in other words the intended effect of the act on the agent. Affectedness of the
 % agent, then, is not necessarily inherent to the semantics of a specific verb, but may
 % be introduced by other elements of a clause.
-
-
-\subsection{A working definition of "indefinite object drop"}
-
-citare Medina e tutta la teoria possibile che la conforti
-è una definizione pre-teoretica che prescinde dalle proiezioni sintattiche?
-QUI METTERE IL MIO DIAGRAMMA DI VENN CONCENTRICO
-
-% *Naess (2007: 124-125)*
-% > In this chapter, the term “indefinite object deletion” (IOD) will be used to describe
-% the situation where a verb which allows an argument which syntactically must be
-% characterised as a direct object is employed without any overt direct-object argu-
-% ment. We will restrict the discussion to cases of so-called context-independent
-% object deletion.
-% Many languages allow omission of objects whose reference is expected to be
-% retrievable from context. Such context-dependent object deletion may take place
-% when the object in question has already been mentioned in the previous discourse,
-% or where the general context provides sufficient clues as to the identity [...]  
-% By contrast, context-independent object deletion does not depend on the ref-
-% erent of the missing object being retrievable or identifiable by the hearer. In order
-% to correctly understand a sentence such as He is eating, it is not necessary to be
-% able to infer what is being eaten; in fact, there is no expectation whatsoever that
-% the referent of the object should be identifiable. This is not to say that the use of the
-% verb eat without an object does not imply that an object is present; the act of eating
-% unquestionably presupposes that something is eaten. However, it is only this pres-
-% ence of an object in general that must be inferred by the hearer in such cases: the
-% hearer knows that something is being eaten, but is not expected to be able to iden-
-% tify which specific edible object is being referred to. [...]  
-% Some approaches assume a further division between contexts where objects
-% are omitted because they are obvious and contexts where they are omitted because
-% they are indefinite. For example, Heath (1976a) claims that in the sentence He
-% drinks, “the T[ransitive] O[bject] is deleted because it is obvious in the context,
-% rather than because of indefiniteness. On the other hand, in the type Speed kills the
-% deleted TO is indefinite rather than obvious”.
-% It is not clear, however, how the object of He drinks can be “obvious in the
-% context” when the sentence is in fact presented without any context whatsoever.
-% The only way to interpret this would seem to be that the object is “obvious in the
-% context of deletion”, that is, it is obvious because it is deleted; the very fact that no
-% object is present allows us to assign it the “obvious” interpretation. But this is a
-% circular argument: the object is deleted because it is obvious, and it is obvious be-
-% cause it is deleted. No such difference between “obvious” and “indefinite” deleted
-% objects will be assumed here. 
-
-% *Haegeman (1987: 236)*  
-% > The (b)-examples illustrate what has come to be known as indefinite
-% object drop: a transitive verb lacks an object, but an indefinite object
-% is understood.
-%  Rizzi ( 1986) argues convincingly that these cases of
-% indefinite object drop in English are lexically governed. While eat, for
-% instance, allows object drop, the semantically closely related devour
-% does not:
-
-% *Yasutake (1987: 46)*  
-% calls them "detransitive verbs"
-
-% *Glass (2013: 1)*  
-% > “Implicit object” (IO) is a name for what happens when a verb we normally consider transitive
-% appears without an object
-
-% *Petho & Kardos (2006: 29)*  
-% >  implicit object arguments, also referred
-% to in the literature as null complements or understood arguments
-
-% *Glass (2020: 1)*
-% > Other words for this phenomenon include object drop,  unspecified object,  null object,  null argument,  null complement, null instantiation, diathesis alternation, implicit object  
-
-% *Gillon (2012: 314)*
-% > Fodor and Fodor (1980) seem to have been the first authors to have brought to the
-% attention of linguists that implicit indefinite objects pose a problem for grammatical
-% theory. Though Fodor and Fodor did not put it this way, we can succinctly formulate
-% the problem as a dilemma. Either there is only one verb to read or there are two.
-
-% *Glass (2020: 1)*
-% > It is a longstanding question in lexical semantics which normally-transitive verbs in Englishcan omit their objects to describe an event with an unexpressed theme, which cannot, and why1.Even near-synonyms differ in how natural they sound with their objects omitted (1) (Fillmore1986, Rice 1988, Mittwoch 2005, Gillon 2012), making it difficult to explain omission in termsof meaning, and leading some researchers to characterize this phenomenon as partly or fullyarbitrary (Fillmore 1986, Jackendoff 2002: 134, Ruppenhofer 2004, Gillon 2012, Ruppenhofer& Michaelis 2014).
-
-% *Dvorak (2017: 1)*  
-% > Non-overt direct objects with an existential interpretation, as in (1), have been the topic of
-% linguistic discussions since Chomsky introduced the transformational rule of ‘Unspecified
-% object deletion’ in 1962. In the English-oriented literature, they are usually assumed to be
-% represented lexically, either in the form of de-transitivizing rules that operate on individual
-% predicates, see (2a), or as two separate predicates, transitive and intransitive, linked by
-% a predicate-specific meaning postulate, see (2b). Alternatively, Cote (1996)  enriches the
-% lexical conceptual structure (LCS) of a given verb by marking the relevant argument as
-% unsubscripted zero [...]  
-% More recently, this view has been challenged by Alexiadou et al. (2014), who argue for a
-% syntactic re-interpretation of Bresnan’s rule of Existential Closure (EC) in (2a), such that it
-% applies to any predicate with an unsaturated internal argument: JECK = λ fhe,stiλ es ∃x[f(x)(e)]
-% (see Babko-Malaya 1999 and Martı́ 2011 for related proposals).
-
-% *Lorenzetti (2008: 62)*  
-% > Early accounts of the phenomenon proposed the elimination of the object from the syntax
-% via “object deletion transformation” [Katz and Postal 1964, Browne 1971, Allerton 1975],
-% while later works introduced the view that implicit object constructions have aspectual
-% constraints [Mittwoch 1982] and that omitted objects are frequently typical, inferable or
-% partially specified by the semantics of the verb [Lehrer 1970, Rice 1988].
 
 
 \section{Defining the indefinite} \labsec{theory_defindefinite}
@@ -1023,6 +1571,74 @@ testo
 % act. Additional components of meaning that distinguish between different verbs
 % in each structure are content components in this theory.
 
+% *Wierzbicka (1982: 758)*  
+% RIFLETTERE SOPRATTUTTO SUL SECONDO CAPOVERSO  
+% > the action reported in a have a V frame cannot have an external
+% goal: it must be either aimless, or aimed at some experience of the agent. [...]  
+% Finally, the action (or process) must be seen as repeatable. Having a swim
+% (or a read, or a try) is something that can be done again and again. There is
+% something arbitrary about the length of a walk, a lie-down, or a read. Since
+% these activities (when reported in a have a V frame) are aimless, devoid of any
+% external goal, they can not only be extended or terminated at will, but can also
+% be resumed at will. Thus actions which cannot be repeated cannot be described
+% in a have a V frame. For example, the contrast of have a bite or a lick or a
+% taste vs. ?have an eat may result at least partly from the contrast in repeatability
+% of the actions in question. One could bite John's sandwich, or lick his ice
+% cream, or taste his soup-not once but twice, or more-but one could eat his
+% sandwich only on[ce]
+
+% *Wierzbicka (1982: 759)*  
+% > A translation into a more conventional metalanguage could read: 'The have
+% a V construction is agentive, experiencer-oriented, antidurative, atelic, and
+% reiterative.' 
+
+% *Wierzbicka (1982: 771)*  
+% > Examples are have a bite, a lick, a suck, a chew, a nibble.
+% The verbs included in this subtype are transitive or semi-transit
+% meaning of the verb ensures that the undergoer of the action is on
+% affected by it. A lick, bite, or nibble is not enough to make muc
+% to the object involved; and a chew or a suck would also not affect
+% greatly, because of the slow nature of the process. This means tha
+% verb is transitive, and the action requires an undergoer as well as
+% undergoer can be ignored; the action can be viewed as really invo
+% one participant (the agent). However, if someone eats an apple or
+% the object in question is TOTALLY affected, and thus impossible to ignore
+
+% *Wierzbicka (1982: 776)*  
+% QUESTO VA INSERITO NEL DISCORSO SULLA TELICITY  
+% > This means that the 'unlimited substance' type, like the 'objectless action' type
+% (?4), demands strict atelicity. Drinking or smoking (like walking or swimming)
+% is something that can be prolonged for as long as the agent wishes; but drinking
+% a glass of water or smoking a cigarette cannot be indefinitely extended (just
+% as walking to the post office or swimming to the shore cannot). Thus
+
+% *Wierzbicka (1982: 788)*  
+% > . This does not mean that the frame takes only intransitive verbs. It
+% allows transitive verbs, too, but only if the sentence with a transitive verb
+% permits an interpretation compatible with the requirement of one core partic-
+% ipant: the agent/experiencer. Only two types require one-argument verbs: the
+% type which refers to aimless and objectless individual action conducive to
+% feeling good, and that which refers to potentially therapeutic, semi-voluntary,
+% 'corrective' individual act
+
+% *Naess (2011: 419)*  
+% UTILE ANCHE PER I VERBI DI MOTO!!! fare una nuotata/caduta/corsa/scalata != *fare un'andata  
+% (V. CONSIDERAZIONI IN FONDO ALLA STESSA PAGINA SUL VERBO "RUN")  
+% > In other words, affectedness of the agent
+% is associated not only with specific case-marking patterns, but also with the possibility of
+% intransitive behaviour. [...]  
+% Wierzbicka (1982) discusses constructions of the type have a drink, have a swim, and
+% accounts for their distribution to a large extent in terms of affectedness of the agent participant. [...]  
+% Wierzbicka links this affected-agent semantics explicitly to reduced formal transitivity:
+% ‘have works as a detransitiviser: the object is de-emphasised, the predication concerning
+% the object is backgrounded, and at the same time the emphasis on the agent increases’
+% (Wierzbicka 1982:291). [...]  
+% Nжss claims that it is a crucial property of transitive constructions that
+% their arguments are maximally distinct – not just as physical entities, but in terms of the role
+% they play in an event. Thus a prototypical transitive construction has one single controlling
+% participant and one single affected participant. Verbs of eating and drinking deviate from this
+% pattern because both the agent and the patient are affected
+
 \paragraph{Object drop as noun incorporation}
 queste teorie sostengono che l'oggetto non sia rappresentato sintatticamente! (vero?)
 
@@ -1218,10 +1834,372 @@ queste teorie sostengono che l'oggetto non sia rappresentato sintatticamente! (v
 % instances, he claims, “the alternation is created not by a productive lexical rule but
 % by generalization by analogy with certain core verbs exhibiting the alternation”
 % (Marantz 1984 :193).
-% (NOTA MIA: eat, drink e learn sono affected agent verbs! v. naess 2011: 413)
+% (NOTA MIA: eat, drink e learn sono affected agent verbs! v. naess 2011: 413 + haspelmath negli appunti al prossimo paragrafo)
 
-\paragraph{EATING AND DRINKING} 
-EATING AND DRINKING
+\paragraph{Agent affectedness} 
+Agent affectedness: why eating and drinking are poor choices for typical transitivity examples
+
+% *Naess (2007: 144)*  
+% > IOD is considerably more common with some verb types than with others (affected-agent
+% verbs, where the agent can be construed as the “endpoint” of the event, and ef-
+% fected-object verbs, whose objects are inherently nonreferential and therefore eas-
+% ily omissible),
+
+% *Naess (2007: 150)*  
+% AMBITRANSITIVE/LABILE VERBS  
+% > In other words, what characterises the verb cook semantically is the same
+% property that was demonstrated for bake in 6.3.1 above: the transitive cook is am-
+% biguous between an affected-object and an effected-object reading. We saw above
+% that for such verbs, indefinite object deletion is only permissible with the effected-
+% object reading. That is, an intransitive clause where the S is interpreted as an agent
+% can only be read as referring to the agent’s bringing something into existence.
+% Dad is baking can only mean that he is producing things from loose ingredients
+% through a process of mixing and heating them (baking bread or cookies); it cannot
+% mean that he is putting already existent objects through a process which produces
+% an alteration in them (baking potatoes). On the other hand, the patient-subject
+% variety, for instance the potatoes are baking, clearly has the affected-object reading,
+% as predicted by the restriction of inchoative-causative verb pairs to verbs referring
+% to a change of state. 
+
+% *Naess (2007: 141-144)*  
+% ANCORA SU EAT/DRINK --> CI DEVO FARE UN PARAGRAFO A PARTE!  
+% > A recurring question in discussions of IOD with ingestive verbs is not simply why
+% such verbs so frequently undergo IOD, but also why the use of these verbs without
+% an object tends to give rise to certain very specific readings. In the words of Fill-
+% more, “EAT is used to mean something like ‘eat a meal’ – not merely ‘eat some-
+% thing’, and DRINK is used to mean ‘drink alcoholic beverages’” (Fillmore 1986 :96).
+% It is this use that motivates Rice’s analysis of ‘alcohol’ as being somehow a proto-
+% typical object for drink, and it leads Fillmore to assume that IOD in fact comes in
+% two distinct varieties, “one involving a semantic object of considerable generality,
+% the other requiring the specification of various degrees of semantic specialization”
+% (Fillmore 1986 :96). There are obvious weaknesses in this analysis, since it does
+% not explain how a language user determines whether an absent object should be
+% understood as being of “considerable generality”, or, on the contrary, representing
+% a “semantic specialization”. [...]  
+% The semantic property which gives rise to these
+% specialised meanings is in fact the same property that makes these verbs eligible for
+% indefinite object deletion in the first place: affectedness of the agent. I suggested in
+% 4.3.1 that omitting the object with these verbs amounts to highlighting the effects
+% that the action has on the agentive participant, while backgrounding those on the
+% patient, by omitting the patient argument altogether. The so-called specialised
+% readings arise precisely as a result of this emphasis on the effect on the agent.
+% To understand how objectless eat and drink acquire their conventionally un-
+% derstood meanings of ‘eat a meal’ and ‘drink alcohol’, respectively, we must con-
+% sider the contexts in which these verbs are generally used without an object. As it
+% turns out, these two verbs seem to be in almost complementary distribution with
+% respect to which grammatical contexts favour their use without an overt object NP
+% (see also Newman and Rice 2006).
+% The English verb eat is mostly used without an object in the past tense or per-
+% fect: John ate, I have eaten, or in the progressive, I am eating. The generic/habitual
+% ??John eats, on the other hand, is highly unnatural, if not downright ungrammati-
+% cal.  
+% By contrast, objectless uses of the verb drink are most frequently found pre-
+% cisely in a generic/habitual construction, as in John drinks, or Fillmore’s example
+% I’ve tried to stop drinking. The past-tense John drank seems to be mainly interpret-
+% able as a habitual statement in the past tense, while the perfect ??John has drunk is
+% extremely peculiar without an object. The progressive John is drinking is possible,
+% though perhaps a little strange out of context; it does not appear to favour the
+% reading ‘drinking alcohol’ to quite the extent that the generic statement does, al-
+% though this reading is facilitated by the inclusion of a context evoking the act of
+% drinking alcohol: John is in the pub drinking.  
+% In fact, if we attempt to interpret drink as referring simply to the ingestion of
+% any kind of drinkable fluid, then the same thing happens with this verb as with eat:
+% it becomes very unnatural in a generic/habitual clause without an object – ??John
+% drinks. Most analyses seem to assume that this is because the conventional use of
+% drink to mean ‘drink alcohol’ somehow blocks the reading ‘drink things in general’,
+% or that the verb drink somehow selects ‘alcohol’ as a kind of privileged argument
+% (Rice 1988). However, this does not explain how this “privileged” reading arose in
+% the first place. Rather than explain the absence of a generic use of drink to mean
+% ‘drink anything’ by invoking an “overriding” reading of such clauses as ‘drink alco-
+% hol’, I suggest that the latter should in fact be explained in terms of the former. It is
+% not the case that the reading ‘drink anything’ is unavailable for objectless clauses
+% because the reading ‘drink alcohol’ overrides it; such a statement has little or no
+% explanatory value, saying in effect that objectless drink means ‘drink alcohol’ be- --  
+% cause it means ‘drink alcohol’. Rather, the reading ‘drink alcohol’ is available for
+% generic statements precisely because the ‘drink anything’ reading is pragmatically
+% unnatural and therefore unlikely to be expressed.  
+% The naturalness of generic statements is constrained by properties of the world.
+% When verbs like eat and drink do not easily occur in generic objectless statements
+% of the type John smokes, it is for a very simple reason. Eating and drinking are the
+% two most fundamental actions of human existence; their habitual performance is
+% the most basic prerequisite for sustaining life. ??John eats, in the sense that eating
+% is a habit of John’s, is highly peculiar for the obvious reason that humans and ani-
+% mates who do not have this habit simply do not exist – they would be dead (cf. also
+% Fillmore 1977 :135). Referring to inanimate beings, on the other hand, such sen-
+% tences are much less peculiar; one can imagine, for example, an advertisement
+% listing the attractions of a lifelike doll: She eats, she cries, she sleeps!
+% While the sentence John drinks, taken to mean ‘John habitually imbibes liq-
+% uids’ is unnatural because is is close to tautological – if John did not have this
+% habit, he would not exist – there is nothing in the English grammar which pre-
+% cludes the construction of such a sentence. Drink is an affected-agent verb highly
+% suited to appear in low-transitivity contexts such as objectless generic construc-
+% tions; it is the real-world interpretation of this construction which makes it odd.
+% The sentence is syntactically well-formed but semantically strange – which leaves
+% open the possibility of assigning it an alternative interpretation.  
+% There are a couple of reasons why a suitable candidate for such an interpreta-
+% tion should be ‘drink alcohol’. The consumption of alcoholic beverages has an im-
+% portant social and cultural function in the Western cultural sphere, and increas-
+% ingly in the rest of the world. Newman and Rice (2006) take the ‘alcohol’ reading
+% of intransitively-used ‘drink’ to reflect “the prominence of alcohol consumption as
+% a topic of discourse”.  
+% In addition to these pragmatic considerations, however, the semantic proper-
+% ties of objectless ‘drink’ – the emphasis on the affectedness of the agent – are in
+% themselves conducive to this particular reading. The reading ‘drink alcohol’ very
+% much preserves, if not augments, the affected-agent semantics of ‘drink’ and of the
+% objectless construction. The act of drinking alcohol involves a highly specific in-
+% tended effect on the agent – intoxication – which is not only clearly noticeable to
+% the agent himself but also frequently observable to others. It is this intention of
+% achieving a particular effect, and subsequently the habit of being in a particular
+% state, namely intoxication, that we attribute to people when we use drink without
+% an overt object: a statement like John drinks clearly implies that he drinks for the
+% purpose of getting drunk, and that he does so frequently – not that he occasion-
+% ally sips a glass of wine with his dinner because he enjoys the taste.  
+% Given that the default reading ‘drink liquids’ is unavailable, or rather unneces-
+% sary, for pragmatic reasons, then, the ‘drink alcohol’ reading is ideally suited to
+% take over as standard interpretation for generic drink: affectedness of the agent is
+% crucially relevant to its semantics, and it has a sociocultural significance which
+% makes it highly eligible for being cast in some simplified, conventionalised expres-
+% sion. In short, to say of someone that ‘he drinks things’ does not convey any inter-
+% esting information about the person in question, while saying that ‘he drinks alco-
+% hol (frequently/habitually/too much)’ does; so the construction which would
+% normally be used to express the former is more usefully employed as a conven-
+% tionalised expression of the latter.  
+% Objectless eat, on the other hand, shows a different distribution. There does
+% not appear to be any such socially significant variety of the act of eating which
+% could usefully take over the unnecessary generic construction He eats in English;
+% which means that eat is not normally found in this kind of construction – cer-
+% tainly not with reference to humans or animates. On the other hand, objectless eat
+% is found with reference to specific acts of eating that are either ongoing or con-
+% cluded; and in this use it appears to have the sense of ‘eat a meal’.
+% Recall again that the semantic effect of using an affected-agent verbs in an ob-
+% jectless construction is to emphasise the affectedness of the agent, to the extent that
+% the patient, being immaterial to the meaning conveyed, is suppressed. An object-
+% less ‘eat’ sentence, then, is a statement about the effect on himself that the agent
+% achieves through the act of eating. Typically, the effect one seeks to achieve by eat-
+% ing is that of eliminating hunger; a typical act of eating consists of eating until one
+% is full. Since the amount of food required to achieve this is what we usually refer to
+% as ‘a meal’, this explains the interpretation of objectless ‘eat’ as ‘eat a meal’: if nothing
+% else is specified, we interpret ‘eat’ as meaning ‘eat until full’ – i.e. eat a meal.
+% Indefinite object deletion, then, functions much like antipassivisation in that
+% it is essentially a syntactic mechanism used in contexts of low semantic transitivity.
+
+% *Naess (2007: 55)*  
+% > A phenomenon which in a sense is similar to that of indefinite object deletion
+% is the occurrence of suppletive verb pairs for transitive and intransitive uses of ‘eat’.
+
+% *Naess (2007: 55-56)*  
+% SPOSTARE IN CAPITOLO SU ASPECT (TELICITY?)  
+% > An affected argument is described by Tenny (1994) as “one that makes the
+% event described by the verb delimited, by undergoing a change of state that marks
+% the temporal end of the event”. As a result of this, affected arguments are “measur-
+% ing arguments”, an argument type which “measures out and imposes delimited-
+% ness on the event” (Tenny 1994 :158). In other words, affectedness is a property
+% which defines the perceived endpoint of a verbal event; [...]  
+% This view of affectedness has interesting implications for the notion of Af-
+% fected Agent: If affected arguments “measure out” events, then the agent of a verb
+% like ‘eat’, by virtue of being affected, might function as an argument serving to de-
+% limit the verbal action. In other words, an Affected Agent is, or can be construed
+% as, the endpoint of the act of eating. [...]  
+%  It is essential to note that it is this effect, rather than that on the
+% patient, which is the main goal of the agent’s act: we eat in order to achieve an ef-
+% fect on ourselves, not primarily on the food.  
+% In Tenny’s model, an event cannot show more than one instance of “measur-
+% ing out” by an argument, and only internal arguments can measure out events.
+% Facts such as those just discussed, however, suggest that it is in fact possible for an
+% event to have two potentially measuring arguments, although only one of them
+% may function as an actual measuring argument in any given clause. Furthermore,
+% they suggest that the restriction on which arguments may be measuring arguments
+% is not a formal restriction in terms of internal vs. external arguments, but rather a
+% semantic restriction in terms of affectedness: any affected argument has the po-
+% tential of serving to measure out an event.
+
+% *Naess (2007: 57)*  
+% > The choice of which argument should be taken to measure out an event such as
+% that of eating is in reality a question of perspective. Either one may choose to focus
+% on the objectively most affected participant in the event, the Patient, whose af-
+% fectedness is immediately observable to any objective bystander. Or else one may
+% focus on the most salient effect from the agent’s point of view, namely the effect
+% that the agent registers directly on himself and which constitutes his motivation
+% for engaging in the act of eating.
+
+% *Naess (2007: 61-63)*  
+% QUINDI EAT NON È TRANSITIVO PROTOTIPICO MANCO PE GNENTE  
+% > A similar, though more complex, situation is found in the Mayan language
+% Yukatek of Mexico. To begin with, it should be noted that Yukatek has no under-
+% ived transitive verb meaning ‘eat’; han ‘eat’ is intransitive, and can only be used
+% with a direct object if transitivised with an overt transitivising suffix (Jürgen
+% Bohnemeyer p.c.). [...]  
+% In general, the class of inherently imperfective verbs, which take the transitive
+% subject cross-referencing marker in their unmarked aspect, consists of “activity
+% verbs” – verbs such as ‘work’, ‘run’, ‘bathe’ and ‘dance’ belong to this class. The class
+% of inherently perfective verbs, which in their unmarked aspect show the marker
+% otherwise used to cross-reference transitive objects, consists mainly of “change-of-
+% state” verbs such as ‘arrive’, ‘awaken’, ‘die’ and ‘fall’.
+% Han ‘eat’, however, despite being considered an activity verb by Krämer and
+% Wunderlich (1999 :447) belongs to the inherently perfective class. In other words,
+% when it is unmarked for aspect, it takes the subject cross-referencing marker which
+% with transitive verbs is used for objects. [...]  
+% The classification of ‘eat’ as an “inherently perfective” verb in Yukatek can sim-
+% ilarly be understood as a consequence of the verb’s having an Affected Agent argu-
+% ment. 
+
+% *Naess (2007: 63)*  
+% > Yukatek is by no means the only language where the process of causativisation
+% functions differently with respect to ‘eat’ than for other verbs. Amberber (2002)
+% notes that in a number of languages, causative morphemes or constructions which
+% in general are restricted to occurring on intransitive verbs exceptionally occur on
+% just one small class of transitives: the ingestive verbs.
+
+% *Naess (2007: 75)*  
+% > 4.4.3 ‘Eat’ grammaticalised as marker of agent affectedness  
+% The semantics of affectedness inherent to ‘eat’ is reflected in a number of languag-
+% es through the use of this verb as an auxiliary, as a light verb in noun-verb con-
+% structions, and other grammaticalised uses. In most of these languages such uses
+% of ‘eat’ express a sense of undergoing, affectedness or adversativity:
+
+% *Naess (2007: 77)*  
+% SPOSTARE IN CAPITOLO SU TELICITY! (CONTINUA DOPO, CREDO)  
+% > Of the properties included in Hopper and Thompson’s list of Transitivity pa-
+% rameters, the most obvious candidate for an explanation for the intransitive be-
+% haviour of ‘eat’ verbs would appear to be parameter C, “aspect” – telic vs. atelic. As
+% Hopper and Thompson’s Transitivity notion is explicitly defined as a property of
+% clauses, not all their parameters are directly applicable to individual verbs; but for
+% those that are, the verb ‘eat’ must be ranked as “high” at least for parameters A, B,
+% E, H, and I: it involves two participants, denotes an “action”, is necessarily voli-
+% tional, and takes an A which is “high in potency” (human or animate) and a high-
+% ly affected O. Telicity, on the other hand, has sometimes been appealed to as an
+% explanation for the aberrant behaviour of ‘eat’ verbs. Thus Van Valin and LaPolla
+% characterise ‘eat’ as “not inherently telic” (1997 :112), while Tenny (1994) main-
+% tains that the telicity of ‘eat’ depends on the “delimitedness” or “non-delimited-
+% ness” of its measuring argument, that is, its object: “If Chuck eats an apple, he fin-
+% ishes eating when the apple is gone, but if he eats ice cream, he continues eating for
+% an indefinite period of time, because there is an indefinite quantity of ice cream.
+% (He may even continue eating ice cream forever, if he is in a world that never runs
+% out of ice cream)” (Tenny 1994 :24).
+% Quite apart from the fact that the real world does not actually work this way
+
+% *Naess (2007: 78-79)*  
+% COME SI CONCILIA QUESTO CON MEDINA? PER LEI EAT È TELICO O ATELICO?  
+% > It is well known that telicity depends not only on the predicate of a clause but
+% also on the nature of its object, if it has an object, so that bare-plural or mass noun
+% objects lead to atelic readings (Dowty 1991): John built a chair in an hour/*for an
+% hour vs. John built chairs for an hour/*in an hour. This variation is not specific to
+% ‘eat’ but is apparently characteristic of verbs with incremental themes (Dowty
+% 1991, Tenny 1994). The interesting question in the case of ‘eat’ is how this verb
+% behaves when it is used intransitively, i.e. when the presence of different kinds of
+% objects cannot influence the reading.
+% Intransitive ‘eat’ is in fact perfectly compatible with an adverbial of comple-
+% tion: I ate in five minutes, then rushed off to work. This clearly shows that intransi-
+% tive ‘eat’ does in fact have a delimited – that is, a telic – reading; and since no object
+% is present, this telic reading cannot derive from the “delimitedness” of the object.
+% Rather, the telic reading arises from the affectedness of the agent. [...]  
+% On the other hand, we also find ‘eat’ with adverbials of duration: We ate all
+% evening. This is a rather striking alternation which to my knowledge is relatively
+% rare with intransitive verbs, though it does occur with at least two other types of
+% English intransitives. One is certain “reflexive” verbs of body care such as shower
+% and bathe, which can also be construed either with adverbials of completion or of
+% duration: I showered in five minutes or I showered for half an hour. The completive
+% reading here implies a particular result state of the agent; I showered in five minutes
+% means that it took me five minutes to attain the desired degree of cleanness, where-
+% as I showered for half an hour only means that I spent half an hour standing under
+% the shower. In the latter case, no result state is entailed; the implication of clean-
+% ness can be cancelled by a sentence such as I showered for half an hour but I still
+% couldn’t get all the dirt off my skin.
+% Secondly, the alternation is shown by at least some verbs whose subject under-
+% goes a process which is conceived of as typically leading to a result state, but which
+% is in principle independent of this result state; that is, it may be halted before the
+% state is achieved or extended past the point where the state is achieved, while still
+% being essentially the same process. This is the case for the verbs cook and bake; [...]  
+% What these different verbs have in common is that they all refer, when used with
+% an adverb of completion, to a result state of the subject argument; that is, their sub-
+% jects are affected by the action in question. Once again, then, eat here patterns with
+% verbs which are characterised by affecting their subject argument; reflexive verbs
+% such as shower and bathe and patient-subject verbs like (intransitive) cook and bake. [...]  
+% Furthermore, the possibility of a telic reading for intransitive ‘eat’ is unusual for
+% intransitive uses of verbs that may delete their objects in English; we may say Dad
+% cooked dinner in half an hour or Dad cooked for half an hour but not *Dad cooked
+% in half an hour; Mary sewed a dress in an hour or Mary sewed for an hour but not
+% *Mary sewed in an hour.
+
+% *Naess (2007: 79)*  
+% TELICITY BOCCIATA COME FATTORE PER EAT VERBS  
+% > What is relevant is that the verb has a
+% telic reading even when it is used intransitively. In other words, the intransitive use
+% of ‘eat’ verbs cannot be explained by appealing to the atelicity of such verbs: if ‘eat’
+% can be used intransitively because it has a low value for the parameter of telicity,
+% then we would expect an intransitive clause with ‘eat’ to necessarily have an atelic
+% reading. But if a verb may be telic and still occur in intransitive contexts, then it can-
+% not be the telic-atelic parameter which is the source of its reduced transitivity.
+
+% *Naess (2007: 80)*  
+% >  (Van Valin and LaPolla 1997 :149). It is this lack of a second macrorole which is taken to
+% account for the frequently observed intransitive behaviour of ‘eat’ verbs.
+
+% *Naess (2007: 81)*  
+% >  The claim made by the analysis presented here is that it is precisely the
+% affectedness of the agent which allows the object of ‘eat’ and similar verbs to be
+% construed as “irrelevant”; since the effect of the act on the agent himself is the
+% primary goal of the agent’s acting, the patient is of secondary interest and rela-
+% tively low in distinctness, and may therefore be demoted or omitted altogether.
+
+% *Naess (2007: 126)*
+% > For most languages for which I have been able to find data, it is the case that if
+% they allow indefinite object deletion with any verb, they allow it with ‘eat’ (and
+% usually also ‘drink’). [...]  
+% many of the languages which may omit the objects of ‘eat’ and ‘drink’ also
+% include in their set of IOD verbs other verbs denoting events which affect their
+% agents or their A participant. Another example given for Malayalam in Asher and
+% Kumari (1997) is vaayikkuka ‘read’, another act having an effect on its agent. 
+
+% *Naess (2007: 127-128)*  
+% EFFECTED OBJECTS  
+% > However, there is another type of verb which are crosslinguistically common
+% in IOD constructions, which do not fall under this explanation as their agent par-
+% ticipant is not typically affected, namely verbs with effected objects, discussed in
+% 5.3.5. As noted there, an effected object is one that comes about as a result of the
+% verbal action; it did not exist before the action began, nor does it come into exist-
+% ence if the action is interrupted before it is completed. If someone is, for instance,
+% writing a letter but is interrupted before they finish, we cannot say that a letter has
+% been produced. [...]  
+% The unique property of effected-object verbs is that
+% nonreferentiality of the object is inherent to the semantics of the verb itself; that is,
+% the use of the verb itself indicates that the object is nonreferential and therefore
+% less prominent in the discourse context, less distinct from the general background,
+% and not affected in the usual sense. Note that IOD with such verbs is most felici-
+% tous in grammatical contexts presenting the act as ongoing, and consequently, the
+% object as not yet completed: I am/was writing. By contrast, in perfective contexts,
+% where the object must be understood as having been completed, and therefore
+% referential, omission is all but impossible:??I have written,??I have baked. (Com-
+% pare these to the very common perfect use of objectless eat: I have eaten; cf 6.3.3). [...]  
+% The property shared by the omissible objects with affected-agent and effected-
+% object verbs is a relatively low degree of distinctness. We saw in chapter 4 that Pa-
+% tient participants of affected-agent verbs are not maximally distinct from the Af-
+% fected Agent, and that they are omissible because the Affected Agent may itself be
+% construed as the endpoint of the event, by virtue of being affected. Effected objects
+% are nonaffected and nonreferential, and therefore show a low degree both of dis-
+% tinguishability from the Agent and distinctness from the general background; this
+% low degree of distinctness makes them highly susceptible to omission.
+
+% *Naess (2007: 138)*  
+% > In fact, a similar effect can be observed for English. Consider the verb kill, by
+% any account a very highly transitive verb, with an active and, in the default inter-
+% pretation at least, controlling agent, and a radical effect on its patient. A generic
+% objectless clause with a human subject is not particularly good for kill: *John kills,
+% meaning that he habitually kills people or animals, is unacceptable in English, al-
+% though for the reasons outlined above it may be improved by the addition of a
+% purpose clause: John kills for the sheer thrill of it. However, with an inanimate and
+% therefore necessarily nonagentive subject a generic objectless clause is unproblem-
+% atic: Smoking kills. Note that both the generic reading and the inanimate subject
+% are required for the object to be omissible; *Smoking killed is unacceptable.
+
+qui iniziava il vecchio paragrafo "eating and drinking"
+
+% *Naess (2007: 13)*  
+% KILL OR CUT, NOT EAT! discutere sul fatto che tutti i paper in genere parlano di "eat", che non è molto prototipico...  
+% > Thus, for example,
+% verbs like ‘kill’ or ‘cut’ are expected to be treated as transitive across languages – in-
+% deed, verbs like these are frequently the basis for determining what should count
+% as the basic transitive clause of a language. 
 
 % *Naess (2011: 413)*
 % > Verbs referring to acts of eating and drinking show a crosslinguistic tendency to behave in ways
@@ -1277,9 +2255,105 @@ EATING AND DRINKING
 % and drink, exhibit both transitive and intransitive properties as the roles that their arguments
 % play in the denoted event show overlapping properties. 
 
+
+% *Naess (2011: 420)*  
+% PER SPIEGARE "not clear why alcoholic drinks should be seen as ‘prototypical’; most acts of drinking by
+% most people involve objects other than alcohol"  
+% > An alternative explanation which has been proposed starts from the affected agent analysis
+% described above, and argues that the function of object omission with verbs of eating
+% and drinking is to highlight the effect of action on the agent, by removing the other
+% affected argument, the object. For ‘drink’ this leads to an ‘alcohol’ reading because the
+% consumption of alcohol is a culturally salient activity, and, more importantly, because
+% drinking alcohol is associated with a very specific and often directly observable effect on
+% the agent, that of intoxication. For ‘eat’, the intended effect of eating is said to be that of
+% becoming full, and the amount of food required to achieve this is conventionally referred
+% to as ‘a meal’ – hence the ‘eat a meal’ reading of objectless ‘eat’ (Nжss 2007:141–4).
+
+% *Naess (2011: 421)*  
+% VERBS OF CHANGE-OF-STATE IN MOLTI ALTRI PAPER!  
+% > However, the semantic properties that set these
+% two groups of verbs apart from other two-participant verbs are different: Verbs of eating
+% and drinking have an effect on their agent, meaning that the object can be left
+% out if the effect one wishes to focus on is that on the agent. Verbs of creation, on
+% the other hand, have non-referential objects – the objects do not exist until the verbal
+% action has been brought to completion – and it is this non-referentiality which
+% most plausibly accounts for the omissibility of effected objects in languages like English
+% (Hopper 1985; Næss 2007:127). One might propose a shared property of low
+% distinctness of the object; with affected-agent verbs, the object is low in distinctness
+% because it shares its defining semantic property, affectedness, with the agent, and with
+% effected-object verbs it is low in distinctness because it is non-referential (Næss
+% 2007:128).
+
+% *Naess (2007: 136)*
+% > The IOD construction with a purpose clause – John murdered for the money – does not necessarily have an iterative reading, 
+% as pointed out above. Rather, such clauses are construable as a kind of affected-agent construction where the affected- agent
+%  reading is not imposed by the semantics of the verb, but rather by the pur- pose clause. A statement of the agent’s motivation 
+%  or purpose in performing an act is essentially a statement of the benefits that the agent hopes to achieve in acting; in other words
+%   the intended effect of the act on the agent. Affectedness of the agent, then, is not necessarily inherent to the semantics of a specific
+%   verb, but may be introduced by other elements of a clause.  
+
+% *Naess (2007: 52)*  
+% LA MAX DIST ARG HYP LA DICO IN "DIRECT CONSEQUENCES" SOPRA! citando naess 2007
+% > There is considerable support in the literature for the idea that a prototypical
+% agent is unaffected, although systematic empirical evidence for the relevance of
+% this property has rarely been presented. For example, Langacker (1991 :238) states
+% that in a canonical transitive clause, the agent “remains basically unaffected”; while
+% Kittilä (2002a :237) gives as one of the defining features of a transitive event that
+% “the agent is not affected”. The Maximally Distinguished Arguments Hypothesis
+% places this observation in a larger theoretical context by stating that the require-
+% ment that the agent remain unaffected is a function of the more basic requirement
+% that the two participants of a transitive event should be maximally distinct, con-
+% ceptually as well as physically.
+
+% *Naess (2007: 52)*  
+% MOLTO IMPORTANTE! DIMOSTRA CHE EAT/DRINK NON SONO VERBI TRANSITIVI PROTOTIPICI  
+% > The discussion in this chapter will center round the morphosyntactic behaviour of
+% verbs meaning ‘eat’ and ‘drink’ crosslinguistically. Such verbs have sometimes been
+% referred to in linguistic literature as “ingestive verbs”. This term appears to originate
+% in Masica (1976), where it refers to “a small set of verbs... having in common a se-
+% mantic feature of taking something into the body or mind (literally or figurative-
+% ly)” (Masica 1976 :46). As much of this chapter will be dedicated to demonstrating,
+% these verbs often show intransitive characteristics. Masica considers them to be
+% “occupying a halfway station between intransitives and transitives, since the object
+% in question can frequently be dispensed with in favor of concentration on the activ-
+% ity as such” (p. 48). He takes this observation to explain certain facts about the se-
+% mantic behaviour of these verbs under causativisation in Hindi, cf. 4.3.4 below.
+
+% *Naess (2007: 53)*  
+% > A number of linguists have noted that acts of eating and drinking are charac-
+% terised by affecting their agent. For example, Starosta (1978) characterises intran-
+% sitive uses of ‘eat’ (John is eating) as having a “Patient” subject, by which he pre-
+% sumably means that the subject argument is affected by the act of eating. Wierzbicka
+% (1982) accounts for constructions of the type have a drink essentially by arguing
+% that they describe actions undertaken by an agent for the sole purpose of achiev-
+% ing an effect on himself. Nedjalkov and Jaxontov (1988) include “verbs meaning
+% ‘to eat’, ‘to drink’” in the class of verbs forming “possessive resultative construc-
+% tions”, which apply in cases where “the result of the action affects the underlying
+% subject rather than the immediate patient of the action” (Nedjalkov and Jaxontov
+% 1988 :9). Haspelmath (1994) similarly notes that verbs whose agent argument is
+% “saliently affected” may form “active resultative participles”, meaning that the re-
+% sultative participles describe an effect achieved on the agent rather than the patient
+% argument. Among such affected-agent verbs Haspelmath counts ‘eat’ and ‘drink’ as
+% well as ‘learn’, ‘see’, ‘put on’ and ‘wear’ (Haspelmath 1994 :161).
+
+% *Naess (2007: 54)*  
+% > The best-known and most frequently-discussed case of “intransitive behaviour” in
+% ‘eat’ verbs is that of so-called indefinite object deletion (IOD), found in English
+% and a large number of other languages. In these languages, ‘eat’ verbs exhibit a
+% structurally fairly simple alternation: they can be used either with or without an
+% overt direct object, without any further morphosyntactic differences in the verb or
+% the clause.
+
 \paragraph{DOBJ IS THERE IN SYNTAX}
 questa teoria vede l'oggetto sintatticamente rappresentato! (recuperare altri pezzetti)\\
 trovare il modo di separare questo paragrafo e quello sull'incorporation in una sezione sintassi vs semantica? o anche rappresentato non rappresentato? oppure syntactic transitivity, semantic transitivity?
+
+% *Cummins & Roberge (2005: 47)*  
+% > Based on work by Roberge
+% (2002, to appear), we hold that all null objects are syntactically represented.2
+% Roberge proposes a Transitivity Requirement (TR), parallel to the Extended
+% Projection Principle (EPP) for subjects, whereby the direct-object position,
+% complement of the verb, is given by Universal Grammar.
 
 % *Cummins & Roberge (2004: 2)*
 % > These possibilities cannot be attributed solely to lexical properties of the verb; if this
@@ -1351,3 +2425,122 @@ trovare il modo di separare questo paragrafo e quello sull'incorporation in una 
 % in both English and French. Although we do not find sentences like those in (13) in
 % English (as shown by the ungrammaticality of the glosses), there is nonetheless evidence
 % that a null object has an effect on syntax in both English and French.3 
+
+% *Dvorak (2017: 1)*  
+% > Non-overt direct objects with an existential interpretation, as in (1), have been the topic of
+% linguistic discussions since Chomsky introduced the transformational rule of ‘Unspecified
+% object deletion’ in 1962. In the English-oriented literature, they are usually assumed to be
+% represented lexically, either in the form of de-transitivizing rules that operate on individual
+% predicates, see (2a), or as two separate predicates, transitive and intransitive, linked by
+% a predicate-specific meaning postulate, see (2b). Alternatively, Cote (1996)  enriches the
+% lexical conceptual structure (LCS) of a given verb by marking the relevant argument as
+% unsubscripted zero [...]  
+% More recently, this view has been challenged by Alexiadou et al. (2014), who argue for a
+% syntactic re-interpretation of Bresnan’s rule of Existential Closure (EC) in (2a), such that it
+% applies to any predicate with an unsaturated internal argument: JECK = λ fhe,stiλ es ∃x[f(x)(e)]
+% (see Babko-Malaya 1999 and Martı́ 2011 for related proposals).
+
+% *Lorenzetti (2008: 62)*  
+% > Early accounts of the phenomenon proposed the elimination of the object from the syntax
+% via “object deletion transformation” [Katz and Postal 1964, Browne 1971, Allerton 1975],
+% while later works introduced the view that implicit object constructions have aspectual
+% constraints [Mittwoch 1982] and that omitted objects are frequently typical, inferable or
+% partially specified by the semantics of the verb [Lehrer 1970, Rice 1988].
+
+
+\section{A working definition of "indefinite object drop"} \labsec{theory_workingdef}
+
+citare Medina e tutta la teoria possibile che la conforti
+è una definizione pre-teoretica che prescinde dalle proiezioni sintattiche?
+QUI METTERE IL MIO DIAGRAMMA DI VENN CONCENTRICO
+
+% hopper thompson 1980: 251 (abstract)
+% TORNA BENISSIMO COL MIO DIAGRAMMA DI VENN
+% The grammatical and
+% semantic prominence of Transitivityis shown to derive from its characteristicdis-
+% coursefunction:high Transitivityis correlatedwithforegrounding,and low Transitivity
+% with backgrounding
+
+\begin{figure}[htb]
+\caption{CAPTION.}
+% lexical and aspectual factors
+\labfig{objectdrop_venndiagram}
+    \begin{tikzpicture}
+\coordinate (O) at (0,0);
+\foreach \j in {1,...,3} \draw (O) circle (3.5-\j);
+\foreach \k/\text in {0/extra-linguistic context,1/intra-linguistic context,2/lexicon} \draw[decoration={text along path,reverse path,text align={align=center},text={\text}},decorate] (2.6-\k,0) arc (0:180:2.6-\k);
+    \end{tikzpicture}
+\end{figure}
+
+% *Naess (2007: 124-125)*
+% > In this chapter, the term “indefinite object deletion” (IOD) will be used to describe
+% the situation where a verb which allows an argument which syntactically must be
+% characterised as a direct object is employed without any overt direct-object argu-
+% ment. We will restrict the discussion to cases of so-called context-independent
+% object deletion.
+% Many languages allow omission of objects whose reference is expected to be
+% retrievable from context. Such context-dependent object deletion may take place
+% when the object in question has already been mentioned in the previous discourse,
+% or where the general context provides sufficient clues as to the identity [...]  
+% By contrast, context-independent object deletion does not depend on the ref-
+% erent of the missing object being retrievable or identifiable by the hearer. In order
+% to correctly understand a sentence such as He is eating, it is not necessary to be
+% able to infer what is being eaten; in fact, there is no expectation whatsoever that
+% the referent of the object should be identifiable. This is not to say that the use of the
+% verb eat without an object does not imply that an object is present; the act of eating
+% unquestionably presupposes that something is eaten. However, it is only this pres-
+% ence of an object in general that must be inferred by the hearer in such cases: the
+% hearer knows that something is being eaten, but is not expected to be able to iden-
+% tify which specific edible object is being referred to. [...]  
+% Some approaches assume a further division between contexts where objects
+% are omitted because they are obvious and contexts where they are omitted because
+% they are indefinite. For example, Heath (1976a) claims that in the sentence He
+% drinks, “the T[ransitive] O[bject] is deleted because it is obvious in the context,
+% rather than because of indefiniteness. On the other hand, in the type Speed kills the
+% deleted TO is indefinite rather than obvious”.
+% It is not clear, however, how the object of He drinks can be “obvious in the
+% context” when the sentence is in fact presented without any context whatsoever.
+% The only way to interpret this would seem to be that the object is “obvious in the
+% context of deletion”, that is, it is obvious because it is deleted; the very fact that no
+% object is present allows us to assign it the “obvious” interpretation. But this is a
+% circular argument: the object is deleted because it is obvious, and it is obvious be-
+% cause it is deleted. No such difference between “obvious” and “indefinite” deleted
+% objects will be assumed here. 
+
+% *Haegeman (1987: 236)*  
+% > The (b)-examples illustrate what has come to be known as indefinite
+% object drop: a transitive verb lacks an object, but an indefinite object
+% is understood.
+%  Rizzi ( 1986) argues convincingly that these cases of
+% indefinite object drop in English are lexically governed. While eat, for
+% instance, allows object drop, the semantically closely related devour
+% does not:
+
+% *Yasutake (1987: 46)*  
+% calls them "detransitive verbs"
+
+% *Naess (2007: 55)*  
+% >  However, for English and many other languages,
+% indefinite object deletion only applies to a small subset of verbs, which as a result
+% are frequently labelled “pseudo-intransitive”, “labile”, or “(S/A) ambitransitive” (cf.
+% chapter 6).
+
+% *Glass (2013: 1)*  
+% > “Implicit object” (IO) is a name for what happens when a verb we normally consider transitive
+% appears without an object
+
+% *Petho & Kardos (2006: 29)*  
+% >  implicit object arguments, also referred
+% to in the literature as null complements or understood arguments
+
+% *Glass (2020: 1)*
+% > Other words for this phenomenon include object drop,  unspecified object,  null object,  null argument,  null complement, null instantiation, diathesis alternation, implicit object  
+
+% *Gillon (2012: 314)*
+% > Fodor and Fodor (1980) seem to have been the first authors to have brought to the
+% attention of linguists that implicit indefinite objects pose a problem for grammatical
+% theory. Though Fodor and Fodor did not put it this way, we can succinctly formulate
+% the problem as a dilemma. Either there is only one verb to read or there are two.
+
+% *Glass (2020: 1)*
+% > It is a longstanding question in lexical semantics which normally-transitive verbs in Englishcan omit their objects to describe an event with an unexpressed theme, which cannot, and why1.Even near-synonyms differ in how natural they sound with their objects omitted (1) (Fillmore1986, Rice 1988, Mittwoch 2005, Gillon 2012), making it difficult to explain omission in termsof meaning, and leading some researchers to characterize this phenomenon as partly or fullyarbitrary (Fillmore 1986, Jackendoff 2002: 134, Ruppenhofer 2004, Gillon 2012, Ruppenhofer& Michaelis 2014).
