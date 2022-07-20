@@ -1,14 +1,14 @@
 \setchapterpreamble[u]{\margintoc}
-\chapter{Object-dropping verbs}
+\chapter{Indefinite object drop} % Object-dropping verbs
 \labch{objectdrop}
 
 As mentioned in \refch{intro}, this thesis is about indefinite implicit objects. What is "indefinite" about them? In what sense can they be considered "implicit"? And ultimately, what is objecthood itself? This Chapter will answer these questions in reverse order, from the most general to the most specific one. In \refsec{theory_transitivity} I will make reference to the transitivity continuum, as defined by \textcite{HopperThompson1980} and further explored by later literature. In \refsec{theory_def_vs_indef} a crucial distinction will be made between definite and indefinite object drop, following \textcite{Fillmore1986} and subsequent works. The nature of \textit{indefinite} object drop will be finally described in \refsec{theory_defindefinite}, and a working definition (for the purposes of this thesis) will be provided in \refsec{theory_workingdef}.
 
 \section{Transitivity as a prototype} \labsec{theory_transitivity}
 
-\subsection{Transitivity in Hopper \& Thompson (1980)} \labsec{theory_ht1980}
+% \subsection{Transitivity in Hopper \& Thompson (1980)} \labsec{theory_ht1980}
 School kids everywhere are used to call "transitive" the verbs which take an overt direct object, with reference to the syntax. In a traditional semantic definition, a clause is deemed "transitive" if it describes an event where the action performed by an Agent "passes over"\sidenote{Hence the name of the concept of transitivity, from Latin \textit{transire} 'to go over'} to a Patient, which usually undergoes some kind of transformation.\\
-Going beyond these naive definitions, but still capturing their spirit, \textcite{HopperThompson1980} first proposed an account where transitivity is interpreted as a scalar concept whose strength depends on several parameters, or, to use more modern terminology, as a prototype category \parencite{Naess2007}. In particular, they identified ten parameters \parencite[252]{HopperThompson1980}, reported almost \textit{verbatim} from \reftab{ht1980_parameters}.
+Going beyond these naive definitions, but still capturing their spirit, \textcite{HopperThompson1980} first proposed an account where transitivity is interpreted as a scalar concept whose strength depends on several parameters, or, to use more modern terminology, as a prototype category \parencite{Naess2007}. In particular, they identified ten parameters \parencite[252]{HopperThompson1980}, reported almost \textit{verbatim} in \reftab{ht1980_parameters}.
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{\textcite[252]{HopperThompson1980} defined transitivity as a prototype concept determined by ten parameters.}
@@ -29,10 +29,26 @@ J. & \textbf{Individuation of O} & O highly individuated  & O non-individuated
 \end{tabular}
 \end{table}
 
-% PUNCTUALITY È LA PERFECTIVITY???
-SPIEGARE QUELLI NON OVVI
+These parameters are potentially active in all languages, but languages may differ from one another with respect to the actual subset of parameters they select as necessary criteria for transitivity. This depends on the "recursivity" \parencite[29]{Naess2007} of prototypical concepts, which assign membership in a category (in this case, transitive clauses) on the basis of attributes which are prototype concepts themselves \parencite[61]{taylor1995linguistic}.\\
+Parameters A, B, E, F, and G from \reftab{ht1980_parameters} are self-explanatory. Parameter C (telicity) will be discussed in more detail in \refsec{telicity}. Parameter D (punctuality) refers to the phase between inception and completion of an action, which is non-existent with verbs like \textit{to kick} and noticeable with verbs like \textit{to carry}. Parameter H (agency) separates animate and inanimate subjects. Parameter I (affectedness of the object) determines that sentences like \textit{I drank up the milk} are more transitive than sentences like \textit{I drank some of the milk}, since the milk is only partially affected by the drinking in the second sentence. Finally, parameter J (individuation of the object) refers to the distinctness of the object both from the Agent and from the background, as summarized in \reftab{ht1980_individuation} \parencite[253]{HopperThompson1980}.
 
-A terse summary by \textcite[15]{Naess2007} clearly shows the relation between the naive definitions of transitivity and the ten-parameter account by \textcite{HopperThompson1980}. A prototypical cause is understood to describe an event such that:
+\begin{table}[htb] % the "htb" makes table env unfloaty
+\caption{\textcite[252]{HopperThompson1980} defined transitivity as a prototype concept determined by ten parameters.}
+\labtab{ht1980_individuation}
+\begin{tabular}{c|c}
+ \textbf{individuated} & \textbf{non-individuated} \\
+ \hline
+proper & common \\
+human, animate & inanimate \\
+concrete & abstract \\
+singular & plural \\
+count & mass \\
+referential, definite & non-referential
+\end{tabular}
+\end{table}
+
+The individuation parameter is the most controversial among the ten proposed ones, as observed by \textcite[128]{comrie1989language} and later on by \textcite[18]{Naess2007}. According to what has come to be known as "Comrie's generalization", in prototypical transitive clauses both animacy and definiteness are high in the Agent and low in the Patient, \textit{contra} \textcite{HopperThompson1980}. The weak argumentation \textcite{HopperThompson1980} provide in favor of the individuation parameter is that speakers would be more likely to focus on the Patient in \textit{I bumped into Charles} than in \textit{I bumped into the table}, since bumping is more likely to affect human beings than tables. \textcite{comrie1989language} makes a much more compelling point with reference to cross-linguistic typology, basing the generalization on the animacy hierarchy and on referential case-marking (which I will not discuss here, since it would lead me too far from the intended argumentation). Later literature \parencite{Naess2007, kemmer1993middle, Kardos2010, Naess2009} reinforced this point by assuming that prototypical transitive events are described by verbs whose subject and object are maximally distinct from a semantic point of view.\\
+To sum up, the terse summary by \textcite[15]{Naess2007} clearly shows the relation between the naive definitions of transitivity and the ten-parameter account by \textcite{HopperThompson1980}. A prototypical clause is understood to describe an event such that:
 \begin{itemize}
     \item a volitional Agent (E, H)
     \item performs an action (B)
@@ -40,54 +56,83 @@ A terse summary by \textcite[15]{Naess2007} clearly shows the relation between t
     \item and it is presented as real and concluded (C, D, F, G).
 \end{itemize}
 
-These parameters are potentially active in all languages, but, in a true prototypical fashion, languages may differ from one another with respect to the actual subset of parameters they select as necessary criteria for transitivity.
+\textcite[78]{Lorenzetti2008} provides a tighter cluster of parameters, arguing that only a subset of the ones proposed by \textcite{HopperThompson1980} are truly relevant. In particular, the author ditches the criteria relative to the transitive event being real and concluded (C, D, F, G), and only keeps agentivity, affectedness, and individuation of the object among the other criteria types.
+
+
+\section{Definite \textit{vs} indefinite object drop} \labsec{theory_def_vs_indef}
+
+In \refsec{theory_transitivity} I introduced transitivity as a prototype concept depending on a cluster of parameters and, specifically, involving an Agent acting on a Patient. But what about the utterances where events of this kind are expressed without an overt syntactic object? In this Section I will provide an account of the literature on the matter.
+
+\subsection{Either definite or indefinite: discrete accounts} \labsec{theory_discrete}
+
+\paragraph{Introduction}
+Verbs behaving intransitively are, using \textcite[191]{rutherford1998workbook}'s words, "a mixed bag". Consider, for instance, the examples in \ref{intro}. The sentence in \ref{intro1} features a typical intransitive verb, describing an event where the subject is \textit{not} performing an action with effects on some Patient. The sentence in \ref{intro2} also describes an event where the subject is not volitionally acting on a Patient, but it is nevertheless clear that there has to exist something that John knows (unlike in \ref{intro1}, where there cannot be something that John sleeps). The sentence in \ref{intro3} has an Agent acting volitionally on a Patient, which is however not instantiated syntactically as an overt direct object.
+
+\ex. \label{intro} \a. \label{intro1} John slept.
+\b. \label{intro2} John knew.
+\c. \label{intro3} John ate.
+
+There is a clear similarity between \ref{intro2} and \ref{intro3}, as opposed to \ref{intro1}. They both require a Patient/Theme semantically \parencite[510]{Somers1984}, and they both surface as object-less syntactically. There is, however, a crucial difference between these two sentences. Native speakers of English understand that they have to be provided some context in order to understand \ref{intro2} \textemdash what is it exactly that John knew? On the contrary, \ref{intro3} can be interpreted to mean that John had a meal at a certain moment in time, without resorting to any additional context. This distinction was captured and defined by \textcite{Fillmore1986} (building upon \textcite{fillmore1969types, Allerton1975}), the established seminal work on the distinction between so-called "definite" and "indefinite" object drop (here represented by \ref{intro2} and \ref{intro3}, respectively).
+
+\paragraph{Fillmore's account}
+\textcite[96]{Fillmore1986} distinguishes between Indefinite Null Complements (hence, INC) and Definite Null Complements (hence, DNC) by testing "whether it would sound odd for a speaker to admit ignorance of the identity of the reference of the missing phrase". So, making reference to \ref{intro} again, there would be no issue with saying "John ate. I wonder what he ate.", but it would be quite odd to say "John knew. I wonder what he knew.". Thus, the missing object in \ref{intro2} is a DNC, while the missing object in \ref{intro3} is an INC. Fillmore than splits INCs into two sub-groups based on whether the omitted object is "of considerable generality" or "requiring the specification of various degrees of semantic specialization". The examples in \ref{fillmore} \parencite[96-97]{Fillmore1986} show increasing degrees of, using his words, "semantic specialization". In \ref{fillmore1}, the subject cannot perform the very act of eating or drinking, regardless of the actual ingested item. In \ref{fillmore2} something specific was eaten, but its specific nature is irrelevant inasmuch the speaker is referring to eating as the act of having a meal. In \ref{fillmore3} the omitted object is referring not just to any drinkable liquid, but to alcohol specifically. Finally, in \ref{fillmore4} something very specific was baked by the subject, but this information is backgrounded to focus on the activity itself (I will come back to this in \refsec{theory_incorporation}).
+
+\ex. \label{fillmore} \a. \label{fillmore1} When my tongue was paralyzed I couldn't eat or drink.
+\b. \label{fillmore2} We've already eaten.
+\c. \label{fillmore3} I've tried to stop drinking.
+\d. \label{fillmore4} I spent the afternoon baking.
+
+However, as it will be shown throughout this Chapter, this secondary division of INCs into subgroups does not have to be a binary theoretical distinction. On the contrary, it follows from several finer-grained considerations on the nature of INCs and the factors allowing them. Moreover, this binary division actually opens the door to discussions about a DNC-INC continuum (more details on this in \refsec{theory_continuous}). Specifically, how is "semantic specialization" different from the "knownness" of the object in DNC constructions \parencite[525]{Eu2018}? An answer can be found in \textcite[218]{Allerton1975}, where the case is made that semantically specialized INCs (just like any INC) refer to a category of individuals, while DNCs refer to specific instances of a given category.\\
+Going back to the main distinction between INCs and DNCs, finally, \textcite{Fillmore1986} formally defines the former as objects whose "referent's identity is unknown or a matter of indifference" and the latter as objects whose referent "must be retrieved from something \textit{given} in the context". This context "has either to be given linguistically, in the preceding context, or extralinguistically, in the situational context" \parencite[13]{StarkMeier2017}.
+
+\paragraph{Other accounts}
+Several other researchers made use of the distinction between definite and indefinite implicit objects brought to the fore by \textcite{Fillmore1986}, providing slightly different definitions which capture different aspects of the phenomenon. \textcite{Allerton1975}, then further developed by Fillmore, distinguishes between "contextual omission" and "lexical omission", which respectively refer to Fillmore's DNCs and INCs. \textcite{CumminsRoberge2004} distinguish between "internally-licensed null objects" (INCs) and "referential null objects" (DNCs). According to \textcite[30]{PethoKardos2006}, INCs "receive an \textit{existentially quantified} interpretation", while DNCs are "interpreted anaphorically and must therefore have an appropriate antecedent in context to make sense" (\textcite{Fillmore1986} himself referred to this in the title itself, "Pragmatically Controlled Zero Anaphora"). \textcite[13]{Medina2007}, the foundational work upon which I am basing my own model of the indefinite object construction, sees DNCs as "implicit objects whose particular meaning can be recovered from the preceding discourse or disambiguating physical context" and INCs as "implicit objects whose meaning is recoverable only from the verb in the sentence". Here the focus is all on recoverability, and the author goes on to show that semantic recoverability can be a reliable predictor of object drop in INC sentences. These accounts are not in conflict with Fillmore's formulation of the problem at hand, nor are they in conflict with the view I am adopting in this thesis in order to provide a probabilistic model of the implicit object construction. Other accounts, on the other hand, are more challenging and deserve a more thorough clarification. Let us consider the most relevant ones.\\
+\textcite[55]{TonelliDelmonte2011} argue that, while INCs are "constructionally licensed, in that they apply to any predicate in a particular grammatical construction", DNCs are "lexically specific, in that they apply only to some predicates". Later in this Section (on \refpage{recipes}) and in \refsec{theory_continuous} I will bring evidence in support of the opposite point of view, which is in favor of seeing DNCs as (extra- and intra-linguistically) contextually, not lexically, determined. Moreover, \textcite{TonelliDelmonte2011}'s account is in direct conflict with \textcite[95]{Fillmore1986}, who argues that INCs are "limited to particular lexically defined environments" (such as the object slot of \textit{to eat} and \textit{to read}). In this regard, I side with \textcite{TonelliDelmonte2011}. My probabilistic model of INCs (the results thereof are discussed in \refch{results} and modeled in \refch{model}) will provide strong evidence in support of the idea that any transitive verb can participate in INC constructions, provided the right aspectual, semantic, and pragmatic features.\\
+In a pragmatic (in particular, not lexical) perspective, \textcite[44]{AnderBois} and \textcite[53-54]{Melchin2019} both stay true to Fillmore's original interpretation of DNCs as "pragmatic anaphoras", arguing that DNCs corefer with other referents in the discourse. Moreover, they maintain that INCs lack the possibility of having coreferential interpretations. Fillmore himself \parencite[97]{Fillmore1986} made this point with example \ref{coref}, where \ref{coref2} cannot be considered a proper answer to the question in \ref{coref1}. This is taken to mean that there is no co-reference between the sandwich and the implicit object of \textit{to eat} in \ref{coref2}.
+
+\ex. \label{coref} \a. \label{coref1} What happened to my sandwich?
+\b. \label{coref2} *Fido ate.
+
+However, examples can be provided in support of the opposite. \textcite[142-144]{groefsema1995understood} makes use of sentences such as the ones in \ref{groefsema} to argue that INCs can indeed refer to specific individuals, provided sufficient linguistic context.
+
+\ex. \label{groefsema} \a. \label{groefsema1} John brought the sandwiches and Ann ate.
+\b. \label{groefsema2} John picked up the glass of beer and drank.
+
+Nevertheless, this account does not disrupt Fillmore's firm foundation. As explained by \textcite[527]{Eu2018}, not even in sentences like \ref{groefsema} do INCs force the identification of a specific referent. What happens, instead, is that native speakers processing INCs in a flexible context of this kind can be induced to understand the missing object as if co-referring to the previously mentioned one. Thus, INCs can grammatically dissociate the mentioned referent from the one implied by the missing object, while this possibility is not active for DNCs (which are always co-referential, regardless of the context). Considering eventualities like this, it really is no wonder that \textcite[110]{Cote1996}, with respect to implicit objects in English, spoke of "murky water" in relation to the distinction between lexically-provided information and context available via world knowledge.
 
 
 
-% *Naess (2007: 18)*
-% > Interestingly, an influential line of research in current functional typology ap-
-% pears to explicitly contradict the statement that prototypical transitive clauses have
-% highly individuated O arguments. The observation sometimes referred to as
-% “Comrie’s generalisation” (de Swart 2003, Næss 2007) states that “the most natural
-% kind of transitive construction is one where the A is high in animacy and definite-
-% ness, and the P [= O] is lower in animacy and definiteness; and any deviation from
-% this pattern leads to a more marked construction” (Comrie 1989 :128, my empha-
-% sis).
+%  *Cote (1996: 113)*
+% CFR. LEVIN 1993: 33, Unspecified Object Alternation
+% > null objects found in (3) and (4) which occur with a different set of verbs and which may not co-refer with a discourse antecedent, but which do seem to create a discoure
+% entity available for subsequent reference. Following previous work, I refer to the verbs that take this type of null object as Indefinite Object Alternation (IOA) verbs.
 
-% *Lorenzetti (2008: 78)*  
-% >  the phenomenon of the null instantiation of
-% objects is best characterised within a revised notion of transitivity to be conceived as a scalar
-% property of utterances, and emerging from the interplay of a cluster of parameters [Hopper
-% and Thompson 1980]. The latter, however, do not display the same degree of salience, and
-% only some of them, such as agentivity, affectedness and individuation of the object are
-% assumed to have a primary role in this respect.
+% *Liu (2008: 290)*  
+% in risposta a quelli che dicono che non c'è differenza tra INDEFINITE object deletion e DEFINITE obj del  
+% (dovrei avere una cosa del genere negli appunti, ma dove??)
+% > For example, without any contextual
+% information preceding or following the sentence Mary read for a while before she
+% went to bed, it is impossible to decide whether a specific object, like a book or a magazine,
+% has been deleted after the verb read. Making this distinction is important
+% because whether a specific object has been deleted determines whether the verb is
+% used as an intransitive verb focusing on activity or as an instance of object deletion,
+% a distinction that, as I will argue later in this paper, should and can be made.
 
-% *Newman & Rice (2006: 6)*  
-% > An influential and far-reaching re-conceptualization of the notion of
-% transitivity is that found in Hopper and Thompson (1980). They identify 10
-% parameters which distinguish high and low transitivity of clauses, as
-% summarized in Table 2.
-
-% *Olsen & Resnik (1997: 2)*
-% > According to H&T, clauses that
-% show telic aspect and individuated objects are more transitive than those with
-% atelic aspect and nonindividuated objects. Furthermore, if aspect and
-% individuation covary, telicity and high individuation should occur together in
-% transitive clauses, and atelicity and low individuation together in intransitive
-% clauses. 
+% *Liu (2008: 293)*  
+% corrobora il punto precedente  
+% > As some linguists (e.g., Garcia-Velasco & Munoz 2002; Quirk et al. 1985) have
+% correctly pointed out, in the case of the second type, the shift of the verbs’ function
+% from transitive to intransitive often involves a change in the focus of meaning, i.e.,
+% the focus turns from the object in the transitive use to the activity (the verb) itself in
+% the intransitive use. There is no such semantic shift in the object-deleting verbs’ shift
+% from transitive to intransitive.
 
 % *Kardos (2010: 1)*
 % > This paper is concerned with the distinct behavior of change-of-state (COS) verbs and
 % pseudo-transitive verbs. The members of the former class, such as break, crack, explode, dry,
 % harden, melt and open, are considered to exhibit prototypical transitive behavior (Hopper and
 % Thompson 1980, Blume 1998, Testelec 1998, inter alia), whereas those of the latter class,
-% such as eat, drink, sweep, write, knit, translate, which are also referred to as ambitransitive or
-% labile (Næss 2009), are known to feature both transitive and intransitive properties. [...]  
-%  First, it is widely assumed that what makes a verb
-% prototypically transitive is the semantically maximally distinct behavior of its arguments (e.g.
-% Kemmer 1993, Næss 2009). [...] with these verbs the obligatory
-% presence of two arguments follows from the fact that they denote complex events1 (Levin and
-% Rappaport Hovav 2005, van Hout 1996).
+% such as eat, drink, sweep, write, knit, translate, which are also referred to as ambitransitive
 
 % *Kardos (2010: 3)*  
 % > The term 'pseudo-transitive' chararacterizes different types of verbs, such as verbs of
@@ -103,7 +148,6 @@ These parameters are potentially active in all languages, but, in a true prototy
 % contact is that they occur with a special type of direct object, called incremental theme (for a
 % detailed discussion of incremental themes, see Dowty 1991, Levin and Rappaport Hovav
 % 2005, Wechsler 2005, Ramchand 2008).
-
 % *Kastner & Zu (2014: 19-20)* 
 % > Looking at implicit objects in Hebrew,
 % episodic contexts allow for any arbitrary object (140) while generic contexts require a [+human] or
@@ -113,42 +157,6 @@ These parameters are potentially active in all languages, but, in a true prototy
 % (141) ‘The fact that in Texas, they hang people/*paintings in rooms without windows, drives me crazy.’  
 % Landau concludes that a full typology of implicit objects might have to make reference to [+human] or
 % [+generic] specifications
-
-\subsection{Later refinements} \labsec{theory_postthompson}
-Naess si ricollega perfettamente all'agent affectedness che dico sotto!
-
-% *Naess (2007: 28)*  
-% SI RICOLLEGA BENISSIMO ALLA PROTOTYPICAL TRANSITIVITY!  
-% > In what Kemmer calls a prototypical two-participant event, corresponding to
-% what will here be called a (semantically) transitive event, it is a basic requirement
-% that the Initiator and the Endpoint participants be two physically distinct entities,
-% and that the event involve some kind of transmission of force from the Initiator to
-% the Endpoint participant. Kemmer further specifies that the initiating entity – an
-% agent, in this particular case – should be human and acting volitionally, while the
-% Endpoint – a patient – should be inanimate, definite, and completely affected by
-% the event instigated by the agent.
-
-% *Naess (2007: 29)*  
-% > A prototypical transitive event, then, involves a prototypical agent and a proto-
-% typical patient, neither of which shares any of the defining properties of the other.
-% The fact that prototypicality tends to be recursive is noted by Taylor (1995 :61):
-% “the very attributes on whose basis membership in a category is determined are
-% more often than not themselves prototype categories.” We remember from the pre-
-% vious chapter that a fundamental property of prototype categories is that they are
-% defined in maximal distinction to each other.
-
-% *Naess (2007: 30)*  
-% > (3.1) The Maximally Distinct Arguments Hypothesis  
-% 		 A prototypical transitive clause is one where the two participants are maxi-
-% mally semantically distinct in terms of their roles in the event described by
-% the clause.
-
-
-\section{Definite \textit{vs} indefinite object drop} \labsec{theory_def_vs_indef}
-
-\subsection{Either definite or indefinite: discrete accounts} \labsec{theory_discrete}
-
-Definite or indefinite: discrete accounts -- Fillmore (1986)’s seminal work
 
 % *Olsen & Resnik (1997: 7)*  
 % IMPORTANTE! DEFINITE VS INDEFINITE  
@@ -177,162 +185,18 @@ Definite or indefinite: discrete accounts -- Fillmore (1986)’s seminal work
 % relationship between transitivity and discourse new information may also be
 % amenable to an information-theoretic treatment.
 
-% *Liu (2008: 296)*  
-% > As Rutherford (1998:191) correctly points out, “Verbs
-% exhibiting surface characteristics of intransitivity, however, are a mixed bag and can
-% be distinguished syntactically and/or semantically.”
 
-%  *Liu (2008: 289)*
-%  tutto il paper riguarda questa distinzione in gruppi per transitività  
-%  > verbs used without an object into four categories: 1) pure intransitive verbs, such as
-% arrive, rise, and sleep; 2) ergative intransitive verbs, such as break, increase, and open; 3)
-% transitive-converted intransitive verbs of activity, such as eat, hunt, and read; 4) object deleting
-% verbs, warranted by discourse or situational context, such as know, notice, and
-% promise.
+% *AnderBois (2012: 44)*
+% >  two properties which distinguish overt indefinites
+% and definites in English: the possibility of apparently anaphoric readings (§2.1) and the ability to serve
+% as the inner antecedent for Sluicing (§2.2) [...]  
+% Sluicing is the name given by Ross (1969) to the phenomenon in (7) in which the crossed out
+% material can be elided in the presence of a suitable antecedent clause in prior discourse:  
+% (7) [ Someone left]A , but I don’t know [who left]E .
 
-% *Medina (2007: 13)*
-% > The indefinite implicit object construction is to be distinguished here, as much as possible, from 
-% definite implicit objects which are defined here to be objects in which the speaker does need to have 
-% the specific identity of the object in mind.This distinction serves to distinguish implicit objects whose 
-% particular meaning can be recovered from the preceding discourse or disambiguating physical context 
-% (definite implicit objects) from implicit objects whose meaning is recoverable only from the verb in the
-%  sentence (indefinite implicit objects)
+\paragraph{Genre-based implicit objects: a special case of definite object drop} \labpage{recipes}
 
-% *Petho & Kardos (2006: 30)*  
-% > so-called indefinite null complements (INC) and definite null complements (DNC). This
-% distinction was introduced by Fillmore (1986), and aims to capture a semantic difference between
-% two types of verbs. Indefinite null complements (i.e. implicit objects) of verbs receive an
-% “existentially quantified” interpretation, e.g. I am eating approximately means ‘I am eating
-% something’, but not ‘I am eating it.’. On the other hand, a definite null complement is interpreted
-% anaphorically and must therefore have an appropriate antecedent in context to make sense
-
-% *Garcia-Velasco & Munoz (2002: 7-8)*  
-% IMPORTANTE APPUNTO SULLA RECOVERABILITY! e sulla world knowledge!  
-% > The fact the phenomenon is influenced by two types of factors (lexical and
-% discoursive) has led some scholars to suggest the existence of two corresponding types of
-% argument omission: contextual and lexical omission. This distinction is first introduced in
-% Allerton (1975), to be taken over and developed by Fillmore (1986) and Groefsema (1995).
-% Fillmore establishes an interesting distinction between definite null complements (DNC),
-% which basically correspond to Allerton’s contextual omission and indefinite null complements
-% (INC). Fillmore (1986: 96) employs the following test to distinguish the two categories:  
-% << One test for the INC/DNC distinction has to do with determining whether it would sound odd for a speaker to
-% admit ignorance of the identity of the referent of the missing phrase. It’s not odd to say things like, “He was
-% eating; I wonder what he was eating”; but it is odd to say things like “They found out; I wonder what they found
-% out.” The missing object of the surface-intransitive verb EAT is indefinite; the missing object of the surface-
-% intransitive verb FIND OUT is definite. The point is that one does not wonder about what one already knows.>>  
-% The distinction is then based on the possibility of recovering the missing element. INC verbs
-% do not allow recoverability from the context. [...]  
-% It seems that those verbs which allow the transition from accomplishment to activity might
-% correspond to IO-verbs. That is, the IO type of omission can be considered to be lexical in
-% nature, and therefore influenced by both the type and nature of the verbal object and the
-% semantic class of the verb itself. [...]  
-% The factors of relevance here include the semantic structure of the verb, which
-% itself may give prominence to one semantic component (as in the manner-result opposition),
-% the speaker’s communicative intentions, which may lead him to focus on the activity itself,
-% thus downgrading the referential status of the object, and world knowledge, which allows him
-% to construe an action as an autonomous activity
-
-% *Tonelli & Delmonte (2011: 55 sgg.)*  
-% IMPORTANTE: TERMINI-OMBRELLO PER DEFINITE+INDEFINITE OBJ DROP  
-% > In this work, we focus on null complements, also
-% called pragmatically controlled zero anaphora (Fill-
-% more, 1986), understood arguments or linguistically
-% unrealized arguments [...]  
-%  definite null complements or instantia-
-% tions (DNI) and are lexically specific in that they ap-
-% ply only to some predicates.  
-%  indefinite null complements or instantiations (INI) and
-% are constructionally licensed in that they apply to
-% any predicate in a particular grammatical construc-
-% tion.
-
-% *Eu (2018: 523)*
-% >  Allerton (1975) and Fillmore (1986) understand omitted objects as being indefinite, by which they mean
-% that omitted objects are unknown and insulated from their potential referents available
-% in the context. However, this squib presents data that challenge this understanding of
-% indefiniteness, and proposes that the indefiniteness of omitted objects may be more
-% precisely understood as their indeterminacy over their potential referents. [...]  
-% Omitted objects
-% are ‘semantically obligatory’ (Somers 1984: 510), and yet object omission is generally
-% distinguished from the phenomenon where an object is missing on the surface but
-% ‘recoverable’ from the context. The difference between the two types of missing
-% objects, however, has not been clearly explained, and this squib investigates this
-% difference to gain a more precise view of object omission.
-% Allerton (1975) and Fillmore (1986) explain the difference in terms of definiteness:
-% omitted objects are indefinite in reference, while recoverable objects are definite.
-
-% *Eu (2018: 524)*
-% > For Fillmore and Allerton, however, the unknownness of INC-objects does not
-% mean that they are known only as the abstract semantic role assigned to the object.
-% Rather, they note that INC-objects are often understood in ‘semantic specialization’,
-% for instance, as ‘a meal’ as in (4a), ‘alcoholic beverages’ as in (4b), and ‘breads or
-% pastries’ as in (4c):  
-% (4) (a) We’ve already eaten.  
-% (b) I’ve tried to stop drinking.  
-% (c) I spent the afternoon baking.  
-% (Fillmore 1986: 96–7)
-
-% *Eu (2018: 525)*
-% > The question, then, is how semantic specialization differs from the knownness of
-% DNC-objects. Allerton (1975: 218) answers this by saying: ‘the sentence: John’s been
-% drinking again may imply a particular KIND of object, but it does not refer to one
-% established as DEFINITE contextually’. In other words, semantically specialized INC-
-% objects always refer to a category, or ‘a particular KIND of object’, and never a specific
-% instance of the category, while DNC-objects refer to specific individuals in the context.
-
-% *Eu (2018: 525)*
-% > Indefiniteness as unknownness, however, is challenged by cases where INC-objects
-% fairly clearly refer to a specific individual in the context. Groefsema (1995: 142, 44)
-% introduces (5a, b) against Fillmore’s comment on (3a) and says that here eat and drink
-% do take the contextual referents (sandwiches, glass of beer) as their objects, although
-% the amount eaten or drunk is ‘unspecified’:
-% (5) (a) John brought the sandwiches and Ann ate.
-% (b) John picked up the glass of beer and drank.
-% (Groefsema 1995: 142, 144)
-
-% *Eu (2018: 527)*
-% >  The point here is that INC-objects themselves do not fix the actual referent
-% as the obvious one; hence, whenever the context is flexible enough as in (5a–d), it is
-% possible to dissociate the actual referent from the obvious one without sounding odd.
-% In contrast, DNC-objects require a clear and fixed referent. So in all contexts if the
-% actual referent is different from what the hearer expects on the basis of the context, the
-% object cannot be deleted; therefore, if an object is deleted as a DNC-object, the actual
-% referent cannot differ from the obvious referent no matter how flexible the context may
-% be. The referents of DNC-objects are determinate.
-
-% *Ruppenhofer & Michaelis (2010: 159)*  
-% > Fillmore (1986) distinguishes two major types of null comple-
-% ments, definite and indefinite, based on the potential for a discourse antecedent,
-% and Goldberg (2006: Chapter 9) uses the discourse prominence of participants to
-% explain why constructions like the English experiential perfect license argument
-% omissions that are not allowable in episodic contexts (e.g., She has never failed to
-% impress Ø ).
-
-% *Stark & Meier (2018: 11)*  
-% > Cummins/Roberge (2004). In their qualitative analysis of object drop in French,
-% they distinguish two types of null objects (NOs): “internally-licensed Null Objects” and
-% “referential” Null Objects.
-
-% *Stark & Meier (2018: 13)*  
-% > This kind of null topic [referential null objects] is controlled pragmatically according to Raposo (1986, 375), i. e.
-% it has either to be given linguistically, in the preceding context, or extralinguistically, in
-% the situational context.
-
-% *Ahringberg (2015: 9)*  
-% > Fillmore (1986, p. 103) further recognizes several complement constructions that may be
-% omitted as definite null complements, including lexical noun phrase direct objects, indicative
-% that-clause direct objects, subjunctive that-clause direct objects, and prepositional phrase
-% complements of transitive verbs, to name a few.
-
-% *Dvorak (2017: 117)*  
-% >  The terms were coined by Fillmore (1969, 1986), but the distinction itself goes
-% back even further, to Katz and Postal (1964) who distinguished between the deletion of
-% it versus something at the level of D-structure. Fillmore (1969) proposed that it has to
-% be specified for each predicate whether it can have a null complement with an indfefinite
-% interpretation, or with a definite interpretation. Fraser and Ross (1970) assume that the null
-% object of Max read / Max is reading undergoes ‘unspecified object deletion’, which makes
-% it different from the null object of the verbs like I approved / I began / I insisted, which
-% has an anaphoric interpretation. 
+a quanto pare, per fillmore sono indefinite object drop, ma per gli altri sono definite?
 
 % *Dvorak (2017: 118)*  
 % > Fillmore (1986) reinforces the lexicon-based view of ‘indefinite null complements’ by
@@ -349,89 +213,6 @@ Definite or indefinite: discrete accounts -- Fillmore (1986)’s seminal work
 % He is also aware that in some highly restricted mini-genres, the possibility of object omission
 % is much higher: Store in a cool place, Shake before using, Keep out of reach of children. For
 % a recent take on these special registers, see Ruda 2014.
-
-% *Melchin (2019: 53-54)*  
-% > The understood objects of verbs that have undergone UOA are interpreted as indefi-
-% nite masses or plurals. For their indefinite status, I give evidence from AnderBois (2012).
-% AnderBois notes that the understood objects may not be coreferential with any previous
-% discourse referents. [...] The unavailability of coreferential interpretations is a property of indefinite DPs; definite
-% DPs (including personal pronouns) typically corefer with other referents in the discourse.
-
-%  *Cote (1996: 110)*
-%  > an examination of English null objects leads one into the murky waters of the distinction between arguments of verbs and information available from world
-% knowledge about events.
-
-%  *Cote (1996: 113)*
-% > null objects found in (3) and (4) which occur with a different set of verbs and which may not co-refer with a discourse antecedent, but which do seem to create a discoure
-% entity available for subsequent reference. Following previous work, I refer to the verbs that take this type of null object as Indefinite Object Alternation (IOA) verbs.
-
-
-% *Liu (2008: 290)*  
-% in risposta a quelli che dicono che non c'è differenza tra INDEFINITE object deletion e DEFINITE obj del  
-% (dovrei avere una cosa del genere negli appunti, ma dove??)
-% > For example, without any contextual
-% information preceding or following the sentence Mary read for a while before she
-% went to bed, it is impossible to decide whether a specific object, like a book or a magazine,
-% has been deleted after the verb read. Making this distinction is important
-% because whether a specific object has been deleted determines whether the verb is
-% used as an intransitive verb focusing on activity or as an instance of object deletion,
-% a distinction that, as I will argue later in this paper, should and can be made.
-
-% *Liu (2008: 293)*  
-% corrobora il punto precedente  
-% > As some linguists (e.g., Garcia-Velasco & Munoz 2002; Quirk et al. 1985) have
-% correctly pointed out, in the case of the second type, the shift of the verbs’ function
-% from transitive to intransitive often involves a change in the focus of meaning, i.e.,
-% the focus turns from the object in the transitive use to the activity (the verb) itself in
-% the intransitive use. There is no such semantic shift in the object-deleting verbs’ shift
-% from transitive to intransitive.
-
-% *Liu (2008: 300)*  
-% > two groups. For instance, Quirk et al. (1985:1565) list both the ergative and the
-% transitive-converted intransitive verbs as instances of “transitive → intransitive.”
-% There are three significant differences between the two groups of verbs. First, the
-% subject or the sole argument of an ergative verb plays the theta role of theme, but the
-% sole argument of a transitive-converted intransitive verb plays the theta role of agent
-% (e.g., The window broke vs. Mary ate). Second, while there is a subject change in the
-% use of an ergative intransitive verb compared to its transitive counterpart (e.g., from
-% They opened the door to The door opened), no such a change is involved in the use
-% of a transitive-turned intransitive verb [...]  
-% The third difference between the two groups is that there is no object deletion
-% involved at all in ergative intransitive verbs when they shift from transitive to intransitive
-% because the shift entails only a movement of the object into the subject position,
-% i.e., the object is not deleted, just moved to a different position in the sentence. [...]  
-% Of course, some scholars argue that there are a few instances
-% in which a transitive-converted intransitive verb of activity may assume “a more specific
-% meaning, so a particular kind of object is ‘understood’” (Quirk et al. 1985:1169).
-% An example given by Quirk et al. is John drinks heavily. They suggest that the verb
-% drink in the utterance means ‘drink alcohol,’ i.e., alcohol is the omitted object. While
-% it is true that drink here means ‘drink alcohol,’ the focus of the utterance, in the final
-% analysis, is not on the object because it does not really refer to any specific kind or
-% amount of alcoholic drink, something that is usually mentioned if the focus is on the
-% object. In short, transitive-turned-intransitive verbs of activity focus on the activity,
-% not the object.4
-
-% *Liu (2008: 302)*  
-% > The third compelling reason to consider these verbs intransitive verbs of activity
-% is that they can function meaningfully without a clear discourse or situational context
-% as shown in the following BNC examples:  
-% (26) She likes to read.  
-% (27) The python has already eaten.  
-% (28) She might have been drinking.  
-% In contrast, true object-deleting verbs, such as know, promise, and understand,
-% cannot be used this way
-
-% *AnderBois (2012: 44)*
-% >  two properties which distinguish overt indefinites
-% and definites in English: the possibility of apparently anaphoric readings (§2.1) and the ability to serve
-% as the inner antecedent for Sluicing (§2.2) [...]  
-% Sluicing is the name given by Ross (1969) to the phenomenon in (7) in which the crossed out
-% material can be elided in the presence of a suitable antecedent clause in prior discourse:  
-% (7) [ Someone left]A , but I don’t know [who left]E .
-
-\subsection{Genre-based implicit objects: a special case of definite object drop} \labsec{theory_recipes}
-
-Recipes and special registers
 
 % Syntactic *Cote (1996: 120-122)* (130 del pdf)
 % > By syntactic explanation I mean any analysis which argues that the null object is represented in the syntactic structure of the sentence/utterance. [...] Culy (1987) argues this case for null objects in recipe constructions in English (a separate issue
@@ -1175,6 +956,63 @@ Two entries in the lexicon: the naive account
 % has difficulties in accounting for the behaviour of ‘eat’ under IOD, which will be
 % further discussed in 6.3.3.
 
+% *Liu (2008: 290)*  
+% CITATO SOPRA
+% in risposta a quelli che dicono che non c'è differenza tra INDEFINITE object deletion e DEFINITE obj del  
+% (dovrei avere una cosa del genere negli appunti, ma dove??)
+% > For example, without any contextual
+% information preceding or following the sentence Mary read for a while before she
+% went to bed, it is impossible to decide whether a specific object, like a book or a magazine,
+% has been deleted after the verb read. Making this distinction is important
+% because whether a specific object has been deleted determines whether the verb is
+% used as an intransitive verb focusing on activity or as an instance of object deletion,
+% a distinction that, as I will argue later in this paper, should and can be made.
+
+% *Liu (2008: 293)*  
+% CITATO SOPRA
+% corrobora il punto precedente  
+% > As some linguists (e.g., Garcia-Velasco & Munoz 2002; Quirk et al. 1985) have
+% correctly pointed out, in the case of the second type, the shift of the verbs’ function
+% from transitive to intransitive often involves a change in the focus of meaning, i.e.,
+% the focus turns from the object in the transitive use to the activity (the verb) itself in
+% the intransitive use. There is no such semantic shift in the object-deleting verbs’ shift
+% from transitive to intransitive.
+
+% *Liu (2008: 300)*  
+% > two groups. For instance, Quirk et al. (1985:1565) list both the ergative and the
+% transitive-converted intransitive verbs as instances of “transitive → intransitive.”
+% There are three significant differences between the two groups of verbs. First, the
+% subject or the sole argument of an ergative verb plays the theta role of theme, but the
+% sole argument of a transitive-converted intransitive verb plays the theta role of agent
+% (e.g., The window broke vs. Mary ate). Second, while there is a subject change in the
+% use of an ergative intransitive verb compared to its transitive counterpart (e.g., from
+% They opened the door to The door opened), no such a change is involved in the use
+% of a transitive-turned intransitive verb [...]  
+% The third difference between the two groups is that there is no object deletion
+% involved at all in ergative intransitive verbs when they shift from transitive to intransitive
+% because the shift entails only a movement of the object into the subject position,
+% i.e., the object is not deleted, just moved to a different position in the sentence. [...]  
+% Of course, some scholars argue that there are a few instances
+% in which a transitive-converted intransitive verb of activity may assume “a more specific
+% meaning, so a particular kind of object is ‘understood’” (Quirk et al. 1985:1169).
+% An example given by Quirk et al. is John drinks heavily. They suggest that the verb
+% drink in the utterance means ‘drink alcohol,’ i.e., alcohol is the omitted object. While
+% it is true that drink here means ‘drink alcohol,’ the focus of the utterance, in the final
+% analysis, is not on the object because it does not really refer to any specific kind or
+% amount of alcoholic drink, something that is usually mentioned if the focus is on the
+% object. In short, transitive-turned-intransitive verbs of activity focus on the activity,
+% not the object.4
+
+% *Liu (2008: 302)*  
+% > The third compelling reason to consider these verbs intransitive verbs of activity
+% is that they can function meaningfully without a clear discourse or situational context
+% as shown in the following BNC examples:  
+% (26) She likes to read.  
+% (27) The python has already eaten.  
+% (28) She might have been drinking.  
+% In contrast, true object-deleting verbs, such as know, promise, and understand,
+% cannot be used this way
+
 \subsection{One verb, two meanings: the state-of-the-art account} \labsec{theory_incorporation}
 
 qui parlare dell'"oggetto logico" e del focus sull'activity!!!\\
@@ -1435,6 +1273,22 @@ testo testo
 
 \paragraph{Focus on the activity}
 testo
+
+%  *Liu (2008: 289)*
+% QUI, ADDIRITTURA, SI PARTE DALL'IDEA DELL'ACTIVITY INTRANSITIVA E LA SI FA DIVENTARE TRANSITIVA!
+%  tutto il paper riguarda questa distinzione in gruppi per transitività  
+%  > verbs used without an object into four categories: 1) pure intransitive verbs, such as
+% arrive, rise, and sleep; 2) ergative intransitive verbs, such as break, increase, and open; 3)
+% transitive-converted intransitive verbs of activity, such as eat, hunt, and read; 4) object deleting
+% verbs, warranted by discourse or situational context, such as know, notice, and
+% promise.
+
+% *Garcia-Velasco & Munoz (2002: 7-8)*  
+% The factors of relevance here include the semantic structure of the verb, which
+% itself may give prominence to one semantic component (as in the manner-result opposition),
+% the speaker’s communicative intentions, which may lead him to focus on the activity itself,
+% thus downgrading the referential status of the object, and world knowledge, which allows him
+% to construe an action as an autonomous activity
 
 % *Mittwoch (2005: 2)*  
 % PARAGRAFO IMPORTANTISSIMO!!!  tra activity e prototypicality
@@ -1837,7 +1691,8 @@ queste teorie sostengono che l'oggetto non sia rappresentato sintatticamente! (v
 % (NOTA MIA: eat, drink e learn sono affected agent verbs! v. naess 2011: 413 + haspelmath negli appunti al prossimo paragrafo)
 
 \paragraph{Agent affectedness} 
-Agent affectedness: why eating and drinking are poor choices for typical transitivity examples
+Agent affectedness: why eating and drinking are poor choices for typical transitivity examples\\
+in "transitivity as a prototype" cito NAESS e altri per dire che subject e object nelle frasi transitive devono essere massimamente distinti da un punto di vista semantico!
 
 % *Naess (2007: 144)*  
 % > IOD is considerably more common with some verb types than with others (affected-agent
@@ -2460,6 +2315,18 @@ QUI METTERE IL MIO DIAGRAMMA DI VENN CONCENTRICO
 % semantic prominence of Transitivityis shown to derive from its characteristicdis-
 % coursefunction:high Transitivityis correlatedwithforegrounding,and low Transitivity
 % with backgrounding
+
+% *Eu (2018: 525)*
+% QUESTO TORNA BENISSIMO COL MIO DIAGRAMMA DI VENN CONCENTRICO!
+% CITATO IN "OTHER ACCOUNTS"
+% > Indefiniteness as unknownness, however, is challenged by cases where INC-objects
+% fairly clearly refer to a specific individual in the context. Groefsema (1995: 142, 44)
+% introduces (5a, b) against Fillmore’s comment on (3a) and says that here eat and drink
+% do take the contextual referents (sandwiches, glass of beer) as their objects, although
+% the amount eaten or drunk is ‘unspecified’:
+% (5) (a) John brought the sandwiches and Ann ate.
+% (b) John picked up the glass of beer and drank.
+% (Groefsema 1995: 142, 144)
 
 \begin{figure}[htb]
 \caption{CAPTION.}
