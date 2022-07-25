@@ -15,7 +15,7 @@ This Chapter presents the five linguistic factors I will use as predictors in my
 % SPS can be computed over all senses of a noun, and thus over all of the argument classes which subsume each of these senses
 
 As shown in \nrefsec{recoverability}, direct objects are likely omitted if they are "sufficiently recoverable" \parencite{Glass2013} from the meaning of the verb. Following \textcite{Medina2007}, object recoverability as a predictor in the Stochastic Optimality Theoretic model provided in this thesis is a continuous variable, for two main reasons. First, it would not be possible to set a fixed threshold value to separate recoverable and non-recoverable object verbs. Second, a continuous predictor works especially well within a model of \textit{gradient} grammaticality, such as the one hereby provided.\\
-While Medina \hl{only} employs the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996}, I model object recoverability using \hl{three different measures of a verb's semantic selectivity as a proxy to object recoverability:}
+While Medina only employs the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996}, I model object recoverability using three different measures of a verb's semantic selectivity as a proxy to object recoverability:
 
 \begin{itemize}
     \item SPS, the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996};
@@ -136,7 +136,7 @@ The classes considered when computing the SPS scores have to belong to a lexical
 \end{forest}
 \end{figure}
 
-In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wordnet,Miller1995} as a computational model of the lexical taxonomy. Its appeal to the author \parencite[32]{Resnik1993} lies in that the WordNet taxonomy encodes knowledge in an explicit, hierarchical fashion, which is "intuitively reasonable" and "widely accepted".\\ While powerful in many respects, Resnik's model of selectional preferences has a crucial drawback, which is the need for a manually-built lexicon. This requirement makes it difficult to compute SPS scores for verbs in languages without a WordNet, for neologisms, and for special registers not yet encoded in WordNet. Given this severe limitation, I decided \hl{to improve on} Resnik's SPS to model the recoverability of direct objects, creating a model based on distributional semantics \parencite{Lenci:2018} that can be applied in all the cases where the SPS measure cannot.
+In order to compute SPS scores, Resnik adopts WordNet \parencite{beckwith1991wordnet,Miller1995} as a computational model of the lexical taxonomy. Its appeal to the author \parencite[32]{Resnik1993} lies in that the WordNet taxonomy encodes knowledge in an explicit, hierarchical fashion, which is "intuitively reasonable" and "widely accepted".\\ While powerful in many respects, Resnik's model of selectional preferences has a crucial drawback, which is the need for a manually-built lexicon. This requirement makes it difficult to compute SPS scores for verbs in languages without a WordNet, for neologisms, and for special registers not yet encoded in WordNet. Given this severe limitation, I decided to improve on Resnik's SPS to model the recoverability of direct objects, creating a model based on distributional semantics \parencite{Lenci:2018} that can be applied in all the cases where the SPS measure cannot.
 
 \paragraph{Results}
 The SPS scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_resnik}.\\ % \vspace{}
@@ -234,7 +234,7 @@ How does all of this translate into a solution to the problem of having a taxono
 
 Based on these consideration, the conclusion is that the closer the direct objects of a verb are in a vector space, the more recoverable they should be. This is the main intuition behind Computational PISA, whose computational implementation I will discuss in the next paragraph.
 
-\paragraph{Computational implementation} Computational PISA is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb. \hl{The full script used to obtain Computational PISA scores using a corpus and a list of verbs as input is available} \href{https://github.com/ellepannitto/PISA}{on GitHub}\sidenote{https://github.com/ellepannitto/ PISA}. \\
+\paragraph{Computational implementation} Computational PISA is defined as the semantic density of a verb-relation pair, i.e. the mean value of the pairwise cosine similarity between the arguments of the pair. In this thesis, this means calculating the mean pairwise cosine similarity between all the direct objects of a given transitive verb. The full script used to obtain Computational PISA scores using a corpus and a list of verbs as input is available \href{https://github.com/ellepannitto/PISA}{on GitHub}\sidenote{https://github.com/ellepannitto/ PISA}. \\
 This is done in two steps, for each transitive verb under consideration. The first one is to compute the Selectional Association between the verb and each one of its direct objects as defined by \textcite{Erk2007, ErkEtAl2010} in \refeq{erkpadopado}. This is a measure of the strength of the selectional preference \textit{SA} of a verb for a possible argument \textit{a\textsubscript{0}}, modeled as the weighted sum of the similarities between the candidate argument \textit{a\textsubscript{0}} and the actual arguments found in the corpus (each called \textit{a} in the formula). In \textcite{CappelliLenciPISA} and this dissertation I measure argument similarity with the cosine similarity.
 
 \begin{equation} \labeq{erkpadopado}
@@ -314,7 +314,7 @@ Since Computational PISA was intended to model argument recoverability, I tested
 \end{small}
 \end{table}
 
-\paragraph{\hl{Operative choices}} \labpage{cleanthecorpus}
+\paragraph{Operative choices} \labpage{cleanthecorpus}
 Drawing from the results discussed in \textcite{CappelliLenciPISA} and summarized in the previous paragraph, I computed Computational PISA scores for my verbs of interest in English and Italian. For English, I based the calculations on ukWaC as in the original study, and for Italian, I based them on itWaC, a 2-billion token part-of-speech tagged and lemmatized corpus of Italian \parencite{baroni2009wacky}. Given that web-scraped, automatically tagged corpora this large inevitably suffer from significant noise in the data, which then results in possibly unreliable results, I pre-processed the data extracted from both corpora to minimize the impact of noise and tagging mishaps. First of all, I filtered the 65,000 direct objects of my 30+30 verbs of interest so that they were:
 \begin{itemize}
     \item not hapaxes (considering the verb-noun frequencies)
@@ -337,7 +337,7 @@ I based my operative choices regarding the vector spaces and weighting functions
 The Computational PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_cpisa}.\\ % \vspace{}
 
 
-\subsection{\hl{Behavioral PISA}}\labsec{behavPisa}
+\subsection{Behavioral PISA}\labsec{behavPisa}
 
 \paragraph{Introduction} 
 Despite representing a clear step forward compared to Resnik's taxonomy-based measure of selectional preferences, a corpus-based measure such as Computational PISA still has notable downsides. First of all, the corpus on which Computational PISA calculations are based has to be large enough to feature all the verbs under consideration, and for each verb to present a sufficient number of direct objects to allow for the computation of meaningful Computational PISA. It may well be the case that using a small corpus forces an experimenter to draw from a different set of verbs than intended for their study, if not all of them are featured in the corpus. Moreover, low-frequency verbs may appear with a small set of direct objects even in large corpora, making it potentially difficult to obtain reliable Computational PISA scores. Another order of problems (which larger, automatically-tagged corpora are more prone to suffer from than smaller, manually-tagged ones) depends on noisy or otherwise inaccurate corpus data. For instance, large corpora constructed via crawling the Web (such as ukWaC and itWaC) typically present a substantial number of misspelled words and mis-tagged parts of speech, making it necessary to clean them manually beforehand. In addition to this, even clean corpora often lack fine-grained semantic information, about thematic roles (e.g. distinguishing the Theme and the Recipient in 'John gave Mary a book'), polysemy (e.g. 'to graduate' may mean 'to become a doctor', but also 'to arrange something in gradations'), idiomatic uses of verbs (e.g. there is usually no actual bucket being kicked when someone 'kicks the bucket').\\
@@ -360,7 +360,7 @@ The Behavioral PISA scores thus obtained were then normalized to fall between 0 
 The Behavioral PISA scores for the English and Italian transitive verbs under consideration are fully listed in \refappsec{app_bpisa}.
 
 
-\subsection{\hl{Model evaluation}}\labsec{evalMySPSs}
+\subsection{Model evaluation}\labsec{evalMySPSs}
 
 The three models of semantic selectivity as a proxy to the recoverability of the direct objects of a verb discussed in this section, i.e. Resnik's SPS, Computational PISA, and Behavioral PISA, all capture different aspects of the same phenomenon and they leverage different computational implementations. Resnik's SPS is a taxonomy-based measure which looks at the WordNet classes direct objects belong to, in order to compute the selectional strength of a transitive verb. Computational PISA is a corpus-based measure whose implementation is rooted in distributional semantics. Behavioral PISA models the recoverability of direct objects via acceptability judgments elicited from native speakers relative to the similarity of pairs of objects of a set of given verbs.\\
 Using human judgments on object similarity as a baseline to evaluate the performance of computational models, in this section I will consider Behavioral PISA the benchmark against which Resnik's SPS and Computational PISA are to be compared.
@@ -439,14 +439,14 @@ Even though simple past does not equate to perfective aspect, it's true that pas
 
 \subsection{Operative choices}
 Considering what has been noted in the previous paragraph, and following \textcite{Medina2007}, in the experimental stimuli perfective aspect will be encoded with perfect morphology and imperfective aspect will be encoded with progressive morphology.\\
-For English, perfective stimuli will be in the past perfect tense (as in \ref{perf_ex1_eng}) and imperfective stimuli in the past continuous tense (as in \ref{perf_ex2_eng}). For Italian, perfective stimuli will be in the \textit{\hl{tra}passato prossimo} tense (as in \ref{perf_ex1_ita}) and imperfective stimuli in the continuous past form created with the auxiliary 'to stay' in the \textit{imperfetto} tense and the simple gerund of the main verb (as in \ref{perf_ex2_ita}). 
+For English, perfective stimuli will be in the past perfect tense (as in \ref{perf_ex1_eng}) and imperfective stimuli in the past continuous tense (as in \ref{perf_ex2_eng}). For Italian, perfective stimuli will be in the \textit{trapassato prossimo} tense (as in \ref{perf_ex1_ita}) and imperfective stimuli in the continuous past form created with the auxiliary 'to stay' in the \textit{imperfetto} tense and the simple gerund of the main verb (as in \ref{perf_ex2_ita}). 
 \ex.\label{perf_ex_eng} \a. John had played. \label{perf_ex1_eng} 
 \b. John was playing. \label{perf_ex2_eng}
 
-\ex.\label{perf_ex_ita} \a. Gianni \hl{aveva} cantato. \label{perf_ex1_ita} 
+\ex.\label{perf_ex_ita} \a. Gianni aveva cantato. \label{perf_ex1_ita} 
 \b. Gianni stava cantando. \label{perf_ex2_ita}
 
-On a side note, Italian also has perfective-only and imperfective-only simple past tenses, namely \textit{passato remoto} and \textit{imperfetto}, but I chose to use compound tenses since \textit{passato remoto} lost some ground to \textit{passato prossimo} over the last few decades, and also considering the variety of regional uses of \textit{passato remoto} \parencite{bertinetto1996distribuzione}. \hl{Most importantly, the \textit{trapassato} \textit{prossimo} tense was chosen to encode perfective aspect in Italian because it's the aspectually closest Italian tense to the English past perfect, despite the glaring differences between the aspectual systems in these two languages} \parencite{bertinetto1992piucheperf}.
+On a side note, Italian also has perfective-only and imperfective-only simple past tenses, namely \textit{passato remoto} and \textit{imperfetto}, but I chose to use compound tenses since \textit{passato remoto} lost some ground to \textit{passato prossimo} over the last few decades, and also considering the variety of regional uses of \textit{passato remoto} \parencite{bertinetto1996distribuzione}. Most importantly, the \textit{trapassato} \textit{prossimo} tense was chosen to encode perfective aspect in Italian because it's the aspectually closest Italian tense to the English past perfect, despite the glaring differences between the aspectual systems in these two languages \parencite{bertinetto1992piucheperf}.
 
 % Il mio suggerimento di rifare l'esperimento nasce dal fatto che occorre sempre confrontare (nei limiti del possibile) gli stessi oggetti. Questo principio viene violato se si confrontano piucheperfetto da un lato, e passato 'prossimo' dall'altro.
 
