@@ -36,6 +36,7 @@
 	%autocite=footnote,
 	backend=biber, % Compile the bibliography with biber
 	hyperref=true,
+	maxbibnames=9, % to list all authors in bibliography instead of having "et al"
 	backref=true,
 	citecounter=true,
 	pagetracker=true,
@@ -83,10 +84,10 @@
 \AtEveryBibitem{
 	\clearfield{issn}
 	\clearfield{isbn}
-	\clearfield{archivePrefix}
-	\clearfield{arxivId}
+% 	\clearfield{archivePrefix}
+% 	\clearfield{arxivId}
 	\clearfield{pmid}
-	\clearfield{eprint}
+% 	\clearfield{eprint}
 	\ifentrytype{online}{}{\ifentrytype{misc}{}{\clearfield{url}}}
 	\ifentrytype{book}{\clearfield{doi}}{}
 }
