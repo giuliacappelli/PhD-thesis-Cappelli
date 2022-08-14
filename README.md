@@ -9,6 +9,8 @@ The interested reader will find my data, i.e. the stimuli for each experiment an
 * each verb tagged with its features relative to the verb-specific predictors of object drop, i.e. telicity, manner specification, and semantic selectivity;
 * stimuli and full judgments elicited from 30 participants per language on a 7-point Likert scale in the main behavioral experiment of this thesis, aimed towards creating a Stochastic Optimality Theoretic model of object drop in English and Italian.
 
+## Experiments (source code)
+The source code for the PsychoPy Builder experiments I designed for this PhD thesis, to be run on Pavlovia and possibly distributed via Prolific, are available here [in a dedicated repository](https://github.com/giuliacappelli/psychopy_exps).
 
 ## Code (data processing and analysis)
 As for the data processing, analysis of results, computational implementation of experimental designs, and creation of stimuli, I coded several Python scripts and documented their usage on GitHub. In detail:
