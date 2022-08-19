@@ -8,9 +8,13 @@
 
 \subsection{Operative pipeline} \labsec{likert_pipeline}
 
-This paragraph outlines the technical steps needed to obtain the same results I got using the same scripts I coded, for the sake of replicability. I am improving on the operative pipeline employed by \textcite{Medina2007}, which implied collecting judgments on an undisclosed platform and creating a Stochastic Optimality Theoretic model by means of Excel Solver, both because I use non-proprietary software and languages one can download and use for free, and because I am making my Python scripts and raw input data publicly accessible. As pointed out before, all the raw input data necessary to run my scripts, which in this case are the Likert judgments provided by human participants to the experiment in \refch{judgments}, are available \href{https://github.com/giuliacappelli/dissertationData}{in a dedicated GitHub repository}\footnote{https://github.com/giuliacappelli/dissertationData}.\\
-Since the script taking care of the data pre-processing, preliminary analysis, and model creation are designed to work on the barest of input data (i.e., lacking any platform-dependent additional information such as datestamps, operative systems, etc.), the first step in this pipeline is the cleansing and reshaping of the output generated in the PsychoPy-Pavlovia-Prolific process of judgment gathering detailed in \refsec{participants}. This result can be achieved using \href{https://github.com/giuliacappelli/PsychopyToMedina}{my dedicated script}\footnote{https://github.com/giuliacappelli/PsychopyToMedina} on GitHub, which takes care of taking the full Pavlovia-generated file as input and yielding a tabular output with the minimal information necessary to run my Stochastic Optimality Theoretic analysis. The script also anonymizes the participants' names to make the data shareable, and it can (optionally, depending on the experimenter's needs) filter out any participant providing polar either-1-or-7 judgments when prompted to make full use of the 7-point Likert scale.\\
-The judgments are now ready to be processed with \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{the main Python program}\footnote{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}, which requires an input comprised of columns for the verb lemmas, the sentence type (target, control or filler), a column for each predictor of object drop in the desired model, and a column with the judgments provided by each participant in the experiment. This script preprocesses the judgments as described in \refsec{likert_preprocessing}, generates the data used in the analysis provided in this Chapter, and models the judgments according to the Stochastic Optimality Theory requirements described in \refch{modeltheory} (final results in \refch{model}).
+This paragraph outlines the technical steps needed to replicate my results by running my scripts on the raw judgment data I collected. %I am improving on the operative pipeline employed by \textcite{Medina2007}, which implied collecting judgments on an undisclosed platform and creating a Stochastic Optimality Theoretic model by means of Excel Solver, both because I use non-proprietary software and languages one can download and use for free, and because I am making my Python scripts and raw input data publicly accessible. 
+As pointed out before, all the raw input data necessary to run my scripts, which in this case are the Likert judgments provided by human participants to the experiment in \refch{judgments}, are available \href{https://github.com/giuliacappelli/dissertationData}{in a dedicated GitHub repository}\footnote{https://github.com/giuliacappelli/dissertationData}.\\
+% Since the script taking care of the data pre-processing, preliminary analysis, and model creation are designed to work on the barest of input data (i.e., lacking any platform-dependent additional information such as datestamps, operative systems, etc.), 
+The first step in this pipeline is the cleansing and reshaping of the output generated in the PsychoPy-Pavlovia-Prolific process of judgment gathering detailed in \refsec{participants}. This result can be achieved using \href{https://github.com/giuliacappelli/PsychopyToMedina}{my dedicated script}\footnote{https://github.com/giuliacappelli/PsychopyToMedina} on GitHub, which takes care of taking the full Pavlovia-generated file as input and yielding a tabular output with the minimal information necessary to run my Stochastic Optimality Theoretic analysis. The script also anonymizes the participants' names to make the data shareable, and it can (optionally, depending on the experimenter's needs) filter out any participant providing polar either-1-or-7 judgments when prompted to make full use of the 7-point Likert scale.\\
+The judgments are now ready to be processed with \href{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}{the main Python program}\footnote{https://github.com/giuliacappelli/MedinaStochasticOptimalityTheory}, which 
+% requires an input comprised of columns for the verb lemmas, the sentence type (target, control or filler), a column for each predictor of object drop in the desired model, and a column with the judgments provided by each participant in the experiment. This script 
+preprocesses the judgments as described in \refsec{likert_preprocessing}, generates the data used in the analysis provided in this Chapter, and models the judgments according to the Stochastic Optimality Theory requirements described in \refch{modeltheory} (final results in \refch{model}).
 
 \subsection{Data preprocessing} \labsec{likert_preprocessing}
 
@@ -22,7 +26,7 @@ Before moving forward to the actual data analysis and modeling, the main script 
 \end{enumerate}
 
 This kind of preprocessing also improves on \posscite{Medina2007} setting, where both semantic selectivity and judgment data were analysed by considering their raw, original values, because it minimizes the potentially disruptive influence of external factors such as corpus frequencies and individual differences in humans on the final Stochastic Optimality Theoretic model of object drop.\\
-In the next sections, following \textcite{Medina2007}, I will provide a thorough description of the way the acceptability judgments pertaining the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will demonstrate that:
+In the next sections, following \textcite{Medina2007}, I will provide a thorough description of the way the acceptability judgments about the implicit object construction are influenced by each factor separately and by all the factors together, both in English and in Italian. This analysis will show that:
 \begin{itemize}
     \item no factor alone has a main effect so strong as to fully predict the grammaticality of the implicit object construction;
     \item a comprehensive Stochastic Optimality Theoretic model of object drop based on all five predictors in \refch{predictors} is indeed feasible.
@@ -35,9 +39,9 @@ The model itself is presented and discussed in \refch{model}.
 \subsection{Semantic selectivity} \labsec{eng_judgresult_semsel}
 
 The effect of semantic selectivity on the acceptability of the implicit object in English is quantified by means of a Pearson correlation between them. The results of this computation are visualized in \reffig{explore_eng_semsel_sps} for Resnik's SPS, in \reffig{explore_eng_semsel_cpisa} for Computational PISA, and in \reffig{explore_eng_semsel_bpisa} for Behavioral PISA.\\
-The first thing to strike the eye of the observer is that the three models of semantic selectivity correlate with varying degrees of accuracy with the human judgments. Unsurprisingly the Selectional Preference Strength, a now-classic measure by \textcite{Resnik1993,Resnik1996}, yields unsatisfactory results which fall quite short of statistical significance. Computational PISA performs much better, with significant (p = 0.038) results, even though the correlation between it and the judgments is very modest (Pearson's r = 0.381). Finally, Behavioral PISA appears to be by far the best-performing model of semantic selectivity, with a Pearson's r of 0.494 against human judgments and a p value of 0.006.\\ 
-Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs} (see \reftab{sps_correlmatrix_eng} in particular), these results should not come as a surprise. Indeed, being the gold standard of semantic selectivity models due to being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is taxonomy-based.\\
-All in all, semantic selectivity (especially the PISA models) is not a bad predictor of object drop in English, but it's far from being a reliable one when considered in isolation from all the other possible ones.
+The first thing to strike the eye of the observer is that the three models of semantic selectivity correlate with varying degrees of accuracy with the human judgments. The Selectional Preference Strength, a now-classic measure by \textcite{Resnik1993,Resnik1996}, yields unsatisfactory results which fall quite short of statistical significance. Computational PISA performs much better, with significant (p = 0.038) results, even though the correlation between it and the judgments is very modest (Pearson's r = 0.381). Finally, Behavioral PISA appears to be by far the best-performing model of semantic selectivity, with a Pearson's r of 0.494 against human judgments and a p value of 0.006.\\ 
+Keeping in mind what I concluded about the three models of semantic selectivity back in \refsec{evalMySPSs} (see \reftab{sps_correlmatrix_eng} in particular), these results should not come as a surprise. Indeed, being based on human judgments, Behavioral PISA is expected to yield the best results among the three models used here. Computational PISA correlated quite well with the Behavioral PISA benchmark, and we can see that it also correlates nicely with the acceptability judgments regarding the implicit object construction. Resnik's SPS, on the contrary, was found to be a poor model of semantic selectivity if compared to Behavioral PISA, and it is also a poor fit if compared to human ratings about object drop. The good performance of Computational PISA and Behavioral PISA against Resnik's SPS can be explained by referring to the way these models were created, since both PISA models are based on pairwise similarity scores between pairs of direct objects for a given verb, while Resnik's SPS is taxonomy-based.\\
+All in all, semantic selectivity (especially the PISA models) is not a bad predictor of object drop in English, but it's far from being a reliable one when considered in isolation from all the other possible factors.
 
 % parlare dei singoli puntini rilevanti?
 
@@ -86,7 +90,8 @@ However, the distribution of judgments both for imperfective and for perfective 
 \end{figure}
 
 \paragraph{Iterativity}
-The boxplots in \reffig{explore_eng_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in English. The median rating for iterative stimuli (0.826) is higher than the median rating for non-iterative stimuli (0.753), consistently with the literature on the matter (refer back to \refsec{iterativity} and \refsec{predictor_iterativity}). However, the difference is not stark enough to be statistically significant according to a Mann-Whitney U test, which may depend on native speakers being less sensitive to iterativity if compared to other linguistic factors (such as telicity and perfectivity) when it comes to judging the grammaticality of the implicit object construction. Another possible explanation for this apparently irrelevant role of iterativity may be that it is only lacking when considered as a main effect, but it may be a relevant predictor when considered in conjunction with several other factors in a joint model. I will get back to this in \refsec{eng_jointeffect}.\\
+The boxplots in \reffig{explore_eng_iterativity} illustrate the main effect of iterativity on the acceptability judgments on the implicit object construction in English. The median rating for iterative stimuli (0.826) is higher than the median rating for non-iterative stimuli (0.753), consistently with the literature on the matter (refer back to \refsec{iterativity} and \refsec{predictor_iterativity}). However, the difference is not stark enough to be statistically significant according to a Mann-Whitney U test, which may depend on native speakers being less sensitive to iterativity if compared to other linguistic factors (such as telicity and perfectivity) when it comes to judging the grammaticality of the implicit object construction.\\
+% Another possible explanation for this apparently irrelevant role of iterativity may be that it is only lacking when considered as a main effect, but it may be a relevant predictor when considered in conjunction with several other factors in a joint model. I will get back to this in \refsec{eng_jointeffect}.
 Once again, the distribution of judgments for both types of stimuli covers almost all the possible 0-1 range, and there are no outlier ratings.
 
 \begin{figure}[htb]
@@ -96,13 +101,13 @@ Once again, the distribution of judgments for both types of stimuli covers almos
 \end{figure}
 
 \paragraph{Manner specification}
-The boxplots in \reffig{explore_eng_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in English. A Mann-Whitney U test shows that the median rating for manner non-specified verbs (0.898) is significantly higher (p < 0.001) than the median rating for manner specified verbs (0.645), consistently with the literature and the hypothesis (refer back to \refsec{mannerspec} and \refsec{predictor_mannspec}).\\
-The distribution of judgments for manner specified verbs (0.060 $\div$ 0.987) is more sparse than the distribution of judgments for manner non-specified verbs (0.286 $\div$ 1), if one does not consider the five outliers among the latter. These outliers are the ratings for:
+The boxplots in \reffig{explore_eng_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in English. A Mann-Whitney U test shows that the median rating for manner unspecified verbs (0.898) is significantly higher (p < 0.001) than the median rating for manner specified verbs (0.645), consistently with the literature and the hypothesis (refer back to \refsec{mannerspec} and \refsec{predictor_mannspec}).\\
+The distribution of judgments for manner specified verbs (0.060 $\div$ 0.987) is more sparse than the distribution of judgments for manner unspecified verbs (0.286 $\div$ 1), if one does not consider the five outliers among the latter. These outliers are the ratings for:
 \begin{itemize}
-    \item the four target stimuli for the verb \textit{to break} (perfective non-iterative 0, imperfective iterative 0.038, perfective iterative 0.039, imperfective non-iterative 0.050);
+    \item the four target stimuli for the verb \textit{to break} (perfective non-iterative\sidenote{As detailed in \refsec{design}, semantic selectivity, telicity, and manner specification are properties of each target verb, which participate in a 2x2x2 experimental design where the presence of a direct object, perfectivity, and iterativity are manipulated at the sentence level.} 0, imperfective iterative 0.038, perfective iterative 0.039, imperfective non-iterative 0.050);
     \item the perfective, non-iterative stimulus for the verb \textit{to build} (0.124), i.e., \textit{Paul had built}.
 \end{itemize}
-As was the case with the atelic outlier in \reffig{explore_eng_telicity}, the outlier stimulus for the verb \textit{to build} is both perfective and non-iterative, making it a very unlikely candidate for felicitous object drops. The verb \textit{to break} appears to be quite resistant to object drop regardless of the experimental conditions, given that all the target stimuli featuring it are outliers (below the lower whisker of the boxplot) in the distribution of judgments for manner non-specified verbs.
+As was the case with the atelic outlier in \reffig{explore_eng_telicity}, the outlier stimulus for the verb \textit{to build} is both perfective and non-iterative, making it a very unlikely candidate for felicitous object drops. The verb \textit{to break} appears to be quite resistant to object drop regardless of the experimental conditions, given that all the target stimuli featuring it are outliers (below the lower whisker of the boxplot) in the distribution of judgments for manner unspecified verbs.
 
 \begin{figure}[htb]
 \caption{Effect of manner specification on normalized acceptability judgments about object drop in English.}
@@ -113,7 +118,8 @@ As was the case with the atelic outlier in \reffig{explore_eng_telicity}, the ou
 
 \subsection{Joint effect of predictors}  \labsec{eng_jointeffect}
 
-So far in \refsec{eng_judgresult} I demonstrated with experimental evidence that no predictor among the five I am focusing on (detailed in \refch{factors} and \refch{predictors}) can predict alone the grammaticality of the implicit object construction, regardless of the statistical significance of its main effect on human acceptability judgments. In this section I will instead consider the joint effect of all five predictors of object drop on the grammaticality ratings in a statistical model, in order to gauge the feasibility of a linguistically-motivated probabilistic model of the implicit object construction. I will compute a linear mixed-effects model\sidenote{For observations on the feasibility of linear mixed-effects models applied to rating data, such as Likert-scale judgments, refer to \textcite{GibsonPiantadosiFedorenko2011, bross2019acceptability, cunnings2012overview, Kizach2014, EndresenJanda2017}.} for each measure of semantic selectivity I employed, accounting both for the fixed effects determined by the five predictors and for the random effects determined by my choice of verbs and participants, whereas \textcite[131]{Medina2007} computed a multiple linear regression (which is not endowed to account for random effects in addition to the fixed ones). I carried out my analysis using the Python package \texttt{statsmodels} and completed it with the R function \texttt{report()} of the package \texttt{easystats} \parencite{r_report}, which takes as its input the linear mixed model created with the R function \texttt{lmer()} of the package \texttt{lme4} \parencite{r_lmer}, to compute the conditional R\textsuperscript{2} and marginal R\textsuperscript{2} of the model\sidenote{The conditional R\textsuperscript{2} quantifies the total explanatory power of the model, i.e., how much both fixed effects and random effects explain the variance in the data. The marginal R\textsuperscript{2} instead quantifies the explanatory power of fixed effects alone.}.\\
+% So far in \refsec{eng_judgresult} I demonstrated with experimental evidence that no predictor among the five I am focusing on (detailed in \refch{factors} and \refch{predictors}) can predict alone the grammaticality of the implicit object construction, regardless of the statistical significance of its main effect on human acceptability judgments. 
+In this section I will consider the joint effect of all five predictors of object drop on the grammaticality ratings in a statistical model, in order to gauge the feasibility of a linguistically-motivated probabilistic model of the implicit object construction. I will compute a linear mixed-effects model\sidenote{For observations on the feasibility of linear mixed-effects models applied to rating data, such as Likert-scale judgments, refer to \textcite{GibsonPiantadosiFedorenko2011, bross2019acceptability, cunnings2012overview, Kizach2014, EndresenJanda2017}.} for each measure of semantic selectivity I employed, accounting both for the fixed effects determined by the five predictors and for the random effects determined by my choice of verbs and participants, whereas \textcite[131]{Medina2007} computed a multiple linear regression (which is not endowed to account for random effects in addition to the fixed ones). I carried out my analysis using the Python package \texttt{statsmodels} and completed it with the R function \texttt{report()} of the package \texttt{easystats} \parencite{r_report}, which takes as its input the linear mixed model created with the R function \texttt{lmer()} of the package \texttt{lme4} \parencite{r_lmer}, to compute the conditional R\textsuperscript{2} and marginal R\textsuperscript{2} of the model\sidenote{The conditional R\textsuperscript{2} quantifies the total explanatory power of the model, i.e., how much both fixed effects and random effects explain the variance in the data. The marginal R\textsuperscript{2} instead quantifies the explanatory power of fixed effects alone.}.\\
 The three linear mixed-effects models I computed are reported in:
 \begin{itemize}
     \item \reftab{eng_lmem_sps} (conditional R\textsuperscript{2} = 0.53, marginal R\textsuperscript{2} = 0.20), where semantic selectivity is measured with Resnik's SPS;
@@ -129,11 +135,11 @@ In general, it is already possible to observe that, while the total explanatory 
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.117 & 0.334    & 12.333 & 0.000                  & 3.463    & 4.771    \\
-telicity{[}atelic{]}     & 1.504 & 0.388    & 3.870   & 0.000                  & 0.742    & 2.265    \\
-perfectivity{[}imperf{]} & 0.541 & 0.045    & 11.903 & 0.000                  & 0.452    & 0.630     \\
-iterativity{[}iter{]}    & 0.221 & 0.045    & 4.864  & 0.000                  & 0.132    & 0.310     \\
-mannspec{[}nospec{]}     & 0.280  & 0.383    & 0.732  & 0.464              & -0.470    & 1.031    \\
+\textbf{Intercept}               & 4.117 & 0.334    & 12.333 & 0.000                  & 3.463    & 4.771    \\
+\textbf{tel{[}atelic{]}}    & 1.504 & 0.388    & 3.870   & 0.000                  & 0.742    & 2.265    \\
+\textbf{perf{[}imperf{]}} & 0.541 & 0.045    & 11.903 & 0.000                  & 0.452    & 0.630     \\
+\textbf{iter{[}iter{]}}    & 0.221 & 0.045    & 4.864  & 0.000                  & 0.132    & 0.310     \\
+spec{[}nospec{]}     & 0.280  & 0.383    & 0.732  & 0.464              & -0.470    & 1.031    \\
 sps                      & 0.199 & 0.183    & 1.088  & 0.277              & -0.159   & 0.557    \\
 subject                 Var   & 0.351    & 0.071  &                    &          &       &     \\
 verb                 Var   & 0.943    & 0.196  &                    &          &         &     
@@ -146,11 +152,11 @@ verb                 Var   & 0.943    & 0.196  &                    &          &
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.167 & 0.352    & 11.854 & 0.000              & 3.478    & 4.856    \\
-telicity{[}atelic{]}     & 1.437 & 0.407    & 3.526  & 0.000              & 0.638    & 2.235    \\
-perfectivity{[}imperf{]} & 0.541 & 0.045    & 11.903 & 0.000              & 0.452    & 0.630    \\
-iterativity{[}iter{]}    & 0.221 & 0.045    & 4.864  & 0.000              & 0.132    & 0.310    \\
-mannspec{[}nospec{]}     & 0.261 & 0.390    & 0.669  & 0.504              & -0.504   & 1.026    \\
+\textbf{Intercept}             & 4.167 & 0.352    & 11.854 & 0.000              & 3.478    & 4.856    \\
+\textbf{tel{[}atelic{]} }    & 1.437 & 0.407    & 3.526  & 0.000              & 0.638    & 2.235    \\
+\textbf{perf{[}imperf{]}} & 0.541 & 0.045    & 11.903 & 0.000              & 0.452    & 0.630    \\
+\textbf{iter{[}iter{]}}    & 0.221 & 0.045    & 4.864  & 0.000              & 0.132    & 0.310    \\
+spec{[}nospec{]}     & 0.261 & 0.390    & 0.669  & 0.504              & -0.504   & 1.026    \\
 cpisa                    & 0.182 & 0.198    & 0.920  & 0.358              & -0.206   & 0.571    \\
 subject                 Var   & 0.351    & 0.071  &                    &          &    &        \\
 verb                     Var   & 0.956    & 0.198  &                    &          &   &      
@@ -163,11 +169,11 @@ verb                     Var   & 0.956    & 0.198  &                    &       
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.238 & 0.336    & 12.601 & 0.000              & 3.579    & 4.898    \\
-telicity{[}atelic{]}     & 1.278 & 0.405    & 3.157  & 0.002              & 0.485    & 2.072    \\
-perfectivity{[}imperf{]} & 0.541 & 0.045    & 11.903 & 0.000              & 0.452    & 0.630    \\
-iterativity{[}iter{]}    & 0.221 & 0.045    & 4.864  & 0.000              & 0.132    & 0.310    \\
-mannspec{[}nospec{]}     & 0.306 & 0.367    & 0.832  & 0.406              & -0.415   & 1.026    \\
+\textbf{Intercept}                & 4.238 & 0.336    & 12.601 & 0.000              & 3.579    & 4.898    \\
+\textbf{tel{[}atelic{]}}     & 1.278 & 0.405    & 3.157  & 0.002              & 0.485    & 2.072    \\
+\textbf{perf{[}imperf{]}} & 0.541 & 0.045    & 11.903 & 0.000              & 0.452    & 0.630    \\
+\textbf{iter{[}iter{]}}    & 0.221 & 0.045    & 4.864  & 0.000              & 0.132    & 0.310    \\
+spec{[}nospec{]}     & 0.306 & 0.367    & 0.832  & 0.406              & -0.415   & 1.026    \\
 bpisa                    & 0.331 & 0.190    & 1.740  & 0.082              & -0.042   & 0.705    \\
 subject                  Var   & 0.351    & 0.071  &                    &          &    &      \\
 verb                     Var   & 0.883    & 0.183  &                    &          &     &       
@@ -179,7 +185,8 @@ The three models all converge\sidenote{Linear mixed-effects model are generated 
     \item the effect of (im)perfectivity, (a)telicity, and iterativity is statistically significant and positive;
     \item the effect of manner (non-)specification and semantic selectivity is statistically non-significant and positive.
 \end{itemize}
-This leads to the conclusion that the joint effect of the five predictors of object drop in English is by far a better explanation of the acceptability judgments on this phenomenon than the isolated main effects of them all. This means that it will make sense to compute a linguistically-motivated, stochastic (Optimality Theoretic) model of the effect of all the five predictors on the grammaticality of the implicit object construction.
+% This leads to the conclusion that the joint effect of the five predictors of object drop in English is by far a better explanation of the acceptability judgments on this phenomenon than the isolated main effects of them all.
+These results lead to the conclusion that the joint effect of the five predictors of indefinite object drop in English can provide a good explanation of the acceptability judgments relative to this phenomenon. Therefore, this means that it will make sense to compute a linguistically-motivated, probabilistic model of the effect of all the five predictors on the grammaticality of the implicit object construction. The implementation of this model within the framework of Stochastic Optimality Theoretic (in the linear variant defined by \textcite{Medina2007}) will be discussed in \refch{model}, where I will also discuss its predictions relative to the grammaticality of indefinite object drop in English and Italian, and perform a comparison between my own results and the ones Medina obtained in her original model.
 
 
 \section{Italian results} \labsec{ita_judgresult}
@@ -244,8 +251,8 @@ The boxplots in \reffig{explore_ita_iterativity} illustrate the main effect of i
 \end{figure}
 
 \paragraph{Manner specification}
-The boxplots in \reffig{explore_ita_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in Italian. A Mann-Whitney U test reveals the difference between the medians of judgments for manner specified (0.469) and manner non-specified (0.833) verbs to be statistically significant (p < 0.0001), consistently with expectations (refer back to \refsec{mannerspec} and \refsec{predictor_mannspec}).\\
-The distribution of ratings for manner non-specified verbs is tighter than the distribution of ratings for manner specified verbs, but there is still relevant overlap between them despite the high statistical significance of their difference. Thus manner specification, just like all the other predictors considered here, cannot fully predict the grammaticality of object drop in isolation from other linguistic factors.
+The boxplots in \reffig{explore_ita_mannspec} illustrate the main effect of manner specification on the acceptability judgments on the implicit object construction in Italian. A Mann-Whitney U test reveals the difference between the medians of judgments for manner specified (0.469) and manner unspecified (0.833) verbs to be statistically significant (p < 0.0001), consistently with expectations (refer back to \refsec{mannerspec} and \refsec{predictor_mannspec}).\\
+The distribution of ratings for manner unspecified verbs is tighter than the distribution of ratings for manner specified verbs, but there is still relevant overlap between them despite the high statistical significance of their difference. % Thus manner specification, just like all the other predictors considered here, cannot fully predict the grammaticality of object drop in isolation from other linguistic factors.
 
 \begin{figure}[htb]
 \caption{Effect of manner specification on normalized acceptability judgments about object drop in Italian.}
@@ -271,11 +278,11 @@ It appears that, in Italian as in English, the three models have the same total 
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.677  & 0.255    & 18.367 & 0.000              & 4.178    & 5.176    \\
-telicity{[}atelic{]}     & 0.950  & 0.279    & 3.402  & 0.001              & 0.403    & 1.498    \\
-perfectivity{[}imperf{]} & 0.308  & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
-iterativity{[}iter{]}    & 0.061  & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
-mannspec{[}nospec{]}     & 0.550  & 0.279    & 1.976  & 0.048              & 0.004    & 1.096    \\
+\textbf{Intercept}                & 4.677  & 0.255    & 18.367 & 0.000              & 4.178    & 5.176    \\
+\textbf{tel{[}atelic{]}}     & 0.950  & 0.279    & 3.402  & 0.001              & 0.403    & 1.498    \\
+\textbf{perf{[}imperf{]}} & 0.308  & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
+iter{[}iter{]}    & 0.061  & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
+\textbf{spec{[}nospec{]}}     & 0.550  & 0.279    & 1.976  & 0.048              & 0.004    & 1.096    \\
 sps                      & -0.093 & 0.131    & -0.709 & 0.478              & -0.351   & 0.164    \\
 subject Var              & 0.403  & 0.090     &        &                    &          &          \\
 verb Var                 & 0.489  & 0.115    &        &                    &          &         
@@ -288,11 +295,11 @@ verb Var                 & 0.489  & 0.115    &        &                    &    
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.674  & 0.266    & 17.550 & 0.000              & 4.152    & 5.196    \\
-telicity{[}atelic{]}     & 0.970  & 0.288    & 3.369  & 0.001              & 0.406    & 1.535    \\
-perfectivity{[}imperf{]} & 0.308  & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
-iterativity{[}iter{]}    & 0.061  & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
-mannspec{[}nospec{]}     & 0.533  & 0.286    & 1.863  & 0.062              & -0.028   & 1.094    \\
+\textbf{Intercept}                & 4.674  & 0.266    & 17.550 & 0.000              & 4.152    & 5.196    \\
+\textbf{tel{[}atelic{]}}     & 0.970  & 0.288    & 3.369  & 0.001              & 0.406    & 1.535    \\
+\textbf{perf{[}imperf{]}} & 0.308  & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
+iter{[}iter{]}    & 0.061  & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
+spec{[}nospec{]}     & 0.533  & 0.286    & 1.863  & 0.062              & -0.028   & 1.094    \\
 cpisa                    & -0.033 & 0.141    & -0.237 & 0.813              & -0.310   & 0.243    \\
 subject Var              & 0.403  & 0.090     &        &                    &          &          \\
 verb Var                 & 0.498  & 0.117    &        &                    &          &         
@@ -305,11 +312,11 @@ verb Var                 & 0.498  & 0.117    &        &                    &    
 \begin{tabular}{l|llllll}
                          & Coef. & Std.Err. & z      & P\textgreater{}|z| & {[}0.025 & 0.975{]} \\
 \hline                         
-Intercept                & 4.800 & 0.280    & 17.150 & 0.000              & 4.252    & 5.349    \\
-telicity{[}atelic{]}     & 0.830 & 0.311    & 2.668  & 0.008              & 0.220    & 1.439    \\
-perfectivity{[}imperf{]} & 0.308 & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
-iterativity{[}iter{]}    & 0.061 & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
-mannspec{[}nospec{]}     & 0.454 & 0.281    & 1.614  & 0.106              & -0.097   & 1.005    \\
+\textbf{Intercept}                & 4.800 & 0.280    & 17.150 & 0.000              & 4.252    & 5.349    \\
+\textbf{tel{[}atelic{]}}     & 0.830 & 0.311    & 2.668  & 0.008              & 0.220    & 1.439    \\
+\textbf{perf{[}imperf{]}} & 0.308 & 0.041    & 7.610  & 0.000              & 0.229    & 0.388    \\
+iter{[}iter{]}    & 0.061 & 0.041    & 1.495  & 0.135              & -0.019   & 0.140    \\
+spec{[}nospec{]}     & 0.454 & 0.281    & 1.614  & 0.106              & -0.097   & 1.005    \\
 bpisa                    & 0.140 & 0.155    & 0.903  & 0.367              & -0.164   & 0.443    \\
 subject Var              & 0.403 & 0.090    &        &                    &          &          \\
 verb Var                 & 0.483 & 0.114    &        &                    &          &         
@@ -321,7 +328,7 @@ The three models all converge, and for the most part they yield comparable resul
     \item the effect of (a)telicity and (im)perfectivity is statistically significant and positive;
     \item the effect of manner (non-)specification is positive, but only statistically significant in the model quantifying semantic selectivity with Resnik's SPS;
     \item the effect of iterativity is statistically non-significant and positive;
-    \item the effect of semantic selectivity, which is never statistically significant, is slightly negative in the models using Resnik's SPS and Computational PISA, but positive in the model using Behavioral PISA (compatibly with everything I observed in this Chapter about the three different models of semantic selectivity in Italian).
+    \item the effect of semantic selectivity, which is never statistically significant, is slightly negative in the models using Resnik's SPS and Computational PISA, but positive in the model using Behavioral PISA (consistently with everything I observed in this Chapter about the three different models of semantic selectivity in Italian).
 \end{itemize}
 As noted before about English, these models of the joint effect of the five predictors of object drop on the acceptability judgments in Italian support the creation of a Stochastic Optimality Theoretic model of the implicit object construction, despite the different (sometimes absent) statistical significance of the single linguistic factors.
 
@@ -329,12 +336,8 @@ As noted before about English, these models of the joint effect of the five pred
 
 \section{Closing remarks} \labsec{sumup_judgresult}
 
-The take-home message of this chapter is that no predictor alone, among the five ones I am using in this dissertation, is decisive in determining the grammaticality of the implicit object construction in English or Italian. Nevertheless, all of them (with the exception of iterativity) have statistical significant main effects on the acceptability ratings, so it is evident they play a role in influencing them to some extent.\\
+% The take-home message of this chapter is that no predictor alone, among the five ones I am using in this dissertation, is decisive in determining the grammaticality of the implicit object construction in English or Italian. Nevertheless, all of them (with the exception of iterativity) have statistical significant main effects on the acceptability ratings, so it is evident they play a role in influencing them to some extent.\\
+The univariate analysis of the binary predictors of indefinite object drop showed that all of them discriminate significantly between the two groups of stimuli determined by each predictor (the group where the feature is present, and the group where it is absent), with the exception of iterativity. Moreover, there is a significant correlation between semantic selectivity (when measured with PISA models in English and with Behavioral PISA in Italian) and the acceptability judgments provided by participants to the behavioral experiment.\\
 At this point, does it make sense to compute a model of object drop considering the joint effect of all five predictors? I answered positively to this question by means of linear mixed-effects models for English and Italian, which all converged on significant results. These results also point out that the models for English are consistently, albeit just slightly, better than the models for Italian computed with the same set of predictors. This may depend on the corpora of choice (ukWaC for English, itWaC for Italian), on the way the participants to the experiments behaved when providing judgments (despite the strict protocol in \refsec{setting}), and also on idiosyncratic characteristics of the two languages under scrutiny. I will also engage in similar considerations in \refch{model}.\\
-The convergence of the linear mixed-effect models proves that a model of object drop considering the joint effect of all five predictors is indeed possible. However, since I just demonstrated and quantified their action, numbers and figures in hand, would it not make sense to be happy with these results and avoid all the hassles that come with having to compute a Stochastic Optimality Theoretic model (in the novel linear, non-gaussian way introduced in \refch{medina}) from scratch? The best answer to this question was already provided by \textcite{Medina2007} herself, the ideator of the original model. This thesis (and hers) concerns itself with creating a \textit{linguistic} model of the grammaticality of the implicit object construction, with explicit constraints whose violations determine which output will be the favored one among a set of possible candidates for a given input. A linear mixed-effects model provides a \textit{statistical} model that computes the relative grammaticality of a candidate as a sum of weighted variables, whereas the Stochastic Optimality Theoretic model by Medina computes it as the sum of the probabilities of constraint orderings. Most importantly, Medina's mathematical model keeps the input, the candidate set, the constraints, and the probabilities of constraint re-ordering explicit and knowable in every step of the computation, while in the mixed model they are all collapsed together in the weights the model computes under the hood.
-
-% confronto italiano-inglese
-
-% dire che l'italiano SPS è consistentemente peggio dell'inglese (v. anche Model comparison SPS)
-
-% dire che nel capitolo successivo poi rifletto anche sul rapporto tra regressione e stOT (v. medina p 147)
+The convergence of the linear mixed-effect models proves that a model of object drop considering the joint effect of all five predictors is indeed able to account for a non-negligible amount of variance in the data. % However, since I just demonstrated and quantified their action, numbers and figures in hand, would it not make sense to be happy with these results and avoid all the hassles that come with having to compute a Stochastic Optimality Theoretic model (in the novel linear, non-gaussian way introduced in \refch{medina}) from scratch?
+Given these results, what would the added value of a Stochastic Optimality Theoretic model (in the novel linear, non-gaussian way introduced in \refch{medina}) of indefinite object drop be? The best answer to this question was already provided by \textcite{Medina2007} herself, the ideator of the original model. This thesis (and hers) concerns itself with creating a \textit{linguistic} model of the grammaticality of the implicit object construction, with explicit constraints whose violations determine which output will be the favored one among a set of possible candidates for a given input. A linear mixed-effects model provides a \textit{statistical} model that computes the relative grammaticality of a candidate as a sum of weighted variables, whereas the Stochastic Optimality Theoretic model by Medina computes it as the sum of the probabilities of constraint orderings. Most importantly, Medina's mathematical model keeps the input, the candidate set, the constraints, and the probabilities of constraint re-ordering explicit and knowable in every step of the computation, while in the mixed model they are all collapsed together in the weights the model computes under the hood. I will come back to the relationship between regression models and Medina's stochastic model in \refsec{concl_lmem}.

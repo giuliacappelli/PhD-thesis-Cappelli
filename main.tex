@@ -199,12 +199,12 @@
 % 	\medskip
 	
 	\textbf{Colophon} \\
-	The data, code, and materials supporting the findings of this dissertation are available within the thesis (and its supplementary materials) or in GitHub repositories referenced in the text.\\ This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class. The source code of this book is available at:\\\url{https://github.com/fmarotta/kaobook}
+	The data, code, and materials supporting the findings of this dissertation are available within the thesis (and its supplementary materials) or in GitHub repositories referenced in the text.\\ This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class. The source code of this book is available at:\\\url{https://github.com/giuliacappelli/tesi-PhD}
 	
 	\medskip
 	
 	\textbf{First version} \\
-	First printed in May 2019 \@publishers
+	Submitted in August 2022 \@publishers
 }
 \makeatother
 
@@ -233,7 +233,10 @@
 %	PREFACE
 %----------------------------------------------------------------------------------------
 
-% \input{chapters/acknowledgments.tex}
+\setchapterstyle{kao} % Choose the default chapter heading style
+
+% \input{extra/acknowledgments.tex}
+\input{extra/abstract.tex}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
@@ -269,8 +272,6 @@
 \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
 \setchapterstyle{kao} % Choose the default chapter heading style
 
-% \input{chapters/acknowledgments.tex}
-
 \input{chapters/introduction.tex}
 
 \pagelayout{wide} % No margins
@@ -299,12 +300,12 @@
 \pagelayout{wide} % No margins
 \addpart{Appendix}
 \pagelayout{margin} % Restore margins
-\input{chapters/app_verbs.tex}
-\input{chapters/app_behavPISA.tex}
-\input{chapters/app_predictors.tex}
-\input{chapters/app_stimuli.tex}
-% \input{chapters/app_models.tex} % RIMETTERE! tolta per compilare velocemente
-\input{chapters/app_errors.tex}
+\input{extra/app_verbs.tex}
+\input{extra/app_behavPISA.tex}
+\input{extra/app_predictors.tex}
+\input{extra/app_stimuli.tex}
+% \input{extra/app_models.tex} % RIMETTERE! tolta per compilare velocemente
+\input{extra/app_errors.tex}
 
 %----------------------------------------------------------------------------------------
 
@@ -330,6 +331,7 @@
 % \printbibheading % questo scrive "Bibliography" attaccato a bordo foglio
 \printbibheading[title=References\hphantom{cappelli}]
 \bibbycategory
+
 % DECOMMENTA QUI SOTTO PER AVERE BIBLIO TRADIZIONALE SENZA LETTERONE
 % \defbibnote{bibnote}{Here are the references in alphabetical order.\par\bigskip} % Prepend this text to the bibliography
 % \printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote] % Add the bibliography heading to the ToC, set the title of the bibliography and output the bibliography note
