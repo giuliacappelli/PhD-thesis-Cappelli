@@ -124,9 +124,9 @@
 
 \makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
 
-\makeglossaries % Make LaTeX produce the files required to compile the glossary
+% \makeglossaries % Make LaTeX produce the files required to compile the glossary
 
-\makenomenclature % Make LaTeX produce the files required to compile the nomenclature
+% \makenomenclature % Make LaTeX produce the files required to compile the nomenclature
 
 % Reset sidenote counter at chapters
 %\counterwithin*{sidenote}{chapter}
@@ -137,31 +137,26 @@
 \def\thirdcircle{(330:1.75cm) circle (2.5cm)}
 %----------------------------------------------------------------------------------------
 
-\begin{document}
 \pgfplotsset{compat=1.16} % aggiunta suggerita da Overleaf
+\begin{document}
+
 
 %----------------------------------------------------------------------------------------
 %	BOOK INFORMATION
 %----------------------------------------------------------------------------------------
 
-\titlehead{\hfill \includegraphics[height=6cm]{figures/logosns.png} \hspace*{\fill}}
-\subject{}
+\titlehead{\hfill \includegraphics[height=5cm]{figures/logosns.png} \hspace*{\fill}}
+\subject{Classe di Lettere e Filosofia \\ Corso di perfezionamento in Filosofia \\ XXXIII ciclo}
 
-% \begin{center}
-%     \includegraphics[scale=0.5]{figures/logosns.png}
-% \end{center}
+\title[Implicit indefinite objects at the syntax-semantics-pragmatics interface]{Implicit indefinite objects\\ at the syntax-semantics-pragmatics interface: a probabilistic model of acceptability judgments}
+\subtitle{Settore Scientifico-Disciplinare: L-LIN/01 Glottologia e linguistica}
 
-\title[Implicit indefinite objects at the syntax-semantics-pragmatics interface]{Implicit indefinite objects\\ at the syntax-semantics-pragmatics interface:}
-\subtitle{a probabilistic model of acceptability judgments}
+\author[Giulia Cappelli]{\textbf{Candidata}\\ dott.ssa Giulia Cappelli}
 
-\author[Giulia Cappelli]{Giulia Cappelli}
+\date{\textbf{Relatori} \\ prof. Pier Marco Bertinetto \\ prof. Alessandro Lenci}
 
-% \author[Giulia Cappelli]{Giulia Cappelli \thanks{A \LaTeX\ lover}}
+\publishers{\textbf{A.A. 2021/2022}}
 
-% \date{\today}
-\date{Scuola Normale Superiore}
-
-\publishers{in partial fulfillment of the requirements for the degree of Doctor of Philosophy (Ph.D.) in Linguistics}
 
 %----------------------------------------------------------------------------------------
 
@@ -234,7 +229,9 @@
 % If twoside=false, \uppertitleback and \lowertitleback are not printed
 % To overcome this issue, we set twoside=semi just before printing the title pages, and set it back to false just after the title pages
 \KOMAoptions{twoside=semi}
+
 \maketitle
+
 \KOMAoptions{twoside=false}
 
 %----------------------------------------------------------------------------------------
