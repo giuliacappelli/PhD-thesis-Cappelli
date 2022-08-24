@@ -28,53 +28,53 @@ The optimal verb set used in the creation of the stimuli must be balanced in eve
 The creation of a verb set for the two Likert experiments was accomplished in two steps, as detailed below.
 
 \subsection{Creation of verb lists} \labpage{verblists}
-First of all, a list was made of several transitive English verbs (5 from \textcite{Resnik1993}, 8 from \textcite{Levin1993}, 4 from both papers, and 5 commonly used verbs of my choosing). I further added to the list 12 verbs specified with respect to the manner component (discussed in \nrefsec{predictor_mannspec}), based on my personal opinion as a linguist and person in charge of this project. This resulted in a list containing 30 transitive verbs, reported in \reftab{verbs_engita}.\\
+First of all, a list was made of several transitive English verbs (3 from \textcite[138]{Resnik1993}, 8 from \textcite[33]{Levin1993}, 4 from both papers, and 5 commonly used verbs of my choosing). I further added to the list 10 verbs specified with respect to the manner component (discussed in \nrefsec{predictor_mannspec}), based on my personal opinion as a linguist and person in charge of this study. This resulted in a list containing 30 transitive verbs, reported in \reftab{verbs_engita}.\\
 The English verbs in the list have unambiguous meanings (e.g., \textit{to slice, to wash}). I did not include all of Resnik's original set, which featured highly polysemous verbs such as \textit{to have} and \textit{to do}, precisely to comply with this requirement. In order to verify that the 30 verbs are indeed monosemous, quantifying my intuition in a more rigorous way, I used WordNet \parencite{Miller1995} to check that each verb belongs to just one synset (i.e., has just one sense) or, if it belongs to more than one as it often happens, that these synsets are very close together semantically. In order to achieve this result, I computed the Wu-Palmer similarity\sidenote{
 	The Wu-Palmer similarity (WP) is a similarity measure based on the depth of the two synsets (s1 and s2) in the taxonomy and the depth of their closest ancestor, i.e., the Least Common Subsumer (LCS).
 	\begin{equation*}
   WP = 2 * \frac{depth(LCS(s1,s2))}{depth(s1) + depth(s2)}
 	\end{equation*}
 	It can vary between 0 and 1 (0 $<$ WP $\leq$ 1), with higher scores corresponding to more similar senses.
-} between all the WordNet synsets each verb belongs to. I defined strict criteria for monosemy, namely, a verb is only considered monosemous if no more than 20\% of its senses have a Wu-Palmer similarity score lower than a set threshold. For lack of a standardized threshold in the literature, I set it at 0.15, since it's close to the scores of very different word senses of the notoriously non-monosemous English noun \textit{bank}, a now classic textbook example (0.1428 for 'bank\textsubscript{1}: sloping land' versus 'bank\textsubscript{2}: financial institution', 0.1538 for 'bank\textsubscript{1}: sloping land' versus 'bank\textsubscript{6}: gambling house funds'). All the 30 verbs in the set are acceptable, based on these requirements. It's possible to reproduce the results (or apply the test to novel data) using my Python script, available \href{https://github.com/giuliacappelli/checkPolysemy}{here on GitHub}\sidenote{https://github.com/giuliacappelli/ checkPolysemy}.\\
+} between all the WordNet synsets each verb belongs to. I defined strict criteria for monosemy, namely, a verb is only considered monosemous if no more than 20\% of its senses have a Wu-Palmer similarity score lower than a set threshold. For lack of a standardized threshold in the literature, I set it at 0.15, since it is close to the scores of very different word senses of the notoriously non-monosemous English noun \textit{bank}, a now classic textbook example (0.1428 for 'bank\textsubscript{1}: sloping land' versus 'bank\textsubscript{2}: financial institution', 0.1538 for 'bank\textsubscript{1}: sloping land' versus 'bank\textsubscript{6}: gambling house funds'). All the 30 verbs in the set are acceptable, based on these requirements. It's possible to reproduce the results (or apply the test to novel data) using my Python script, available \href{https://github.com/giuliacappelli/checkPolysemy}{here on GitHub}\sidenote{https://github.com/giuliacappelli/ checkPolysemy}.\\
 Keeping the semantic requirement for monosemy in mind, I created the set of 30 Italian verbs (also listed in \reftab{verbs_engita}) by translating each English verb from the list into Italian, and checked that they are not polysemous using the same criteria applied to the English verb set. For each verb in the English set, the corresponding Italian verb is the first translation found in the WordReference English-Italian Dictionary \copyright 2020. I had to choose the second translation by WordReference just for \textit{to chop} (because the first translation, \textit{tagliare}, suits best the verb \textit{to cut}) and for \textit{to swig} (because the first translation, \textit{tracannare}, features in the itWaC corpus only 32 times, while \textit{trangugiare} is found 647 times).\\
-Based on the information discussed in \nrefch{predictors}, I computed the PISA scores for each verb in both lists, and I annotated each verb pair with their telicity and manner specification features (the full details are collected in \refapp{app_predictors}).\\
+Based on the information discussed in \refch{predictors}, I computed the PISA scores for each verb in both lists, and I annotated each verb pair with their telicity and manner specification features (the full details are collected in \refapp{app_predictors}).\\
 
 \begin{table}[htb] % the "htb" makes table env unfloaty
 \caption{The sets of English and Italian verbs of interest.}
 \labtab{verbs_engita}
-\begin{tabular}{ll}
-English verbs & Italian verbs \\
+\begin{tabular}{ll|l}
+\textbf{English verbs} & \textbf{Italian verbs} & \textbf{source} \\
 \hline
-behead	&	decapitare	\\
-break	&	rompere	\\
-build	&	costruire\\	
-chop	&	spaccare	\\
-clean	&	pulire	\\
-cook	&	cucinare	\\
-cut	&	tagliare	\\
-devour	&	divorare	\\
-doodle	&	scarabocchiare\\	
-drink	&	bere	\\
-eat	&	mangiare	\\
-embroider	&	ricamare	\\
-hum	&	canticchiare	\\
-kill	&	uccidere	\\
-knife	&	accoltellare	\\
-poison	&	avvelenare	\\
-polish	&	lucidare	\\
-pour	&	versare	\\
-sew	&	cucire	\\
-sign	&	firmare	\\
-sing	&	cantare	\\
-sip	&	sorseggiare	\\
-slice	&	affettare\\	
-smoke	&	fumare	\\
-steal	&	rubare	\\
-swig	&	trangugiare	\\
-teach	&	insegnare	\\
-wash	&	lavare	\\
-watch	&	guardare	\\
-write	&	scrivere	       
+behead	&	decapitare & new (manner of killing)	\\
+break	&	rompere & new	\\
+build	&	costruire & new\\	
+chop	&	spaccare & new (manner of cutting)	\\
+clean	&	pulire & \textcite{Levin1993}	\\
+cook	&	cucinare & \textcite{Levin1993}	\\
+cut	&	tagliare & new	\\
+devour	&	divorare & new (manner of eating)	\\
+doodle	&	scarabocchiare & new (manner of writing)\\	
+drink	&	bere & \textcite{Levin1993, Resnik1993}	\\
+eat	&	mangiare & \textcite{Levin1993, Resnik1993}	\\
+embroider	&	ricamare & \textcite{Levin1993}	\\
+hum	&	canticchiare & \textcite{Levin1993}	\\
+kill	&	uccidere & new	\\
+knife	&	accoltellare & new (manner of cutting)	\\
+poison	&	avvelenare & new (manner of killing)	\\
+polish	&	lucidare & \textcite{Levin1993}	\\
+pour	&	versare & \textcite{Resnik1993}	\\
+sew	&	cucire & \textcite{Levin1993}	\\
+sign	&	firmare & new (manner of writing)	\\
+sing	&	cantare & \textcite{Levin1993, Resnik1993}	\\
+sip	&	sorseggiare & new (manner of drinking)	\\
+slice	&	affettare & new (manner of cutting)\\	
+smoke	&	fumare & new	\\
+steal	&	rubare & \textcite{Resnik1993}	\\
+swig	&	trangugiare & new (manner of drinking)	\\
+teach	&	insegnare & \textcite{Levin1993}	\\
+wash	&	lavare & \textcite{Levin1993}	\\
+watch	&	guardare & \textcite{Resnik1993}	\\
+write	&	scrivere & \textcite{Levin1993, Resnik1993}	       
 \end{tabular}
 \end{table}
 
@@ -151,7 +151,7 @@ stagger	&	barcollare
 \end{table}
 
 As mentioned in \nrefch{predictors}, semantic recoverability, telicity, and manner specification vary \textit{across verbs}, while the presence of an overt direct object, perfectivity, and iterativity vary \textit{across sentences}. This means that the two groups of object drop predictors are treated in different ways. Recoverability, telicity, and manner specification are intrinsic characteristics of each verb, respectively continuous the first and binary the last two (refer to \refapp{app_predictors} for the complete set of verbs with their features). On the contrary, the presence of a direct object, perfectivity, and iterativity are binary features that need to be encoded by creating a pair of minimally different sentences for each.\\
-Let us consider the eight\sidenote{based on the design in \refsec{design}} example stimuli for the verb \textit{to eat} in \ref{eat_simulation}:
+Let us consider the eight\sidenote{Based on the design in \refsec{design}.} example stimuli for the verb \textit{to eat} in \ref{eat_simulation}:
 \ex. \label{eat_simulation} \a. John had eaten pizza again. \hfill {\small [dObj+, perf+, iter+]}
 \b. John had eaten pizza. \hfill {\small [dObj+, perf+, iter-]}
 \c. John was eating pizza again. \hfill {\small [dObj+, perf-, iter+]}
@@ -161,7 +161,11 @@ Let us consider the eight\sidenote{based on the design in \refsec{design}} examp
 \e. John was eating again. \hfill {\small [dObj-, perf-, iter+]}
 \e. John was eating. \hfill {\small [dObj-, perf-, iter-]}
 
-All the 30 verbs of interest and the 10 filler verbs, both for English and Italian, will feature in stimuli like the ones listed in \ref{eat_simulation}. In transitive sentences, regardless of the verb being transitive or intransitive in nature, the direct object is semantically compatible with the meaning of the verb so that the violation of selectional preferences do not act as a confound in the experiment. The reader will find the full list of stimuli and verb-object pairings in \refapp{app_stimuli}, and detailed information on the manipulation of perfectivity and iterativity in \nrefsec{predictor_perfectivity}.
+All the 30 verbs of interest and the 10 filler verbs, both for English and Italian, will feature in stimuli like the ones listed in \ref{eat_simulation}. In transitive sentences, regardless of the verb being transitive or intransitive in nature, the direct object is semantically compatible with the meaning of the verb so that the violation of selectional preferences does not act as a confound in the experiment. Moreover, in order to minimize the possible confounding effect of other factors which \textcite{HopperThompson1980} identified as relevant in determining prototypical transitivity (as discussed in \refsec{theory_transitivity}), all the stimuli are in the indicative (\textit{realis}) mood, they are affirmative rather than negative, and they feature a human subject (which is the most volitional, high-in-potency Agent possible). As anticipated in \refsec{theory_workingdef}, no context is provided in the stimuli, since it is known to enhance the recoverability of objects and, thus, to influence the grammaticality of indefinite object drop.\\
+The reader will find the full list of stimuli and verb-object pairings in \refapp{app_stimuli}, and detailed information on the manipulation of perfectivity and iterativity in \refsec{predictor_perfectivity}.
+
+% dire che non ho effetti confound relativi ai 10 parametri di HT1980, e.g. sono tutte frasi reali, con Agente intenzionale
+% IMPO! dire che le mie sono tutte no-context utterances (fare riferimento a ultima sezione di Cap 2)
 
 
 \section{Setting} \labsec{setting}

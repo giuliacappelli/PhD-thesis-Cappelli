@@ -14,7 +14,7 @@ This Chapter presents the five linguistic factors I will use as predictors in my
 % By distributing the credit for a particular noun over all of the argument classes which subsume it, the model is able to capture semantic generalizations. For example, the argument classes which subsume the noun “water” include water, liquid, fluid, substance, matter, physical entity, and entity (Fellbaum, 1998). Thus, what is computed by SPS is not only that a verb selected for the noun “water”, but rather that it selected for all the argument classes which subsume the noun, such as liquid. If only the particular nouns used were allowed in the model, then very few verbs would be highly selective since they would select for a wide range of non-identical objects. In contrast, by calculating SPS over argument classes, what can be generalized about a verb is that it tends to select nouns that fall under the classes of liquid, fluid, etc
 % SPS can be computed over all senses of a noun, and thus over all of the argument classes which subsume each of these senses
 
-As shown in \nrefsec{recoverability}, direct objects are likely omitted if they are "sufficiently recoverable" \parencite{Glass2013} from the meaning of the verb. Following \textcite{Medina2007}, object recoverability as a predictor in the Stochastic Optimality Theoretic model provided in this thesis is a continuous variable, for two main reasons. First, it would not be possible to set a fixed threshold value to separate recoverable and non-recoverable object verbs. Second, a continuous predictor works especially well within a model of \textit{gradient} grammaticality, such as the one hereby provided.\\
+As discussed throughout \refch{objectdrop} and in \refsec{recoverability}, direct objects are likely omitted if they are "sufficiently recoverable" \parencite{Glass2013} from the meaning of the verb. Following \textcite{Medina2007}, object recoverability as a predictor in the Stochastic Optimality Theoretic model provided in this thesis is a continuous variable, for two main reasons. First, it would not be possible to set a fixed threshold value to separate recoverable and non-recoverable object verbs. Second, a continuous predictor works especially well within a model of \textit{gradient} grammaticality, such as the one hereby provided.\\
 While Medina only employs the taxonomy-based Selectional Preference Strength measure by \textcite{Resnik1993, Resnik1996}, I model object recoverability using three different measures of a verb's semantic selectivity as a proxy to object recoverability:
 
 \begin{itemize}
@@ -23,10 +23,10 @@ While Medina only employs the taxonomy-based Selectional Preference Strength mea
     \item Behavioral PISA, a behavioral measure inspired by Computational PISA and computed as the Object Similarity measure by \textcite{Medina2007}.
 \end{itemize}
 
-These three measures are explained in throughout this Section.
+These three measures are detailed in this Section.
 
 
-\subsection{Resnik's SPS}\labsec{resnik_sps}
+\subsection{Resnik's SPS} \labsec{resnik_sps}
 % Before turning to the details of PISA, a brief historical introduction is in order.
 % \paragraph{Introduction}  
 
@@ -80,11 +80,39 @@ Under this view, selectional preferences are fully encoded by the change between
 SPS_{v,r} = \sum_{c \in classes} p(c|v,r) \: \log_{2}\frac{p(c|v,r)}{p(c|r)}
 \end{equation}
 
-In \refeq{resnik_sps_eq}, $p(c|v,r)$ is the posterior distribution of argument classes for a given predicate $v$ in a given relation $r$ with the predicate, and $p(c|r)$ is the prior distribution of argument classes regardless of the predicate. The only relevant relation for the purposes of this thesis is the verb-object relation, but it can also be any other grammatical function (such as verb-subject) or semantic role (such as verb-Instrument, as in \textcite{CappelliLenciPISA}). Given a set of transitive verbs used in a corpus, SPS scores will be higher for transitive verbs having a narrow selectional range (as in \ref{dobj1}) and lower for those having a broader selectional range (as in \ref{dobj2}).
+In \refeq{resnik_sps_eq}, $p(c|v,r)$ is the posterior distribution of argument classes for a given verb $v$ in a given relation $r$ with the verb, and $p(c|r)$ is the prior distribution of argument classes regardless of the verb. The only relevant relation for the purposes of this thesis is the verb-object relation, but it can also be any other grammatical function (such as verb-subject) or semantic role (such as the verb-Instrument relation, as in \textcite{CappelliLenciPISA}).\\
+The probabilities in \refeq{resnik_sps_eq} are estimated from corpus frequencies. Thus, assuming that only nouns participating in the verb-object relation are considered, $p(c|v,r)$ is computed as in \refeq{resnik_sps_pcvr}, and $p(c|r)$ is computed as in \refeq{resnik_sps_pcr}.
+% computed according to a frequentist definition of probability, i.e., in terms of the relative frequency of the event whose probability is the object of the computation
+
+\begin{equation} \labeq{resnik_sps_pcvr}
+p(c_i|v,r) = \frac{f(v,r,c_i)}{\sum_{c \in classes} f(v,r,c)}
+\end{equation}
+
+\begin{equation} \labeq{resnik_sps_pcr}
+p(c_i|r) = \frac{f(r,c_i)}{\sum_{c \in classes} f(r,c)}
+\end{equation}
+
+The frequencies associated to each class are equated to the sum of the frequencies of the nouns belonging to that class, since they cannot be extracted directly from the corpus. Thus, $f(v,r,c)$ is computed as in \refeq{resnik_sps_fvrc} and $f(r,c)$ is computed as in \refeq{resnik_sps_frc}.
+
+\begin{equation} \labeq{resnik_sps_fvrc}
+f(v,r,c) = \sum_{n|c \in hyp(n)} f(v,r,n)
+\end{equation}
+
+\begin{equation} \labeq{resnik_sps_frc}
+f(r,c) = \sum_{n|c \in hyp(n)} f(r,n)
+\end{equation}
+
+In order to overcome the problem of word sense disambiguation posed by polysemous nouns, \textcite[28]{Resnik1993} proposes to "distribute the credit" for a noun uniformly over its possible classes, namely, to average the frequency of the noun over all the classes subsuming that noun, as in \refeq{resnik_sps_poly}.
+
+\begin{equation} \labeq{resnik_sps_poly}
+f(r,n) = \frac{\sum_{i=1}^{k} f(r,n,c_i)}{k}
+\end{equation}
+
+Given a set of transitive verbs used in a corpus, SPS scores will be higher for transitive verbs having a narrow selectional range (as in \ref{dobj1}) and lower for those having a broader selectional range (as in \ref{dobj2}).
 \ex.\label{ex1} \a. \label{dobj1} John ate $\varnothing$\textsubscript{object}.
 \b. \label{dobj2} *John made $\varnothing$\textsubscript{object}.
 
-Crucially, selectional preferences as measured by SPS provide insight about the recoverability of direct objects, and their recoverability affects the grammaticality of the sentences in \ref{ex1}. In particular, \textit{to eat} selects mostly for edible items, so that reading \ref{dobj1} we can reasonably assume John ate some kind of food, while \textit{to make} selects for a wide array of objects from semantically different classes, so it's impossible to know what is that John made in \ref{dobj2}.\\
+Crucially, selectional preferences as measured by SPS provide insight about the recoverability of direct objects, and their recoverability affects the grammaticality of the sentences in \ref{ex1}. In particular, \textit{to eat} selects mostly for edible items, so that reading \ref{dobj1} we can reasonably assume John ate some kind of food, while \textit{to make} selects for a wide array of objects from semantically different classes, so it is impossible to know what is that John made in \ref{dobj2}.\\
 The classes considered when computing the SPS scores have to belong to a lexical taxonomy, so that each sense of each noun in the lexicon is mapped to a concept. Using Resnik's example \parencite[59]{Resnik1993}, the noun \textit{baseball} can be mapped to two concepts, i.e., a hyponym of the concept $<$ball$>$ and a hyponym of the concept $<$field game$>$. Moving from concepts to taxonomy classes, a noun belongs to any class having one of its concepts as a hyponym, even indirectly. Thus, as illustrated in \reffig{wordnet_simplified}, \textit{baseball} belongs not only to the classes $<$ball$>$ and $<$field game$>$, but also to $<$game equipment$>$, $<$artifact$>$, $<$inanimate object$>$, $<$outdoor game$>$, $<$sport$>$, $<$human activity$>$, and $<$entity$>$ (the root node of the whole hierarchy).
 
 \begin{figure}[htb]

@@ -188,7 +188,10 @@ Taking all of this into consideration, a non-standard Optimality Theoretic compr
 \end{enumerate}
 
 \section{Defining a probabilistic constraint ranking} \labsec{rankingmedina}
-\subsection{Introduction} \textcite{Medina2007} built such a model under the premises of Stochastic Optimality Theory, whose tenets I introduced in \refsec{stochot}. This framework accounts for gradient grammaticality out-of-the-box, since it assigns each candidate a probability of it being the winner, to be interpreted as a degree of acceptability. As for the implementation of semantic selectivity as a continuous factor, Medina came up with a personal variation on Stochastic Optimality Theory.\\
+
+\subsection{Introduction}
+
+\textcite{Medina2007} built such a model under the premises of Stochastic Optimality Theory, whose tenets were introduced in \refsec{stochot}. This framework accounts for gradient grammaticality out-of-the-box, since it assigns each candidate a probability of it being the winner, to be interpreted as a degree of acceptability. As for the implementation of semantic selectivity as a continuous factor, Medina came up with a personal variation on Stochastic Optimality Theory.\\
 As noted in tableaux \reftab{medina2007_Ytel_Yperf} to \reftab{medina2007_Ntel_Nperf}, the winner in a Standard Optimality Theoretic model is determined based on the ranking of \textsc{*Int Arg} relative to the other three constraints at play. The same would hold true for a traditional Stochastic Optimality Theoretic version of the same model, where all constraints would be assigned a given normal distribution with a fixed evaluation noise (fully described by its standard deviation). Medina's stochastic model obtains the probability of \textsc{*Int Arg} dominating the other three constraints as a function of the verb's semantic selectivity, computed using Resnik's Selectional Preference Strength \parencite{Resnik1993,Resnik1996}. Compared with traditional Stochastic Optimality Theory, Medina's proposal achieves the same goal of having candidates with \textit{gradient} grammaticality (instead of a single absolute winner), while having two advantages:
 \begin{itemize}
     \item implementing semantic selectivity in the model properly, and
