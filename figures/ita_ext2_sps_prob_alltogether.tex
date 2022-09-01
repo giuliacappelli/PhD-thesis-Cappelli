@@ -25,7 +25,7 @@ xtick style={color=black},
 xtick={1e-93,1.0000000013},
 xticklabels={0,1},
 y grid style={gray, dotted},
-ylabel={p (*INT ARG >> other constraints)},
+ylabel={p (\textsc{*Int Arg} >> other constraints)},
 ymajorgrids,
 ymin=0, ymax=1.02638649825962,
 ytick style={color=black}
@@ -35,31 +35,31 @@ table {%
 1e-93 0.877479710453594
 1.0000000013 0.824318354162164
 };
-\addlegendentry{p (*INT ARG >> FAITH ARG)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Faith Arg})}
 \addplot [semithick, blue]
 table {%
 1e-93 0.720494934960556
 1.0000000013 0.619419669967409
 };
-\addlegendentry{p (*INT ARG >> TELIC END)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Telic End})}
 \addplot [semithick, green01270]
 table {%
 1e-93 0.837496134396361
 1.0000000013 0.873651200153844
 };
-\addlegendentry{p (*INT ARG >> PERF CODA)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Perf Coda})}
 \addplot [semithick, black]
 table {%
 1e-93 0.999999999999952
 1.0000000013 0.981260963934171
 };
-\addlegendentry{p (*INT ARG >> NON-ITER ARG)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Non-Iter Arg})}
 \addplot [semithick, red, dashed]
 table {%
 1e-93 1
 1.0000000013 0.47227003480757
 };
-\addlegendentry{p (*INT ARG >> MANN SPEC ARG)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Mann-Spec Arg})}
 \end{axis}
 
 \end{tikzpicture}

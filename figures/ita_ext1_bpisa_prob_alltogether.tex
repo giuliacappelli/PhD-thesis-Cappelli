@@ -25,7 +25,7 @@ xtick style={color=black},
 xtick={1e-93,1.0000000013},
 xticklabels={0,1},
 y grid style={gray, dotted},
-ylabel={p (*INT ARG >> other constraints)},
+ylabel={p (\textsc{*Int Arg} >> other constraints)},
 ymajorgrids,
 ymin=0, ymax=1.02596067793572,
 ytick style={color=black}
@@ -35,25 +35,25 @@ table {%
 1e-93 0.658975219966619
 1.0000000013 0.890534187695652
 };
-\addlegendentry{p (*INT ARG >> FAITH ARG)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Faith Arg})}
 \addplot [semithick, blue]
 table {%
 1e-93 0.696115187981004
 1.0000000013 0.480786441285542
 };
-\addlegendentry{p (*INT ARG >> TELIC END)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Telic End})}
 \addplot [semithick, green01270]
 table {%
 1e-93 0.779962834280108
 1.0000000013 0.906658947922789
 };
-\addlegendentry{p (*INT ARG >> PERF CODA)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Perf Coda})}
 \addplot [semithick, black]
 table {%
 1e-93 0.959045793988262
 1.0000000013 1
 };
-\addlegendentry{p (*INT ARG >> NON-ITER ARG)}
+\addlegendentry{p (\textsc{*Int Arg} >> \textsc{Non-Iter Arg})}
 \end{axis}
 
 \end{tikzpicture}

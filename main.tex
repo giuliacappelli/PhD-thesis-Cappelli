@@ -82,6 +82,9 @@
 % aggiunta mia per NON avere figure prima del titolo del loro paragrafo
 \usepackage{flafter}
 
+% aggiunta mia per NON avere tabelle fluttuanti
+\usepackage{float}
+
 % aggiunta mia per fare citazioni col possessivo / genitivo sassone!
 \newcommand{\posscite}[1]{\citeauthor{#1}'s (\citeyear{#1})}
 
@@ -209,7 +212,7 @@
 	\medskip
 	
 	\textbf{First version} \\
-	Submitted in August 2022 in partial fulfillment of the requirements for the degree of Doctor of Philosophy (Ph.D.) in Linguistics.
+	Submitted in September 2022 in partial fulfillment of the requirements for the degree of Doctor of Philosophy (Ph.D.) in Linguistics.
 }
 \makeatother
 
@@ -264,9 +267,9 @@
 
 \listoffigures % Output the list of figures
 
-% Comment both of the following lines to have the LOF and the LOT on different pages
-\let\cleardoublepage\bigskip
-\let\clearpage\bigskip
+% Comment the 2 following lines to have the LOF and the LOT on different pages
+% \let\cleardoublepage\bigskip
+% \let\clearpage\bigskip
 
 \listoftables % Output the list of tables
 
@@ -311,7 +314,7 @@
 \input{extra/app_behavPISA.tex}
 \input{extra/app_predictors.tex}
 \input{extra/app_stimuli.tex}
-% \input{extra/app_models.tex} % RIMETTERE! tolta per compilare velocemente
+\input{extra/app_models.tex} % RIMETTERE! tolta per compilare velocemente
 \input{extra/app_errors.tex}
 
 %----------------------------------------------------------------------------------------
