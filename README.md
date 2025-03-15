@@ -1,5 +1,14 @@
 # tesi-PhD
-LaTeX source of my PhD dissertation
+Please cite as
+
+@phdthesis{cappelli2022implicit,
+  title        = {Implicit indefinite objects at the syntax-semantics-pragmatics interface: a probabilistic model of acceptability judgments},
+  author       = {Cappelli, Giulia},
+  year         = 2022,
+  note         = {Available at \url{https://hdl.handle.net/11384/133342}},
+  school       = {Scuola Normale Superiore},
+  type         = {PhD thesis}
+}
 
 ## Data (stimuli and results)
 The interested reader will find my data, i.e. the stimuli for each experiment and the raw results I got from participants, in [a repository](https://github.com/giuliacappelli/dissertationData) containing:
