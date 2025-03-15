@@ -1,6 +1,6 @@
 # tesi-PhD
-Please cite as
-
+Please cite as:
+```
 @phdthesis{cappelli2022implicit,
   title        = {Implicit indefinite objects at the syntax-semantics-pragmatics interface: a probabilistic model of acceptability judgments},
   author       = {Cappelli, Giulia},
@@ -9,6 +9,7 @@ Please cite as
   school       = {Scuola Normale Superiore},
   type         = {PhD thesis}
 }
+```
 
 ## Data (stimuli and results)
 The interested reader will find my data, i.e. the stimuli for each experiment and the raw results I got from participants, in [a repository](https://github.com/giuliacappelli/dissertationData) containing:
