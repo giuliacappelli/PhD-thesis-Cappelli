@@ -1,4 +1,8 @@
-# tesi-PhD
+# My PhD dissertation: raw LaTeX, data, scripts
+
+## Full LaTeX source
+This folder contains the full LaTeX source of my PhD dissertation.
+
 Please cite as:
 ```
 @phdthesis{cappelli2022implicit,
